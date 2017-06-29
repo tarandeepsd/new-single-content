@@ -1,0 +1,155 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body">
+    <h3><span>Edit tip</span></h3>
+<div class="row">
+    <div class="default-form form_area row" ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:464px;">
+  
+  		<form class="col-sm-12 scroll_minus">
+        
+        <!--<div class="oops_error">
+            <b>Ops... something went wrong!</b> Please, make sure you have completed each field correctly.
+        </div>-->
+        
+          <div class="form-group">
+          <label>Tip Title  <small>(compulsory)</small></label>
+            <div class="form-input input-error first_tooltip">
+                <input type="text" class="form-control" value="Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy tincidunt">
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Attention! The email address you entered is not in the correct format.</div>
+            </div>
+             </div>
+          
+           
+          <div class="form-group">
+            <label>Description  <small>(compulsory)</small></label>
+            
+            <div class="form-input form-textarea form-correct">
+                    	<div class="textarea">
+                        	<textarea class="form-control" style="height:146px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</textarea>
+                        </div>
+                        <span class="form-icon correct-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+            
+          </div>
+          
+          
+           <div class="row">
+          <div class="col-sm-6"> 
+                <div class="form-group cal_left">
+                    <label>Answer before   <span class="optional">(optional)</span></label>
+                      <div class="form-input" ng-click="open2()">
+                    <!--<input type="text" class="form-control form-control-icon" ng-click="calendar_open=!calendar_open" placeholder="dd/mm/yyyy">-->
+                    
+                    <input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                	uib-datepicker-popup="{{format}}" ng-model="formData.fromDate" 
+                                    is-open="popup2.opened" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats"/>
+									
+                                    
+                            <span class="form-icon question-icon"></span>
+                            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                        </div>
+                </div>
+            </div>
+            
+           <div class="col-sm-6"> 
+                <div class="form-group">
+                    <label>Category <span class="optional">(optional)</span></label>
+                    <div class="form-input">
+                    	<div class="question_section m_zero">
+                                        
+                            <div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='Select a category for this tip'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="scrollarea open_dropdown" ng-scrollbars ng-scrollbars-config="{}" style="max-height:230px;">
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 1 - level 1'}" ng-click="scontrino='Category Name 1 - level 1'"> Category Name 1 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 2 - level 1'}" ng-click="scontrino='Category Name 2 - level 1'"> Category Name 2 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 3 - level 1'}" ng-click="scontrino='Category Name 3 - level 1'"> Category Name 3 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 4 - level 1'}" ng-click="scontrino='Category Name 4 - level 1'"> Category Name 4 - level 1</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>  
+                                           
+                            <div class="ques_box">
+                                                <span class="icon question-icon"></span>
+                                                <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>              
+                                   
+                          </div>
+                    </div>
+                  </div>   
+              </div>
+            
+            <div class="clearfix"></div>
+            
+           <div class="col-sm-6"> 
+                <div class="form-group">
+                    <label>Does this tip refer to a particular Shop? <span class="optional">(optional)</span></label>
+                    <div class="form-input">
+                            <input type="text" class="form-control form-control-icon" ng-click="calendar_open=!calendar_open" placeholder="Enter Shop name">
+                            <span class="form-icon question-icon"></span>
+                            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+
+                        </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6"> 
+                <div class="form-group">
+                    <label>Add this tip to a Collection  <span class="optional">(optional)</span></label>
+                     <div class="form-input input-dropdown" uib-dropdown="1">
+                    <input type="text" class="form-control form-control-icon" placeholder="{{ suggestions }} " data-toggle="dropdown" uib-dropdown-toggle ng-init="suggestions='Type Collection’s name'" />
+                    <div class="input-suggestion-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <ul>
+                            <li><a href="#" ng-class= "active('Lorem', suggestions)"  ng-click="suggestions='Lorem'"><strong>Lor</strong>em <span class="notification newTxt">NEW</span></a></li>
+                            <li><a href="#" ng-class= "active('calorifero', suggestions)"  ng-click="suggestions='calorifero'">ca<strong>lor</strong>ifero <span class="notification">existing</span></a></li>
+                            <li><a href="#" ng-class= "active('malore', suggestions)"  ng-click="suggestions='malore'">ma<strong>lor</strong>e <span class="notification">existing</span></a></li>
+                        </ul>
+                    </div>		
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                 </div>
+                </div>
+            </div>
+          
+          </div>
+          
+          
+          <div class="form-group m_zero">
+           <div class="row">
+           
+          	<div class="col-sm-6">
+            	<div class="custom-checkboxbtn checkbox">
+              <label><input type="checkbox" ng-model="properties" name="checkbox" value="proper" class="ng-pristine ng-untouched ng-valid ng-empty">
+                       <span class="lbl grey_checkbox">Notify me when this tip receives a comment</span> </label>
+                      </div>
+		    </div>
+          
+             <div class="col-sm-3">
+               <button class="gray_dark_btn btn modal-btn m_top_zero" type="button" ng-click="ok()">cancel</button>
+              </div>  
+             <div class="col-sm-3">
+              <button class="btn purple_bg_btn modal-btn m_top_zero" type="button" ng-click="ok()">save changes</button>
+             </div>         
+          </div>
+            </div>
+          
+        </form>      
+  
+    <div class="clearfix"></div>
+        
+    </div>
+</div>   
+</div>

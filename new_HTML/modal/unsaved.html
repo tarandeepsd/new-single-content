@@ -1,0 +1,15 @@
+<div class="modal-header">
+		   <button type="button" class="close" ng-click="cancel()"></button>
+		</div>
+			
+			<div class="modal-body">
+        	<h3><span>Unsaved element</span></h3>
+            
+	    <form novalidate class="registerForm" name="registerForm" ng-init = "submitForm=0">
+            <div class="form_area">
+				<p class="text-center grey_text">There are changes that you did not save.<br/> Do you want to quit without saving?</p>
+				<button class="btn btn-block register_btn m_top20" type="button" ng-click="ok()">no, save my changes</button>
+				<button class="btn register_btn btn-block btn_red m_top10" type="button" ng-click="cancel()">yes, quit and do not save</button>
+            </div>            
+	    </form>
+	    </div>

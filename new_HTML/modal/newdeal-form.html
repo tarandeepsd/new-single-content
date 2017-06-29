@@ -1,0 +1,300 @@
+<!-- Default Form -->
+<div class="default-form dealmodal-form">
+	<div class="row">
+    	<div class="col-sm-12">
+            <!-- Edit Deal Left section -->
+            <div class="deal-right-section">
+                <div class="form-group">
+                    <label>Deal Title <span class="req">(compulsory)</span></label>
+                    <div class="form-input first_tooltip">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter a title for this deal">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                     <div class="form-group">
+                        <label>Deal Price <span class="req">(compulsory)</span></label>
+                        <div class="form-price-input">
+                            <div class="form-input form-select form-select-small" ng-controller="DropdownCtrl">
+                                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='€'">
+                                        {{currency}} 
+                                    </a>	
+                                   <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                                        <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                                        <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                                        <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                                   </ul>
+                                </div>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" class="form-control form-control-icon" placeholder="e.g. 9.99">
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                             </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-sm-6">
+                     <div class="form-group">
+                        <label>Full Price</label>
+                        <div class="form-price-input">
+                            <div class="form-input form-select form-select-small" ng-controller="DropdownCtrl">
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='€'">
+                                {{currency}} 
+                            </a>	
+                           <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                                <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                                <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                                <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                           </ul>
+                            
+                        </div>
+                    </div>
+                            <div class="form-input">
+                                <input type="text" class="form-control form-control-icon" placeholder="e.g. 9.99">
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                            </div>
+                        </div>
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                 <label>Description <span class="req">(compulsory)</span></label>
+            <div class="form-input form-textarea">
+                <div class="textarea">
+                    <textarea class="form-control" placeholder="Enter a description for this deal" style="height:146px;"></textarea>
+                </div>
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+            </div>
+        </div>
+            <div class="clearfix"></div>
+                
+    		</div>
+   		</div>
+
+        <div class="col-sm-12 p_rzero_mob">
+        <!-- Edit Deal Left section -->
+        <div class="deal-left-section row">
+        
+           <div class="col-sm-12 col-md-6 p_rzero_mob">
+            
+            <div class="row image_upload_section">
+             
+             <div class="col-md-5 col-sm-4">
+            <!-- Image gallery -->
+            <div class="image-gallery form-group m_zero">
+                <label>Image <span class="optional">(optional)</span></label>
+                <div class="image-group">
+                    <div class="image">
+                        <a href="#">
+                            <img src="assets/images/newdeal-pop-img.jpg" />
+                        </a>
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+            
+             <div class="col-md-7 col-sm-8 p_left_zero">
+                <!-- //Image gallery -->
+                <div class="form-group m_top20">
+                    <input class="btn btn-block green-btn" type="button" value="upload image ..." />
+                </div>
+                
+                <div class="form-group m_zero">
+                <small class="font_size14grey">or enter image URL</small>
+                    <div class="form-input">
+                        <input type="text" class="form-control" placeholder="http://www.">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+             </div>
+             
+            </div>
+             
+             <div class="image-instruction">
+                    Allowed formats: Jpeg, Png, Bmp. Minimum dimensions: 640x640px
+                </div>
+            
+           </div>
+           
+           <div class="col-sm-12 col-md-6 p_rzero_mob"> 
+            
+            <div class="form-group cal_left">
+            <label>Expiry Date  <span class="optional">(optional)</span></label>
+            <div class="form-input" ng-click="open3()">
+                    <!--<input type="text" class="form-control form-control-icon" ng-click="calendar_open=!calendar_open" placeholder="dd/mm/yyyy">-->
+                    
+                    <input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                	uib-datepicker-popup="{{format}}" ng-model="formData.fromDate" 
+                                    is-open="popup3.opened" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats" />
+                                    
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            
+        </div>
+        
+        	<div class="form-group">
+            	<label>Add this deal to a Collection  <span class="optional">(optional)</span></label>
+                <div class="form-input input-dropdown" uib-dropdown="1">
+                    <input type="text" class="form-control form-control-icon" placeholder="{{ suggestions }} " data-toggle="dropdown" uib-dropdown-toggle ng-init="suggestions='Type Collection’s name'" />
+                    <div class="input-suggestion-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <ul>
+                            <li><a href="#" ng-class= "active('Lorem', suggestions)"  ng-click="suggestions='Lorem'"><strong>Lor</strong>em <span class="notification newTxt">NEW</span></a></li>
+                            <li><a href="#" ng-class= "active('calorifero', suggestions)"  ng-click="suggestions='calorifero'">ca<strong>lor</strong>ifero <span class="notification">existing</span></a></li>
+                            <li><a href="#" ng-class= "active('malore', suggestions)"  ng-click="suggestions='malore'">ma<strong>lor</strong>e <span class="notification">existing</span></a></li>
+                        </ul>
+                    </div>		
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                 </div>
+            
+        	</div>
+        
+        </div>
+        </div>
+        <!-- Edit Deal Left section -->
+        </div>
+	</div> 
+    
+    <!-- logged out Section-->
+    <div class="loggedout-section clearfix">
+    	<h2 class="title"> <span></span> No account needed, just type your email address.</h2>
+        
+        <div class="loggedout-form">
+        
+            <div class="inline-form">
+                <div class="form-group">
+                    <label>Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter your email address">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+            </div>
+        
+        	 <div class="social-icons">
+                <span class="label">or sign up with</span>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="twitter"></a>
+                <a href="#" class="google-plus"></a>
+            </div>
+            
+          </div>
+          
+        <div class="loggedout-form">
+        
+            <div class="inline-form clearfix">
+                <div class="form-group column6 pr10">
+                    <label>Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input form-correct">
+                        <input type="text" class="form-control form-control-icon" value="email@example.com">
+                        <span class="form-icon correct-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                <div class="form-group column6 pl10">
+                    <label>Password <span class="req">(compulsory)</span></label>
+                    <div class="form-input">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter your password">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+            </div>
+        
+        	 <div class="social-icons">
+                <span class="label">or sign up with</span>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="twitter"></a>
+                <a href="#" class="google-plus"></a>
+            </div>
+            
+          </div>  
+          
+        </div> 
+       <!-- //logged out Section --> 
+        
+         <!-- Activation Link form  -->
+        <div class="loggedout-section clearfix">
+    		<h2 class="title green-title"> <span></span> You have succesfully connected your Facebook profile to Shout!</h2>
+        	<div class="loggedout-form">
+        	<div class="form-group">
+                    <label>Send me my activation link to this Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input form-correct">
+                        <input type="text" class="form-control form-control-icon" value="email@example.com">
+                        <span class="form-icon correct-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                
+          </div>  
+     </div> 
+     <!-- //Activation Link form  -->
+     
+      <!-- logged out Section--> 
+    <div class="loggedout-section clearfix">
+    	<h2 class="title yellow-title"> <span></span> Facebook connected succesfully. Please specify your email address</h2>
+        
+        <div class="loggedout-form">
+        
+        	 <div class="social-icons">
+                <span class="label">or sign up with</span>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="twitter"></a>
+                <a href="#" class="google-plus"></a>
+            </div>
+            
+            
+            <div class="inline-form">
+                <div class="form-group">
+                    <label>Send me my activation link to this Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter your email address">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+            </div>
+        
+           
+          </div>
+          
+     </div>
+     <!-- //logged out Section --> 
+       
+       
+    <div class="row"> 
+    	<div class="col-sm-6">
+            <div class="form-group form-bottom-checkbox clearfix">
+                <div class="form-input custom-checkboxbtn">
+                    <label>
+                        <input type="checkbox" name="checkbox" checked="true"  /> <span class="lbl">Notify me when this deal receives a comment</span>
+                    </label>
+                </div>
+            </div>
+         </div>
+         <div class="col-sm-6">
+            <div class="form-group">
+           		<!--<input type="button" class="btn btn-block purple-btn modal-btn" value="post deal"  />-->
+                <a href="#" class="btn btn-block purple-btn modal-btn"><span class="web_view">post deal</span> <span class="phone_view">accept terms and post deal</span></a>
+            </div>
+        </div>
+   </div>
+   
+   </div>		
+    <!-- //Default Form -->

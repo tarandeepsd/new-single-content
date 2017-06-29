@@ -1,0 +1,152 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body">
+
+	<h3><span>Report Shop Review</span></h3>
+    
+    <div class="radiobtn-modallist">
+		<h4 class="subtitle">Choose the reason why you are reporting this Shop Review:</h4>
+        <uib-accordion close-others="true" class="custom-radiobtn">
+            <uib-accordion-group>
+              <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">The Review is not accurated</span></label>
+              </uib-accordion-heading>
+                 <div class="accordian-content" ng-controller="CollapseCtrl">
+                    <h5>Specify why this Shop Review is not accurated.</h5>
+                    <div class="default-form">
+                        <div class="form-group">
+                                <div class="form-input form-textarea">
+                                    <div class="textarea"><textarea placeholder="The Review is not accurated because ..." class="form-control"></textarea>
+                                    </div>
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                         </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="cancel" class="btn grey-btn" />
+                         <input type="button" value="report" class="btn purple-btn" />
+                    </div>
+                  </div>
+            </uib-accordion-group>
+            
+            <uib-accordion-group>
+               <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">The Review refers to another shop</span></label>
+              </uib-accordion-heading>
+              <div class="accordian-content" ng-controller="CollapseCtrl">
+                    <h5>Do you know the correct shop this Review is referred to?</h5>
+                    <ul class="custom-radiobtn">
+                        <li> 
+                          <label ng-click="isCollapsed = false">
+                            <input type="radio" name="radio1" value="Products">
+                            <span class="lbl">Yes</span> 
+                           </label>
+                        </li>
+                        <li>
+                          <label ng-click="isCollapsed = true">
+                            <input type="radio" name="radio1" value="Deals" checked="checked">
+                            <span class="lbl">No</span> 
+                          </label>
+                        </li>
+                     </ul>
+                    <div class="default-form" uib-collapse="isCollapsed">
+                        <div class="form-group">
+                                <div class="form-input">
+                                    <input type="text" placeholder="Enter shop’s URL" class="form-control">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                         </div>
+                    </div>
+                    <div class="button">
+                       <input type="button" value="cancel" class="btn grey-btn" />
+                       <input type="button" value="report" class="btn purple-btn" />
+                    </div>
+                  </div> 
+            </uib-accordion-group>
+             
+            <uib-accordion-group>
+               <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">The Review violates Shout’s Terms & Conditions <b>(spam, abuse, advertisement, etc.)</b></span></label>
+              </uib-accordion-heading>
+                <div class="accordian-content">
+                    <h5>Specify why this Review violates Shout’s Terms & Conditions, then click report.</h5>
+                    <div class="default-form">
+                        <div class="form-group">
+                                <div class="form-input form-textarea">
+                                    <div class="textarea"><textarea placeholder="The Product violates Terms & Conditions because ..." class="form-control"></textarea>
+                                    </div>
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                         </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="cancel" class="btn grey-btn" />
+                         <input type="button" value="report" class="btn purple-btn" />
+                    </div>
+                  </div>
+            </uib-accordion-group>
+            <uib-accordion-group>
+               <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">The Review uses abusive or vulgar language</span></label>
+              </uib-accordion-heading>
+                <div class="accordian-content">
+                    <h5>If relevant, paste the inappropriate text below, then click report. </h5>
+                    <div class="default-form">
+                        <div class="form-group">
+                            <div class="form-input form-textarea">
+                                 <div class="textarea"><textarea placeholder="Abusive or vulgar language ..." class="form-control"></textarea>
+                                </div>
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="cancel" class="btn grey-btn" />
+                         <input type="button" value="report" class="btn purple-btn" />
+                    </div>
+                  </div>
+            </uib-accordion-group>
+            <uib-accordion-group>
+               <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">Other reason</span></label>
+              </uib-accordion-heading>
+                <div class="accordian-content">
+                    <h5>Please specify the reason of your report.</h5>
+                    <div class="default-form">
+                        <div class="form-group">
+                                <div class="form-input form-textarea">
+                                     <div class="textarea"><textarea placeholder="The reason why I’m reporting this review is ..." class="form-control"></textarea>
+                                    </div>
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                         </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="cancel" class="btn grey-btn" />
+                         <input type="button" value="report" class="btn purple-btn" />
+                    </div>
+                  </div>
+            </uib-accordion-group>
+            <uib-accordion-group>
+               <uib-accordion-heading>
+                <label><input type="radio" /><span class="lbl">I want to remove my Shop Review</span></label>
+              </uib-accordion-heading>
+                <div class="accordian-content">
+                    <div class="button">
+                    	<input type="button" value="cancel" class="btn grey-btn" />
+                        <input type="button" value="remove review" class="btn purple-btn" />
+                    </div>
+                  </div>
+            </uib-accordion-group>
+        </uib-accordion>
+        <div class="clearfix"></div>
+	</div>
+
+<div class="clearfix"></div>
+</div>

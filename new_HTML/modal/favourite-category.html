@@ -1,0 +1,302 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body ">
+		    <!-- Step 1 -->
+		    <div class="step-1" ng-init="step_1=true" ng-show="step_1==true">
+                    <h3><span>My Favourite Categories</span></h3>
+                   <div class="form_area">
+                   <p class="upload_user_text"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please select at least 5 Categories for which you wish to receive personalised recommendations:</p>
+					
+					<input type="text" class="form-control search" placeholder="Search Category ...">
+						
+						<!-- Ctaegory -->
+         <div class="category-section clearfix popup_category scrollarea"
+			ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height: 331px;">
+       
+            <div class="grid p_top0">
+            	<!-- category -->
+                <div ng-include="'category-add.html'"></div>
+                <!-- //category -->
+            </div>
+            
+         </div>
+        <!-- //Ctaegory -->
+						
+			<button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="step2('modal-sm2')">next step</button>
+						
+                    </div>
+		    </div>
+		    <!-- Step 1 -->
+		    
+    <!-- Step 2 (Interest popup)-->
+    <div class="step-2 interest-modal" ng-init="step_2=false" ng-show="step_2==true">
+    	<h3><span>My Interests</span></h3>
+        <div class="form_area confirm p_top0">
+           <p class="upload_user_text top_zero_img"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please specify your interests to help us identify the most relevant contents for you.</p>
+            <div class="input-group">
+            	<input type="text" class="form-control border_radius_r0" placeholder="Type a keyword to add it to your interests">
+                <a href="#" class="input-group-addon question-addon"></a>
+                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                <a href="#" class="input-group-addon add-icon add_interest"><img src="assets/images/svg/add-interest.svg"/></a>
+            </div>
+
+            <div class="interest_list">
+            	<p>Type your keyword in the form above andclick the “heart” button to add it to your preferences</p>
+	                
+            </div>
+            <button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="step3('modal-lg3')">next step</button>
+        </div>
+    </div>
+    <!-- //Step 2 (Favourite Category popup)-->
+		    
+    <!-- Step 3 -->
+    <div class="step-3 interest-modal" ng-init="step_3=false" ng-show="step_3==true">
+    <h3><span>My Interests</span></h3>
+        <div class="form_area confirm p_top0">
+          <p class="upload_user_text top_zero_img"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please specify your interests to help us identify the most relevant contents for you.</p>
+             <div class="input-group">
+            	<input type="text" class="form-control border_radius_r0" placeholder="Type a keyword to add it to your interests">
+                <a href="#" class="input-group-addon question-addon"></a>
+                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                <a href="#" class="input-group-addon add-icon add_interest"><img src="assets/images/svg/add-interest.svg"/></a>
+            </div>
+
+            <div class="interest_list" ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:221px;">
+                <ul>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                    <li> <a href="#" class="heart_icon"></a> Alternative Rock</li>
+                    <li> <a href="#" class="heart_icon"></a>  Basketball</li>
+                </ul>
+            </div>
+            <button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="step4('modal-sm')">next step</button>
+        </div>
+    
+    </div>
+    <!-- Step 3 -->
+		    
+    <!-- Step 4 -->
+    <div class="step-4 location-popup" ng-init="step_4=false" ng-show="step_4==true">
+    	<h3><span>My Location</span></h3>
+        
+        <div class="form_area">
+           <p class="upload_user_text"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please specify your location to benefit from local deals:</p>
+            
+            <div class="double_inputs">
+                <div class="form-group">
+                    <div ng-controller="DropdownCtrl">
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="country='United Kingdom'; imageCountry='assets/images/svg/Italy-flag.jpg'">
+                                <img src="{{imageCountry}}" /> {{ country }} 
+                            </a>			
+                            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                <li><a href="#" ng-class= "active('Italy', country)"  ng-click="country='Italy'; imageCountry='assets/images/svg/Italy-flag.jpg'"><img src="assets/images/svg/Italy-flag.jpg" /> Italy</a></li>
+                                <li><a href="#" ng-class= "active('Lithuania', country)" ng-click="country='Lithuania'; imageCountry='assets/images/svg/lithuania-flag.jpg'"><img src="assets/images/svg/lithuania-flag.jpg" /> Lithuania</a></li>
+                                <li><a href="#" ng-class= "active('United Kingdom', country)" ng-click="country='United Kingdom'; imageCountry='assets/images/svg/uk-flag.jpg'"><img src="assets/images/svg/uk-flag.jpg" /> United Kingdom</a></li>
+                            </ul>
+                        </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control italicTxt" placeholder="e.g. London">
+                        <a href="#" class="input-group-addon question-addon"></a>
+                        <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="clearfix"></div>
+            
+            <p class="font14_line20">Please specify your mobile number to get the best deals on the go:</p>
+            
+            <div class="double_inputs">
+                <div class="form-group">
+                    <div ng-controller="DropdownCtrl">
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="country='United Kingdom'; imageCountry='assets/images/svg/Italy-flag.jpg'">
+                                <img src="{{imageCountry}}" /> {{ country }} 
+                            </a>			
+                            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                <li><a href="#" ng-class= "active('Italy', country)"  ng-click="country='Italy'; imageCountry='assets/images/svg/Italy-flag.jpg'"><img src="assets/images/svg/Italy-flag.jpg" /> Italy</a></li>
+                                <li><a href="#" ng-class= "active('Lithuania', country)" ng-click="country='Lithuania'; imageCountry='assets/images/svg/lithuania-flag.jpg'"><img src="assets/images/svg/lithuania-flag.jpg" /> Lithuania</a></li>
+                                <li><a href="#" ng-class= "active('United Kingdom', country)" ng-click="country='United Kingdom'; imageCountry='assets/images/svg/uk-flag.jpg'"><img src="assets/images/svg/uk-flag.jpg" /> United Kingdom</a></li>
+                            </ul>
+                        </div>
+                   </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control italicTxt" placeholder="e.g. London">
+                        <a href="#" class="input-group-addon question-addon"></a>
+                        <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="step5()">next step</button>
+        </div>
+     </div>
+    <!-- Step 4 -->
+		    
+    <!-- Step 5 -->
+    <div class="step-5 location-popup" ng-init="step_5=false" ng-show="step_5==true">
+        <h3><span>Personal Details</span></h3>
+        <div class="form_area">
+           <p class="upload_user_text top_zero_img"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please specify your age, gender and family status to get the best tailored recommendations:</p>
+             
+             <div class="double_inputs">
+            	 <div class="form-group"><div class="input-group">
+                 <input type="text" placeholder="Specify your age (eg: 34)" class="form-control">
+                <a href="#" class="input-group-addon question-addon"></a>
+                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+              </div></div>
+              	 <div class="form-group"><div class="custom-radiobtn m_top20"> 
+                <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+            </div></div>
+         	</div>
+            
+             <div class="double_inputs">
+            	<div class="form-group">
+                <div ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='Select your Family Status'">
+                         {{ family }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active('Select your Family Status', family)"  ng-click="family='Select your Family Status'">Select your Family Status</a></li>
+                            <li><a href="#" ng-class= "active('Married with Children', family)"  ng-click="family='Married with Children'">Married with Children</a></li>
+                            <li><a href="#" ng-class= "active(' Your Family Status', family)" ng-click="family='Your Family Status'">Your Family Status</a></li>
+                         </ul>
+                    </div>
+               </div>
+            </div>
+            	<div class="form-group">
+                <div ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='How many children?'">
+                         {{ family }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active('How many children?', family)"  ng-click="family='Select your Family Status'">How many children?</a></li>
+                            <li><a href="#" ng-class= "active('1', family)"  ng-click="family='1'">1</a></li>
+                            <li><a href="#" ng-class= "active('2', family)" ng-click="family='2'">2</a></li>
+                         </ul>
+                    </div>
+               </div>
+            </div>
+            </div>
+            
+            <button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="step6()">Next Step</button>
+        </div>
+    </div>
+    <!-- Step 5 -->
+			
+			
+		    <!-- Step 6 -->
+		    <div class="step-6 location-popup" ng-init="step_6=false" ng-show="step_6==true">
+				<h3><span>Personal Details</span></h3>
+				
+                <div class="form_area">
+					<p class="upload_user_text top_zero_img"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Please specify your age, gender and family status to get the best tailored recommendations:</p>
+             
+                     <div class="double_inputs">
+                         <div class="form-group"><div class="input-group">
+                         <input type="text" placeholder="Specify your age (eg: 34)" class="form-control">
+                        <a href="#" class="input-group-addon question-addon"></a>
+                        <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                      </div></div>
+                         <div class="form-group"><div class="custom-radiobtn m_top20"> 
+                        <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                        <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+                    </div></div>
+                    </div>
+                    
+                     <div class="double_inputs">
+                        <div class="form-group">
+                        <div ng-controller="DropdownCtrl">
+                            <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='Select your Family Status'">
+                                 {{ family }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "active('Select your Family Status', family)"  ng-click="family='Select your Family Status'">Select your Family Status</a></li>
+                                    <li><a href="#" ng-class= "active('Married with Children', family)"  ng-click="family='Married with Children'">Married with Children</a></li>
+                                    <li><a href="#" ng-class= "active(' Your Family Status', family)" ng-click="family='Your Family Status'">Your Family Status</a></li>
+                                 </ul>
+                            </div>
+                       </div>
+                    </div>
+                        <div class="form-group">
+                        <div ng-controller="DropdownCtrl">
+                            <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='How many children?'">
+                                 {{ family }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "active('How many children?', family)"  ng-click="family='Select your Family Status'">How many children?</a></li>
+                                    <li><a href="#" ng-class= "active('1', family)"  ng-click="family='1'">1</a></li>
+                                    <li><a href="#" ng-class= "active('2', family)" ng-click="family='2'">2</a></li>
+                                 </ul>
+                            </div>
+                       </div>
+                    </div>
+                    </div>
+                    
+                    <div class="children_count" ng-scrollbars ng-scrollbars-config="{}"	style="max-height:145px;">
+             			<div class="double_inputs">
+                        <p class="font14_line20">First child details </p>
+                         <div class="form-group"><div class="input-group">
+                         <input type="text" placeholder="Specify your age (eg: 34)" class="form-control">
+                        <a href="#" class="input-group-addon question-addon"></a>
+                        <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                      </div></div>
+                         <div class="form-group"><div class="custom-radiobtn m_top20"> 
+                        <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                        <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+                    </div></div>
+                     <div class="clearfix"></div>
+                    </div>
+                    	
+                        <div class="double_inputs">
+                        <p class="font14_line20">Second child details </p>
+                         <div class="form-group"><div class="input-group">
+                         <input type="text" placeholder="Specify your age (eg: 34)" class="form-control">
+                        <a href="#" class="input-group-addon question-addon"></a>
+                        <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                      </div></div>
+                         <div class="form-group"><div class="custom-radiobtn m_top20"> 
+                        <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                        <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+                    </div></div>
+                     <div class="clearfix"></div>
+                    </div>
+                   
+                    </div>
+                    
+					<button class="btn btn-block confirm_btn m_btm20" type="button" ng-click="ok()">Save</button>
+				</div>
+                
+			</div>
+		    <!-- Step 6 -->
+		    
+		</div>

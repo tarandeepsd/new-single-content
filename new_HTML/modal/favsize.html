@@ -1,0 +1,229 @@
+<div class="modal-header">
+												   <button type="button" class="close" ng-click="cancel()"></button>
+												</div>
+													
+													<div class="modal-body">
+													<h3><span>Add Favourite Sizes</span></h3>
+													
+												<form novalidate class="registerForm" name="registerForm" ng-init = "submitForm=0">
+													<div class="form_area m_top28">
+														<p class="upload_user_text"> <img src="assets/images/svg/profiling-process-character.svg" alt=""> Select the sizes for which you wish to receive recommendations:</p>
+                                                         <div class="row">
+                                                        <div class="col-sm-8">
+                                                        <div class="row m_btm10">
+                                                        	<div class="col-sm-6">
+                                                            	<div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='Shoes'">
+                         {{ family }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active('Shoes', family)"  ng-click="family='Shoes'">Shoes</a></li>
+                            <li><a href="#" ng-class= "active('Head', family)"  ng-click="family='Head'">Head</a></li>
+                            <li><a href="#" ng-class= "active('Neck', family)" ng-click="family='Neck'">Neck</a></li>
+                            
+                            <li><a href="#" ng-class= "active('Shoulders', family)"  ng-click="family='Shoulders'">Shoulders</a></li>
+                            <li><a href="#" ng-class= "active('Brest', family)"  ng-click="family='Brest'">Brest</a></li>
+                            <li><a href="#" ng-class= "active('Hands', family)" ng-click="family='Neck'">Hands</a></li>
+                            
+                            <li><a href="#" ng-class= "active('Waist', family)"  ng-click="family='Shoulders'">Waist</a></li>
+                            <li><a href="#" ng-class= "active('Legs', family)"  ng-click="family='Brest'">Legs</a></li>
+                         </ul>
+                    </div>
+                    										</div>
+                                                            
+                                                            <div class="col-sm-6">
+                                                            	<div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="gender='Man'">
+                         {{ gender }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active('Man', gender)"  ng-click="gender='Man'">Man</a></li>
+                            <li><a href="#" ng-class= "active('Woman', gender)"  ng-click="gender='Woman'">Woman</a></li>
+                            <li><a href="#" ng-class= "active('Boy', gender)" ng-click="gender='Boy'">Boy</a></li>
+                            
+                            <li><a href="#" ng-class= "active('Girl', gender)"  ng-click="gender='Girl'">Girl</a></li>
+                            <li><a href="#" ng-class= "active('Baby', gender)"  ng-click="gender='Baby'">Baby</a></li>
+                         </ul>
+                    </div>
+                    										</div>
+                                                            
+                    								    </div>
+                    
+                                                        <div class="cate_list scrollarea"
+			ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:290px;">
+            
+            	<ul class="li_pad_top size_list_new bg_p_none">
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span>37 - Woman Shoes</span></li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 44 - Head</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 34 - Man Legs</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 33 - Man Waist</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 45 - Man Shoes</span> </li>
+                        
+                        <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 37 - Woman Shoes</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 44 - Head</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 34 - Man Legs</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 33 - Man Waist</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 45 - Man Shoes</span> </li>
+                    
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 44 - Head</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 34 - Man Legs</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 33 - Man Waist</span> </li>
+                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/4_fav_selected_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/5_selected_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/6_selected_onclick.svg" class="active">
+                    	</a> <span> 45 - Man Shoes</span> </li>
+                </ul>
+                
+                                                        	<p class="blank_text" style="display:none;">Type the name of the Category in the form above, <br/>then click on the <span><img src="../assets/images/heart.png" alt=""/></span> icon to add it to your favourites</p>
+                                                        </div>
+                                                        
+                                                        </div>
+                                                        
+                                                        <div class="col-sm-4">
+                                                        	<div class="size_list scrollarea" ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:295px; overflow:auto;">
+                                                            	<ul class="bg_p_none age_list">
+                                                                	<li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 38</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 39</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 40</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 41</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 42</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 43</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 44</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 45</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 46</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 47</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 48</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 49</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 50</span> </li>
+                        <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 48</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 49</span> </li>
+                                                                    <li><a href="javascript:void(0)" class="notification_img_box img_space">
+                            <img src="assets/images/svg/heart/1_fav_normal.svg" class="normal">
+                            <img src="assets/images/svg/heart/2_fav_onhover.svg" class="hover">
+                            <img src="assets/images/svg/heart/3_fav_onclick.svg" class="active">
+                    	</a> <span> 50</span> </li>
+                                                                </ul>
+                                                            </div>	
+                                                        </div>
+                                                        
+                                                        </div>
+                                                        <a href="#" class="btn btn-block confirm_btn" ng-click="cancel()"> add favourite size</a>
+                                                        
+													</div>            
+												</form>
+												</div>

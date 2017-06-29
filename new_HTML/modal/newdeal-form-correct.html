@@ -1,0 +1,501 @@
+<!-- Default Form -->
+<div class="default-form dealmodal-form">
+	<div class="row">
+    	<div class="col-sm-6">
+    	<!-- Edit Deal Left section -->
+    	<div class="deal-right-section">
+            <div class="form-group">
+                <label>Deal Title <span class="req">(compulsory)</span></label>
+                <div class="form-input">
+                    <input type="text" class="form-control form-control-icon form-correct" value="Apple iPhone 6 4.7' UNLOCKED Silver / Gold / Space G">
+                    <span class="form-icon correct-icon"></span>
+                </div>
+            </div>
+        	<div class="form-group">
+        		<label>Category <span class="req">(compulsory)</span></label>
+        		<div class="form-input form-select form-correct" ng-controller="DropdownCtrl" scroller-height>
+            	<ul class="dropdown custom-dropdown customize-dropdown">
+                   <li>
+                        <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="categoria='Appliances'">
+                            {{categoria}}
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="input-group add-on search-input">
+                                <input class="form-control" placeholder="Search..." name="srch-term" id="srch-term" type="text">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-search" type="submit"></button>
+                                </div>
+                            </div>
+                            <ul class="scrollarea" ng-scrollbars ng-scrollbars-config="{}"
+        style="max-height: 310px;">
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Appliances', categoria)"  ng-click="categoria='Appliances'">Appliances</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                 <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Baby', categoria)"  ng-click="categoria='Baby'">Baby</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown clearfix">	
+                                            <span class="arrow dropdown-toggle"></span>
+                                            <a href="#">Baby Food & Accessories</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown clearfix">	
+                                                    <span class="arrow dropdown-toggle"></span>
+                                                    <a href="#">Food</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Cereal Creams</a></li>
+                                                        <li><a href="#">Baby Smoothies</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Accessories</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Baby Feeding</a></li>
+                                    </ul>
+                                </li>
+                                 <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Books, Music & Films', categoria)"  ng-click="categoria='Books, Music & Films'">Books, Music & Films</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                 <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Clothing & Fashion Accessories', categoria)"  ng-click="categoria='Clothing & Fashion Accessories'">Clothing & Fashion Accessories</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Computers', categoria)"  ng-click="categoria='Computers'">Computers</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                 <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Electronics & Photography', categoria)"  ng-click="categoria='Electronics & Photography'">Electronics & Photography</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Food & Drink', categoria)"  ng-click="categoria='Food & Drink'">Food & Drink</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Handbags, Luggage & Backpacks', categoria)"  ng-click="categoria='Handbags, Luggage & Backpacks'">Handbags, Luggage & Backpacks</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Health & Beauty', categoria)"  ng-click="categoria='Health & Beauty'">Health & Beauty</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Home & Garden', categoria)"  ng-click="categoria='Home & Garden'">Home & Garden</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Motors & Boating', categoria)"  ng-click="categoria='Motors & Boating'">Motors & Boating</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Musical Instruments', categoria)"  ng-click="categoria='Musical Instruments'">Musical Instruments</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Optics, Watches & Jewellery', categoria)"  ng-click="categoria='Optics, Watches & Jewellery'">Optics, Watches & Jewellery</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Pet Supplies', categoria)"  ng-click="categoria='Pet Supplies'">Pet Supplies</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('School & Office', categoria)"  ng-click="categoria='School & Office'">School & Office</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Services & Activities', categoria)"  ng-click="categoria='Services & Activities'">Services & Activities</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Sports & Leisure', categoria)"  ng-click="categoria='Sports & Leisure'">Sports & Leisure</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Telephony', categoria)"  ng-click="categoria='Telephony'">Telephony</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Travel & Holidays', categoria)"  ng-click="categoria='Travel & Holidays'">Travel & Holidays</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Toys & Games', categoria)"  ng-click="categoria='Toys & Games'">Toys & Games</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown clearfix">
+                                    <span class="arrow dropdown-toggle"></span>
+                                    <a href="#" ng-class= "active('Videogames & Consoles', categoria)"  ng-click="categoria='Videogames & Consoles'">Videogames & Consoles</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Level 4.2</a></li>
+                                        <li><a href="#">Level 4.3</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+             	</ul>
+            	<span class="form-icon correct-icon"></span>
+        	</div>
+   		 </div>
+    
+    
+    
+    <div class="form-group">
+        <label>Deal Price <span class="req">(compulsory)</span></label>
+        <div class="form-price-input">
+            <div class="form-input form-select form-select-small form-correct" ng-controller="DropdownCtrl">
+                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='€'">
+                        {{currency}} 
+                    </a>	
+                   <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                        <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                        <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                        <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="form-input form-correct">
+                <input type="text" class="form-control form-control-icon" value="509.00">
+                <span class="form-icon correct-icon"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+            <label>Full Price</label>
+        <div class="form-price-input">
+            <div class="form-input form-select form-select-small form-correct" ng-controller="DropdownCtrl">
+                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='£'">
+                        {{currency}} 
+                    </a>	
+                   <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                        <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                        <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                        <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="form-input form-correct">
+                <input type="text" class="form-control form-control-icon" value="1009.00">
+                <span class="form-icon correct-icon"></span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="form-group">
+            <label>Delivery to UNITED KINGDOM</label>
+        <div class="form-price-input">
+            <div class="form-input form-select form-select-small form-correct" ng-controller="DropdownCtrl">
+                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='$'">
+                        {{currency}} 
+                    </a>	
+                   <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                        <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                        <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                        <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="form-input form-correct">
+                <input type="text" class="form-control form-control-icon" value="1009.00">
+                <span class="form-icon correct-icon"></span>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="form-group">
+        <label>Expiry Date</label>
+        <div class="form-input form-correct">
+            <input type="text" class="form-control form-control-icon" value="20/06/2016">
+            <span class="form-icon correct-icon"></span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+             <label>Description <span class="req">(compulsory)</span></label>
+        <div class="form-input form-textarea form-correct">
+            <div class="textarea">
+                <textarea class="form-control">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </textarea>
+            </div>
+            <span class="form-icon correct-icon"></span>
+        </div>
+    </div>
+    
+    <div class="form-group">
+           <label>To post a Deal you have to be registered <span class="req">(compulsory)</span></label>
+        <div class="form-input form-correct">
+            <input type="text" class="form-control form-control-icon" value="email@example.com">
+            <span class="form-icon correct-icon"></span>
+        </div>
+    </div>
+    <div class="form-group">
+           <label>Password <span class="req">(compulsory)</span></label>
+        <div class="form-input form-correct">
+            <input type="password" class="form-control form-control-icon" value="password">
+            <span class="form-icon correct-icon"></span>
+        </div>
+    </div>
+    <div class="form-group">
+         <div class="form-login-icon">
+            <label>or log in with</label>
+            <ul>
+            	<li>
+                	<a href="#" class="hover">
+                    	<img src="../shout/assets/images/icons/facebook_normal.svg" class="normal" />
+                        <img src="../shout/assets/images/icons/facebook_onhover.svg" class="hover" />
+                        <img src="../shout/assets/images/icons/facebook_onclick.svg" class="active" />
+                    </a>
+                </li>
+                <li>
+                	<a href="#" class="hover">
+                    	<img src="../shout/assets/images/icons/1_twitter_normal.svg" class="normal" />
+                        <img src="../shout/assets/images/icons/2_twitter_onhover.svg" class="hover" />
+                        <img src="../shout/assets/images/icons/3_twitter_onclick.svg" class="active" />
+                    </a>
+                </li>
+                <li>
+                	<a href="#" class="hover">
+                    	<img src="../shout/assets/images/icons/google_normal.svg" class="normal" />
+                        <img src="../shout/assets/images/icons/google_onhover.svg" class="hover" />
+                        <img src="../shout/assets/images/icons/google_onclick.svg" class="active" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+     <div class="form-group clearfix">
+        <div class="form-input custom-checkboxbtn">
+            <label>
+                <input type="checkbox" name="checkbox" checked="true"  /> <span class="lbl">By signin up, you agree to <a href="#">Shout’s Terms & Conditions</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a></span>
+            </label>
+        </div>
+    </div>
+    
+    
+   <div class="form-group">
+         <label>Categoria <span class="req">(campo obbligatorio)</span></label>
+        <div class="form-input form-select form-correct" ng-controller="DropdownCtrl" scroller-height>
+            <ul class="dropdown custom-dropdown customize-dropdown">
+               <li>
+                    <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="categoria='My favourite deals'">
+                        {{categoria}}
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="input-group add-on search-input">
+                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                            <div class="input-group-btn">
+                                <button class="btn btn-search" type="submit"></button>
+                            </div>
+                        </div>
+                        <ul class="scrollarea" ng-scrollbars ng-scrollbars-config="{}"
+    style="max-height: 310px;">
+    						<li>
+                               <a href="#">Dea <span class="btn purple-btn">create</span></a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('My favourite deals', categoria)"  ng-click="categoria='My favourite deals'">My favourite deals</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('My Wishlist', categoria)"  ng-click="categoria='My Wishlist'">My Wishlist</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for my babe', categoria)"  ng-click="categoria='Presents for my babe'">Presents for my babe</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for daddy', categoria)"  ng-click="categoria='Presents for daddy'">Presents for daddy</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Pet products', categoria)"  ng-click="categoria='Pet products'">Pet products</a>
+                            </li>
+                             <li>
+                               <a href="#" ng-class= "active('My Wishlist', categoria)"  ng-click="categoria='My Wishlist'">My Wishlist</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for my babe', categoria)"  ng-click="categoria='Presents for my babe'">Presents for my babe</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for daddy', categoria)"  ng-click="categoria='Presents for daddy'">Presents for daddy</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Pet products', categoria)"  ng-click="categoria='Pet products'">Pet products</a>
+                            </li>
+                             <li>
+                               <a href="#" ng-class= "active('My Wishlist', categoria)"  ng-click="categoria='My Wishlist'">My Wishlist</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for my babe', categoria)"  ng-click="categoria='Presents for my babe'">Presents for my babe</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Presents for daddy', categoria)"  ng-click="categoria='Presents for daddy'">Presents for daddy</a>
+                            </li>
+                            <li>
+                               <a href="#" ng-class= "active('Pet products', categoria)"  ng-click="categoria='Pet products'">Pet products</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+             </ul>
+            <span class="form-icon correct-icon"></span>
+        </div>
+        
+    </div>
+    
+    <div class="form-group clearfix">
+        <div class="form-input custom-checkboxbtn">
+            <label>
+                <input type="checkbox" name="checkbox" checked="true"  /> <span class="lbl">Send me a notification when this review receives a like or a comment</span>
+            </label>
+        </div>
+    </div>
+    </div>
+    </div>
+
+	<div class="col-sm-6">
+    <!-- Edit Deal Left section -->
+    <div class="deal-left-section form-group">
+        <!-- Image gallery -->
+        <div class="image-gallery">
+            <label>Image <span class="req">(compulsory)</span></label>
+            <div class="image correct">
+                <a href="#"><img src="../shout/assets/images/newdeal-pop-img.jpg" />
+                </a>
+            </div>
+            
+            <div class="thumbnail">
+                <div class="arrow arrow-left">
+                    <a href="#"><img src="../shout/assets/images/deal-gallery-left-arrow.jpg" /></a>		                        
+                </div>
+                <div class="img correct">
+                    <a href="#"><img src="../shout/assets/images/editdeal-thumb-img.jpg" /></a>
+                </div>
+                <div class="img">
+                    <a href="#"><img src="../shout/assets/images/editdeal-thumb-img2.jpg" /></a>
+                </div>
+                <div class="img">
+                    <a href="#"><img src="../shout/assets/images/editdeal-thumb-img3.jpg" /></a>
+                </div>
+                 <div class="img">
+                    <a href="#"><img src="../shout/assets/images/editdeal-thumb-img3.jpg" /></a>
+                </div>
+                <div class="arrow arrow-right">
+                    <a href="#"><img src="../shout/assets/images/deal-gallery-right-arrow.jpg" /></a>		                        
+                </div>
+            </div>
+        </div>
+        <!-- //Image gallery -->
+        <div class="form-group">
+            <input class="btn btn-block green-btn" type="button" value="upload image ..." />
+            <div class="image-instruction">
+                Allowed formats: Jpeg, Png, Bmp. Minimum dimensions: 640x640px
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-input">
+                <input type="text" class="form-control" placeholder="or enter image’s URL">
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet.</div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Deal Left section -->
+    </div>
+    
+ </div>  
+ 
+	<div class="row">
+ 	<div class="col-xs-12 text-right">
+        	<input type="button" class="btn btn-large purple-btn" ng-click="step5()" value="post deal"  />
+    </div>
+ </div> 
+</div>		
+<!-- //Default Form -->

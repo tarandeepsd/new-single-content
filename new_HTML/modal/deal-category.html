@@ -1,0 +1,264 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+       
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'category-breadcrumb.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-sidebar.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content product-section">  
+            	<!-- Top Section Mobile -->
+                <div class="hidden-lg hidden-md mobile-product-filter clearfix">
+                       
+                        <!-- Show all -->
+                        
+                        <div class="toptab-box filter-showtab">
+                        	<div class="filter-icon">
+                            	<a href="#" ng-click="$root.filter_show=true"> <img src="assets/images/filter-icon.svg" /></a>
+                        	</div>
+                        <div class="filter-tab">
+                        	<div class="sortby-filter" ng-controller="DropdownCtrl">
+                           	 	<label>Show</label>
+                            	<!-- Custom Dropdown -->
+                                <div class="show-dropdown">
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="showcat='Deals'; value='9,999'">
+                                            {{ showcat }} <span> {{ value }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                           <li><a href="#" ng-class= "active('Products', showcat)"  ng-click="showcat='Products'; value='99,999'">Products <span>99,999</span></a></li>
+                                           <li><a href="#" ng-class= "active('Deals', showcat)"  ng-click="showcat='Deals'; value='9,999'">Deals <span>9,999</span></a></li>
+                                           <li><a href="#" ng-class= "active('Tips', showcat)"  ng-click="showcat='Tips'; value='999'"> Tips <span>999</span></a></li>
+                                           <li><a href="#" ng-class= "active('Discussions', showcat)"  ng-click="showcat='Discussions'; value='99'">Discussions <span>99</span></a></li>
+                                           <li><a href="#" ng-class= "active('Collections', showcat)"  ng-click="showcat='Collections'; value='99'">Collections <span>99</span></a></li>
+                                           <li><a href="#" ng-class= "active('Shops', showcat)"  ng-click="showcat='Shops'; value='1'">Shops <span>1</span></a></li>
+                                        </ul>
+                                    </div>
+                                 </div>
+                             <!-- // Custom Dropdown -->
+                        	</div>
+                        </div>
+                        	
+                        </div>
+                        <!-- //Show all -->
+                    	
+                        <div class="toptab-box top-filter-block">
+                        	
+                        
+                                <!-- Tab -->
+                                <div class="sortby-filter sort-tab" ng-controller="DropdownCtrl" >
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1" >
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='All'; count='99,999'">
+                                        {{ sorttab }} <span> {{ count }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                            <li><a href="#" ng-class= "active('All', sorttab)" ng-click="$parent.active = 0;sorttab='All'; count='99,999'">All <span>99,999</span></a></li>
+                                            <li><a href="#" ng-class= "active('Top', sorttab)" ng-click="$parent.active = 1;sorttab='Top'; count='9,999'">Top <span>9,999</span></a></li>
+                                            <li><a href="#" ng-class= "active('Discussed', sorttab)"  ng-click="$parent.active = 2;sorttab='Discussed'; count='999'">Discussed <span>999</span></a></li>
+                                            <li><a href="#" ng-class= "active('Voted', sorttab)"  ng-click="$parent.active = 3;sorttab='Voted'; count='99'">Voted <span>99</span></a></li>
+                                        </ul>
+                                    </div>
+                                <!-- // Custom Dropdown -->
+                                </div> 
+                                <!-- //Tab -->
+                                <!-- Sort By Filter -->
+                                <div class="sortby-filter sortby-filter-mobile" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical'; ascdsc='A-Z';sortbyActive='a1'">
+                                        {{ sortby }} <span> {{ ascdsc }}</span>
+                                    </a>			
+                                       <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='A-Z'; sortbyActive='a1'">Alphabetical Order <span>A-Z</span></a></li>
+                                        <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='Z-A'; sortbyActive='a2'">Alphabetical Order <span>Z-A</span></a></li>
+                                        <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='newest first'; sortbyActive='a3'">Date <span>newest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='oldest first'; sortbyActive='a4'">Date <span>oldest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='highest first'; sortbyActive='a5'">DB Value <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc=' lowest first'; sortbyActive='a6'">DB Value <span> lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='highest first'; sortbyActive='a7'">Discount <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='lowest first'; sortbyActive='a8'">Discount <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='highest first'; sortbyActive='a9'">Price <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='lowest first'; sortbyActive='a10'">Price <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='soonest'; sortbyActive='a11'">Expiry Date <span>soonest</span></a></li>
+                                        <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='latest'; sortbyActive='a12'">Expiry Date <span>latest</span></a></li>
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>
+                                
+                               <!-- Sort By Filter below420 -->
+                                <div class="sortby-filter sortby-filter-mobile sortby-filter-mobile420" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/ascending.svg';sortbyActive='a1'">
+                                        {{ sortby }} <span><img src="{{ascdsc}}" /></span>
+                                    </a>			
+                                      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a1'">Alphabetical Order <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a2'">Alphabetical Order <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a3'">Date <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a4'">Date <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a5'">DB Value <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a6'">DB Value <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a7'">Discount <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a8'">Discount <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a9'">Price <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a10'">Price <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a11'">Expiry Date <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a12'">Expiry Date <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>  
+                                <!-- //Sort By Filter -->
+                        	
+                        </div>
+                    </div>
+                
+                <!-- //Top Section Mobile -->
+            
+            	<!-- Sort By Filter -->
+            	<div class="sortby-filter hidden-xs hidden-sm" ng-controller="DropdownCtrl">
+                	<label class="hidden-xs">Sort by</label>
+                    <!-- Custom Dropdown -->
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical Order'; ascdsc='Z-A';sortbyActive='a2'">
+                            {{ sortby }} <span> {{ ascdsc }}</span>
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='A-Z'; sortbyActive='a1'">Alphabetical Order <span>A-Z</span></a></li>
+                            <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='Z-A'; sortbyActive='a2'">Alphabetical Order <span>Z-A</span></a></li>
+                            <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='newest first'; sortbyActive='a3'">Date <span>newest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='oldest first'; sortbyActive='a4'">Date <span>oldest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='highest first'; sortbyActive='a5'">DB Value <span>highest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc=' lowest first'; sortbyActive='a6'">DB Value <span> lowest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='highest first'; sortbyActive='a7'">Discount <span>highest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='lowest first'; sortbyActive='a8'">Discount <span>lowest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='highest first'; sortbyActive='a9'">Price <span>highest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='lowest first'; sortbyActive='a10'">Price <span>lowest first</span></a></li>
+                            <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='soonest'; sortbyActive='a11'">Expiry Date <span>soonest</span></a></li>
+                            <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='latest'; sortbyActive='a12'">Expiry Date <span>latest</span></a></li>
+                        </ul>
+                    </div>
+                     <!-- // Custom Dropdown -->
+                </div>  
+                <!-- //Sort By Filter -->
+                
+                
+            	<!-- Tab Product  Content -->
+                <uib-tabset active="active">
+                    <uib-tab index="0" >
+                        <uib-tab-heading>
+                            	All<span class="counter">999</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            	<div ng-include="'pod-list.html'"></div>
+                                
+                                <div class="pod-morebtn text-center">
+                                	<a href="#" class="btn morebtn">show more</a>
+                                </div>
+                           </div>
+                    </uib-tab>
+                    <uib-tab index="1" >
+                        <uib-tab-heading>
+                            	Top<span class="counter">999</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            <div ng-include="'pod-list-nomatch.html'"></div>
+                            
+                            <div class="main-title">
+                                <h2><span>Top Deals without filters</span></h2>
+                            </div>
+                            <div ng-include="'pod-list.html'"></div>
+                        </div>
+                    </uib-tab>
+                    <uib-tab index="2" >
+                        <uib-tab-heading>
+                            	Discussed<span class="counter">999</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            <div ng-include="'pod-list-blank.html'"></div>
+                        </div>
+                    </uib-tab>
+                    <uib-tab index="3" >
+                        <uib-tab-heading>
+                            	Voted<span class="counter">999</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                         	<div class="showresult-msg">857 results matching the 8 applied filters 
+                            <a href="#" class="pull-right btn red-btn">reset filters</a>
+                            <div class="clearfix"></div>
+                            </div>
+                            <div ng-include="'pod-list.html'"></div>
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+                <!-- //Tab Product  Content -->
+            	           
+                 
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+  
+   <!-- Bootstrap slider Js Script -->  
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->  
+     <script src="assets/js/custom.js"></script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body login_coupon" ng-controller="customjsController">
+    <h3><span>Get Coupon</span></h3>
+    <h4 class="subtitle"><strong>20% OFF</strong> Title of this coupon.  
+   <a href="#" ng-click="showCustom(); toggleText=!toggleText;" ng-init="toggleText=false;" class="toggle_text"><span class="" ng-class="{'toggle_top': toggleText, 'toggle_down': !toggleText}"></span> Additional info</a>
+    <div class="clearfix"></div>
+    </h4>
+    
+    <div class="accordian-content hideCustomInfo">
+       <div ng-scrollbars ng-scrollbars-config="{}" style="max-height:194px;">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet: </p>
+              <ul>
+              	<li>Dolore magna aliquam erat volutpat;</li>
+                <li>Ut wisi enim ad minim veniam;</li>
+                <li>Quis nostrud exerci tation ullamcorper suscipit lobortis.</li>
+              </ul>
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+              </div>
+    </div>
+    
+   
+    <div class="coupon_code_text">1234567890</div>
+    
+    <div class="code_btns">
+    	<a href="#" class="btn confirm_btn">copy code</a>
+        <a href="http://www.amazon.co.uk" target="_blank" class="btn green_btn">go to site</a>
+    </div>
+    
+    <p class="amazon_text">Use this Coupon when paying on <a href="http://www.amazon.co.uk" target="_blank">Amazon UK</a>.</p>
+
+</div>

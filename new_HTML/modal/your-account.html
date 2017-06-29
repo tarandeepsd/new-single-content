@@ -1,0 +1,25 @@
+ <div class="modal-header">
+                <button type="button" class="close" ng-click="cancel()"></button>
+                </div>
+                   <div class="modal-body confirm">
+                    <h3><span>Your Account</span></h3>
+                   <div class="form_area">
+                        <p>Your Username and Password have been auto-assigned. If you want to customese them use the form below.</p>
+						<p>You can edit them at any time from the <a href="#" >Account Settings</a> page in your profile.</p>
+						
+                        <label>Username</label>
+                        <input type="text" placeholder="Shouter123" class="form-control">
+						
+						<label>Password</label>
+                        <input type="password" placeholder="12345678" class="form-control">
+						
+						<label>Confirm Password <small class="complsory">(compulsory)</small></label>
+                        <input type="password" placeholder="12345678" class="form-control">
+						
+						<div class="btns_group">
+                        <button class="btn btn-default m_btm20" type="button">save and close</button>
+						<button class="btn confirm_btn m_btm20" type="button" ng-click="ok()">next step</button>
+						
+						</div>
+                    </div>
+               </div>

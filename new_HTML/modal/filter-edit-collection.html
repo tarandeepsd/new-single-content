@@ -1,0 +1,49 @@
+<div class="modal-header">
+<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body">
+     <!-- Message Write Button -->
+    <div class="writemsg-btn">
+  	  <!-- Filter Block -->
+        <div class="filter-block filter-msg-block filter-editcollection-block">
+			<h3 class="title"><span>Edit this Collection</span></h3>
+          	
+            <div class="edit-row">
+                <label>Collection Name</label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="Collection Name" type="text">
+                </div>
+            </div>
+          
+			<div class="edit-row">          
+              <label>Edit Collection’s contents</label>
+              <div class="custom-checkboxbtn">
+                  <label ng-click="disabled=!disabled">
+                    <input type="checkbox" name="checkbox" checked="checked" >
+                    <span class="lbl">Select all messages</span> 
+                  </label>
+              </div>
+        
+            <div class="button disable" ng-init="disabled=false" ng-class="{ 'disable':disabled }">
+            	<div ng-controller="Modalmovecontent">
+                <a href="#" ng-click="openMovecontent()" class="btn move-btn green-btn"><span>move selected</span></a>
+                </div>
+                <div ng-controller="Modaldeletecontent">
+                <a href="#" ng-click="openDeletecontent()" class="btn delete-btn red-btn"><span>delete selected</span></a>
+                </div>
+            </div>
+          </div>
+          
+            <div class="edit-row btmbtn">          
+            	<div class="button" ng-controller="Modaldeletecollection">
+                    <a href="#" class="btn save-btn purple-btn"><span>save changes</span></a>
+                    <a href="#" ng-click="openDeletecollection()" class="btn delete-btn red-btn"><span>delete collection</span></a>
+                </div>
+            </div>
+     
+        </div>
+        <!-- //Filter Block -->
+    </div>
+    <!-- //Message Write Button -->
+</div>

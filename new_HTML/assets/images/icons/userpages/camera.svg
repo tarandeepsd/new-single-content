@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="80px" height="64px" viewBox="0 0 80 64" enable-background="new 0 0 80 64" xml:space="preserve">
+<g>
+	<circle fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" cx="64" cy="24" r="4"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M72,8H60c0-4.418-3.582-8-8-8H28c-4.418,0-8,3.582-8,8h-4V4h-4v4
+		H8c-4.418,0-8,3.582-8,8v40c0,4.418,3.582,8,8,8h64c4.418,0,8-3.582,8-8V16C80,11.582,76.418,8,72,8z M72,52c0,2.209-1.791,4-4,4
+		H12c-2.209,0-4-1.791-4-4V20c0-2.209,1.791-4,4-4h16v-4c0-2.209,1.791-4,4-4h16c2.209,0,4,1.791,4,4v4h16c2.209,0,4,1.791,4,4V52z"
+		/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M40,20c-8.836,0-16,7.164-16,16s7.163,16,16,16
+		c8.837,0,16-7.163,16-16S48.836,20,40,20z M40,48c-6.627,0-12-5.373-12-12s5.372-12,12-12c6.628,0,12,5.373,12,12S46.627,48,40,48z
+		"/>
+</g>
+</svg>

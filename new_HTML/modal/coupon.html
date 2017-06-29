@@ -1,0 +1,67 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body" ng-controller="customjsController">
+    <h3><span>Get Coupon</span></h3>
+    <h4 class="subtitle"><strong>20% OFF</strong> Title of this coupon. It could be longer than this, in this case make it wrap like this.    
+    <a href="#" ng-click="showCustom(); toggleText=!toggleText;" ng-init="toggleText=false;" class="toggle_text"><span class="" ng-class="{'toggle_top': toggleText, 'toggle_down': !toggleText}"></span> Additional info</a>
+    <div class="clearfix"></div>
+    </h4>
+    
+    <div class="accordian-content hideCustomInfo">
+       <div ng-scrollbars ng-scrollbars-config="{}" style="max-height:194px;">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet: </p>
+              <ul>
+              	<li>Dolore magna aliquam erat volutpat;</li>
+                <li>Ut wisi enim ad minim veniam;</li>
+                <li>Quis nostrud exerci tation ullamcorper suscipit lobortis.</li>
+              </ul>
+              <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+              </div>
+    </div>
+    
+   
+    <div class="coupon_code_text">1234567890</div>
+    
+    <div class="code_btns">
+    	<a href="#" class="btn confirm_btn">copy code</a>
+        <a href="http://www.amazon.co.uk" target="_blank" class="btn green_btn">go to site</a>
+    </div>
+    
+    <p class="amazon_text">Use this Coupon when paying on <a href="http://www.amazon.co.uk" target="_blank">Amazon UK</a>.</p>
+
+    
+</div>
+
+<div class="gain_section">
+   <h2>Save and Gain!</h2> 	
+   <p>Register on Shout, receive the best deals and coupons directly on your inbox, and start gaining monthly commissions with our Affiliate Program.</p>
+   
+   <form class="default-form">
+        <div class="row">
+        
+        	<div class="col-sm-8 p_right0">
+            <div class="form-group">
+            <div class="form-input">
+                <input type="text" class="form-control" placeholder="Enter your email address">
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Attention! The email address you entered is not in the correct format.</div>
+            </div>
+             </div>
+             </div>
+             
+            <div class="col-sm-4"> 
+            <button class="btn orange_btn btn-block" type="button" ng-click="ok()">register free</button>
+            </div>
+        </div> 
+           
+    	<ul ng-controller="ModalLogin">
+        	<li><a href="term-conditions.html" target="_blank">Terms &amp; Conditions</a></li>
+            <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+            <li><a href="cookie-policy.html" target="_blank">Cookie Policy</a></li>
+            <li ng-click="openLogin()"><a href="#" ng-click="ok()">Already registered? Log in</a></li>
+        </ul>
+    </form>
+    
+</div>
+    

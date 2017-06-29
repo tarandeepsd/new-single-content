@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body">
+  <h3><span>Do one better</span></h3>
+  <div class="row">
+    <div class="col-sm-6">
+      <p class="text-center"><img src="assets/images/svg/HAPPY.svg" alt=""/></p>
+    </div>
+    <div class="col-sm-6">
+      <p>We are sorry to see you go.</p>
+      <p>If you are unsubscribing because of the quantity of email you receive from us, we suggest to simply modify your Newsletter frequency settings: you will receive less emails, but you will continue to get notified about deals that may interest you.</p>
+      <p>If the reason instead was the kind of deals we are recommending to you, think about <a href="#">updating your preferences</a>.</p>
+    </div>
+  </div>
+  <div class="row m_top30">
+    <div class="col-sm-6">
+      <div  ng-controller="DropdownCtrl">
+        <div class="dropdown custom-dropdown" uib-dropdown="1"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='Weekly'"> {{ scontrino }} </a>
+          <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li><a href="#" ng-class= "{'active':scontrino=='Weekly'}"  ng-click="scontrino='Weekly'"> Weekly</a></li>
+            <li><a href="#" ng-class= "{'active':scontrino=='Daily'}" ng-click="scontrino='Daily'"> Daily</a></li>
+            <li><a href="#" ng-class= "{'active':scontrino=='Every 15 Days'}" ng-click="scontrino='Every 15 Days'"> Every 15 Days</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6"> <a href="#" class="btn btn_orange btn-block purple_bg_btn">update frequency</a> </div>
+  </div>
+</div>

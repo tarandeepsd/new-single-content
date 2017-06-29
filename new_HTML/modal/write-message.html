@@ -1,0 +1,80 @@
+<div class="modal-header">
+<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body">
+	<h3><span>Write a new message</span></h3>
+    
+    <div class="message-close-alert hide">
+    	<p>If you close this pop up before sending the message, your draft will not be saved. Do you really want to discard this message?</p>
+        <div class="button"><a href="#" class="btn red-btn">yes, discard message</a></div><div class="button"><a href="#" class="btn purple-btn">no, keep writing</a>
+    </div>
+    </div>
+
+    <div class="default-form">
+        <form>
+             <!-- CHoosen Input -->
+              <div class="choose-field-group">
+                <label>Recipient <span class="req">(compulsory)</span></label>
+             	<div class="chosen-container">
+                        <ul class="chosen-choices correct clearfix">
+                              <li class="choice">
+                            	<a class="choice-close" href="#"></a>
+                            	<span>AngelinaJolie</span>
+                            </li>
+                            <li class="input-field">
+                            	<input type="text" autocomplete="off" class="form-control" placeholder="Add another" tabindex="4">
+                            </li>
+                           <span class="form-icon correct-icon"></span> 
+                        </ul>
+                   		<div class="chosen-drop">
+                            <ul class="chosen-results">
+                                <li class="active-result" data-option-array-index="1">GianniMorandi</li>
+                                <li class="active-result" data-option-array-index="2">Scarlett</li>
+                                <li class="active-result" data-option-array-index="3">AngelinaJolie</li>
+                            </ul>
+                        </div>
+                  </div>
+              </div>
+             <!-- //CHoosen Input -->
+             <!-- Form Group -->
+            <div class="form-group">
+                <label>Subject <span class="req">(compulsory)</span></label>
+                <div class="form-input">
+                    <input type="text" class="form-control" placeholder="Enter the subject for this message">
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            </div>
+            <!-- //Form Group -->
+          <!-- Text Editor -->
+           <div class="form-group m_zero">
+                <label>Your message <span class="req">(compulsory)</span></label>
+            <div class="text-editors">
+                                            <a href="#" class="hint">
+                                                <span class="image-icons hint-icon"></span>
+                                            </a>
+                                            <div class="hintanswer">
+                                                Lorem ipsum dolor summit
+                                            </div>
+                                            <p class="m_zero editor_img"><img alt="" src="assets/images/editor_small.png"></p>
+                                            <textarea placeholder="Enter your comment here" class="block-text"></textarea>
+                                            
+                                        </div>	
+										<div class="clearfix"></div>
+            </div>
+          <!-- //Text Editor -->
+          <!-- //Text Editor -->
+		  
+		  <div class="btns_double clearfix">
+                <span><button ng-click="ok()" type="button" class="gray_dark_btn btn modal-btn m_btm10">CANCEL</button></span>
+				<span><button ng-click="cancel()" type="button" class="btn register_btn btn-block">send message</button></span>
+                </div>
+		  
+           
+          <!-- //Text Editor -->
+        </form>
+    </div>
+
+
+</div>

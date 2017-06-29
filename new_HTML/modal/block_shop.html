@@ -1,0 +1,20 @@
+<div class="modal-header">
+												   <button type="button" class="close" ng-click="cancel()"></button>
+												</div>
+													
+													<div class="modal-body ng-scope">
+        	<h3><span>Block Shop</span></h3>
+            
+	    <form ng-init="submitForm=0" name="registerForm" class="registerForm ng-pristine ng-valid" novalidate>
+            <div class="form_area m_top20">
+				<h4 class="subtitle_new line_height20">By blocking a Shop you will not be able to see its contents anymore. 
+                <br/>Do you really want to block this shop?
+                </h4>
+                <p class="grey_14font">You can unblock a Shop at any time from the <a href="#">Blocked Contents</a> section of your profile </p>
+                <div class="btns_double clearfix">
+                <span class=""><button ng-click="ok()" type="button" class="btn btn-block register_btn btn_red">no, I made a mistake</button></span>
+				<span class=""><button ng-click="cancel()" type="button" class="btn register_btn btn-block">yes, Block</button></span>
+                </div>
+            </div>            
+	    </form>
+	    </div>

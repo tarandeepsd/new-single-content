@@ -1,0 +1,58 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body">
+    <h3><span>Edit Comment</span></h3>
+    
+    <div class="content_outer">
+    	<div class="suggest_box suggest_new">
+        	<ul>
+            	<li>Let the community know what you think about this deal </li>
+                <li>Suggest an alternative product</li>
+             </ul>
+			 <ul>
+			 <li>Suggest a cheaper deal for this product or <a href="#">shout it</a></li>
+                <li class="cross_icon">If you want to post a review about the product in this deal <a href="#">click here</a></li>
+            </ul>
+        </div>
+        
+        <div class="default-form form_area">
+        <div class="form-group">
+                                            <label>Your message <span class="req">(compulsory)</span></label>
+                                            <div class="text-editors">
+                                            <a href="" class="hint hidden-xs">
+                                                <span class="image-icons hint-icon"></span>
+                                            </a>
+                                            <div class="hintanswer">
+                                                Lorem ipsum dolor summit
+                                            </div>
+                                            <p class="m_zero editor_img"><img alt="" src="assets/images/editor_small.png"></p>
+                                            <textarea placeholder="Enter your messaget here" class="block-text"></textarea>
+                                            
+                                        </div>
+										<div class="clearfix"></div>
+                                        </div>
+        
+        
+        <div class="row">
+           
+          	<div class="col-sm-6">
+            	<div class="custom-checkboxbtn checkbox m_top20">
+              <label><input type="checkbox" ng-model="properties" name="checkbox" value="proper" class="ng-pristine ng-untouched ng-valid ng-empty">
+                       <span class="lbl grey_checkbox"> Notify me when this deal receives a comment</span> </label>
+                      </div>
+		    </div>
+          
+             <div class="col-sm-3">
+               <button class="gray_dark_btn btn modal-btn m_btm10" type="button" ng-click="ok()">cancel</button>
+              </div>  
+             <div class="col-sm-3">
+              <button class="btn purple_bg_btn modal-btn m_btm10" type="button" ng-click="ok()">save changes</button>
+             </div>         
+          </div>
+          
+       </div>
+    </div>
+    
+</div>

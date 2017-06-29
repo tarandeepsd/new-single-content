@@ -1,0 +1,50 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body user_cover_tab">
+	<h3 class="avtar-title"><span>Upload Images</span></h3>
+    <h3 class="cover-title"><span>Upload Images</span></h3>
+	
+    <uib-tabset>
+        <uib-tab index="0" active="true">
+        	<uib-tab-heading ng-click="step2()">
+                Avatar
+            </uib-tab-heading>
+            
+        	<div class="avatar-image uploaded"> </div>
+            
+             <div class="button">
+                <!--<a href="#" class="btn orange_btn">upload image ...</a>-->
+                <label  class="custom-file-input orange_btn"> <input type="file"> </label>
+                <div class="uploadTxt text-center">Jpeg or Png, minimum 180*180px</div>
+                
+                <div class="btns_double clearfix">
+                    <span class="m_zero"><a href="#" ng-click="cancel()" class="btn register_btn btn-block">save & close</a></span>
+                    <span class="m_zero"><a href="#" ng-click="cancel()" class="btn register_btn btn-block">save & Next</a></span>
+                </div>
+            </div>
+            
+        </uib-tab>
+    	<uib-tab index="1" >
+    		<uib-tab-heading  ng-click="step3()">
+                Cover Image
+            </uib-tab-heading>
+        	
+        	<div class="avatar-image uploaded cover_image"> </div>
+            
+             <div class="button">
+                <!--<a href="#" class="btn orange_btn">upload image ...</a>-->
+                <label  class="custom-file-input orange_btn"> <input type="file"> </label>
+                <div class="uploadTxt text-center">Jpeg or Png, minimum 1280*140px</div>
+                
+                <div class="btns_double clearfix">
+                    <span class="m_zero"><a href="#" ng-click="cancel()" class="btn register_btn btn-block">save & Back</a></span>
+                    <span class="m_zero"><a href="#" ng-click="cancel()" class="btn register_btn btn-block">save & close</a></span>
+                </div>
+            </div>
+    	</uib-tab>
+        <div class="clearfix"></div>
+    </uib-tabset>
+
+<div class="clearfix"></div>
+</div>

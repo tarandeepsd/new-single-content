@@ -1,0 +1,264 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body">
+    <h3><span>Edit coupon</span></h3>
+<div class="row">
+    <div class="default-form form_area row" ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:464px;">
+  
+  		<form class="col-sm-12 scroll_minus">
+        
+        <!--<div class="oops_error">
+            <b>Ops... something went wrong!</b> Please, make sure you have completed each field correctly.
+        </div>-->
+        
+          <div class="form-group">
+                    <label>Coupon Title <span class="req">(compulsory)</span></label>
+                    <div class="form-input first_tooltip">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter a title for this tip">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+          
+          <div class="row">
+                <div class="col-sm-12 col-md-6"> 
+                    <div class="form-group">
+                        <label>Coupon Code <span class="optional">(optional)</span></label>
+                        <div class="form-input">
+                                <input type="text" class="form-control form-control-icon" placeholder="Enter the coupon code">
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                            </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-12 col-md-6"> 
+                <div class="form-group">
+                    <label>Benefits  <span class="optional">(optional)</span></label>
+                    <div class="benefit_section">
+                      <div class="drop_width135">                      
+                      	<div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='Discount'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="open_dropdown">
+                                               <li><a href="#" ng-class= "{'active':scontrino=='Discount'}" ng-click="scontrino='Discount'"> Discount</a></li>
+                                               <li><a href="#" ng-class= "{'active':scontrino=='Free Delivery'}" ng-click="scontrino='Free Delivery'"> Free Delivery</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>   
+                      </div>
+                      
+                      <div class="small_dropdown">                      
+                      	<div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='%'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="open_dropdown">
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='%'}" ng-click="scontrino='%'"> %</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='£'}" ng-click="scontrino='£'">£</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='€'}" ng-click="scontrino='€'">€</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='$'}" ng-click="scontrino='$'">$</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>   
+                      </div>
+                      
+                      	<div class="form-input">
+                          <input type="text" class="form-control form-control-icon" placeholder="e.g.: 20">
+                          <span class="form-icon question-icon"></span>
+                          <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                        </div>
+                                    
+                    </div>
+                  </div>   
+              </div>
+              
+          </div> 
+              
+           
+          <div class="form-group">
+                 <label>Description <span class="req">(compulsory)</span></label>
+            <div class="form-input form-textarea">
+                <div class="textarea">
+                    <textarea class="form-control" placeholder="Enter a description for this coupon" style="height:146px;"></textarea>
+                </div>
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+            </div>
+        </div>
+          
+          
+           <div class="row">
+          
+            <div class="col-sm-12 col-md-6"> 
+                <div class="form-group">
+                    <label>Requirements <span class="optional">(optional)</span></label>
+                    <div class="benefit_section">
+                      <div class="drop_width135">                      
+                      	<div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='None'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="open_dropdown">
+                                               <li><a href="#" ng-class= "{'active':scontrino=='None'}" ng-click="scontrino='None'"> None</a></li>
+                                               <li><a href="#" ng-class= "{'active':scontrino=='Registration'}" ng-click="scontrino='Registration'">Registration</a></li>
+                                                <li><a href="#" ng-class= "{'active':scontrino=='Minimum spend'}" ng-click="scontrino='Minimum spend'"> Minimum spend</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>   
+                      </div>
+                      
+                      <div class="small_dropdown form-disable">                      
+                      	<div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='-'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="open_dropdown">
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='%'}" ng-click="scontrino='%'"> %</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='£'}" ng-click="scontrino='£'">£</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='€'}" ng-click="scontrino='€'">€</a></li>
+                                                   <li><a href="#" ng-class= "{'active':scontrino=='$'}" ng-click="scontrino='$'">$</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>   
+                      </div>
+                      
+                      	<div class="form-input form-disable">
+                          <input type="text" class="form-control form-control-icon" placeholder="-">
+                          <span class="form-icon question-icon"></span>
+                          <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                        </div>
+                                    
+                    </div>
+                  </div>   
+          </div>
+          
+            <div class="col-sm-12 col-md-6"> 
+                <div class="form-group cal_left">
+                    <label>Expiry Date  <span class="optional">(optional)</span></label>
+                       <div class="form-input" ng-click="open2()">
+                    <!--<input type="text" class="form-control form-control-icon" ng-click="calendar_open=!calendar_open" placeholder="dd/mm/yyyy">-->
+                    
+                    <input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                	uib-datepicker-popup="{{format}}" ng-model="formData.fromDate" 
+                                    is-open="popup2.opened" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats"/>
+                                    
+                            <span class="form-icon question-icon"></span>
+                            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6"> 
+                <div class="form-group">
+                    <label>Category <span class="optional">(optional)</span></label>
+                    <div class="form-input">
+                    	<div class="question_section m_zero">
+                                        
+                            <div ng-controller="DropdownCtrl">
+                                        <div class="dropdown custom-dropdown grey_dropdown m_zero" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="scontrino='Select the category this coupon applies to'">
+                                                {{ scontrino }} 
+                                            </a>			
+                                            
+                                            <div class="dropdown-menu">
+                                                <ul class="scrollarea open_dropdown" ng-scrollbars ng-scrollbars-config="{}" style="max-height:230px;">
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 1 - level 1'}" ng-click="scontrino='Category Name 1 - level 1'"> Category Name 1 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 2 - level 1'}" ng-click="scontrino='Category Name 2 - level 1'"> Category Name 2 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 3 - level 1'}" ng-click="scontrino='Category Name 3 - level 1'"> Category Name 3 - level 1</a></li>
+                                                  <li><a href="#" ng-class= "{'active':scontrino=='Category Name 4 - level 1'}" ng-click="scontrino='Category Name 4 - level 1'"> Category Name 4 - level 1</a></li>
+                                                </ul>
+                                                
+                                        </div>
+                                        
+                                       </div>
+                                          </div>  
+                                           
+                            <div class="ques_box">
+                                <span class="icon question-icon"></span>
+                                <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>              
+                                   
+                          </div>
+                    </div>
+                  </div>   
+              </div>
+            
+            <div class="col-sm-6"> 
+                <div class="form-group">
+                    <label>Add this deal to a Collection  <span class="optional">(optional)</span></label>
+                     <div class="form-input input-dropdown" uib-dropdown="1">
+                    <input type="text" class="form-control form-control-icon" placeholder="{{ suggestions }} " data-toggle="dropdown" uib-dropdown-toggle ng-init="suggestions='Type Collection’s name'" />
+                    <div class="input-suggestion-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <ul>
+                            <li><a href="#" ng-class= "active('Lorem', suggestions)"  ng-click="suggestions='Lorem'"><strong>Lor</strong>em <span class="notification newTxt">NEW</span></a></li>
+                            <li><a href="#" ng-class= "active('calorifero', suggestions)"  ng-click="suggestions='calorifero'">ca<strong>lor</strong>ifero <span class="notification">existing</span></a></li>
+                            <li><a href="#" ng-class= "active('malore', suggestions)"  ng-click="suggestions='malore'">ma<strong>lor</strong>e <span class="notification">existing</span></a></li>
+                        </ul>
+                    </div>		
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                 </div>
+				 
+                </div>
+            </div>
+          
+          </div>
+          
+          
+          <div class="form-group m_zero">
+           <div class="row">
+           
+          	<div class="col-sm-6">
+            	<div class="custom-checkboxbtn checkbox">
+              <label><input type="checkbox" ng-model="properties" name="checkbox" value="proper" class="ng-pristine ng-untouched ng-valid ng-empty">
+                       <span class="lbl grey_checkbox">Notify me when this coupon receives a comment</span> </label>
+                      </div>
+		    </div>
+          
+             <div class="col-sm-3">
+               <button class="gray_dark_btn btn modal-btn m_top_zero" type="button" ng-click="ok()">cancel</button>
+              </div>  
+             <div class="col-sm-3">
+              <button class="btn purple_bg_btn modal-btn m_top_zero" type="button" ng-click="ok()">save changes</button>
+             </div>         
+          </div>
+            </div>
+          
+        </form>      
+  
+    <div class="clearfix"></div>
+        
+    </div>
+</div>   
+</div>

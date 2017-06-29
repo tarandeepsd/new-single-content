@@ -1,0 +1,189 @@
+<!-- Default Form -->
+<div class="default-form dealmodal-form">
+    <div class="form-group">
+        <label>Title of the Review <span class="req">(compulsory)</span></label>
+        <div class="form-input first_tooltip">
+            <input type="text" class="form-control form-control-icon" placeholder="Enter a title for this product review">
+            <span class="form-icon question-icon"></span>
+            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+        </div>
+    </div>
+    
+    <div class="form-group form-rating">
+    	<label>Rate this Shop <span class="lightgreyTxt font_size12">(move the bar toggles below to express your opinion on this shop)</span></label>
+        <div class="rating-slide-section form-input clearfix">
+        	<div class="rating-slide-block black_label">
+             	<div class="row">
+                   <div class="column-half p_btm0">
+                        <label>Features</label>
+                        <!-- Filter Slider -->
+                        <div class="filter-slider rating-slider clearfix" ng-controller="RangeSliderCtrl">
+                            <span slider
+                                  slider-id="rangeSlider"
+                                  ng-model="model.second"
+                                  value="value.second"
+                                  min="1"
+                                  max="10"
+                                  tooltipseparator="{{ testOptions.tooltipseparator }}"
+                                  tooltipsplit="{{ testOptions.tooltipsplit }}">
+                                </span>
+                        </div>
+                        <!-- //Filter SLider -->
+                    </div>
+                    
+                    
+                    <div class="column-half p_btm0">
+                        <label>Usability</label>
+                        <!-- Filter SLider -->
+                        <div class="filter-slider rating-slider clearfix" ng-controller="RangeSliderCtrl">
+                            <span slider
+                                  slider-id="rangeSlider"
+                                  ng-model="model.second"
+                                  value="value.second"
+                                  min="1"
+                                  max="10"
+                                  tooltipseparator="{{ testOptions.tooltipseparator }}"
+                                  tooltipsplit="{{ testOptions.tooltipsplit }}">
+                                </span>
+                        </div>
+                        <!-- //Filter SLider -->
+                    </div>
+                    <div class="column-half">
+                        <label>Performance</label>
+                        <!-- FIlter SLider -->
+                        <div class="filter-slider rating-slider clearfix" ng-controller="RangeSliderCtrl">
+                            <span slider
+                                  slider-id="rangeSlider"
+                                  ng-model="model.second"
+                                  value="value.second"
+                                  min="1"
+                                  max="10"
+                                  tooltipseparator="{{ testOptions.tooltipseparator }}"
+                                  tooltipsplit="{{ testOptions.tooltipsplit }}">
+                                </span>
+                        </div>
+                        <!-- //FIlter SLider -->
+                    </div>
+                    
+                    <div class="column-half">
+                        <label>Design</label>
+                        <!-- FIlter SLider -->
+                        <div class="filter-slider rating-slider clearfix" ng-controller="RangeSliderCtrl">
+                            <span slider
+                                  slider-id="rangeSlider"
+                                  ng-model="model.second"
+                                  value="value.second"
+                                  min="1"
+                                  max="10"
+                                  tooltipseparator="{{ testOptions.tooltipseparator }}"
+                                  tooltipsplit="{{ testOptions.tooltipsplit }}">
+                                </span>
+                        </div>
+                        <!-- //FIlter SLider -->
+                    </div>
+            	</div>
+            </div>
+            
+            <span class="form-icon question-icon"></span>
+            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+        </div>
+    </div>
+                                                
+
+        <div class="form-group">
+          <label>Description <span class="req">(compulsory)</span></label>
+            <div class="form-input form-textarea">
+                <div class="textarea">
+                    <textarea class="form-control" placeholder="Enter a description for this deal" style="height:245px;"></textarea>
+                </div>
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+            </div>
+        </div>
+
+   	
+    
+    <!-- logged out Section -->
+    <div class="loggedout-section clearfix">
+    	<h2 class="title"> <span></span> No account needed, just type your email address.</h2>
+        
+        <div class="loggedout-form">
+        
+        	 <div class="social-icons">
+                <span class="label">or sign up with</span>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="twitter"></a>
+                <a href="#" class="google-plus"></a>
+            </div>
+            
+            
+            <div class="inline-form">
+                <div class="form-group">
+                    <label>Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter your email address">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+            </div>
+        
+           
+          </div>
+          
+        <!-- form email -with password -->
+        <div class="loggedout-form">
+        
+        	 <div class="social-icons">
+                <span class="label">or sign up with</span>
+                <a href="#" class="facebook"></a>
+                <a href="#" class="twitter"></a>
+                <a href="#" class="google-plus"></a>
+            </div>
+            
+            
+            <div class="inline-form clearfix">
+                <div class="form-group column6 pr10">
+                    <label>Email Address <span class="req">(compulsory)</span></label>
+                    <div class="form-input form-correct">
+                        <input type="text" class="form-control form-control-icon" value="email@example.com">
+                        <span class="form-icon correct-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                <div class="form-group column6 pl10">
+                    <label>Password <span class="req">(compulsory)</span></label>
+                    <div class="form-input">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter your password">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+            </div>
+        
+           
+          </div>  
+        <!-- //form email -with password -->
+        </div>
+    <!-- //logged out Section --> 
+    
+    
+    <div class="row"> 
+    	<div class="col-sm-6">
+            <div class="form-group form-bottom-checkbox clearfix">
+                <div class="form-input custom-checkboxbtn">
+                    <label>
+                        <input type="checkbox" name="checkbox" checked="true"/> <span class="lbl">Notify me when this review receives a comment</span>
+                    </label>
+                </div>
+            </div>
+         </div>
+         <div class="col-sm-6">
+            <div class="form-group">
+           		<a href="#" class="btn btn-block modal-btn purple-btn post_btn">post review </a>
+            </div>
+        </div>
+   </div>
+   
+   </div>		
+    <!-- //Default Form -->

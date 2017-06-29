@@ -1,0 +1,186 @@
+	<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body loginbg">
+	<h3><span>Log in to <img src="assets/images/shout-logo.svg" alt=""/></span></h3>
+    
+    <div class="login_welcome">
+       Welcome back!
+    </div>
+	
+    <form novalidate class="registerForm" name="registerForm" ng-init = "submitForm=0">
+        <div class="default-form form_area">
+            <div class="attention_error_box" ng-show="!registerForm.$invalid &&
+            email=='abc@gmail.com' &&
+            submitForm == 2">Attention! This email address is already registered on Shout.Enter your password below to log in. Forgotten your password? <a href="#">Click here</a> </div>
+            <div class="error_box"
+            ng-show="registerForm.email.$error.email && submitForm">Attention! The email address you entered is not in the correct format.</div>
+            <!-- <div class="oops_error" -->
+            <!-- ng-show="(registerForm.email.$error.required || -->
+            <!-- registerForm.password.$error.required) && -->
+            <!-- submitForm==1"> -->
+            <!-- <b>Ops... something went wrong!</b> Please, make sure you have completed each field correctly.</div> -->
+        
+            <!-- <div class="success_msg" ng-show="!registerForm.$invalid && -->
+            <!-- email!='abc@gmail.com'&& -->
+            <!-- submitForm == 2"> -->
+            <!-- <b>Registration successful!</b> We have sent you an email containing the link to confirm your registration. <a href="#">Go to your email</a>  -->
+            <!-- <p>closes in 5</p></div> -->
+			
+            <div ng-show="!(!registerForm.$invalid &&
+            email!='abc@gmail.com'&&
+            submitForm == 2)">
+			
+			<div class="form-group">
+			<div class="form-input"
+            ng-class="{'input-error':(registerForm.email.$error.required || registerForm.email.$error.email) && emailBlur,
+            'attention_error': email=='abc@gmail.com',
+            'correct':!registerForm.email.$invalid && email!='abc@gmail.com' }">
+            <input required id="loginForm-email"  type="email" placeholder="Enter your username or email address" class="form-control"
+            ng-change = "(submitForm==2)?submitForm=1:''"
+            ng-blur="emailBlur = true"
+            ng-model="email" name="email" tabindex="1" auto-focus>
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                    </div>
+			
+            	</div>
+				
+            <div  ng-show ="(!registerForm.email.$invalid)">
+            <div class="error_box" ng-show="registerForm.password.$error.required && submitForm==1 && !registerForm.email.$invalid">Attention! The email address you entered is not in the correct format.</div>
+          
+		  <div class="form-group">
+			<div class="form-input"
+                ng-class="{'input-error':registerForm.password.$error.required && (passBlur||submitForm),
+				'correct':!registerForm.password.$invalid }">
+				<input required
+				type="password"
+				placeholder="Enter your password"
+				class="form-control m_btm10"
+				ng-model="password"
+				ng-change = "(submitForm==2)?submitForm=1:''"
+				
+				ng-blur="passBlur = true"
+				name="password">
+				 <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+			</div>
+		</div>
+			
+            <small class="forgot"><a href="#">Forgotten password?</a> </small>
+            
+            <div class="custom-checkboxbtn checkbox">
+            <label>
+            <input type="checkbox"> <span class="lbl">Keep me logged</span>
+            </label>
+            </div>
+            
+          <button class="btn btn-block register_btn m_btm30"  type="submit" ng-click="login(registerForm.$invalid) ">LOG IN</button>
+		  <!--<button class="btn btn-block register_btn m_btm30"  type="submit" ng-click="submitForm = (registerForm.$invalid)?1:2 ">LOG IN</button>-->
+            <!-- <button class="btn btn-block register_btn m_btm30"  type="submit" ng-click="ok()">LOG IN</button> -->
+            
+            </div>
+            
+            <p class="or_tag"><span>or log in with</span></p>
+            
+            <div class="social_media_icons">
+                          <div class="col-xs-4">
+                            <a href="#" class="fb_icon">
+                            	<img src="assets/images/svg/facebook/01_facebook_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/facebook/02_facebook_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/facebook/03_facebook_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="tw_icon">
+                                <img src="assets/images/svg/twitter/01_twitter_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/twitter/02_twitter_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/twitter/03_twitter_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="gplus_icon">
+                                <img src="assets/images/svg/google/01_google_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/google/02_google_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/google/03_google_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                        </div>
+            
+            <p class="login" ng-controller="Modalsignup"><a href="#" ng-click="openSignup()"><span>Don’t have a Shout account yet? Sign up</span></a></p>
+            </div>
+        </div>
+    
+    </form>
+
+	</div>
+
+<!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
+<!--<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>-->
+    
+        <!-- <div class="modal-header">
+                   <button type="button" class="close" ng-click="cancel()"></button>
+                </div>
+                    
+                    <div class="modal-body loginbg">
+                    <h3><span>Log in to <img src="assets/images/shout-logo.svg" alt=""/></span></h3>
+                    
+                    <div class="form_area">
+                    
+                        <div class="attention_error" style="display:none;">Attention! This email address is already registered on Shout.Enter your password below to log in. Forgotten your password? <a href="#">Click here</a> </div>
+                        <div class="error_box" style="display:none;">Attention! The email address you entered is not in the correct format.</div>
+                        
+                        <div class="oops_error" style="display:none;"><b>Ops... something went wrong!</b> Please, make sure you have completed each field correctly.</div>
+                        
+                        <div class="success_msg" style="display:none;">
+                        <b>Registration successful!</b> We have sent you an email containing the link to confirm your registration. <a href="#">Go to your email</a> 
+                        <p>closes in 5</p></div>
+                        
+                        <input type="text" placeholder="Enter your registered email address" class="form-control _input-error _attention_error _correct">
+                        <div class="error_box" style="display:none;">Attention! The email address you entered is not in the correct format.</div>
+                        <input type="password" placeholder="Enter your Shout account password" class="form-control m_btm10">
+                        
+                        <small class="forgot"><a href="#">Forgotten password?</a> </small>
+                        
+                        <div class="custom-checkboxbtn checkbox">
+                            <label>
+                              <input type="checkbox"> <span class="lbl">Keep me logged</span>
+                            </label>
+                          </div>
+                        
+                        <button class="btn btn-block register_btn m_btm20" type="button" ng-click="ok()">log in</button>
+                        
+                        
+                        <p class="or_tag"><span>or log in with</span></p>
+                        
+                        <div class="social_media_icons">
+                          <div class="col-xs-4">
+                            <a href="#" class="fb_icon">
+                            	<img src="assets/images/svg/facebook/01_facebook_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/facebook/02_facebook_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/facebook/03_facebook_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="tw_icon">
+                                <img src="assets/images/svg/twitter/01_twitter_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/twitter/02_twitter_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/twitter/03_twitter_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="gplus_icon">
+                                <img src="assets/images/svg/google/01_google_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/google/02_google_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/google/03_google_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <p class="login"> <a href="#">Don’t have a Shout account yet? Sign up </a></p>
+                        
+                    </div>
+                    
+              </div>
+-->

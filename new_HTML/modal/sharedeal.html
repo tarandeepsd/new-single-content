@@ -1,0 +1,20 @@
+<div class="modal-header">
+<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body">
+        	<h3><span>Share this deal</span></h3>
+            
+	    <form  class="registerForm">
+            <div class="form_area m_top20">
+				<h4 class="subtitle_new text-center line_height20">Chose where you want to share this deal </h4>
+                <ul class="social_popup">
+                	<li><a href="#"><em class="facebook_share"><span class="affiliate-icon">£</span></em> on Facebook </a></li>
+                    <li><a href="#"><em class="twitter_share"><span class="affiliate-icon">£</span></em> on Twitter</a></li>
+                    <li><a href="#"><em class="google_share"><span class="affiliate-icon">£</span></em> on Google +</a></li>
+                    <li ng-controller="Modalshare_email" ng-click="ok()"><a href="#" ng-click="openshare_email()"><em class="email_share"><span class="affiliate-icon">£</span></em> by email</a></li>
+                </ul>
+                
+            </div>            
+	    </form>
+	    </div>

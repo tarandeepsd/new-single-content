@@ -1,0 +1,401 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body clearfix">
+
+<!--<h3 class="title mob_view"><span><img src="assets/images/shout-logo.svg" /> a new deal</span></h3>-->
+
+<!-- Left tab section -->
+<div class="nav-tab"></div>
+<!-- Left tab section -->
+
+    <uib-tabset active="active" class="newmodal-tab">
+		<!-- Deal Section  -->
+        <uib-tab index="0" >
+        	<!-- Deal Tab Icon   -->
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/deal/deal1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/deal/deal2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/deal/deal3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/deal/deal4_selected.svg" class="active" />
+                <span class="hover-tip">Shout a new deal</span>
+            </uib-tab-heading>
+            <!-- //Deal Tab Icon   -->
+            <!-- Deal Tab Content  -->
+             <div role="tabpanel" class="tab-pane active">
+             	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new deal</span></h3>
+                <!-- Deal Tab Content Step1  -->
+                <div class="first-step"  ng-show="step_1==true">
+                	<h4 class="subtitle">If you want to post a different kind of content, please change the selection in the left column of this pop up</h4>
+                    <div class="default-form">
+                        <div class="form-group">
+                        	<label>Deal URL <span class="req">(compulsory)</span></label>
+                                <div class="form-input">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                        </div>
+                        
+                          
+                           		<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn btn-disable btn-block"/>
+                        		</div>
+                               
+                        
+                        <div class="form-group">&nbsp;</div>
+                        
+                        <div class="form-group">
+                        	<label>Deal URL <span class="req">(compulsory)</span></label>
+                             <div class="form-input form-correct">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon correct-icon"></span>
+                                </div>
+                        </div>
+                        
+                        
+                            	<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn purple-btn btn-block"/>
+                        		</div>
+                                
+                        
+                     </div>
+                </div>
+                <!-- //Deal Tab Content Step1  -->
+                <!-- Deal Tab Content Step2  -->
+    			<div class="loading-data" ng-show="step_2==true">
+        			<h4 class="text-center">Retrieving deal data, please wait ...</h4>
+                   	<div class="loading-gif text-center">
+                    	<img src="assets/images/loading02.gif"  />
+                    </div>
+                    <div class="form-button">
+                       	<input type="button" value="next step" ng-click="step3()" class="btn purple-btn btn-block m_top20"  />
+                    </div>
+                </div>
+                <!-- //Deal Tab Content Step2  -->
+                <!-- Deal Tab Content Step3 -->
+                <div ng-show="step_3==true" class="scroller-section">
+					 <div ng-include="'modal/newdeal-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+    		</div>
+            <!-- //Deal Tab Content  -->
+        </uib-tab>
+        <!-- //Deal Section  -->
+        
+        <uib-tab index="1" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/sales/sale1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/sales/sale2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/sales/sale3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/sales/sale4_selected.svg" class="active" />
+            	<span class="hover-tip">Shout a new sale</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+             	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new sale</span></h3>
+                <!-- Deal Tab Content Step1  -->
+                <div class="first-step"  ng-show="step_1==true">
+                	<h4 class="subtitle">You are currently posting a sale. If you want to post a different kind of content, change the selection on the left</h4>
+                    <div class="default-form">
+                        <div class="form-group">
+                        	<label>Sale URL <span class="req">(compulsory)</span></label>
+                                <div class="form-input">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                        </div>
+                        
+                          
+                           		<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn btn-disable btn-block"/>
+                        		</div>
+                               
+                        
+                        <div class="form-group">&nbsp;</div>
+                        
+                        <div class="form-group">
+                        	<label>Sale URL <span class="req">(compulsory)</span></label>
+                             <div class="form-input form-correct">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon correct-icon"></span>
+                                </div>
+                        </div>
+                        
+                        
+                            	<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn purple-btn btn-block"/>
+                        		</div>
+                                
+                        
+                     </div>
+                </div>
+                <!-- //Deal Tab Content Step1  -->
+                <!-- Deal Tab Content Step2  -->
+    			<div class="loading-data" ng-show="step_2==true">
+        			<h4 class="text-center">Retrieving sale data, please wait ...</h4>
+                   	<div class="loading-gif text-center">
+                    	<img src="assets/images/loading02.gif"  />
+                    </div>
+                    <div class="form-button">
+                       	<input type="button" value="next step" ng-click="step3()" class="btn purple-btn btn-block m_top20"  />
+                    </div>
+                </div>
+                <!-- //Deal Tab Content Step2  -->
+                <!-- Deal Tab Content Step3 -->
+                <div ng-show="step_3==true" class="scroller-section">
+					 <div ng-include="'modal/newsale-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+    		</div>
+            
+        </uib-tab>
+        
+        <uib-tab index="2" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/coupon/coupon1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/coupon/coupon2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/coupon/coupon3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/coupon/coupon4_selected.svg" class="active" />
+            	<span class="hover-tip">Shout a new coupon</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+            	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new coupon</span></h3>
+                  <!-- Deal Tab Content Step1  -->
+                <div class="first-step"  ng-show="step_1==true">
+                	<h4 class="subtitle">You are currently posting a coupon. If you want to post a different kind of content, change the selection on the left</h4>
+                    <div class="default-form">
+                        <div class="form-group">
+                        	<label>Coupon URL <span class="req">(compulsory)</span></label>
+                                <div class="form-input">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                        </div>
+                        
+                          
+                           		<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn btn-disable btn-block"/>
+                        		</div>
+                               
+                        
+                        <div class="form-group">&nbsp;</div>
+                        
+                        <div class="form-group">
+                        	<label>Coupon URL <span class="req">(compulsory)</span></label>
+                             <div class="form-input form-correct">
+                                    <input type="text" class="form-control form-control-icon" placeholder="http://www.">
+                                    <span class="form-icon correct-icon"></span>
+                                </div>
+                        </div>
+                        
+                        
+                            	<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn purple-btn btn-block"/>
+                        		</div>
+                                
+                        
+                     </div>
+                </div>
+                <!-- //Deal Tab Content Step1  -->
+                <!-- Deal Tab Content Step2  -->
+    			<div class="loading-data" ng-show="step_2==true">
+        			<h4 class="text-center">Retrieving coupon data, please wait ...</h4>
+                   	<div class="loading-gif text-center">
+                    	<img src="assets/images/loading02.gif"  />
+                    </div>
+                    <div class="form-button">
+                       	<input type="button" value="next step" ng-click="step3()" class="btn purple-btn btn-block m_top20"  />
+                    </div>
+                </div>
+                <!-- //Deal Tab Content Step2  -->
+                <!-- Deal Tab Content Step3 -->
+                <div ng-show="step_3==true" class="scroller-section">
+					 <div ng-include="'modal/newcoupon-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+            </div>
+        </uib-tab>
+        
+        
+        <uib-tab index="3" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/tip/tip1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/tip/tip2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/tip/tip3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/tip/tip4_selected.svg" class="active" />
+            	<span class="hover-tip">Shout a new tip</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+            	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new tip</span></h3>
+                 <!-- Deal Tab Content Step3 -->
+                <div class="scroller-section">
+					 <div ng-include="'modal/newtip-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+            </div>
+        </uib-tab>
+        
+        <uib-tab index="4" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/discussion/discussion1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/discussion/discussion2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/discussion/discussion3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/discussion/discussion4_selected.svg" class="active" />
+                <span class="hover-tip">Shout a new discussion</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+            	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new discussion</span></h3>
+                 <!-- Deal Tab Content Step3 -->
+                <div class="scroller-section">
+					 <div ng-include="'modal/newdiscussion-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+            </div>
+        </uib-tab>
+        
+        <uib-tab index="5" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/productreview/product_review1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/productreview/product_review2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/productreview/product_review3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/productreview/product_review4_selected.svg" class="active" />
+            	<span class="hover-tip">Shout a new product review</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+            	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new product review</span></h3>
+                <!-- Deal Tab Content Step1  -->
+                <div class="first-step"  ng-show="step_1==true">
+                	<h4 class="subtitle">If you want to post a different kind of content, please change the selection in the left column of this pop up</h4>
+                    <div class="default-form">
+                        <div class="form-group">
+                        	<label>Product Name <span class="req">(compulsory)</span></label>
+                            
+                                <div class="form-input">
+                                    <input type="text" class="form-control form-control-icon" placeholder="Enter product name">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                        </div>
+                        
+                        <div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn btn-disable btn-block"  />
+                        		</div>
+                        
+                        <div class="form-group">&nbsp;</div>
+                        
+                        <div class="form-group">
+                        	<label>Product Name <span class="req">(compulsory)</span></label>
+                            
+                                <div class="form-input form-correct">
+                                    <input type="text" class="form-control form-control-icon" value="iPhone 5S 32Gb White Full Optional">
+                                    <span class="form-icon correct-icon"></span>
+                                </div>
+                        </div>
+                        
+                        <div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn purple-btn btn-block"  />
+                        		</div>
+                     </div>
+                </div>
+                <!-- //Deal Tab Content Step1  --> 
+                 <!-- Deal Tab Content Step2  -->
+    			<div class="loading-data" ng-show="step_2==true">
+        			<h4 class="text-center">Retrieving product data, please wait ...</h4>
+                   	<div class="loading-gif text-center">
+                    	<img src="assets/images/loading02.gif"  />
+                    </div>
+                    <div class="form-button">
+                       	<input type="button" value="next step" ng-click="step3()" class="btn purple-btn btn-block m_top20"  />
+                    </div>
+                </div>
+                <!-- //Deal Tab Content Step2  -->
+                <!-- Deal Tab Content Step3 -->
+                <div ng-show="step_3==true" class="scroller-section">
+					 <div ng-include="'modal/newproduct-review-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+            </div>
+        </uib-tab>
+        
+        <uib-tab index="6" >
+            <uib-tab-heading>
+                <img src="assets/images/icons/shoutnewcontent/shopreview/shop_review1_normal.svg" class="normal" />
+                <img src="assets/images/icons/shoutnewcontent/shopreview/shop_review2_onhover.svg" class="hover" />
+                <img src="assets/images/icons/shoutnewcontent/shopreview/shop_review3_onclick.svg" class="focus" />
+                <img src="assets/images/icons/shoutnewcontent/shopreview/shop_review4_selected.svg" class="active" />
+            	<span class="hover-tip">Shout a new shop review</span>
+            </uib-tab-heading>
+
+            <div role="tabpanel" class="tab-pane active">
+            	<h3 class="title"><span><img src="assets/images/shout-logo.svg" /> a new shop review</span></h3>
+                
+                 <!-- Deal Tab Content Step1  -->
+                <div class="first-step"  ng-show="step_1==true">
+                	<h4 class="subtitle">You are currently posting a shop review. If you want to post a different kind of content, change the selection on the left</h4>
+                    <div class="default-form">
+                        <div class="form-group">
+                        	<label>Shop Name <span class="req">(compulsory)</span></label>
+                                <div class="form-input">
+                                    <input type="text" class="form-control form-control-icon" placeholder="Enter Shop Name">
+                                    <span class="form-icon question-icon"></span>
+                                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                </div>
+                        </div>
+                        
+                          
+                           		<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn btn-disable btn-block"/>
+                        		</div>
+                               
+                        
+                        <div class="form-group">&nbsp;</div>
+                        
+                        <div class="form-group">
+                        	<label>Shop Name <span class="req">(compulsory)</span></label>
+                             <div class="form-input form-correct">
+                                    <input type="text" class="form-control form-control-icon" placeholder="Enter Shop Name" value="Amazon UK">
+                                    <span class="form-icon correct-icon"></span>
+                                </div>
+                        </div>
+                        
+                        
+                            	<div class="form-button">
+                        			<input type="button" value="next step" ng-click="step2()" class="btn purple-btn btn-block"/>
+                        		</div>
+                                
+                        
+                     </div>
+                </div>
+                <!-- //Deal Tab Content Step1  -->
+                <!-- Deal Tab Content Step2  -->
+    			<div class="loading-data" ng-show="step_2==true">
+        			<h4 class="text-center">Retrieving shop data, please wait ...</h4>
+                   	<div class="loading-gif text-center">
+                    	<img src="assets/images/loading02.gif"  />
+                    </div>
+                    <div class="form-button">
+                       	<input type="button" value="next step" ng-click="step3()" class="btn purple-btn btn-block m_top20"  />
+                    </div>
+                </div>
+                <!-- //Deal Tab Content Step2  -->
+                <!-- Deal Tab Content Step3 -->
+                <div ng-show="step_3==true" class="scroller-section">
+					 <div ng-include="'modal/newshop-review-form.html'" class="scrollarea" ng-scrollbars ng-scrollbars-config="{}" style="max-height: 464px;"></div>
+                </div>
+    			<!-- Deal Tab Content Step3 -->
+                
+                
+            </div>
+        </uib-tab>
+        
+    </uib-tabset>
+    
+  </div>
+</div>

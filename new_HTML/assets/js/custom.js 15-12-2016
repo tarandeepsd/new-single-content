@@ -1,0 +1,3233 @@
+angular.module('shoutModule', [])
+angular.module('shoutModule', ['ngAnimate','ui.bootstrap', 'ngSanitize', 'ui.bootstrap-slider','nouislider', 'ngScrollbars']);
+angular.module('shoutModule').directive('activeFunction',function(){
+	
+	return {
+		restrict : "A",
+		link:function(scope,element,attrs){
+			console.log("element:",element);
+			console.log("attrs:",attrs);
+
+			console.log("attrs.modal:",attrs.modal);
+			console.log("attrs.activeValue:",attrs.activeValue);
+				if(attrs.modal === attrs.activeValue)
+				{	console.log("conditon true");
+					element.addClass('active');
+				}
+		
+		}
+	};
+});
+angular.module('shoutModule').controller('DropdownCtrl', function ($scope, $rootScope, $log, $document) {
+	/* error is here in $scope.active function */
+  $scope.active = function( value, modal ) {
+	
+    return (modal==value?'active':' ')
+  }
+  $scope.toggleDropdown = function() {
+	  $scope.$emit('content.changed');
+  }
+  $scope.load_more_button=false;
+  
+});
+
+angular.module('shoutModule').controller('blogCtrl', function ($scope, $rootScope, $log, $document) {
+
+  $scope.openBlog = function()
+  {
+	  console.log("in open blog fun");
+	  $('#first_blog').addClass('open');	
+  }
+  $scope.closeBlog = function()
+  {
+	  console.log("in close blog fun");
+	  $('#first_blog').removeClass('open');
+  }
+  
+});
+
+angular.module('shoutModule').controller('productListCtrl', function ($scope, $rootScope, $log, $document) {
+	$scope.btnText = 'Show';
+	$scope.hideshow = function(btnText) {
+		if(btnText == 'Show')
+		{
+			$scope.btnText = 'Hide';
+			$(".info-address").removeClass("fadein").addClass("fadeOut");
+		}
+		else
+		{
+			$scope.btnText = 'Show';
+			$(".info-address").removeClass("fadeOut").addClass("fadein");
+		}
+		
+	};
+	
+	$scope.showdislike = function(id){
+		angular.element('#'+id+' .outer_like_dislike').css('display','none');
+		angular.element('#'+id+' .btn_dislike').css('display','block');
+	}
+	
+	$scope.showlike = function(id){
+		angular.element('#'+id+' .outer_like_dislike').css('display','none');
+		angular.element('#'+id+' .btn_like').css('display','block');
+	}
+
+  $scope.ResizeWindow = function(){
+    angular.element('#one .pod-section .pod-item .image').each(function() { var w = jQuery('#tabswidth').val(); console.log('scroll',w); $(this).find('span').css('height',w)});
+    angular.element('#two .pod-section .pod-item .image').each(function() { var w = jQuery('#tabswidth').val(); $(this).find('span').css('height',w)});
+    angular.element('#three .pod-section .pod-item .image').each(function() { var w =jQuery('#tabswidth').val(); $(this).find('span').css('height',w)});
+    angular.element('#four .pod-section .pod-item .image').each(function() { var w =jQuery('#tabswidth').val(); $(this).find('span').css('height',w)});
+    angular.element('#one .pod-section .pod-item .image.image-circle').each(function() { var w = $(this).width(); $(this).find('span').css('height','');$(this).find('span img').css('height',w)});
+angular.element('#two .pod-section .pod-item .image.image-circle').each(function() { var w = $(this).width(); $(this).find('span').css('height','');$(this).find('span img').css('height',w)});
+angular.element('#three .pod-section .pod-item .image.image-circle').each(function() { var w = $(this).width(); $(this).find('span').css('height','');$(this).find('span img').css('height',w)});
+angular.element('#four .pod-section .pod-item .image.image-circle').each(function() { var w = $(this).width(); $(this).find('span').css('height','');$(this).find('span img').css('height',w)});
+/*angular.element('#one .pod-section .pod-item.pod-height .block').css({'height': '347px'});
+angular.element('#two .pod-section .pod-item.pod-height .block').css({'height': ((jQuery('#two .pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+angular.element('#three .pod-section .pod-item.pod-height .block').css({'height': ((jQuery('#three .pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+angular.element('#four .pod-section .pod-item.pod-height .block').css({'height': ((jQuery('#four .pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+*/  }
+
+});
+
+angular.module('shoutModule').controller('CollapseCtrl', function ($scope) {
+  $scope.isCollapsed = true;
+  
+  
+  //Retailer Category Page	
+	$('body .category-label').on('click','a',function($scope){
+	  	$scope.isCollapsed = false;
+		$scope.stopPropagation();
+	});
+	
+	
+	
+	
+});
+
+/*angular.module('shoutModule').controller('mainCtrl', function ($scope) {
+	console.log("in main ctrl");
+	$scope.active = function( value, modal ) {
+		return (modal==value?'active':' ')
+	  }
+});*/
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+// CUstom Scroll Bar
+////////////////////////////////////////////////////////////////////////////
+angular.module('shoutModule').directive('scrollerHeight', ['$document', '$window', '$interval','$timeout', function( $document, $window, $interval, $timeout    ){
+  return {
+        scope: true,
+        controller: function( $scope ){
+      	   $scope.scrollerToggle = false;
+      	   $scope.callHeight = {};
+      	   $scope.isOpen = false;
+      	},
+        link: function(scope, element){ 
+      	  var collDivHwight = true,OCollDivHwight=true;
+      	  var offset =  angular.element( element ).find(">a").innerHeight();
+      	  var windowHeight = angular.element(window).innerHeight(); 
+      	  var divHeight = angular.element( element ).find(".drop_down_menu").innerHeight();
+          scope.callHeight = {"max-height":(windowHeight-offset)+'px'};
+          scope.callHeightConfig = {};
+      	  /** on resize **/
+
+      	  angular.element(window).on('resize', function(){
+            windowHeight = angular.element(window).innerHeight(); 
+			if (angular.element( element ).find(".mCustomScrollBox")) {
+				divHeight = angular.element( element ).find(".mCustomScrollBox").scrollHeight;
+				if( divHeight+ offset > windowHeight  && 0){
+				  scope.callHeightConfig = {"setHeight":(windowHeight-offset)+'px'};
+				  scope.callHeight = {"height":(windowHeight-offset)+'px'};
+				}else{
+				  scope.callHeight = {"max-height":(windowHeight-offset)+'px'};
+				  scope.callHeightConfig = {};
+				}
+				scope.$apply();
+			}
+          });
+	    
+	    /** Click outside of document **/
+	      angular.element( $document ).on('click', function( evt ){
+    	      if(!(angular.element(evt.target).closest(element).length )) {
+          		angular.element( element ).removeClass('open');
+          		angular.element( element ).find("*").removeClass('open');
+          		scope.scrollerToggle = false;
+    	      }
+    	    });
+	    
+	      var toggleClass = function( event, obj ){
+  	      windowHeight = angular.element(window).innerHeight(); 
+          scope.callHeight = {"max-height":(windowHeight-offset)+'px'};
+          scope.$apply();
+  	      angular.element( obj ).closest('li').find("*").removeClass('open');
+  	      angular.element( obj ).closest('li').toggleClass('open');
+  	      var clickObject = angular.element( element )
+  	      .find('#scroller_category');
+  	      var categary = true;
+  	      if ( clickObject.length == 0 ) {
+        		clickObject = angular.element( element );
+        		categary = false;
+  	      }
+  	      var hasClassElement = clickObject.hasClass( "open" );
+  	      angular.element( obj ).parent().siblings().each(function(index, value){
+    		    angular.element( value ).removeClass('open');
+    	      angular.element( value ).find("*").removeClass('open');
+  	      });
+          
+	       }
+	    
+	 
+	    
+        angular.element( element ).siblings().on('click',function(){
+          angular.element( element ).removeClass('open');
+          angular.element( element ).find("*").removeClass('open');
+        });
+        angular.element( element ).find(".dropdown-toggle").on('click', function( event ){
+          toggleClass(event, this );
+        });
+	    
+	   
+	    
+	   }
+    };
+  
+}]);
+
+////////////////////////////////////////////////////////////////////////////
+// Bootstrap Banner Slider
+////////////////////////////////////////////////////////////////////////////
+angular.module('shoutModule').controller('CarouselDemoCtrl', function ($scope) {
+  $scope.myInterval = 12000;                        
+  $scope.noWrapSlides = false;
+ // $scope.active = 0;
+  var slides = $scope.slides = [];
+  var currIndex = 0;
+
+  $scope.addSlide = function() {
+    var newWidth = + slides.length + 1;  
+    slides.push({
+      image: 'assets/images/banner/shout_carousel_' + newWidth + '.png',
+      heading: ['Know <u>when</u> to buy!','Only <u>real</u> deals'][slides.length % 2],
+	    headingText: ['Discover the best buys, every single day','Shout recommends only true convenience'][slides.length % 2],
+	    text: [][slides.length % 2],
+      id: currIndex++
+    });
+  };
+              
+  $scope.randomize = function() {
+    var indexes = generateIndexesArray();
+    assignNewIndexesToSlides(indexes);
+  };
+
+  for (var i = 0; i < 2; i++) {
+    $scope.addSlide();
+  }
+
+  // Randomize logic below
+
+  function assignNewIndexesToSlides(indexes) {
+    for (var i = 0, l = slides.length; i < l; i++) {
+      slides[i].id = indexes.pop();
+    }
+  }
+
+  function generateIndexesArray() {
+    var indexes = [];
+    for (var i = 0; i < currIndex; ++i) {
+      indexes[i] = i;
+    }
+    return shuffle(indexes);
+  }
+  function shuffle(array) {
+    var tmp, current, top = array.length;
+
+    if (top) {
+      while (--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+      }
+    }
+
+    return array;
+  }
+});
+
+////////////////////////////////////////////////////////////////////////////
+// Modal Custom
+////////////////////////////////////////////////////////////////////////////
+
+
+// Block User Modal 
+angular.module('shoutModule').controller('Modalblockuser', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openBlockuser = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog") ).addClass('modal-confirm');
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/block-user.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// Block User Modal 
+angular.module('shoutModule').controller('Modalsharedeal', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.opensharedeal = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog") ).addClass('modal-confirm');
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/sharedeal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Confirm Modal 
+angular.module('shoutModule').controller('ModalConfirm', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openConfirm = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog") ).addClass('modal-confirm');
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/confirm-email.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+
+
+
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Reset Password Modal 
+angular.module('shoutModule').controller('ModalResetpassword', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openResetpassword = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/reset-password.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+
+
+
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Register Modal 
+angular.module('shoutModule').controller('Modalsignup', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openSignup = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/register-poppup.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+
+// Register Error Modal 
+angular.module('shoutModule').controller('ModalsignupError', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openError = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/register-error-popup.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+
+
+
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+angular.module('shoutModule').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+		
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+  
+  
+  //========================================== DATEPICKER START
+  
+  		$scope.formData = {};
+  
+		$scope.formData.fromDate = new Date(); //  new Date(items.description.appointment_date);
+
+		$scope.today = function() {
+		  $scope.formData.fromDate = new Date();
+		};
+		$scope.today();
+		
+		$scope.clear = function() {
+		  $scope.formData.fromDate = null;
+		};
+		
+		
+		$scope.minDate = new Date();
+		
+		$scope.dateOptions = {
+		  //minDate: new Date(),
+		  showWeeks: false,
+		  startingDay: 0
+		};
+		
+		$scope.open1 = function() {
+		  $scope.popup1.opened = true;
+		};
+		$scope.open2 = function() {
+		  $scope.popup2.opened = true;
+		};
+		$scope.open3 = function() {
+			console.log("hey im here")
+		  $scope.popup3.opened = true;
+		};
+		
+		$scope.setDate = function(year, month, day) {
+		  $scope.formData.fromDate = new Date(year, month, day);
+		};
+		
+		$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'dd/MM/yyyy'];
+		$scope.format = $scope.formats[4];
+		$scope.altInputFormats = ['M!/d!/yyyy'];
+		
+		$scope.popup1 = {
+		  opened: false
+		};
+		$scope.popup2 = {
+		  opened: false
+		};
+		$scope.popup3 = {
+		  opened: false
+		};
+		
+	//datepicker end===============================================================
+});
+/** Modal **/
+
+
+
+// Register Modal 
+angular.module('shoutModule').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.isCollapsed= true;
+  $scope.isemailCollapsed= true;
+  $scope.ispassCollapsed= true;
+  $scope.isnoCollapsed= true;
+  $scope.isageCollapsed= true;
+  $scope.isgenderCollapsed= true;
+  $scope.isfamilyCollapsed= true;
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+		$scope.isCollapsed= true;
+		$scope.isemailCollapsed= true;
+		$scope.ispassCollapsed= true;
+		$scope.isnoCollapsed= true;
+		$scope.isageCollapsed= true;
+		$scope.isgenderCollapsed= true;
+		$scope.isfamilyCollapsed= true;
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+//angular.module('shoutModule').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+//  $scope.items = items;
+//  $scope.selected = {
+//    item: $scope.items[0]
+//  };
+//  $scope.ok = function () {
+//    $uibModalInstance.close($scope.selected.item);
+//  };
+//  $scope.cancel = function () {
+//    $uibModalInstance.dismiss('cancel');
+//  };
+//});
+/** Modal **/
+
+
+/** Modal Login **/
+
+angular.module('shoutModule').controller('ModalLogin', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openLogin = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/login-poppup.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  /** Welcome popup**/
+  $scope.openload = function (size) {
+//    var modalInstance = $uibModal.open({
+//      animation: $scope.animationsEnabled,
+//      templateUrl: 'modal/welcome-poppup.html',
+//      controller: 'ModalInstancelgloadCtrl',
+//      size: size,
+//      resolve: {
+//        items: function () {
+//          return $scope.items;
+//        }
+//      }
+//    });
+//    modalInstance.result.then(function (selectedItem) {
+//      $scope.selected = selectedItem;
+//    }, function () {
+//      $log.info('Modal dismissed at: ' + new Date());
+//    });
+ };
+  
+  $scope.openload('welcome');
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+angular.module('shoutModule').controller('ModalInstancelgloadCtrl', function ($document, $scope, $uibModalInstance, items) {
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
+angular.module('shoutModule').controller('ModalInstancelgCtrl', function ($document, $scope, $uibModalInstance, items) {
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
+/** Modal Login end **/
+
+
+/** Modal Upload **/
+angular.module('shoutModule').controller('ModalUploadPic', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openUploadPic = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/upload-avtar.html',
+      controller: 'ModalInstancesmCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+//angular.module('shoutModule').controller('ModalInstancesmCtrl', function ($scope, $uibModalInstance, items) {
+//  $scope.items = items;
+//  $scope.selected = {
+//    item: $scope.items[0]
+//  };
+//  $scope.ok = function () {
+//    $uibModalInstance.close($scope.selected.item);
+//  };
+//  $scope.cancel = function () {
+//    $uibModalInstance.dismiss('cancel');
+//  };
+//});
+
+/** Modal **/
+
+
+/** Modal Upload User **/
+angular.module('shoutModule').controller('ModalUploadUser', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openUploadUser = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/upload-userimage.html',
+      controller: 'ModalInstancesmCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+angular.module('shoutModule').controller('ModalInstancesmCtrl', function ($scope, $uibModalInstance, items) {
+
+	console.log("I'm here int his controller");
+
+  $scope.items = items;
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+   $scope.step2 = function( className ){
+	angular.element( document.getElementsByClassName("modal-upload-image") ).removeClass("upload-cover");
+  }
+   $scope.step3 = function( className ){
+		angular.element( document.getElementsByClassName("modal-upload-image") ).addClass("upload-cover");
+  }
+
+ 
+  
+});
+
+/** Favourite cotegories Modal **/
+angular.module('shoutModule').controller('ModalDemobigCtrl', function ($scope, $uibModal, $log, $timeout, $document) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openbig = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/favourite-category.html',
+      controller: 'ModalInstancebigCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+		  
+        },
+      }
+    });
+    $scope.modalInstance = modalInstance;
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+
+  };
+});
+
+
+
+angular.module('shoutModule').controller('ModalInstancebigCtrl', ['$scope', '$uibModalInstance', 'items', '$timeout', '$document',function ($scope, $uibModalInstance, items, $timeout, $document) {
+  $scope.items = items;
+  $timeout(function(){
+	  $scope.$emit('content.changed');
+	},0);
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+  $scope.step_1 = true;
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+
+  $scope.step2 = function(  className ){
+    $scope.step_1 = false;
+    $scope.step_2 = true;
+    angular.element( document.getElementsByClassName("modal-big") ).addClass(className);
+  }
+
+  
+  $scope.step3 = function( className ){
+    $scope.step_2 = false;
+    $scope.step_3 = true;
+    angular.element( document.getElementsByClassName("modal-big") ).addClass(className);
+  }
+
+  $scope.step4 = function( className ){
+    $scope.step_3 = false;
+    $scope.step_4 = true;
+    angular.element( document.getElementsByClassName("modal-big") ).addClass(className);
+  }
+
+  $scope.step5 = function( className ){
+    $scope.step_4 = false;
+    $scope.step_5 = true;
+    angular.element( document.getElementsByClassName("modal-big") ).addClass(className);
+  }
+
+  $scope.step6 = function( className ){
+    $scope.step_5 = false;
+    $scope.step_6 = true;
+    angular.element( document.getElementsByClassName("modal-big") ).addClass(className);
+  }
+}]);
+/** Modal cotegories **/
+
+
+
+/** Modal Disconnect **/
+
+angular.module('shoutModule').controller('Modaldisconnnect', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.opendisconnect = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/disconnnect.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+/** Modal Connect **/
+
+angular.module('shoutModule').controller('Modalconnnect', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openconnect = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/connnect.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+  /** Modal Fav Cate **/
+
+angular.module('shoutModule').controller('Modalfavcategories', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfavcategories = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/favcategories.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+    /** Modal Block user **/
+
+angular.module('shoutModule').controller('Modalunblockshouter', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openunblockshouter = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/unblockshouter.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+ /** Modal Add Interest **/
+
+angular.module('shoutModule').controller('Modalinterests', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openinterests = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/interests.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+    
+ /** Modal favshop **/
+
+angular.module('shoutModule').controller('Modalfavshop', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfavshop = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/favshop.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+      
+ /** Modal favcountries **/
+
+angular.module('shoutModule').controller('Modalfavcountries', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfavcountries = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/favcountries.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+
+ /** Modal fav Size **/
+
+angular.module('shoutModule').controller('Modalfavsize', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfavsize = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/favsize.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+   /** Modal Unsaved **/
+
+angular.module('shoutModule').controller('Modalunsaved', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openunsaved = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/unsaved.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+// Coupon Modal 
+angular.module('shoutModule').controller('ModalCoupon', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openCoupon = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/coupon.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+angular.module('shoutModule').controller('customjsController', function($scope){
+	$scope.showCustom = function(){
+		if(angular.element(document.getElementsByClassName("hideCustomInfo") ).hasClass('showCustomInfo'))
+		{
+			angular.element( document.getElementsByClassName("hideCustomInfo") ).removeClass('showCustomInfo');
+		}
+		else
+		{
+			angular.element( document.getElementsByClassName("hideCustomInfo") ).addClass('showCustomInfo');
+		}
+	}	
+});
+  
+// Coupon login Modal 
+angular.module('shoutModule').controller('ModalCouponin', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openCouponin = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/coupon-login.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+  
+// Unfollow login Modal 
+angular.module('shoutModule').controller('ModalUnfollow', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openUnfollow = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/unfollow_shouter.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+  
+// register interest login Modal 
+angular.module('shoutModule').controller('ModalInterest', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openInterest = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/register-interest.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Block shop Modal 
+angular.module('shoutModule').controller('Modalshopblock', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openshopblock = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/block_shop.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Remove preference Modal 
+angular.module('shoutModule').controller('ModalRemovepre', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openRemovepre = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/remove_preference.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Unblock Shop Modal 
+angular.module('shoutModule').controller('ModalUnblockshop', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.openUnblockshop = function (size) {
+setTimeout(function(){ 
+  	angular.element( document.getElementsByClassName("modal-dialog"));
+  },100); 
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/unblock_shop.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+////////////////////////////////////////////////////////////////////////////
+// Top Navigation Scroll fixed
+////////////////////////////////////////////////////////////////////////////
+angular.module('shoutModule').directive("scroll", function ($window) {
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+             if (this.pageYOffset >= 60) {
+                 element.addClass('scroll-bg');
+                 console.log('Scrolled below header.');
+             } else {
+                 element.removeClass('scroll-bg');
+                 console.log('Header is in view.');
+             }
+        });
+    };
+});
+angular.module('shoutModule').directive("toggleChecked", function ($window) {
+    return function(scope, element, attrs) {
+		console.log(element);
+        angular.element(element).on("click", function() {
+             console.log($(this).parents('div#toggleChecked').toggleClass('pod_active'));
+             // console.log($(this).parents('div#toggleChecked').toggleChecked());
+        });
+    };
+});
+
+////////////////////////////////////////////////////////////////////////////
+// Filter Toogle
+////////////////////////////////////////////////////////////////////////////
+angular.module('shoutModule').directive("filterToggle", function () {
+    return {
+        scope: true,
+	controller: function( $scope ) {
+	  $scope.isCollapsed = true;
+	},
+	link: function(scope, element){
+	  scope.isCollapsed = true;
+	}
+    };
+});
+angular.module('shoutModule').controller('mmenuCtrl', function ($scope) {
+  $scope.closemmenu = function(){
+    $("#menu").data("mmenu").close();
+  }
+  $scope.closemmenubyheader = function(){
+	if($('#menu').hasClass('mm-opened')) {
+	$("#menu").data("mmenu").close();
+	}
+  }
+});
+
+
+angular.module('shoutModule').directive('mmenu', function() {
+  return {
+    restrict : 'A',
+	controller : "mmenuCtrl",
+    link : function(scope, element, attrs) {
+            $(element).mmenu({
+              "extensions": [
+                  "pagedim-black"
+               ],
+              offCanvas: {
+                 position  : "left",
+                 zposition : "front"
+              },
+			  navbar:{
+				title:"<a href='deal-category.html' class='mm-title'>All Category</a>"  
+			   }
+			  
+            });
+    }
+  };
+});
+angular.module('shoutModule').directive("filterToggleReset", function () {
+    return {
+        require: '?^filterToggle',
+      	link: function(scope, element, attr){
+          scope.model = {
+            second: [],
+            discount: [],
+            dbrange:[]
+          };
+      	  element.on('click', function( event ){
+            event.stopPropagation();
+            var minVal = parseFloat(attr.min);
+            var maxVal = parseFloat(attr.max);
+            var stype = attr.slidertype;
+            if(stype == 'priceRange'){
+              scope.$apply(function(){
+                scope.price = {
+                  from: minVal,
+                  to:maxVal
+                }
+              });
+            }
+            if(stype == 'dbRange'){
+              scope.$apply(function(){
+                scope.db = {
+                  from: minVal,
+                  to:maxVal
+                }
+              });
+            }
+             if(stype == 'discountRange'){
+              scope.$apply(function(){
+                scope.discount = {
+                  from: minVal,
+                  to:maxVal
+                }
+              });
+            }
+      	  });
+      	}
+    };
+});
+
+
+
+/** slider **/
+angular.module('shoutModule').controller('RangeSliderCtrl', function ($scope) {
+        $scope.price = {
+        from: 0,
+        to:99999
+        }
+
+        $scope.db = {
+        from: -9999,
+        to:9999
+        }
+
+        $scope.discount = {
+        from: 0,
+        to:100
+        }
+
+        $scope.rating = {
+          from:0,
+          to:10
+        }
+        
+});
+/** slider **/
+
+
+
+angular.module('shoutModule').controller('DatepickerPopupDemoCtrl', function ($scope) {
+  $scope.today = function() {
+    $scope.dt = new Date();
+  };
+  $scope.today();
+
+  $scope.clear = function() {
+    $scope.dt = null;
+  };
+
+  $scope.inlineOptions = {
+    customClass: getDayClass,
+    minDate: new Date(),
+    showWeeks: true
+  };
+
+  $scope.dateOptions = {
+    dateDisabled: disabled,
+    formatYear: 'yy',
+    maxDate: new Date(2020, 5, 22),
+    minDate: new Date(),
+    startingDay: 1
+  };
+
+  // Disable weekend selection
+  function disabled(data) {
+    var date = data.date,
+      mode = data.mode;
+    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+  }
+
+  $scope.toggleMin = function() {
+    $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
+    $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
+  };
+
+
+  $scope.toggleMin();
+
+  $scope.open1 = function() {
+    $scope.popup1.opened = true;
+  };
+
+  $scope.open2 = function() {
+    $scope.popup2.opened = true;
+  };
+
+  $scope.setDate = function(year, month, day) {
+    $scope.dt = new Date(year, month, day);
+  };
+
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[0];
+  $scope.altInputFormats = ['M!/d!/yyyy'];
+
+  $scope.popup1 = {
+    opened: false
+  };
+
+  $scope.popup2 = {
+    opened: false
+  };
+
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var afterTomorrow = new Date();
+  afterTomorrow.setDate(tomorrow.getDate() + 1);
+  $scope.events = [
+    {
+      date: tomorrow,
+      status: 'full'
+    },
+    {
+      date: afterTomorrow,
+      status: 'partially'
+    }
+  ];
+
+  function getDayClass(data) {
+    var date = data.date,
+      mode = data.mode;
+    if (mode === 'day') {
+      var dayToCheck = new Date(date).setHours(0,0,0,0);
+
+      for (var i = 0; i < $scope.events.length; i++) {
+        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+
+        if (dayToCheck === currentDay) {
+          return $scope.events[i].status;
+        }
+      }
+    }
+
+    return '';
+  }
+});
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+// Updated Modal
+////////////////////////////////////////////////////////////////////////////
+
+
+//ModalProfileCtrl
+angular.module('shoutModule').controller('ModalProfileCtrl', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.isCollapsed= true;
+  $scope.isemailCollapsed= true;
+  $scope.ispassCollapsed= true;
+  $scope.isnoCollapsed= true;
+  $scope.isageCollapsed= true;
+  $scope.isgenderCollapsed= true;
+  $scope.isfamilyCollapsed= true;
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+    $scope.isCollapsed= true;
+    $scope.isemailCollapsed= true;
+    $scope.ispassCollapsed= true;
+    $scope.isnoCollapsed= true;
+    $scope.isageCollapsed= true;
+    $scope.isgenderCollapsed= true;
+    $scope.isfamilyCollapsed= true;
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+//ModalProfileCtrl
+
+//ModalProfileCtrl
+angular.module('shoutModule').controller('ModalGeneralCtrl', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.isCollapsed= true;
+  $scope.isemailCollapsed= true;
+  $scope.ispassCollapsed= true;
+  $scope.isnoCollapsed= true;
+  $scope.isageCollapsed= true;
+  $scope.isgenderCollapsed= true;
+  $scope.isfamilyCollapsed= true;
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+    $scope.isCollapsed= true;
+    $scope.isemailCollapsed= true;
+    $scope.ispassCollapsed= true;
+    $scope.isnoCollapsed= true;
+    $scope.isageCollapsed= true;
+    $scope.isgenderCollapsed= true;
+    $scope.isfamilyCollapsed= true;
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+//ModalProfileCtrl
+
+
+//ModalSocialRegisterCtrl
+angular.module('shoutModule').controller('ModalSocialRegisterCtrl', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.isCollapsed= true;
+  $scope.isemailCollapsed= true;
+  $scope.ispassCollapsed= true;
+  $scope.isnoCollapsed= true;
+  $scope.isageCollapsed= true;
+  $scope.isgenderCollapsed= true;
+  $scope.isfamilyCollapsed= true;
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+    $scope.isCollapsed= true;
+    $scope.isemailCollapsed= true;
+    $scope.ispassCollapsed= true;
+    $scope.isnoCollapsed= true;
+    $scope.isageCollapsed= true;
+    $scope.isgenderCollapsed= true;
+    $scope.isfamilyCollapsed= true;
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+//ModalProfileCtrl
+angular.module('shoutModule').controller('ModalUnsavedCtrl', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.emailBlur = false;
+  $scope.passBlur = false;
+  $scope.isCollapsed= true;
+  $scope.isemailCollapsed= true;
+  $scope.ispassCollapsed= true;
+  $scope.isnoCollapsed= true;
+  $scope.isageCollapsed= true;
+  $scope.isgenderCollapsed= true;
+  $scope.isfamilyCollapsed= true;
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+    modalInstance.result.then(function (selectedItem) {
+    $scope.selected = selectedItem;
+    }, function () {
+    $scope.isCollapsed= true;
+    $scope.isemailCollapsed= true;
+    $scope.ispassCollapsed= true;
+    $scope.isnoCollapsed= true;
+    $scope.isageCollapsed= true;
+    $scope.isgenderCollapsed= true;
+    $scope.isfamilyCollapsed= true;
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+////////////////////////////////////////////////////////////////////////////
+// Updated Modal
+////////////////////////////////////////////////////////////////////////////
+
+
+/** Modal shouter **/
+
+angular.module('shoutModule').controller('Modalshouter', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openshouter = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/shouter.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+
+/** Modal shouter **/
+
+angular.module('shoutModule').controller('Modalblockcountries', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openblockcountries = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/blockcountries.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+  /** Modal Shop **/
+
+angular.module('shoutModule').controller('Modalshop', function ($scope, $uibModal, $log) {
+ $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openshop = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/blockshop.html',
+      controller: 'ModalInstancelgCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  });
+  
+  
+
+// Write Message Modal 
+angular.module('shoutModule').controller('Modalwritemsg', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openWritemsg = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/write-message.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-message", 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+   // $scope.openWritemsg('message');
+});
+
+
+// Delete Message Modal 
+angular.module('shoutModule').controller('Modaldeletemsg', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openDeletemsg = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/delete-message.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Delete Collection Modal 
+angular.module('shoutModule').controller('Modaldeletecollection', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openDeletecollection = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/delete-collection.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Delete Content Modal 
+angular.module('shoutModule').controller('Modaldeletecontent', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openDeletecontent = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/delete-content.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// Move Content Modal 
+angular.module('shoutModule').controller('Modalmovecontent', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openMovecontent = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/move-content.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// Add To Collection Modal 
+angular.module('shoutModule').controller('Modaladdcollection', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openAddcollection = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/addto-collection.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-addcollection", 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Modal Popup
+angular.module('shoutModule').controller('Modalreportdeal', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportdeal = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-deal-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Discussion Modal Popup
+angular.module('shoutModule').controller('Modalreportdiscussion', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportdiscussion = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-deal-discusssion.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// REPORT Modal Popup
+angular.module('shoutModule').controller('Modalreportmessage', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportmessage = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-message.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// REPORT Modal Popup
+angular.module('shoutModule').controller('Modalreportcollection', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportcollection = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-collection.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Delete Price Modal Popup
+angular.module('shoutModule').controller('Modaldeleteprice', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openDeleteprice = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/delete-price.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Remove price alert Modal Popup
+angular.module('shoutModule').controller('Modalremovealert', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openremovealert = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/remove_price_alert.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// Price Alert Modal Popup
+angular.module('shoutModule').controller('Modalpricealert', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openpricealert = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/price_alert.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// Price Alert Modal Popup
+angular.module('shoutModule').controller('Modalpriceedit', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openpriceedit = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/price_alert_edit.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-deletemsg" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Product Popup
+angular.module('shoutModule').controller('Modalreportproduct', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportproduct = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-product-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+
+// REPORT Comment Popup
+angular.module('shoutModule').controller('Modalreportcomment', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportcomment = function (size) {
+	var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-comment-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Product Review Popup
+angular.module('shoutModule').controller('Modalreportproductreview', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  //alert(111);
+  $scope.openReportproductreview = function (size) {
+//	  console.log('functionm called');
+	 var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-productreview-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Tip Popup
+angular.module('shoutModule').controller('Modalreporttip', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReporttip = function (size) {
+	 var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-tip.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Sale Popup
+angular.module('shoutModule').controller('Modalreportsale', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportsale = function (size) {
+	 var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-sale-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// REPORT Sale Popup
+angular.module('shoutModule').controller('Modalreportcoupon', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportcoupon = function (size) {
+	 var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-coupon-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT Shop Review Popup
+angular.module('shoutModule').controller('Modalreportshopreview', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportshopreview = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-shopreview-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Edit Discussion Popup
+angular.module('shoutModule').controller('Modaleditdiscussion', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openeditdiscussion = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/edit_discussion.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-editshopreview",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Edit Tip Popup
+angular.module('shoutModule').controller('Modaledittip', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openedittip = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/edit_tip.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-editshopreview",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Edit Tip Popup
+angular.module('shoutModule').controller('Modaleditcoupon', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openeditcoupon = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/editcoupon.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-editshopreview",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// REPORT confirm Modal Popup
+angular.module('shoutModule').controller('Modalreportconfirmdeal', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openReportconfirmdeal = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/report-confirmdeal-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-reportpopup",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Modal Edit Deal Popup
+angular.module('shoutModule').controller('Modaleditdeal', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openEditdeal = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/editdeal-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-editdeal",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// Modal Edit Deal Popup
+angular.module('shoutModule').controller('Modaleditsale', function ($scope, $uibModal, $log) {
+	
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openEditsale = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/editsale-modal.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-editdeal",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// Modal Graph Popup
+angular.module('shoutModule').controller('Modalgraph', function ($scope, $uibModal, $log) {
+	
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.opengraph = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/graph.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  //windowClass:"modal-editdeal",
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Modal Badge Popup
+angular.module('shoutModule').controller('Modalbadges', function ($scope, $uibModal, $log) {
+	
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.Modalbadges = function (size) {
+	  console.log("modal size:",size);
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/modal-badges.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// Modal New badges Popup
+angular.module('shoutModule').controller('Modalnewbadges', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.Modalnewbadges = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/modal-new-badges.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// feedback Modal Popup
+angular.module('shoutModule').controller('Modalfeedback', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfeedback = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/feedback.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// share emai Modal Popup
+angular.module('shoutModule').controller('Modalshare_email', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openshare_email = function (size) {
+  setTimeout(function(){ 
+  },100);
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/share_email.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// invite friends Modal Popup
+angular.module('shoutModule').controller('Modalinvite_friends', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openinvite_friends = function (size) {
+  setTimeout(function(){ 
+  },100);
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/invite_friends.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+// welcome Modal Popup
+angular.module('shoutModule').controller('Modalwelcome', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openwelcome = function (size) {
+  setTimeout(function(){ 
+  },100);
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/welcome-poppup.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+// Suggest Retailer Modal Popup
+angular.module('shoutModule').controller('Modalsuggest_retailer', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.opensuggest_retailer = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/suggest_retailer.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+// SHOUT CONTENT (SHOUT A NEW DEAL - DEAL NOT PRESENT ONLINE) Modal Popup
+/** Favourite cotegories Modal **/
+angular.module('shoutModule').controller('ModalNewDealPresentOnline', function ($scope, $uibModal, $log, $timeout, $document) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openNewDealPresentOnline = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/newdeal-present-online-modal.html',
+      controller: 'ModalInstancedealCtrl',
+      size: size,
+	  windowClass:"modal-editdeal",
+      resolve: {
+        items: function () {
+          return $scope.items;
+	   },
+      }
+    });
+    $scope.modalInstance = modalInstance;
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+angular.module('shoutModule').controller('ModalInstancedealCtrl', ['$scope', '$uibModalInstance', 'items', '$timeout', '$document',function ($scope, $uibModalInstance, items, $timeout, $document) {
+  $scope.items = items;
+  $timeout(function(){
+	  $scope.$emit('content.changed');
+	},0);
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+  $scope.step_1 = true;
+  $scope.step_2 = false;
+  $scope.step_3 = false;
+  $scope.step_4 = false;
+  $scope.step_5 = false;
+  $scope.step_6 = false;
+  $scope.ok = function () {
+    $uibModalInstance.close($scope.selected.item);
+  };
+ $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+  $scope.step2 = function(className ){
+	$scope.step_1 = false;
+    $scope.step_2 = true;
+ 	setTimeout(function(){$scope.$apply()},1)	
+  }
+
+  
+  $scope.step3 = function( className ){
+    $scope.step_2 = false;
+    $scope.step_3 = true;
+ 	setTimeout(function(){$scope.$apply()},1)	
+  }
+
+  $scope.step4 = function( className ){
+    $scope.step_3 = false;
+    $scope.step_4 = true;
+    angular.element( document.getElementsByClassName("modal-shoutnewdeal") ).addClass(className);
+  }
+
+  $scope.step5 = function( className ){
+    $scope.step_4 = false;
+    $scope.step_5 = true;
+    angular.element( document.getElementsByClassName("modal-shoutnewdeal") ).addClass(className);
+  }
+
+  $scope.step6 = function( className ){
+    $scope.step_5 = false;
+    $scope.step_6 = true;
+    angular.element( document.getElementsByClassName("modal-shoutnewdeal") ).addClass(className);
+  }
+  
+  //========================================== DATEPICKER START
+  
+  		$scope.formData = {};
+  
+		$scope.formData.fromDate1 = new Date(); //  new Date(items.description.appointment_date);
+		$scope.formData.fromDate2 = new Date();
+
+		$scope.today = function() {
+		  $scope.formData.fromDate1 = new Date();
+		  $scope.formData.fromDate2 = new Date();
+		};
+		$scope.today();
+		
+		$scope.clear = function() {
+		  $scope.formData.fromDate1 = null;
+		  $scope.formData.fromDate1 = null;
+		};
+		
+		
+		$scope.minDate = new Date();
+		
+		$scope.dateOptions = {
+		  //minDate: new Date(),
+		  showWeeks: false,
+		  startingDay: 0
+		};
+		
+		$scope.open1 = function() {
+		  $scope.popup1.opened = true;
+		};
+		$scope.open2 = function() {
+		  $scope.popup2.opened = true;
+		};
+		$scope.open3 = function() {
+			console.log("hey im here")
+		  $scope.popup3.opened = true;
+		};
+		
+		$scope.setDate = function(year, month, day) {
+		  $scope.formData.fromDate = new Date(year, month, day);
+		};
+		
+		$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate', 'dd/MM/yyyy'];
+		$scope.format = $scope.formats[4];
+		$scope.altInputFormats = ['M!/d!/yyyy'];
+		
+		$scope.popup1 = {
+		  opened: false
+		};
+		$scope.popup2 = {
+		  opened: false
+		};
+		$scope.popup3 = {
+		  opened: false
+		};
+	//datepicker end===============================================================
+  
+}]);
+
+
+// Mobile filter Edit collection Modal 
+angular.module('shoutModule').controller('ModalfiltereditCollection', function ($scope, $uibModal, $log) {
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.animationsEnabled = true;
+  $scope.openfiltereditCollection = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'modal/filter-edit-collection.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+	  windowClass:"modal-filter" , 
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+			 
+    });
+    modalInstance.result.then(function (selectedItem) {
+		
+		
+    $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+ $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+});
+
+
+
+angular.module('shoutModule').directive('divAdjustHeight', ['$document', '$window', '$interval','$timeout', function( $document, $window, $interval, $timeout    ){
+  return {
+        scope: true,
+        controller: function( $scope ){
+      	},
+        link: function(scope, element){ 
+			console.log(angular.element(element).height()) 
+			console.log(angular.element(element).height()-139)
+			console.log(angular.element(element).find('.discussion-text'));
+			angular.element(element).find('.discussion-text').height(angular.element(element).height()-159)
+
+	   }
+    };
+  
+}]);
+
+////////////////////////////////////////////////////////////////////////////
+// Pod Item Height fixed (Need to Change with Angular ( programming point))
+////////////////////////////////////////////////////////////////////////////
+$(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		topOffset = target.offset().top;
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: topOffset - 100
+          }, 1000);
+		  console.log(target.offset(),"asd");
+          return false;
+        }
+      }
+    });
+
+
+  });
+  
+  
+  
+  
+//////////////////////////////////////////////////////////////////////////////////
+//// Pod Item Height fixed (Need to Change with Angular ( programming point))////
+////////////////////////////////////////////////////////////////////////////////
+
+
+$(window).resize(function(){
+	jQuery('.pod-section .pod-item .image').each(function() { var $this = $(this), w = $this.find('img').width(); $this.find('img').height(w); });
+	jQuery('.pod-section .pod-item.viewall-item .block a').css({'height': ((jQuery('.pod-section .product-block .pod-item.first').height()) - 0)+'px'});
+	jQuery('.pod-section .pod-item.pod-height .block').css({'height': ((jQuery('.pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});	
+});
+
+
+$(window).on('scroll',function(){
+	jQuery('.pod-section .pod-item .image').each(function() { var $this = $(this), w = $this.find('img').width(); $this.find('img').height(w); });
+	jQuery('.pod-section .pod-item.viewall-item .block a').css({'height': ((jQuery('.pod-section .product-block .pod-item.first').height()) - 0)+'px'});
+	jQuery('.pod-section .pod-item.pod-height .block').css({'height': ((jQuery('.pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+
+$('body .panelpod-item .text').on('click','span',function($scope){
+	$scope.stopPropagation();
+});
+
+});
+
+jQuery('.pod-section .pod-item.pod-height .block').css({'height': ((jQuery('.pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+jQuery('.pod-section .pod-item.pod-height .block').css({'height': ((jQuery('.pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+	
+
+setTimeout(function(){ 
+	jQuery('.pod-section .pod-item.pod-height .block').css({'height': ((jQuery('.pod-section .product-block .pod-item.first .block').outerHeight()) - 0)+'px'});
+	jQuery('.pod-section .pod-item.viewall-item .block a').css({'height': ((jQuery('.pod-section .product-block .pod-item.first').height()) - 0)+'px'});
+
+},5000);
+
+
+
+
+setInterval(function(){ 
+ },1000);
+
+
+//--------------- checbox ----------------------//

@@ -1,0 +1,123 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+
+<div class="modal-body loginbg">
+	<h3><span>Sign up to <img src="assets/images/shout-logo.svg" alt=""/></span></h3>
+    
+    <div class="register_list">
+       <ul>
+          <li>Benefit from thousands of amazing deals everyday</li>
+          <li>Vote the deals you like the most</li>
+          <li>Share your comments</li>
+          <li>Get genuine advice from experienced savers!</li>
+       </ul>
+    </div>
+    <form novalidate class="form-group registerForm" name="registerForm" ng-init = "submitForm=0">
+        <div class="default-form form_area">
+            <div class="attention_error_box" ng-show="!registerForm.$invalid &&
+            email=='abc@gmail.com' &&
+            submitForm == 2">Attention! This email address is already registered on Shout.Enter your password below to log in. Forgotten your password? <a href="#">Click here</a> </div>
+            <div class="error_box"
+            ng-show="registerForm.email.$error.email && submitForm">Attention! The email address you entered is not in the correct format.</div>
+            <!-- <div class="oops_error" -->
+            <!-- ng-show="(registerForm.email.$error.required || -->
+            <!-- registerForm.password.$error.required) && -->
+            <!-- submitForm==1"> -->
+            <!-- <b>Ops... something went wrong!</b> Please, make sure you have completed each field correctly.</div> -->
+        
+            <!-- <div class="success_msg" ng-show="!registerForm.$invalid && -->
+            <!-- email!='abc@gmail.com'&& -->
+            <!-- submitForm == 2"> -->
+            <!-- <b>Registration successful!</b> We have sent you an email containing the link to confirm your registration. <a href="#">Go to your email</a>  -->
+            <!-- <p>closes in 5</p></div> -->
+            
+			<div class="form-group">
+            <div ng-show="!(!registerForm.$invalid &&
+            email!='abc@gmail.com'&&
+            submitForm == 2)"
+            class="form-input"
+            ng-class="{'input-error':(registerForm.email.$error.required || registerForm.email.$error.email) && emailBlur,
+            'attention_error': email=='abc@gmail.com',
+            'correct':!registerForm.email.$invalid && email!='abc@gmail.com' }">
+            	<input required type="email" placeholder="Enter your email address" class="form-control"
+            ng-change = "(submitForm==2)?submitForm=1:''"
+            ng-blur="emailBlur = true"
+            ng-model="email" name="email" id="signupForm-email" auto-focus>
+			<span class="form-icon question-icon"></span>
+            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+            </div>
+            </div>
+            
+            <div class="error_box" ng-show="registerForm.password.$error.required && submitForm==1 && !registerForm.email.$invalid">Attention! The email address you entered is not in the correct format.</div>
+			
+			<div class="form-group">
+			
+            <div ng-show ="(!registerForm.email.$invalid)" class="form-input" ng-class="{'input-error':registerForm.password.$error.required && (passBlur||submitForm),
+            'correct':!registerForm.password.$invalid }">
+			
+            <input required
+            type="password"
+            placeholder="Choose your password"
+            class="form-control"
+            ng-model="password"
+            ng-change = "(submitForm==2)?submitForm=1:''"
+            ng-blur="passBlur = true"
+            name="password">
+            <span class="form-icon question-icon"></span>
+            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+			
+            <div class="custom-checkboxbtn checkbox">
+            <label>
+            <input type="checkbox"> <span class="lbl">Send me the Shout community Newsletter</span>
+            </label>
+            </div>
+            
+            <div class="custom-checkboxbtn checkbox">
+            <label>
+            <input type="checkbox"> <span class="lbl">Send me the best deals of the day Newsletter</span>
+            </label>
+            </div>
+            
+            <!-- <button class="btn btn-block register_btn"  type="submit" ng-click="submitForm = (registerForm.$invalid)?1:2 ">SIGN UP</button> -->
+            <button class="btn btn-block register_btn"  type="submit" ng-click="register(registerForm.$invalid)">SIGN UP</button>
+            <p class="terms" >By creating a Shout account, you accept the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></p>
+            </div>
+			</div>
+            <!--<p class="small_text">By creating a Shout account, you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>-->
+            <p class="or_tag"><span>or sign up with</span></p>
+            
+            <div class="social_media_icons">
+                          <div class="col-xs-4">
+                            <a href="#" class="fb_icon">
+                            	<img src="assets/images/svg/facebook/01_facebook_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/facebook/02_facebook_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/facebook/03_facebook_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="tw_icon">
+                                <img src="assets/images/svg/twitter/01_twitter_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/twitter/02_twitter_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/twitter/03_twitter_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                          <div class="col-xs-4">
+                            <a href="#" class="gplus_icon">
+                                <img src="assets/images/svg/google/01_google_signup_normal.svg" class="normal" />
+                                <img src="assets/images/svg/google/02_google_signup_onhover.svg" class="hover" />
+                                <img src="assets/images/svg/google/03_google_signup_onclick.svg" class="active" />
+                            </a>
+                          </div>
+                        </div>
+            
+            <p class="login" ng-controller="ModalLogin"><a href="#" ng-click="openLogin()"><span>Already registered? Log in</span></a></p>
+			
+            </div>
+        </div>
+    
+    </form>
+</div>
+
+<!--<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>-->
+<!--<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>-->

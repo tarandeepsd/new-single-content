@@ -1,0 +1,38 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+			
+			<div class="modal-body">
+        	<h3><span>Register on <img src="assets/images/shout-logo.png" alt=""/></span></h3>
+            
+	    <form novalidate class="registerForm" name="registerForm" ng-init = "submitForm=0">
+		                    <div class="alert-msg">
+                                <div class="alert alert-error">
+                                    Ops... Something went wrong. Please make sure you correctly fulfilled all fields. 
+                                </div>
+                            </div>
+        
+            
+            <div class="form_area">
+				<div class="error_box">Attention! The email address you entered is not in the correct format.</div>
+				<input required
+				       type="password"
+				       placeholder="Email Address"
+				       class="form-control input-error">     
+				<div class="attention_error_box">Attention! This email address is already registered on Shout. Enter your password below to log in. Forgotten your password? <a href="">Click here</a> </div>       	
+				<input required
+				       type="password"
+				       placeholder="Email Address"
+				       class="form-control attention_error">
+				<input required
+				       type="text"
+				       value="example@email.com"
+				       class="form-control correct">    
+				<div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>       	
+				<input required
+				       type="password"
+				       placeholder="Lorem ipsum"
+				       class="form-control question">
+            </div>            
+	    </form>
+	    </div>

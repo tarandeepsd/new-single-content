@@ -1,0 +1,91 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body confirm suggest_retailer">
+    <h3><span>Suggest New Shop</span></h3>
+    <h4 class="black_title">Do you want a new Shop listed on Shout? Please fulfill this form</h4>
+
+    <div class="row">
+  <div style="max-height:392px;">
+<div class="default-form form_area col-sm-12">
+        <div class="form-group">
+             <label>Shop Name <small> (compulsory) </small> </label>
+           <div class="form-input first_tooltip">
+                <input type="text" placeholder="Enter the name of the Shop you want to suggest" class="form-control">
+               <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+            </div>
+            
+        </div>
+         
+        <div class="form-group m_btom10">
+             <label>This Shop sells: <small>(compulsory)</small> </label>
+           <div class="form-input">
+               <p class="custom-checkboxbtn">
+        		<label>
+                	<input  type="checkbox" name="checkbox" ng-model="customButtons.val"> 
+                	<span class="lbl">Online</span>
+               </label>
+               <label>
+                	<input type="checkbox" name="checkbox" value="2" ng-model="customButtons2.val"> 
+                	<span class="lbl">Offline</span>
+               </label>
+
+        </p>
+        
+            </div>
+            
+        </div>
+        
+        <div ng-init="customButtons.val = true;" ng-show="customButtons.val" class="" style="display:block;">
+        
+            <div class="form-group">
+                 <label>Shop Site URL: <small>(compulsory)</small> </label>
+               <div class="form-input">
+                    <input type="text" placeholder="http://www." class="form-control">
+                   <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+                
+            </div>
+            
+          </div>
+        
+		<div ng-show="customButtons2.val" class="">
+        
+        	<div class="form-group">
+                 <label>Street Address Line 1 <small>(compulsory)</small> </label>
+               <div class="form-input">
+                    <input type="text" placeholder="First line of the Branch address" class="form-control">
+                   <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            </div>
+            
+        	<div class="form-group">
+                 <label>Street Address Line 2 <small>(compulsory)</small> </label>
+               <div class="form-input">
+                    <input type="text" placeholder="Second line of the Branch address (Unit, Building, Floor, etc.)" class="form-control">
+                   <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                 <label>City and Postcode <small>(compulsory)</small> </label>
+               <div class="form-input">
+                    <input type="text" placeholder="City and Postcode" class="form-control">
+                   <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            </div>
+        
+        </div>
+        
+        <button class="btn purple_bg_btn btn-block modal-btn" type="button" ng-click="ok()">send suggestion</button>
+        
+        <div class="clearfix"></div>
+        
+    </div>     
+    </div>
+</div></div>

@@ -1,0 +1,220 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()"></button>
+</div>
+<div class="modal-body clearfix">
+	<h3><span>Edit deal</span></h3>
+    
+    <!-- Default Form -->
+    <div class="edit_deal_outer" ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:464px;">
+    	<div class="default-form dealmodal-form">
+        
+        
+        <div class="row">
+    	<div class="col-sm-12">
+            <!-- Edit Deal Left section -->
+            <div class="deal-right-section">
+                <div class="form-group">
+                    <label>Deal URL <span class="req">(compulsory)</span></label>
+                    <div class="form-input first_tooltip">
+                        <input type="text" class="form-control form-control-icon" placeholder="https://www.">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Deal Title <span class="req">(compulsory)</span></label>
+                    <div class="form-input first_tooltip">
+                        <input type="text" class="form-control form-control-icon" placeholder="Enter a title for this deal">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6">
+                     <div class="form-group">
+                        <label>Deal Price <span class="req">(compulsory)</span></label>
+                        <div class="form-price-input">
+                            <div class="form-input form-select form-select-small" ng-controller="DropdownCtrl">
+                                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='€'">
+                                        {{currency}} 
+                                    </a>	
+                                   <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                                        <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                                        <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                                        <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                                   </ul>
+                                </div>
+                            </div>
+                            <div class="form-input">
+                                <input type="text" class="form-control form-control-icon" placeholder="e.g. 9.99">
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                             </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-sm-6">
+                     <div class="form-group">
+                        <label>Full Price</label>
+                        <div class="form-price-input">
+                            <div class="form-input form-select form-select-small" ng-controller="DropdownCtrl">
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="currency='€'">
+                                {{currency}} 
+                            </a>	
+                           <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">		
+                                <li><a href="#" ng-class= "active('£', currency)"  ng-click="currency='£'">£</a></li>
+                                <li><a href="#" ng-class= "active('€', currency)"  ng-click="currency='€'">€</a></li>
+                                <li><a href="#" ng-class= "active('$', currency)"  ng-click="currency='$'">$</a></li>
+                           </ul>
+                            
+                        </div>
+                    </div>
+                            <div class="form-input">
+                                <input type="text" class="form-control form-control-icon" placeholder="e.g. 9.99">
+                                <span class="form-icon question-icon"></span>
+                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                            </div>
+                        </div>
+                         </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                 <label>Description <span class="req">(compulsory)</span></label>
+            <div class="form-input form-textarea">
+                <div class="textarea">
+                    <textarea class="form-control" placeholder="Enter a description for this deal" style="height:146px;"></textarea>
+                </div>
+                <span class="form-icon question-icon"></span>
+                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+            </div>
+        </div>
+            
+                
+    		</div>
+   		</div>
+
+        <div class="col-sm-12 p_rzero_mob">
+        <!-- Edit Deal Left section -->
+        <div class="deal-left-section row">
+        
+           <div class="col-sm-12 col-md-6 p_rzero_mob">
+            
+            <div class="row image_upload_section">
+             
+             <div class="col-md-5 col-sm-4">
+            <!-- Image gallery -->
+            <div class="image-gallery form-group m_zero">
+                <label>Image <span class="optional">(optional)</span></label>
+                <div class="image-group">
+                    <div class="image">
+                        <a href="#">
+                            <img src="assets/images/newdeal-pop-img.jpg" />
+                        </a>
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+            
+             <div class="col-md-7 col-sm-8 p_left_zero_web">
+                <!-- //Image gallery -->
+                <div class="form-group m_top20">
+                    <input class="btn btn-block blue-btn" type="button" value="upload image ..." />
+                </div>
+                
+                <div class="form-group m_zero">
+                <small class="font_size14grey">or enter image URL</small>
+                    <div class="form-input">
+                        <input type="text" class="form-control" placeholder="http://www.">
+                        <span class="form-icon question-icon"></span>
+                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+             </div>
+             
+            </div>
+             
+             <div class="image-instruction">
+                    Allowed formats: Jpeg, Png, Bmp. Minimum dimensions: 640x640px
+                </div>
+            
+           </div>
+           
+           <div class="col-sm-12 col-md-6 p_rzero_mob"> 
+            
+            <div class="form-group cal_left">
+            <label>Expiry Date  <span class="optional">(optional)</span></label>
+             <div class="form-input" ng-click="open2()">
+                    <!--<input type="text" class="form-control form-control-icon" ng-click="calendar_open=!calendar_open" placeholder="dd/mm/yyyy">-->
+                    
+                    <input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                	uib-datepicker-popup="{{format}}" ng-model="formData.fromDate" 
+                                    is-open="popup2.opened" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats"/>
+                                    
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                </div>
+            
+        </div>
+        
+        	<div class="form-group">
+            	<label>Add this deal to a Collection  <span class="optional">(optional)</span></label>
+                  <div class="form-input input-dropdown" uib-dropdown="1">
+                    <input type="text" class="form-control form-control-icon" placeholder="{{ suggestions }} " data-toggle="dropdown" uib-dropdown-toggle ng-init="suggestions='Type Collection’s name'" />
+                    <div class="input-suggestion-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <ul>
+                            <li><a href="#" ng-class= "active('Lorem', suggestions)"  ng-click="suggestions='Lorem'"><strong>Lor</strong>em <span class="notification newTxt">NEW</span></a></li>
+                            <li><a href="#" ng-class= "active('calorifero', suggestions)"  ng-click="suggestions='calorifero'">ca<strong>lor</strong>ifero <span class="notification">existing</span></a></li>
+                            <li><a href="#" ng-class= "active('malore', suggestions)"  ng-click="suggestions='malore'">ma<strong>lor</strong>e <span class="notification">existing</span></a></li>
+                        </ul>
+                    </div>		
+                    <span class="form-icon question-icon"></span>
+                    <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                 </div>
+            
+        	</div>
+        
+        </div>
+        </div>
+        <!-- Edit Deal Left section -->
+        </div>
+	</div> 
+    
+    
+            <div class="clearfix"></div>
+           
+           	<div class="form-group m_zero">
+           <div class="row">
+           
+          	<div class="col-sm-6">
+            	<div class="custom-checkboxbtn checkbox">
+              <label><input type="checkbox" class="ng-pristine ng-untouched ng-valid ng-empty" value="proper" name="checkbox" ng-model="properties">
+                       <span class="lbl grey_checkbox">Notify me when this deal receives a comment</span> </label>
+                      </div>
+		    </div>
+          
+             <div class="col-sm-3">
+               <button type="button" class="gray_dark_btn btn modal-btn m_btm10">cancel</button>
+              </div>  
+             <div class="col-sm-3">
+              <button type="button" class="btn purple_bg_btn modal-btn m_btm10">save changes</button>
+             </div>         
+          </div>
+            </div>
+             
+        </div>		
+    </div>
+    <!-- //Default Form -->
+    
+
+
+</div>
