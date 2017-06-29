@@ -1,0 +1,51 @@
+<!-- Breadcrumb -->
+<nav class="category-breadcrumb" role="navigation">
+      <!-- Right Nav -->
+       <ul class="breadcrumb-nav clearfix" ng-controller="DropdownCtrl">
+           
+            <li class="dropdown hidden-xs hidden-sm hidden-md" uib-dropdown="1">
+                <h2>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle  ng-click="toggleDropdown()">Your Collections </a>
+                </h2>
+                
+                <ul class="dropdown-menu category-menu scrollarea" uib-dropdown-menu aria-labelledby="simple-dropdown" 
+				ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height: 320px;">
+                	<li><a href="user-shouts.html">Your Shouts <span class="notifications">999</span></a></li>
+                    <li><a href="votes.html">Your Votes <span class="notifications">999</span></a></li>
+                    <li><a href="user-collection.html">Your Collections <span class="notifications">999</span></a></li>
+                    <li><a href="user-wishlist.html">Your Wishlist <span class="notifications">999</span></a></li>                  
+                    <li><a href="friends.html">Your Friends <span class="notifications">999</span></a></li>
+                    <li><a href="notifications.html">Notificactions <span class="notifications red">999</span></a></li>
+                    <li><a href="user-messages.html">Messages <span class="notifications red">999</span></a></li>
+                    <li><a href="account.html">Settings </a></li>
+                     <li><a href="user-affiliation.html">Affiliate </a></li>
+                  </ul>
+
+            </li>
+             
+            <li class="dropdown hidden-xs hidden-sm" uib-dropdown="1">
+            	<h2>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle  ng-click="toggleDropdown()">Single Collection Name 1</a>
+                </h2>
+               
+                <ul class="dropdown-menu category-menu wrap_text" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                	<li><a href="user-single-collection.html">Single Collection Name 1</a></li>
+                    <li><a href="user-single-collection.html">Single Collection Name 2</a></li>
+                    <li><a href="user-single-collection.html">Single Collection Name 3</a></li>
+                    <li><a href="user-single-collection.html">Single Collection Name 4</a></li>
+                    <li><a href="user-single-collection.html">Single Collection with a very very very long Name 5</a></li>
+                </ul>
+            </li>
+            
+   		</ul>
+        
+        <!-- My feed button -->
+        <div class="feed-notification">
+        	<a href="myfeed-collection.html" class="wifi-icon"></a>
+        	<a href="myfeed-collection.html">My Feed </a>
+            <span class="notifications">9,999</span>  
+         </div>
+        <!-- //My feed button -->
+        
+</nav>

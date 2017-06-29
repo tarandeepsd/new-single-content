@@ -1,0 +1,4 @@
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+::i-block-chrome, .chosen-container .chosen-choices input.form-control{height: 40px;}
+}

@@ -1,0 +1,17 @@
+<!-- Slider Banner -->
+<div ng-controller="CarouselDemoCtrl" class="slide-banner">
+    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+    
+      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" no-transitio="true">
+        <div class="item-slide" style="background-image: url('{{slide.image}}');">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <h4 ng-bind-html="slide.heading"></h4>
+              <p>{{slide.headingText}}</p>
+            </div>
+        </div>
+      </uib-slide>
+      
+    </uib-carousel>
+</div>
+<!-- //Slider Banner -->

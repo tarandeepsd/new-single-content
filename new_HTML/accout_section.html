@@ -1,0 +1,1144 @@
+
+ 
+<!-- Top Section Mobile -->
+	<div class="hidden-lg hidden-md mobile-product-filter">
+                  
+                        <!-- Show all -->
+                        <div class="toptab-box filter-showtab">
+                        	<div class="sortby-filter" ng-controller="DropdownCtrl">
+                           	 	<label>Checklist</label>
+                            	<!-- Custom Dropdown -->
+                                <div class="show-dropdown">
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="showcat='Deals'; value='9,999'">
+                                            {{ showcat }} <span> {{ value }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                           <li><a href="#" ng-class= "active('Products', showcat)"  ng-click="showcat='Products'; value='99,999'">Preferences</a></li>
+                                           <li><a href="#" ng-class= "active('Deals', showcat)"  ng-click="showcat='Deals'; value='9,999'">Favourite Categories  <span>2</span></a></li>
+                                           <li><a href="#" ng-class= "active('Tips', showcat)"  ng-click="showcat='Tips'; value='999'"> Interests  <span>2</span></a></li>
+                                           <li><a href="#" ng-class= "active('Discussions', showcat)"  ng-click="showcat='Discussions'; value='99'">Favourite Shops <span>2</span></a></li>
+                                           <li><a href="#" ng-class= "active('Collections', showcat)"  ng-click="showcat='Collections'; value='99'">Favourite Countries <span>2</span></a></li>
+                                           <li><a href="#" ng-class= "active('Shops', showcat)"  ng-click="showcat='Shops'; value='1'">Size </a></li>
+                                        </ul>
+                                    </div>
+                                 </div>
+                             <!-- // Custom Dropdown -->
+                        </div>
+                        </div>
+                        <!-- //Show all -->
+                           
+                        <div class="toptab-box top-filter-block">
+                        	<div class="filter-icon">
+                            	<a href="#" ng-click="filter_show=!filter_show"> <img src="assets/images/filter-icon.png" /></a>
+                            </div>
+                        	<div class="filter-tab">
+                                <!-- Tab -->
+                                <div class="sortby-filter sort-tab" ng-controller="DropdownCtrl">
+                                    <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="sorttab='All'; count=''">
+                                        {{ sorttab }} <span> {{ count }}</span>
+                                    </a>			
+                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('preferences', sorttab)" ng-click="sorttab='Preferences';">Preferences</a></li>
+                                        <li><a href="#" ng-class= "active('general', sorttab)" ng-click="sorttab='General';">General</a></li>
+                                        <li><a href="#" ng-class= "active('social', sorttab)"  ng-click="sorttab='Social';" >Social</a></li>
+                                        <li><a href="#" ng-class= "active('account', sorttab)"  ng-click="sorttab='Account'">Account</a></li>
+                                        <li><a href="#" ng-class= "active('blocked_content', sorttab)"  ng-click="sorttab='Blocked Content'">Blocked Content</a></li>
+                                        
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            </div>  
+                                 <!-- //Tab -->
+                                <!-- Sort By Filter -->
+                                <div class="sortby-filter sortby-filter-mobile" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="sortby='Alphabetical'; ascdsc='descending'">
+                                        {{ sortby }} <span> {{ ascdsc }}</span>
+                                    </a>			
+                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active1('Alphabetical', sortby)"  ng-click="sortby='Alphabetical'; ascdsc='ascending'">Alphabetical <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Alphabetical', sortby)"  ng-click="sortby='Alphabetical'; ascdsc='descending'">Alphabetical <span>descending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Date', sortby)"  ng-click="sortby='Date'; ascdsc='ascending'">Date <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Date', sortby)"  ng-click="sortby='Date' ascdsc='descending'">Date <span>descending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('DB Value', sortby)"  ng-click="sortby='DB Value'; ascdsc='ascending'">DB Value <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('DB Value', sortby)"  ng-click="sortby='DB Value' ascdsc='descending'">DB Value <span>descending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Discount', sortby)"  ng-click="sortby='Discount'; ascdsc='ascending'">Discount <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Discount', sortby)"  ng-click="sortby='Discount' ascdsc='descending'">Discount <span>descending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Price', sortby)"  ng-click="sortby='Price'; ascdsc='ascending'">Price <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Price', sortby)"  ng-click="sortby='Price' ascdsc='descending'">Price <span>descending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Expiry Date', sortby)"  ng-click="sortby='Expiry Date'; ascdsc='ascending'">Expiry Date <span>ascending</span></a></li>
+                                        <li><a href="#" ng-class= "active1('Expiry Date', sortby)"  ng-click="sortby='Expiry Date' ascdsc='descending'">Expiry Date <span>descending</span></a></li>
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            </div>  
+                                <!-- //Sort By Filter -->
+                        	</div>
+                        	
+                        </div>
+                        
+                        
+                    </div>
+<!-- //Top Section Mobile -->
+
+<!-- Sort By Filter -->
+  <div class="sortby-filter hidden-xs hidden-sm" ng-controller="DropdownCtrl">
+                	<label class="hidden-xs">Sort by</label>
+                    <!-- Custom Dropdown -->
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical Order'; ascdsc='descending'">
+                            {{ sortby }} <span> {{ ascdsc }}</span>
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "active1('Alphabetical Order', sortby)"  ng-click="sortby='Alphabetical Order'; ascdsc='ascending'">Alphabetical Order <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Alphabetical Order', sortby)"  ng-click="sortby='Alphabetical Order'; ascdsc='descending'">Alphabetical Order <span>descending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Date', sortby)"  ng-click="sortby='Date'; ascdsc='ascending'">Date <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Date', sortby)"  ng-click="sortby='Date' ascdsc='descending'">Date <span>descending</span></a></li>
+                            <li><a href="#" ng-class= "active1('DB Value', sortby)"  ng-click="sortby='DB Value'; ascdsc='ascending'">DB Value <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('DB Value', sortby)"  ng-click="sortby='DB Value' ascdsc='descending'">DB Value <span>descending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Discount', sortby)"  ng-click="sortby='Discount'; ascdsc='ascending'">Discount <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Discount', sortby)"  ng-click="sortby='Discount' ascdsc='descending'">Discount <span>descending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Price', sortby)"  ng-click="sortby='Price'; ascdsc='ascending'">Price <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Price', sortby)"  ng-click="sortby='Price' ascdsc='descending'">Price <span>descending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Expiry Date', sortby)"  ng-click="sortby='Expiry Date'; ascdsc='ascending'">Expiry Date <span>ascending</span></a></li>
+                            <li><a href="#" ng-class= "active1('Expiry Date', sortby)"  ng-click="sortby='Expiry Date' ascdsc='descending'">Expiry Date <span>descending</span></a></li>
+                        </ul>
+                    </div>
+                     <!-- // Custom Dropdown -->
+                </div>  
+<!-- //Sort By Filter -->
+           
+<!-- Category Content -->
+  <uib-tabset active="active" ng-class="{'active-mobile':active_mobile}">
+                    <uib-tab index="0">
+                        <uib-tab-heading>Preferences</uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            	<div ng-include="'preferences.html'"></div>
+                           </div>
+                    </uib-tab>
+                    <uib-tab index="1" >
+                        <uib-tab-heading> General </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            <div ng-include="'general.html'"></div>
+                        </div>
+                        
+                    </uib-tab>
+                    <uib-tab index="2" >
+                        <uib-tab-heading> Social </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            <div ng-include="'social.html'"></div>
+                        </div>
+                    </uib-tab>
+                    <uib-tab index="3">
+                        <uib-tab-heading> Account </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                            <div ng-include="'account_tab.html'"></div>
+                        </div>
+                    </uib-tab>
+                    
+                    <uib-tab index="4">
+                        <uib-tab-heading> Blocked Content <span class="badge">999</span> </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends"> 
+                            <div ng-include="'blocked_content.html'"></div>
+                        </div>
+                    </uib-tab>
+                    
+                </uib-tabset>
+<!-- //Category Content -->
+                
+<!--<div class="tab_section">
+	<ul class="nav nav-tabs">
+    	<li><a href="#">Preferences </a></li>
+        <li class="active"><a href="#">General </a></li>
+        <li><a href="#">Social </a></li>
+        <li><a href="#"> Account</a></li>
+        <li><a href="#">Blocked Content <span class="badge">999</span> </a></li>
+    </ul>
+    
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="preferences">...</div>
+        <div role="tabpanel" class="tab-pane" id="general">
+        	<div class="panel panel-default form-horizontal form_area m_zero">
+            		  
+                <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Newsletter <small class="font_14grey pull-right red_font">I do not want to receive the Shout Newsletter</small>
+                                 <small class="font_14grey pull-right font_green">I want to receive the Shout Newsletter</small></p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row General" style="display:none;">
+                      		
+                            <p><small class="font_14grey">I want to receive:</small></p> 
+                            <div class="row">
+                            	
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top15">
+                                        <label> <input type="checkbox"> <span class="lbl">The Deal Newsletter</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top15">
+                                        <label> <input type="checkbox"> <span class="lbl">The Monthly Newsletter</span></label>
+                                     </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <ul class="custom-radiobtn">
+                            	<li><label><input type="radio" name="radio"><span class="lbl">Daily</span></label></li>
+                                <li><label><input type="radio" name="radio"><span class="lbl">Weekly</span></label></li>
+                             <li><label><input type="radio" name="radio"><span class="lbl">Every 15 Days</span></label></li>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"><p class="font_14grey">Do you want to receive personalised recommendations in your Newsletter? <a href="#">Enter your Preferences</a></p></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group row">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div></div> 
+                            </div> 
+                      </div>
+                      
+                      
+                </div>
+                	  
+                <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Private Messages </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row General" style="display:none;">
+                      		
+                            <p><small class="font_14grey">I want to receive Private Messages from:</small></p> 
+                            
+                            <div class="row">
+                            	
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top15">
+                                        <label> <input type="checkbox"> <span class="lbl">My Friends</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top15">
+                                        <label> <input type="checkbox"> <span class="lbl">Shouters that follow me</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">Shouters I follow</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">All the other Shouters</span></label>
+                                     </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"><p class="font_14grey m_top23">Shout Team will always be able to write you Private Messages</p></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group row">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div></div> 
+                            </div> 
+                      </div>
+                      
+                      
+                </div>
+                
+                	  
+                <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Notifications on Site </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row General" style="display:none;">
+                      		
+                            <p><small class="font_14grey">Send me a notification:</small></p> 
+                            
+                            <ul class="m_top15 row">
+                            	
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when I receive a new private message</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Review, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when I achieve a new badge</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Shouter starts following my profile</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when I become friend with another Shouter</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when new features are available on Shout.eu</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Review of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10 disable_checkbox">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <div class="clearfix"></div>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group row">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div></div> 
+                            </div> 
+                      </div>
+                      
+                </div>
+                	  
+                <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Email Notifications </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row General" style="display:none;">
+                      		
+                            <p><small class="font_14grey">Send me an email notification:</small></p> 
+                            
+                            <ul class="m_top15 row">
+                            	
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when I receive a new private message</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Review, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when I achieve a new badge</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Shouter starts following my profile</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when I become friend with another Shouter</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when new features are available on Shout.eu</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Review of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10 disable_checkbox">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <div class="clearfix"></div>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group row">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div></div> 
+                            </div> 
+                      </div>
+                      
+                </div>
+                
+                	  
+                <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Tooltips</p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row General" style="display:noned;">
+                          <ul class="custom-radiobtn p_zero">
+                            <li><label><input type="radio" name="radio"><span class="lbl">Show always</span></label></li>
+                            <li><label><input type="radio" name="radio"><span class="lbl">Do not show</span></label></li> 
+                          </ul>
+                            
+                            <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                       
+                      </div>
+                      
+                      
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane active" id="social">
+        	<div class="panel panel-default form-horizontal form_area m_zero">
+            		  
+                     <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                        <div class="col-sm-4 col-xs-9"> 
+                            <div class="social_media">
+                                <a class="fb" href="#"><span></span> register with Facebook 
+                                	<em class="affiliate-icon">£</em></a>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-8 col-xs-3"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row social_connect" style="display:noned;">
+                      		<p class="m_btm20"><small class="font_14grey">Share automatically on Facebook:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Shouts</p> </div>
+                                        
+                                        <div class="col-sm-4">
+                                            <div ng-controller="Modaldisconnnect">
+                                            <a href="#" class="btn btn_disable" ng-click="opendisconnect()">disable <em class="affiliate-icon">-</em></a>
+                                          </div>
+                      
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Collections I add to my Favourite Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Comments</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Categories I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Votes</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shops I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouts I add to my Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouters I start to follow</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable btn_enable">disable <em class="affiliate-icon">£</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      
+                      
+                </div>
+                
+                	 <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                        <div class="col-sm-4 col-xs-9"> 
+                            <div class="social_media">
+                                <a class="tw" href="#"><span></span> register with Twitter <em class="affiliate-icon">£</em></a>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-8 col-xs-3"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row social_connect" style="display:none;">
+                      		<p class="m_btm20"><small class="font_14grey">Share automatically on Facebook:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Shouts</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Collections I add to my Favourite Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Comments</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Categories I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Votes</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shops I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouts I add to my Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouters I start to follow</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable btn_enable">disable <em class="affiliate-icon">£</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      
+                      <div class="clearfix"></div>
+                      
+                </div>
+                
+                	 <div class="user_info_box">
+                     
+                	  <div class="form-group">
+                        <div class="col-sm-4 col-xs-9"> 
+                            <div class="social_media">
+                                
+                                <a class="gplus" href="#"><span></span> register with Google+ <em class="affiliate-icon">£</em></a>
+                                <div class="clearfix"></div>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-8 col-xs-3"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="row social_connect" style="display:none;">
+                      		<p class="m_btm20"><small class="font_14grey">Share automatically on Facebook:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Shouts</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Collections I add to my Favourite Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Comments</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Categories I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>My Votes</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shops I add to my Preferences</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouts I add to my Collections</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon">-</em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8"><p>The Shouters I start to follow</p> </div>
+                                        <div class="col-sm-4"><a href="#" class="btn btn_disable btn_enable">disable <em class="affiliate-icon">£</em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      
+                      <div class="clearfix"></div>
+                      
+                </div>
+                     
+            </div>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane" id="account">
+        	
+            <div class="panel panel-default form-horizontal form_area m_zero">
+            	
+                <div class="user_info_box">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+                        <div class="col-sm-8"> <p>Username</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:noned;">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" value="Username"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter your password to confirm changes"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      <div class="cancel_btn_group">
+                      <div  ng-controller="ModalDemoCtrl">
+                          <a href="#" class="btn btn-default" ng-click="open('sm_new')">cancel</a>
+                        
+            				<script type="text/ng-template" id="myModalContent.html">
+		<div class="modal-header">
+		   <button type="button" class="close" ng-click="cancel()"></button>
+		</div>
+			
+			<div class="modal-body">
+        	<h3><span>Unsaved element</span></h3>
+            
+	    <form novalidate class="registerForm" name="registerForm" ng-init = "submitForm=0">
+            <div class="form_area">
+				<p class="text-center grey_text">There are changes that you did not save.<br/> Do you want to quit without saving?</p>
+				<button class="btn btn-block register_btn m_top20" type="button" ng-click="ok()">no, save my changes</button>
+				<button class="btn register_btn btn-block btn_red m_top10" type="button" ng-click="cancel()">yes, quit and do not save</button>
+            </div>            
+	    </form>
+	    </div>
+	  
+	  </script>
+            		  </div>
+            
+                          <a href="#" class="btn btn_purple">save</a>
+                          
+                           
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                <div class="user_info_box">
+                	  <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email Address</label>
+                        <div class="col-sm-8"> <p>email@example.com</p> </div>
+                        <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" value="email@example.com"/>
+                            <a class="input-group-addon question-addon" href="#"></a>  
+                            <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter your password to confirm changes"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      
+                </div>
+                  
+                <div class="user_info_box b_btm0">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-8"> <p>••••••••••</p> </div>
+                       
+                        <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                          
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="text" class="form-control" value="Enter your old password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      		
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="text" class="form-control" value="Enter your new password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="text" class="form-control" value="Re-enter new password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      
+                </div>
+                     
+            </div>
+            
+            <div class="panel panel-default form-horizontal form_area m_top20">
+            	
+                	<div class="user_info_box">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your location</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                                <select class="form-control">
+                                    <option value="Select your Family Status ">Select your Family Status </option>
+                                    <option value="Your Family Status ">Your Family Status </option>
+                                    <option value=" Family Status "> Family Status </option>
+                                </select>
+                                 <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+            
+                          
+                            </div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter City or Postcode"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                	<div class="user_info_box">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Mobile Number </label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your mobile phone number</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                                <select class="form-control">
+                                    <option value="Select your Family Status ">Select your Family Status </option>
+                                    <option value="Your Family Status ">Your Family Status </option>
+                                    <option value=" Family Status "> Family Status </option>
+                                </select>
+                                 <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+            
+                          
+                            </div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter Mobile Telephone Number"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                	<div class="user_info_box">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Age </label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your age</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                            <div class="col-sm-6"> 
+                            <div class="input-group"> 
+                                <input type="text" class="form-control" placeholder="Enter your age in number form, for example: 34"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                            
+                      </div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                	<div class="user_info_box">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Gender </label>
+                        <div class="col-sm-8"> <p class="orange_text">select your gender</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                            <div class="col-sm-6"> 
+                                   <div class="custom-radiobtn"> 
+                                        <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                                        <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+                                    </div>
+                      		</div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                	<div class="user_info_box b_btm0">
+                	<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Family </label>
+                        <div class="col-sm-8"> <p class="orange_text">select your family status</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="edit_section row location-popup" style="display:none;">
+                      
+                            <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                                <select class="form-control correct">
+                                    <option value="Married with Children "> Single</option>
+                                    <option value="Your Family Status ">Married with Children </option>
+                                    <option value=" Family Status "> Family Status </option>
+                                </select>
+                                 <a class="input-group-addon question-addon correct" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                                </div>
+            
+                            </div>
+                      </div>
+                      
+                      		<div class="col-sm-4"> 
+                           		<div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                                <select class="form-control default_input">
+                                    <option value="Select your Family Status">Select how many children</option>
+                                    <option value="Your Family Status ">1</option>
+                                    <option value=" Family Status "> 2 </option>
+                                </select>
+                                 <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+            
+                            </div>
+                      		</div>
+                      
+                      		<div class="col-sm-4"> 
+                            <div class="input-group"> 
+                                   <div class="width90p double_input pos_rel">
+                            <select class="form-control default_input">
+                               <option value=""> Child Gender </option> 
+                               <option value=" Girl "> Girl </option>
+                                <option value=" Boy "> Boy </option>
+                            </select>
+                            <input type="text" value="age" class="form-control default_input">
+                            <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                              </div> </div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">
+                          <a href="#" class="btn btn-default">cancel</a>
+                          <a href="#" class="btn btn_purple">save</a>
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                </div>
+                
+                </div>
+                	
+        </div>
+        
+        <div role="tabpanel" class="tab-pane" id="blocked">...</div>
+  </div>
+  
+</div>-->
+

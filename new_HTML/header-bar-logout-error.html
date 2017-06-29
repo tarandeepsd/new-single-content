@@ -1,0 +1,246 @@
+<nav class="navbar navbar-fixed-top header-bar" role="navigation">
+    <div class="navbar-header">
+    	<!-- Logo -->
+        <a class="navbar-brand logo" href="#">
+            <img alt="Shout" src="assets/images/shout_logo_beta.svg">
+        </a>
+        <!-- //Logo -->
+        <!-- Deals DropDown -->
+        <div class="hidden-xs search-deal" ng-controller="DropdownCtrl">
+            <div class="dropdown dropdown-deal" uib-dropdown="1">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="deals='Deals'">
+		    	{{ deals }}
+                    <img src="assets/images/icons/dropdown_arrow_open.svg" alt="Shout arrow open" class="arrow open" />
+                    <img src="assets/images/icons/dropdown_arrow_close.svg" alt="Shout arrow open" class="arrow close" />
+				</a>			
+				<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                	<li><a href="#" ng-class= "active('Products', deals)"  ng-click="deals='Products'">Products</a></li>
+                    <li><a href="#" ng-class= "active('Deals', deals)" ng-click="deals='Deals'">Deals</a></li>
+                    <li><a href="#" ng-class= "active('Tips', deals)" ng-click="deals='Tips'">Tips</a></li>
+                    <li><a href="#" ng-class= "active('Discussions', deals)" ng-click="deals='Discussions'">Discussions</a></li>
+                    <li><a href="#" ng-class= "active('Collections', deals)" ng-click="deals='Collections'">Collections</a></li>
+                    <li><a href="#" ng-class= "active('Shops', deals)" ng-click="deals='Shops'">Shops</a></li>
+                    <li><a href="#" ng-class= "active('Shouters', deals)" ng-click="deals='Shouters'">Shouters</a></li>
+                    <li><a href="#" ng-class= "active('Categories', deals)" ng-click="deals='Categories'">Categories</a></li>
+                    <li><a href="#" ng-class= "active('Action', deals)" ng-click="deals='Action'">Action</a></li>
+                </ul>
+            </div>
+            </div>
+        <!-- //Deals DropDown -->
+        
+       <!-- Right Nav -->
+       <ul class="nav navbar-nav navbar-right" ng-controller="DropdownCtrl">
+       <!-- search icon -->
+       <li class="hidden-lg hidden-sm hidden-md search-icon dropdown" ng-class="{'toggle-class':toggleClass}" ng-init="toggleClass=false" >
+            <a href="#" class="dropdown-toggle"  ng-click="toggleClass = !toggleClass">
+                <img src="assets/images/icons/search_lens_mobile.svg" />
+            </a>
+             
+          <!-- Mobile Search Form -->
+            <div class="search-form mobile-search-form" ng-class="{'toggle-class':toggleClass}">
+                <form class="navbar-form navbar-left" role="search">
+                     <!-- Deals DropDown -->
+                <div class="search-deal" ng-controller="DropdownCtrl">
+                <div class="dropdown dropdown-deal" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" uib-dropdown-toggle ng-init="deals='Deals'">
+                		{{ deals }}
+                        <img src="assets/images/icons/dropdown_arrow_open.svg" alt="Shout arrow open" class="arrow open" />
+                        <img src="assets/images/icons/dropdown_arrow_close.svg" alt="Shout arrow open" class="arrow close" />
+                    </a>			
+                    <ul class="dropdown-menu clearfix" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li><a href="#" ng-class= "active('Products', deals)"  ng-click="deals='Products'">Products</a></li>
+                        <li><a href="#" ng-class= "active('Deals', deals)" ng-click="deals='Deals'">Deals</a></li>
+                        <li><a href="#" ng-class= "active('Tips', deals)" ng-click="deals='Tips'">Tips</a></li>
+                        <li><a href="#" ng-class= "active('Discussions', deals)" ng-click="deals='Discussions'">Discussions</a></li>
+                        <li><a href="#" ng-class= "active('Collections', deals)" ng-click="deals='Collections'">Collections</a></li>
+                        <li><a href="#" ng-class= "active('Shops', deals)" ng-click="deals='Shops'">Shops</a></li>
+                        <li><a href="#" ng-class= "active('Shouters', deals)" ng-click="deals='Shouters'">Shouters</a></li>
+                        <li><a href="#" ng-class= "active('Categories', deals)" ng-click="deals='Categories'">Categories</a></li>
+                        <li><a href="#" ng-class= "active('Action', deals)" ng-click="deals='Action'">Action</a></li>
+                    </ul>
+                </div>
+                </div>
+                <!-- //Deals DropDown -->
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search by keyword or Amazon UK URL ...">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-search"><img class="hidden-xs" src="assets/images/icons/search_lens.svg" alt="Shout search" /><span class="hidden-lg hidden-sm hidden-md">search</span></button>
+               </form>
+            </div>
+            <!-- //Search Form -->
+        </li>
+       <!-- Login Section -->
+        
+       <li class="hidden-lg hidden-md" ng-controller="Modalsignup">
+             <a href="#" ng-click="openSignup()"><img src="assets/images/icons/default_avatar.svg" width="25" /></a>
+        </li>
+        <li ng-controller="ModalsignupError" class="signup_btn hidden-xs hidden-sm">
+                <a href="#" ng-click="openError()">Sign Up</a>
+        </li>
+        <li ng-controller="ModalLogin" class="login_btn hidden-xs hidden-sm">
+            <a href="#" ng-click="openLogin()">Log In</a>
+        </li>
+       <li class="shout_plus" ng-controller="ModalNewDealPresentOnline">
+            <a href="#" ng-click="openNewDealPresentOnline('shoutnewdeal')">
+           		<span class="icon-plusbutton">
+                	<img src="assets/images/svg/plus_white.svg"/>
+                    <em class="effiliaction"></em>
+                </span>
+            </a>
+        </li>
+        
+        <li class="dropdown humburger-icon" scroller-height>
+        	<a href="#" class="dropdown-toggle">
+            	<img src="assets/images/icons/burger_new.svg" />
+            </a>
+           <ul class="dropdown-menu uidropdown" ng-scrollbars ng-scrollbars-config="callHeightConfig"  ng-style="callHeight" >
+                <li class="dropdown category-menu" id="scroller_category" >
+                    <a href="#" class="dropdown-toggle">Categories</a>
+                    <ul class="dropdown-menu">
+                    	<li class="dropdown" >
+                        	<a href="#" class="dropdown-toggle">Appliances</a>
+                             <ul class="dropdown-menu">
+                             	<li class="dropdown">
+                                	<a href="#" class="dropdown-toggle">Level 2.1</a>
+                                	<ul class="dropdown-menu">
+                                    	<li class="dropdown" >
+                                        	<a href="#" class="dropdown-toggle">Level 3.1</a>
+                                        	<ul class="dropdown-menu">
+                                            	<li><a href="#">Level 4.1</a></li>
+                                        		<li><a href="#">Level 4.2</a></li>
+                                        		<li><a href="#">Level 4.3</a></li>
+                                             </ul>
+                                        </li>
+                                        <li><a href="#">Level 3.2</a></li>
+                                        <li><a href="#">Level 3.3</a></li>
+                                     </ul>
+                                </li>
+                                <li><a href="#">Level 2.2</a></li>
+                                <li><a href="#">Level 2.3</a></li>
+                             </ul>
+                        </li>
+                        <li><a href="#">Baby</a></li>
+                        <li><a href="#">Books, Music & Films</a></li>
+                        <li><a href="#">Clothing & Fashion</a></li>
+                        <li><a href="#">Computers</a></li>
+                        <li><a href="#">Electronics & Photography</a></li>
+                        <li><a href="#">Food & Drink</a></li>
+                        <li><a href="#">Handbags, Luggage & Backpacks</a></li>
+                        <li><a href="#">Health & Beauty</a></li>
+                        <li><a href="#">Hobbies & Collectables</a></li>
+                        <li><a href="#">Home & Garden</a></li>
+                        <li><a href="#">Motors & Boating</a></li>
+                        <li><a href="#">Musical Intruments</a></li>
+                        <li><a href="#">Optics, Watches & Jewellery</a></li>
+                        <li><a href="#">Pet Supplies</a></li>
+                        <li><a href="#">Schoolo & Office</a></li>
+                        <li><a href="#">Services & Activities</a></li>
+                        <li><a href="#">Sport & Leisure</a></li>
+                        <li><a href="#">Telephony</a></li>
+                        <li><a href="#">Toys & Games</a></li>
+                        <li><a href="#">Travel & Holidays</a></li>
+                        <li><a href="#">Videogames & Consoles</a></li>
+
+                	</ul>
+                </li>
+ 
+                <li class="product-icons">
+                	<ul class="clearfix">
+                        <li>
+                        	<a href="#">
+                            	<img src="assets/images/icons/myfeed_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/myfeed_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/myfeed_menu_onclick.svg" class="active" />
+                                My Feed
+                            </a>
+                        </li>
+                        <li><a href="#">
+                            	<img src="assets/images/icons/top_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/top_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/top_menu_onclick.svg" class="active" />
+                            	Top Deals</a>
+                         </li>
+                        <li><a href="#">
+                            	<img src="assets/images/icons/deals_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/deals_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/deals_menu_onclick.svg" class="active" />
+                            	Deals</a>
+                        </li>
+                         <li><a href="#">
+                         		<img src="assets/images/icons/products_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/products_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/products_menu_onclick.svg" class="active" />
+                            	Products</a>
+                         </li>
+                        <li><a href="#">
+                       			<img src="assets/images/icons/tips_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/tips_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/tips_menu_onclick.svg" class="active" />
+                                Tips</a>
+                        </li>
+                        <li><a href="#">
+                        		<img src="assets/images/icons/discussion_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/discussion_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/discussion_menu_onclick.svg" class="active" />
+                                Discussions</a>
+                        </li>
+                        <li><a href="#">
+                        		<img src="assets/images/icons/collections_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/collections_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/collections_menu_onclick.svg" class="active" />
+                                Collections</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">How Shout works</a></li>
+                <li><a href="#">Affiliate Program <span class="affiliate-icon"></span></a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+                <li class="social-icons">
+                	<ul class="clearfix">
+                    	<li><a href="#">
+                        		<img src="assets/images/icons/facebook_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/facebook_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/facebook_menu_onclick.svg" class="active" />
+                         	</a>
+                         </li>
+                        <li><a href="#">
+                        		<img src="assets/images/icons/twitter_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/twitter_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/twitter_menu_onclick.svg" class="active" />
+                         	</a>
+                         </li>
+                        <li><a href="#">
+                        		<img src="assets/images/icons/google_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/google_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/google_menu_onclick.svg" class="active" />
+                         	</a>
+                         </li>
+                        <li><a href="#">
+                        		<img src="assets/images/icons/contact_us_menu_normal.svg" class="normal" />
+                                <img src="assets/images/icons/contact_us_menu_onhover.svg" class="hover" />
+                                <img src="assets/images/icons/contact_us_menu_onclick.svg" class="active" />
+                         	</a>
+                         </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+      </ul>
+      <!-- //Right Nav -->
+      
+    <!-- Seaarch Form -->
+    <div class="search-form hidden-xs">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search by keyword or Amazon UK URL ...">
+            </div>
+            <button type="submit" class="btn btn-default btn-search"><img class="hidden-xs" src="assets/images/icons/search_lens.svg" alt="Shout search" /><span class="hidden-lg hidden-sm hidden-md">search</span></button>
+       </form>
+    </div>
+    <!-- //Search Form -->
+      
+     
+    
+    </div>
+</nav>

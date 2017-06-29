@@ -1,0 +1,64 @@
+<!-- Filter Section -->
+<div class="filter-section hidden-xs hidden-sm checklist_bar">
+    <!-- Filter Block -->
+    <div class="filter-block search-fliter">
+      <h3 class="title">Show results for</h3>
+      <ul>
+      	<li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Time Range <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block clearfix" uib-collapse="isCollapsed">
+            	<!-- Custom Dropdown -->
+                <div ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="timerange='All Time'">
+                        {{ timerange }} 
+                    </a>			
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li><a href="#" ng-class= "active('All Time', timerange)"  ng-click="timerange='All Time'">All Time</a></li>
+                        <li><a href="#" ng-class= "active('Last Month', timerange)" ng-click="timerange='Last Month'">Last Month</a></li>
+                        <li><a href="#" ng-class= "active('Last 3 Months', timerange)" ng-click="timerange='Last 3 Months'">Last 3 Months</a></li>
+                        <li><a href="#" ng-class= "active('Last 6 Months', timerange)" ng-click="timerange='Last 6 Months'">Last 6 Months</a></li>
+                        <li><a href="#" ng-class= "active('Last Year', timerange)" ng-click="timerange='Last Year'">Last Year</a></li>
+                        <li><a href="#" ng-class= "active('Custom Range', timerange)" ng-click="timerange='Custom Range'">Custom Range</a></li>
+                    </ul>
+                </div>
+                </div>
+          		 <!-- // Custom Dropdown -->
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+      </ul>  
+    </div>
+    <div class="filter-block">
+      <h3 class="title">Checklist</h3>
+		
+        <ul class="checklist">
+        	   <li><label><a href="account.html">Preferences</a></label></li>
+               <li><a href="account.html">Favourite Categories <small>5</small></a></li>
+               <li><a href="account.html">Interests <small>2</small></a></li>
+               <li><a href="account.html">Favourite Shops <small>2</small></a></li>
+               <li><a href="account.html">Favourite Countries  <small>2</small></a></li>
+               <li><a href="account.html">Size <small class="alert_icon"></small> </a></li>
+               <li><label><a href="account.html">Personal Details</a> </label></li>
+               <li><a href="account.html">Location <small class="alert_icon"></small> </a></li>
+               <li><a href="account.html"> Mobile Number <small class="alert_icon"></small> </a></li>
+               <li><a href="account.html"> Age <small class="alert_icon"></small> </a></li>
+                <li><a href="account.html">Gender <small class="alert_icon"></small> </a></li>
+               <li><a href="account.html"> Family <small class="alert_icon"></small> </a></li>
+               <li><label><a href="account.html">Social</a> </label></li>
+               <li><a href="account.html"> Facebook <small class="alert_icon"></small> </a></li>
+               <li><a href="account.html"> Twitter <small class="alert_icon"></small> </a></li>
+              <li><a href="account.html"> Google+ <small class="alert_icon"></small> </a></li>
+        </ul>
+        
+    </div>
+    <!-- //Filter Block -->
+    <!-- Filter Block -->
+     <div ng-include="'filter-top-trending-deal.html'" class="pull-left"></div>
+    <!-- //Filter Block -->
+    
+</div>
+<!-- //FIlter Section -->
+
+

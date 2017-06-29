@@ -1,0 +1,620 @@
+<div class="preferences_section">
+    
+    <div class="panel panel-default clearfix">
+    	<h2 class="fav_text" ng-controller="Modalfavcategories">Favourite Categories: <small>No Favourite Categories added yet</small> <a href="#" class="add_btns" ng-click="openfavcategories('width760')"> <span><img src="assets/images/svg/plus_white.svg" alt=""/></span> add category</a> </h2>
+     
+        <h2 class="fav_text" ng-controller="Modalinterests">Favourite Interests: <span class="badge">999</span> <a href="#" class="add_btns" ng-click="openinterests('width760')"> <span><img src="assets/images/svg/plus_white.svg" alt=""/></span> add interests</a> </h2>
+        
+        <div class="outer_list">
+            <div class="row_list">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="#">Alternative Rock</a></h4>
+                    <small>Interest</small>
+                    <p>How important is this Interest to you??</p>
+                    
+               <!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+                          tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+              </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero select_wdth checkbox_drop_down" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices2='All prices2'">
+                                 {{ prices2 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active': '< £ 10.00'=='prices2'}"  ng-click="prices2='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active': '< £ 20.00'=='prices2'}" ng-click="prices2='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active': '< £ 50.00'=='prices2'}"  ng-click="prices2='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active': '< £ 100.00'=='prices2'}" ng-click="prices2='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active': '< £ 200.00'=='prices2'}"  ng-click="prices2='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active': '< £ 500.00'=='prices2'}" ng-click="prices2='< £ 500.00'"> < £ 500.00</a></li>
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values2='All dB values2'">
+                         {{ values2 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values2'=='values2'}"  ng-click="values2='All dB values2'">All dB values2</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values2'}"  ng-click="values2='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values2'}" ng-click="values2='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values2'}"  ng-click="values2='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values2'}" ng-click="values2='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values2'}"  ng-click="values2='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values2'}" ng-click="values2='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+            <div class="row_list">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="#">Alternative Rock</a></h4>
+                    <small>Interest</small>
+                    <p>How important is this Interest to you??</p>
+                    
+            	<!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+                          tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+          
+                </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero checkbox_drop_down select_wdth" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices3='All prices3'">
+                                 {{ prices3 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active':'< £ 10.00'=='prices3'}"  ng-click="prices3='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 20.00'=='prices3'}" ng-click="prices3='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 50.00'=='prices3'}"  ng-click="prices3='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 100.00'=='prices3'}" ng-click="prices3='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 200.00'=='prices3'}"  ng-click="prices3='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 500.00'=='prices3'}" ng-click="prices3='< £ 500.00'"> < £ 500.00</a></li>
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values3='All dB values3'">
+                         {{ values3 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values3'=='values3'}"  ng-click="values3='All dB values3'">All dB values3</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values3'}"  ng-click="values3='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values3'}" ng-click="values3='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values3'}"  ng-click="values3='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values3'}" ng-click="values3='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values3'}"  ng-click="values3='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values3'}" ng-click="values3='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="fav_text" ng-controller="Modalfavshop">Favourite Shops: <span class="badge">99</span> <a href="#" class="add_btns" ng-click="openfavshop('width760')"> <span><img src="assets/images/svg/plus_white.svg" alt=""/></span> add shops</a> </h2>
+        
+        <div class="outer_list">
+            <div class="row_list">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="retailer-info.html">Amazon UK</a></h4>
+                    <small>Shop</small>
+                    <p>How important is this Interest to you??</p>
+                    
+            	<!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+                          tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+              </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero checkbox_drop_down select_wdth" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices4='All prices4'">
+                                 {{ prices4 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active':'< £ 10.00'=='prices4'}"  ng-click="prices4='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 20.00'=='prices4'}" ng-click="prices4='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 50.00'=='prices4'}"  ng-click="prices4='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 100.00'=='prices4'}" ng-click="prices4='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 200.00'=='prices4'}"  ng-click="prices4='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 500.00'=='prices4'}" ng-click="prices4='< £ 500.00'"> < £ 500.00</a></li>
+
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values4='All dB values4'">
+                         {{ values4 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values4'=='values4'}"  ng-click="values4='All dB values4'">All dB values4</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values4'}"  ng-click="values4='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values4'}" ng-click="values4='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values4'}"  ng-click="values4='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values4'}" ng-click="values4='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values4'}"  ng-click="values4='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values4'}" ng-click="values4='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="fav_text" ng-controller="Modalfavcountries">Favourite Countries: <span class="badge">999</span> <a href="#" class="add_btns" ng-click="openfavcountries('width760')"> <span><img src="assets/images/svg/plus_white.svg" alt=""/></span> add countries</a> </h2>
+        
+        <div class="outer_list">
+            <div class="row_list">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="#"> <span><img src="assets/images/svg/uk-flag.jpg" alt=""/></span> United Kingdom</a></h4>
+                    <small>Country</small>
+                    <p>How important is this Interest to you??</p>
+                    
+              	<!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+                          tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+          
+                </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero checkbox_drop_down select_wdth" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices5='All prices5'">
+                                 {{ prices5 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active':'< £ 10.00'=='prices5'}"  ng-click="prices5='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 20.00'=='prices5'}" ng-click="prices5='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 50.00'=='prices5'}"  ng-click="prices5='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 100.00'=='prices5'}" ng-click="prices5='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 200.00'=='prices5'}"  ng-click="prices5='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 500.00'=='prices5'}" ng-click="prices5='< £ 500.00'"> < £ 500.00</a></li>
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values5='All dB values5'">
+                         {{ values5 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values5'=='values5'}"  ng-click="values5='All dB values5'">All dB values5</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values5'}"  ng-click="values5='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values5'}" ng-click="values5='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values5'}"  ng-click="values5='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values5'}" ng-click="values5='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values5'}"  ng-click="values5='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values5'}" ng-click="values5='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <h2 class="fav_text" ng-controller="Modalfavsize">Sizes: 
+        <span class="badge">999</span> <a href="#" class="add_btns" ng-click="openfavsize('width760')"> <span><img src="assets/images/svg/plus_white.svg" alt=""/></span> add sizes</a> </h2>
+        
+        <div class="outer_list">
+            <div class="row_list">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="#">45 - Men Shoes</a></h4>
+                    <small>Size</small>
+                    <p>How important is this Interest to you??</p>
+                    
+            	<!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+                          tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+            
+                </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero checkbox_drop_down select_wdth" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices6='All prices6'">
+                                 {{ prices6 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active':'< £ 10.00'=='prices6'}"  ng-click="prices6='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 20.00'=='prices6'}" ng-click="prices6='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 50.00'=='prices6'}"  ng-click="prices6='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 100.00'=='prices6'}" ng-click="prices6='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 200.00'=='prices6'}"  ng-click="prices6='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 500.00'=='prices6'}" ng-click="prices6='< £ 500.00'"> < £ 500.00</a></li>
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values6='All dB values6'">
+                         {{ values6 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values6'=='values6'}"  ng-click="values6='All dB values6'">All dB values6</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values6'}"  ng-click="values6='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values6'}" ng-click="values6='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values6'}"  ng-click="values6='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values6'}" ng-click="values6='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values6'}"  ng-click="values6='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values6'}" ng-click="values6='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="outer_list">
+            <div class="row_list border_btm_zero">
+            	<div class="cell_box w_45" ng-controller="ModalRemovepre"><span class="heart_icon" ng-click="openRemovepre('coupon')"></span> </div>
+                <div class="cell_box fillter_cell"> 
+                	<h4><a href="#">33 - Men Shoes</a></h4>
+                    <small>Size</small>
+                    <p>How important is this Interest to you??</p>
+                    
+               <!-- FIlter SLider -->
+                <div class="filter-slider toltip_show clearfix" ng-controller="RangeSliderCtrl">
+                    <span slider
+                          slider-id="rangeSlider"
+                          ng-model="model.second"
+                          value="value.second"
+                         min="0"
+                          max="10"
+                          tooltipseparator="{{ testOptions.tooltipseparator }}"
+     					  tooltipsplit="{{ testOptions.tooltipsplit }}">
+                        </span>
+                </div>
+                <!-- //FIlter SLider -->
+          
+                </div>
+                <div class="cell_box"> 
+                	<p class="add_text">added on</p>
+                    <p class="date_text">29 Nov 2015</p>
+                   	<div class="clearfix"></div>
+                   
+                    <div class="form-input form-select m_right_zero checkbox_drop_down select_wdth" ng-controller="DropdownCtrl" scroller-height>
+                        <ul class="dropdown custom-dropdown customize-dropdown select_wdth m_right_zero">
+                           <li>
+                                <a href="#" class="dropdown-toggle" id="mainDropDown" ng-init="shouts='All Shouts'">
+                                    {{shouts}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    
+                                    <ul>
+                     
+                                        <li ng-class= "active('Deals', shouts)"  ng-click="shouts='Deals'">
+                                           <div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Deals</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Sales', shouts)"  ng-click="shouts='Sales'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Sales</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Coupons', shouts)"  ng-click="shouts='Coupons'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Coupons</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                        <li ng-class= "active('Flyers', shouts)"  ng-click="shouts='Flyers'"><div class="custom-checkboxbtn checkbox">
+                                        		<label><input type="checkbox"><span class="lbl">Flyers</span></label>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                         </ul>
+                    </div>
+                               
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="prices7='All prices7'">
+                                 {{ prices7 }} 
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" ng-class= "{'active':'< £ 10.00'=='prices7'}"  ng-click="prices7='< £ 10.00'"> < £ 10.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 20.00'=='prices7'}" ng-click="prices7='< £ 20.00'"> < £ 20.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 50.00'=='prices7'}"  ng-click="prices7='< £ 50.00'"> < £ 50.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 100.00'=='prices7'}" ng-click="prices7='< £ 100.00'"> < £ 100.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 200.00'=='prices7'}"  ng-click="prices7='< £ 200.00'"> < £ 200.00</a></li>
+                                    <li><a href="#" ng-class= "{'active':'< £ 500.00'=='prices7'}" ng-click="prices7='< £ 500.00'"> < £ 500.00</a></li>
+                                 </ul>
+                            </div>
+                       
+                    <div class="dropdown custom-dropdown select_wdth" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="values7='All dB values7'">
+                         {{ values7 }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active': 'All dB values7'=='values7'}"  ng-click="values7='All dB values7'">All dB values7</a></li>
+                            <li><a href="#" ng-class= "{'active': '>20 (dB)'=='values7'}"  ng-click="values7='> 20dB'"> > 20<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>40 (dB)'=='values7'}" ng-click="values7='>40 (dB)'"> > 40<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>80 (dB)'=='values7'}"  ng-click="values7='> 20dB'"> > 80<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>100 (dB)'=='values7'}" ng-click="values7='>100 (dB)'"> > 100<sup>dB</sup></a></li>
+                            <li><a href="#" ng-class= "{'active': '>140 (dB)'=='values7'}"  ng-click="values7='> 20dB'"> > 140<sup>dB</sup> 
+                            <u class="top_text">TOP SHOUTS</u></a></li>
+                            <li><a href="#" ng-class= "{'active': '>200 (dB)'=='values7'}" ng-click="values7='>200 (dB)'"> > 200<sup>dB</sup></a></li>
+                         </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+  
+</div>

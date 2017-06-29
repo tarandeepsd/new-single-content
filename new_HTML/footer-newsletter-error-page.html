@@ -1,0 +1,41 @@
+<div class="footer-newsletter m_top10">
+    <div class="container-fluid newsletter">
+    	<p>Tired of spending hours looking for amazing deals?</p>
+		<h2>Subscribe to the Shout Newsletter Free!</h2>    
+        <form action="" method="post" role="form">
+        	<div class="newsletter-form clearfix" ng-controller="DropdownCtrl">
+        	<div class="form-group">
+            	<input class="form-control" type="text" id="" name="" placeholder="enter your email address">
+            </div>
+            
+            <!-- DropDown --> 
+            <div class="dropdown" uib-dropdown>
+                <a href="#" class="dropdown-toggle" uib-dropdown-toggle ng-init="newsletter='daily'">
+		    {{ newsletter }}
+                    
+				</a>			
+				<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                	<li><a href="#" ng-class= "active('daily', newsletter)" ng-click="newsletter='daily'">daily</a></li>
+                    <li><a href="#" ng-class= "active('monthly', newsletter)" ng-click="newsletter='monthly'">monthly</a></li>
+                    <li><a href="#" ng-class= "active('yearly', newsletter)" ng-click="newsletter='yearly'">yearly</a></li>
+                </ul>
+            </div>
+            <!-- //DropDown -->
+           
+            <input type="submit" value="subscribe" class="btn hover" />
+            </div>
+        </form>    
+    
+    </div>
+    
+    <!-- Confirmation message -->
+    <div class="container-fluid confirmation-msg">
+    	<h2>
+        	You are now subscribed to Shout Newsletter!
+        </h2> 
+        	<p>We have sent you an email containing the link to confirm your subscription. Not received?</p>
+       
+        <a href="#" class="btn green-btn resetbtn">resend link</a>   
+    </div>
+    <!-- //Confirmation message -->
+</div>

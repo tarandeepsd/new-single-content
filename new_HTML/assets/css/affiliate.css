@@ -1,0 +1,161 @@
+.affiliate-banner{position:relative;}
+.affiliate-banner > img{height:auto;width:100%;}
+.affiliate-banner-txt{bottom:20px;color:#f9f9f9;left:0;position:absolute;right:0;text-align:center;top:65px;}
+.affiliate-banner-txt > h2{font-size:48px;font-weight:300;font-family:'Montserrat';margin:0 0 7px 0;}
+.affiliate-banner-txt > h3{font-size:24px;}
+.affiliate-banner-txt > p{margin:18px 0 0;}
+.affiliate-btn{line-height:54px;background-color:#ffae00;border:none;text-transform:uppercase;border-radius:1.5px;color:#fff;font-size:18px;height:54px;max-width:280px;padding:0 10px;width:100%;}
+.affiliate-btn:hover{color:#fff;}
+.paragraph-rw{text-align:center;padding:10px 167px 17px;}
+.paragraph-rw > p{color:#000;font-size:18px;line-height:30px;margin:0 0 27px;}
+.affiliate-join{background:#0050a0;padding:30px 0;margin-top:50px;}
+.affiliate-join.affiliate-bg{background:#6ab5ac;}
+.affiliate-join-inr{color:#fff;margin:auto;max-width:911px;min-height:56px;padding-right:318px;position:relative;width:100%;}
+.affiliate-join-flip .affiliate-join-inr{padding:0 0 0 318px;}
+.affiliate-join-inr.join-inr2{max-width:685px;}
+.affiliate-join-inr > h2{font-size:30px;font-weight:300;font-family:'Montserrat';padding:12px 0 0;}
+.affiliate-join-inr .affiliate-btn{position:absolute;right:0;top:0;}
+.affiliate-join.affiliate-join-flip .affiliate-btn{left:0;right:auto;}
+.affiliate-feature-blc{margin:50px 0 48px;}
+.affiliate-feature-blc2{margin:100px 0 0;}
+.affiliate-feature-rw{margin:0 0;padding:70px 0;}
+.affiliate-feature-rw:nth-child(even){background:#f4f4f4;}
+.affiliate-feature-blc2 .affiliate-feature-rw:last-child{margin-bottom:48px;}
+.affiliate-feature-txt{float:left;padding:105px 30px 0;width:50%;text-align:center;position:relative;}
+.affiliate-no{bottom:0;left:0;position:absolute;right:0;text-align:center;top:24px;}
+.affiliate-feature-txt > h3{color:#0050a0;font-size:36px;font-weight:400;margin:0 0 7px;}
+.affiliate-feature-txt > h3 span{display:block;}
+.affiliate-feature-txt span:first-child{padding-bottom:15px;}
+.affiliate-feature-txt > p{color:#000;font-size:18px;line-height:40px;}
+.affiliate-feature-pic{float:right;width:50%;text-align:right;}
+.affiliate-feature-pic.center-pic{text-align:center;}
+.affiliate-feature-pic img{display:inline-block;max-width:100%;height:auto;}
+.affiliate-feature-pic.feature-col-flip{float:left;padding:0;text-align:left;}
+.earning-rw{margin:0 0 0px;text-align:center;}
+.subheading{margin:0 auto 20px;max-width:96%;text-align:center;}
+.subheading p{color:#000;font-size:18px;margin:0 0 20px;line-height:30px;}
+.subheading span{display:block;}
+.subheading span.sub-ttl{font-size:14px;color:#999999}
+.earning-inner li{float:left;padding:0 50px;width:33.3%;}
+.earning-col > h4{color:#0050a0;font-size:24px;margin:15px 0 20px;}
+.earning-col > p{color:#000000;font-size:14px;line-height:30px;margin:0 0 9px;}
+.more-link{font-size:14px;}
+.commision-inner{padding:0 20px;}
+.commision-col-row{margin:0 -20px;}
+.commision-tbl{float:left;padding:0 20px;width:50%;overflow:auto;}
+.cmsn-tbl-rw{border-top:1px solid #dfdfdf;display:table;padding:19px 0 17px;width:100%;}
+.cmsn-tbl-cell-1{width:74%;}
+.cmsn-tbl-cell-2{width:15%;}
+.cmsn-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.cmsn-tbl-cell > p{color:#0050a0;padding:0 0 5px;font-size:14px;}
+.cmsn-tbl-cell > span{color:#999999;display:block;font-size:12px;}
+.cmsn-tbl-rw:last-child{border-bottom:1px solid #dfdfdf;}
+.affiliate-tbl-blc{overflow:auto;padding:0 10px;}
+.affiliate-tbl-blc-inr{background:#fff;border:1px solid #dddcda;border-radius:1.5px;-moz-border-radius:1.5px;-webkit-border-radius:1.5px;-o-border-radius:1.5px;display:table;padding:0 20px;width:100%;}
+.affiliate-tbl-blc-inr.bg-none{background:none;border:none;}
+.affiliate-tbl-hd, .affiliate-tbl-hd2, .affiliate-tbl-rw{display:table-row;width:100%;}
+.affiliate-tbl-cell{display:table-cell;text-align:right;border-bottom:1px solid #dfdfdf;padding:15px 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-hd .affiliate-tbl-cell-2, .affiliate-tbl-hd .affiliate-tbl-cell-3{text-align:center;}
+.affiliate-tbl-hd .affiliate-tbl-cell{color:#000000;font-size:14px;padding:20px 0;font-weight:700}
+.affiliate-tbl-cell-2{width:23%;}
+.affiliate-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-hd .affiliate-tbl-cell-2, .affiliate-tbl-hd .affiliate-tbl-cell-3{text-align:center;}
+.affiliate-tbl-cell-2{width:23%;}
+.affiliate-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-hd{padding:20px 0;}
+.affiliate-tbl-hd2{padding:15px 0;}
+.affiliate-tbl-rw, .affiliate-tbl-hd, .affiliate-tbl-hd2{border-bottom:1px solid #dfdfdf;}
+.affiliate-tbl-rw:last-child .affiliate-tbl-cell{border-bottom:none;}
+.affiliate-tbl-rw .affiliate-tbl-cell:last-child{text-align:right;}
+.affiliate-tbl-hd2 .affiliate-tbl-cell{color:#0050a0;font-size:24px;font-weight:500;padding:15px 0;}
+.affiliate-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-hd2 .affiliate-tbl-cell-2, .affiliate-tbl-hd2 .affiliate-tbl-cell-3{text-align:right;}
+.affiliate-tbl-hd2 .affiliate-tbl-cell{color:#0050a0;font-size:24px;font-weight:500;border-bottom:1px solid #dfdfdf;}
+.affiliate-tbl-cell-2{width:23%;}
+.affiliate-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-hd2 .affiliate-tbl-cell span{color:#000000;}
+.affiliate-tbl-cell-1{color:#0050a0;width:51%;text-align:left}
+.affiliate-tbl-cell{display:table-cell;padding:0 15px 0 0;vertical-align:middle;white-space:nowrap;}
+.affiliate-tbl-cell-2{width:23%;}
+.affiliate-tbl-cell{display:table-cell;padding:15px 0;vertical-align:middle;white-space:nowrap;font-size:14px}
+.affiliate-tbl-rw .affiliate-tbl-cell-3{text-align:right;}
+.select-cell{border:1px solid #dddcda;border-radius:1.5px;display:inline-block;height:35px;position:relative;width:80px;}
+.select-cell input{background:rgba(0, 0, 0, 0) none repeat scroll 0 0;border:medium none;height:100%;padding:0 15px;width:100%;font-size:14px;color:#000;}
+.input-arw{border-left:1px solid #ebebeb;bottom:0;position:absolute;right:0;text-align:center;top:0;width:18px;}
+.input-arw span:first-child{border-bottom:1px solid #ebebeb;}
+.input-arw span{cursor:pointer;display:block;vertical-align:middle;}
+.input-arw span img{vertical-align:middle;}
+.amount-cell{display:inline-block;color:#999999;padding:0 25px;font-size:14px;}
+.input-cell{display:inline-block;height:35px;width:80px;}
+.input-cell input{background:#ccdcec none repeat scroll 0 0;border:1px solid #6d9ac9;border-radius:1.5px;height:100%;padding:0 15px;text-align:right;width:100%;font-size:14px;color:#000;}
+.footer-top.footer-top-border{border-top:10px solid #0050a0;}
+.earning-blc{margin:19px 0 0;}
+.earning-blc2{margin:50px 0 45px;}
+.earning-blc .main-title{margin-bottom:25px;}
+.commision-blc .main-title{margin:48px 0 33px;}
+.earning-blc2 .main-title{margin-bottom:33px;}
+.subheading.earning-ttl2 > p{line-height:23px;}
+.main-title h2{font-weight:400}
+.by_mob_only{display:none;color:#000;margin-bottom:12px;margin-left:5px;font-weight:bold;}
+.tbl-hd2-btm .affiliate-tbl-cell{border-bottom:0;}
+@media(max-width:1220px){.input-cell, .select-cell{margin:0 5px;}
+}
+@media(max-width:1024px){.affiliate-banner-txt{top:9%;}
+.affiliate-feature-txt{padding:30px 30px 0;}
+}
+@media(max-width:900px){.affiliate-banner-txt > h3{font-size:20px;}
+.affiliate-banner-txt > h2{font-size:40px;}
+.input-cell, .select-cell{width:62px;}
+.amount-cell{padding:0 15px;}
+}
+@media(max-width:767px){.affiliate-banner-txt{top:9%;}
+.affiliate-banner-txt > h3{font-size:18px;}
+.affiliate-banner-txt > h2{font-size:36px;}
+.affiliate-feature-rw{margin:0 0 36px;}
+.affiliate-feature-txt > h3{font-size:30px;}
+.scroll_box{background:#fff none repeat scroll 0 0;border:1px solid #dddcda;border-radius:1.5px;margin:0 auto;overflow:scroll;width:99%;}
+.scroll_box .affiliate-tbl-blc-inr{border:0px;}
+.affiliate-tbl-rw .affiliate-tbl-cell, .affiliate-tbl-hd2 .affiliate-tbl-cell{display:block;width:100%;text-align:left}
+.affiliate-tbl-hd, .affiliate-tbl-hd2, .affiliate-tbl-rw{display:block;}
+.affiliate-tbl-rw .affiliate-tbl-cell:last-child{text-align:left;}
+.by_mob_only{display:block;}
+.affiliate-tbl-cell-2 span.by_mob_only, .affiliate-tbl-cell-3 span.by_mob_only{font-size:14px;color:#999}
+.affiliate-tbl-hd{display:none}
+.affiliate-tbl-cell-3{border-bottom:0 !important;padding-bottom:2px !important;}
+}
+@media(max-width:850px){.paragraph-rw{padding:10px 30px 17px;}
+}
+@media(max-width:900px){.commision-inner{width:100%;}
+.commision-tbl{width:100%;}
+}
+@media(max-width:950px){.affiliate-join-inr, .affiliate-join-inr.join-inr2{max-width:95%;}
+.affiliate-join-inr > h2{font-size:26px;}
+.earning-inner li{padding:0 20px;}
+}
+@media(max-width:620px){.affiliate-join-inr, .affiliate-join-inr.join-inr2{padding:0px;text-align:center;}
+.affiliate-join-inr .affiliate-btn{position:relative;margin:15px 0 0 0;}
+}
+@media(max-width:670px){.affiliate-feature-rw{margin:0 !important;padding:50px 0;}
+.affiliate-banner > img{display:none;}
+.affiliate-banner-txt{top:15%;}
+.affiliate-banner{height:200px;background:url(../images/affiliate/affiliate_banner.jpg) no-repeat top center;background-size:cover;}
+.earning-blc{max-width:96%;margin:0 auto;}
+.earning-inner li{width:48.3%;display:inline-block;float:none;margin-bottom:20px;vertical-align:top;}
+.affiliate-feature-txt{padding:20px 30px 0;width:100%;}
+.affiliate-feature-pic{width:100%;}
+.affiliate-feature-pic img{display:none;}
+.affiliate-feature-blc2{margin:40px 0 0;}
+.affiliate-no > img{max-height:150px;}
+}
+@media(max-width:490px){.earning-inner li{width:96%;}
+.main-title h2{line-height:normal;font-size:28px;}
+.cmsn-tbl-cell{display:block;padding:0;vertical-align:middle;white-space:normal;width:100% !important;}
+.cmsn-tbl-cell.cmsn-tbl-cell-3, .cmsn-tbl-cell.cmsn-tbl-cell-2{display:inline-block;padding:10px 20px 0 0;width:auto !important;}
+@media(max-width:470px){.affiliate-banner-txt > h3{font-size:17px;}
+.affiliate-banner-txt > h2{font-size:29px;}
+.affiliate-banner-txt{margin:0 auto;max-width:96%;}
+}
+@media(max-width:420px){.mob_view_block .affiliate-tbl-cell{display:block;width:100%;text-align:left;}
+}
+.no_counter{padding-right:0px !important;}
+.affiliate-tbl-cell a:hover{color:#0050a0;}

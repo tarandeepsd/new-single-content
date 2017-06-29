@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="34px" height="34px" viewBox="0 0 34 34" enable-background="new 0 0 34 34" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDCDA" d="M17,0.935C8.128,0.935,0.935,8.128,0.935,17
+	S8.128,33.065,17,33.065S33.065,25.872,33.065,17S25.872,0.935,17,0.935z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDCDA" d="M30.322,24.527L17,16.811L3.678,24.527
+	C6.305,29.168,11.286,32.3,17,32.3S27.695,29.168,30.322,24.527z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#0073BA" d="M17,1.7V17l13.313,7.544C31.577,22.318,32.3,19.743,32.3,17
+	C32.3,8.55,25.45,1.7,17,1.7z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#DDDCDA" d="M17,17V1.7C8.55,1.7,1.7,8.55,1.7,17
+	c0,2.743,0.723,5.318,1.987,7.544L17,17z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#0073BA" d="M17,0C7.611,0,0,7.611,0,17s7.611,17,17,17s17-7.611,17-17
+	S26.389,0,17,0z M17,31C9.268,31,3,24.732,3,17S9.268,3,17,3s14,6.268,14,14S24.732,31,17,31z"/>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M26.243,10.328l-2.571-2.571c-0.516-0.516-1.353-0.516-1.87,0
+		l-1.355,1.356l4.44,4.44l1.355-1.355C26.759,11.681,26.759,10.844,26.243,10.328z"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="9.37,24.63 14.862,23.578 10.422,19.138 	"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M11.52,18.834c0.206,0.206,0.541,0.206,0.748,0l8.249-8.249
+		l-0.771-0.771l-8.249,8.249c-0.206,0.207-0.206,0.542,0,0.748L11.52,18.834z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M15.166,21.732c-0.206,0.206-0.206,0.541,0,0.748l0.023,0.023
+		c0.207,0.206,0.541,0.206,0.748,0l8.249-8.25l-0.771-0.771L15.166,21.732z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M13.319,20.634l0.047,0.047c0.4,0.4,1.049,0.4,1.449,0
+		l7.899-7.899l-1.496-1.496l-7.899,7.899C12.919,19.585,12.919,20.234,13.319,20.634z"/>
+</g>
+</svg>

@@ -1,0 +1,17 @@
+.retailer_home { min-height: 150px; text-align: center; background: #81a8d1  url(../../images/banner-background.png) no-repeat center bottom; }
+.checklist_bar li.custom-checkboxbtn { padding: 5px 0 !important; }
+.checklist_bar li.custom-checkboxbtn p { padding: 0 0 10px; }
+.date_picker { display: block; margin: 0px -4px; padding: 0px; }
+.date_picker li { display: inline-block; margin: 3.5px; padding: 0px !important; list-style: none; float: left; }
+.date_picker li a { display: block; text-align: center; border-radius: 1.5px; height: 30px; width: 30px; line-height: 30px; border: 1px solid #dddcda; margin: 0px; color: #0050a0; text-transform: uppercase; font-weight: 600; padding: 0px; font-size: 16px; background: #fff; }
+.date_picker li a:hover { background: #6D9AC9; color: #fff; text-decoration: none; border-color: #6D9AC9; }
+.date_picker li a:focus{ background: #3E74B1; color: #fff; text-decoration: none; border-color: #3E74B1; }
+.date_picker li a.active { background: #4881BB; color: #fff; text-decoration: none; border-color: #4881BB; }
+.date_picker li:first-child a, .date_picker li:last-child a { width: 68px !important; }
+.default_banner_image { display: inline-block; }
+.default_banner_image img { max-width: 100%; }
+.show-dropdown .checkbox_drop_down .dropdown-menu li { clear: both; display: block; float: left; padding: 8px 10px 6px; width: 100%; }
+ul.custom-dropdown li.open a.dropdown-toggle::after { background-color: #dfdfdf; content: ""; height: 1px; left: 10px; margin: -3px auto 0; position: absolute; right: 10px; top: 100%; }
+.dropdown-menu .custom-checkboxbtn { margin: 0; padding: 0; }
+ul.customize-dropdown .dropdown-menu { padding-top: 0px; }
+.main-title h2 img { display: inline-block; vertical-align: middle; width: 146px; }

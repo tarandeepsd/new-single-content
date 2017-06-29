@@ -1,0 +1,426 @@
+<div class="panel panel-default form-horizontal form_area m_zero account_section clearfix" ng-controller="ModalProfileCtrl">
+            	
+                <div class="user_info_box" ng-class="{'open':!isCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="isCollapsed = !isCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+                        <div class="col-sm-8"> <p>username</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isCollapsed">
+                      	<div class="edit_section row location-popup">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" value="Username"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter your password to confirm changes"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      		
+                            <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                <div class="user_info_box" ng-class="{'open':!isemailCollapsed}">
+                	  <div class="form-group dropdown-toggle" ng-click="isemailCollapsed = !isemailCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email Address</label>
+                        <div class="col-sm-8"> <p>email@example.com</p> </div>
+                        <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isemailCollapsed">
+                      <div class="edit_section row location-popup">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" value="email@example.com"/>
+                            <a class="input-group-addon question-addon" href="#"></a>  
+                            <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter your password to confirm changes"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="clearfix"></div>
+                       </div>
+                </div>
+                  
+                <div class="user_info_box b_btm0" ng-class="{'open':!ispassCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-8"> <p>••••••••••</p> </div>
+                       
+                        <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                          
+                      </div>
+                      
+                       <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                     	 <div class="edit_section row location-popup">
+                      
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="password" class="form-control" placeholder="Enter your old password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10 p_left12">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      		
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="password" class="form-control" placeholder="Enter your new password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10 p_left12">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      
+                      <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                                <input type="password" class="form-control" placeholder="Re-enter new password"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet</div>
+                            </div>
+                             					<div class="custom-checkboxbtn checkbox p_top10 p_left12">
+                                                	<label>
+                                                        <input type="checkbox" value="proper" name="checkbox"  ng-model="properties">
+                                                        <span class="lbl">show password</span>
+                                                    </label>
+                      </div>
+                      </div>
+                      
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      </div>
+                </div>
+                     
+            </div>
+            
+           <div class="panel panel-default form-horizontal form_area m_top20 account_section clearfix" ng-controller="ModalUnsavedCtrl">
+            	<div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your location</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                       <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                      <div class="edit_section row location-popup">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                           
+                                <div class="select-icon" ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="country='United Kingdom'; imageCountry='assets/images/svg/Italy-flag.jpg'">
+                         	<img src="{{imageCountry}}" /> {{ country }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active':country=='Italy'}"  ng-click="country='Italy'; imageCountry='assets/images/svg/Italy-flag.jpg'"><img src="assets/images/svg/Italy-flag.jpg" /> Italy</a></li>
+                            <li><a href="#" ng-class= "{'active':country=='Lithuania'}" ng-click="country='Lithuania'; imageCountry='assets/images/svg/lithuania-flag.jpg'"><img src="assets/images/svg/lithuania-flag.jpg" /> Lithuania</a></li>
+                            <li><a href="#" ng-class= "{'active':country=='United Kingdom'}" ng-click="country='United Kingdom'; imageCountry='assets/images/svg/uk-flag.jpg'"><img src="assets/images/svg/uk-flag.jpg" /> United Kingdom</a></li>
+                        </ul>
+                    </div>
+                    <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                </div>
+                			 <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+            
+                          
+                            </div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter City or Postcode"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      
+                      		<div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                	<div class="user_info_box" ng-class="{'open':!isnoCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="isnoCollapsed = !isnoCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Mobile Number </label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your mobile phone number</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isnoCollapsed">
+                      <div class="edit_section row location-popup">
+                      
+                      		<div class="col-sm-6"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                                <div class="select-icon" ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="country='United Kingdom'; imageCountry='assets/images/svg/Italy-flag.jpg'">
+                         	<img src="{{imageCountry}}" /> {{ country }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active':country=='Italy (+43)'}"  ng-click="country='Italy (+43)'; imageCountry='assets/images/svg/Italy-flag.jpg'"><img src="assets/images/svg/Italy-flag.jpg" /> Italy <small>(+43)</small></a></li>
+                            <li><a href="#" ng-class= "{'active':country=='Lithuania'}" ng-click="country='Lithuania'; imageCountry='assets/images/svg/lithuania-flag.jpg'"><img src="assets/images/svg/lithuania-flag.jpg" /> Lithuania <small>(+43)</small></a></li>
+                            <li><a href="#" ng-class= "{'active':country=='United Kingdom'}" ng-click="country='United Kingdom'; imageCountry='assets/images/svg/uk-flag.jpg'"><img src="assets/images/svg/uk-flag.jpg" /> United Kingdom <small>(+43)</small></a></li>
+                        </ul>
+                    </div>
+                    <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                </div> 
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+            
+                          
+                            </div>
+                      </div>
+                      		
+                            <div class="col-sm-6"> 
+                           <div class="input-group"> 
+                            <input type="text" class="form-control" placeholder="Enter Mobile Telephone Number"/><a class="input-group-addon question-addon" href="#"></a>  <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div></div>
+                      </div>
+                      
+                     		<div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                	<div class="user_info_box" ng-class="{'open':!isageCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="isageCollapsed = !isageCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Age </label>
+                        <div class="col-sm-8"> <p class="orange_text">enter your age</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isageCollapsed">
+                      <div class="edit_section row location-popup">
+                      
+                            <div class="col-sm-6"> 
+                            <div class="input-group"> 
+                                <input type="text" class="form-control" placeholder="Enter your age in number form, for example: 34"/>
+                                <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                            
+                      </div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                	<div class="user_info_box" ng-class="{'open':!isgenderCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="isgenderCollapsed = !isgenderCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Gender </label>
+                        <div class="col-sm-8"> <p class="orange_text">select your gender</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isgenderCollapsed">
+                      <div class="edit_section row location-popup">
+                      
+                            <div class="col-sm-6"> 
+                                   <div class="custom-radiobtn"> 
+                                        <label><input type="radio" name="radio"><span class="lbl">Female</span></label> 
+                                        <label><input type="radio" name="radio"><span class="lbl">Male</span></label> 
+                                    </div>
+                      		</div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                	<div class="user_info_box b_btm0" ng-class="{'open':!isfamilyCollapsed}">
+                	<div class="form-group dropdown-toggle" ng-click="isfamilyCollapsed = !isfamilyCollapsed">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Family </label>
+                        <div class="col-sm-8"> <p class="orange_text">select your family status</p> </div>
+                         <div class="col-sm-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isfamilyCollapsed">
+                      <div class="edit_section row location-popup custom_family_dropdown">
+                      
+                            <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                           
+                                <div class="select-icon" ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="family='Select your Family Status'">
+                         {{ family }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active':family=='Select your Family Status'}"  ng-click="family='Select your Family Status'">Select your Family Status</a></li>
+                            <li><a href="#" ng-class= "{'active':family=='Married with Children'}"  ng-click="family='Married with Children'">Married with Children</a></li>
+                            <li><a href="#" ng-class= "{'active':family=='Your Family Status'}"  ng-click="family='Your Family Status'">Your Family Status</a></li>
+                         </ul>
+                    </div>
+                    <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                </div>
+                                </div>
+            
+                            </div>
+                      </div>
+                      
+                            <div class="col-sm-4"> 
+                           <div class="input-group"> 
+                           
+                           <div class="width90p pos_rel">
+                           
+                           <div class="form-input form-select form-disable select-icon" ng-controller="DropdownCtrl">
+                            	<div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="children='Select how many children'">
+                         {{ children }} 
+                        </a>			
+                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active':children=='1'}"  ng-click="children='1'">1</a></li>
+                            <li><a href="#" ng-class= "{'active':children=='2'}"  ng-click="children='2'">2</a></li>
+                            <li><a href="#" ng-class= "{'active':children=='3'}"  ng-click="children='3'">3</a></li>
+                         </ul>
+                                </div>
+                                <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                           
+                                <!--<div class="select-icon" ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="children='Select how many children'">
+                         {{ children }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" ng-class= "{'active':children=='1'}"  ng-click="children='1'">1</a></li>
+                            <li><a href="#" ng-class= "{'active':children=='2'}"  ng-click="children='2'">2</a></li>
+                            <li><a href="#" ng-class= "{'active':children=='3'}"  ng-click="children='3'">3</a></li>
+                         </ul>
+                    </div>
+                    <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                </div>--> 
+                                </div>
+            
+                            </div>
+                      </div>
+                      
+                      		<div class="col-sm-4"> 
+                            <div class="input-group"> 
+                                   <div class="width90p double_input pos_rel">
+                                   
+                                   
+                                   
+                           <!--<div class="form-input form-select form-disable select-icon" ng-controller="DropdownCtrl">
+                            	<div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="gender='Child Gender'">
+                                     {{ gender }} 
+                                    </a>			
+                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "{'active':gender=='Girl'}"   ng-click="gender='Girl'">Girl</a></li>
+                                        <li><a href="#" ng-class= "{'active':gender=='Boy'}" ng-click="gender='Boy'">Boy</a></li>
+                                     </ul>
+                                </div>
+                                <span class="icon qusetion-icon"></span>
+                    <div class="error_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>-->
+                                   
+                                  <div class="form-input form-select form-disable" ng-controller="DropdownCtrl"> 
+                            	<div class="dropdown custom-dropdown custom_dropdown m_rlt10" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="gender='Child Gender'">
+                                     {{ gender }} 
+                                    </a>			
+                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "{'active':gender=='Girl'}"   ng-click="gender='Girl'">Girl</a></li>
+                                        <li><a href="#" ng-class= "{'active':gender=='Boy'}" ng-click="gender='Boy'">Boy</a></li>
+                                     </ul>
+                                </div>
+                                
+                            <input type="text" value="age" class="form-control form-disable">
+                              </div>  
+                                
+                            <a class="input-group-addon question-addon" href="#"></a>  
+                                <div class="error_box question">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+                            </div>
+                              </div> </div>
+                      
+                       <div class="clearfix"></div>
+                       
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                
+                </div>
+                

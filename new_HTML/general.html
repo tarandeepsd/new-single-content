@@ -1,0 +1,360 @@
+
+<div class="panel panel-default form-horizontal form_area m_zero clearfix" ng-controller="ModalGeneralCtrl">
+            		  
+                <div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p ng-controller="Modalunsubscribe_white">Newsletter <!--<small class="font_14grey pull-right red_font">I do not want to receive the Shout Newsletter</small>-->
+                                 
+                                 <a href="#" class="size14_greycolor pull-right font_green" ng-click="openunsubscribe_white('unsubscribe_white')">I want to receive the Shout Newsletter</a></p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                      <div class="row General">
+                      		
+                            <p><small class="size14_greycolor">I want to receive:</small></p> 
+                            <div class="row">
+                            	
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top6">
+                                        <label> <input type="checkbox"> <span class="lbl">The Deal Newsletter</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox m_top6">
+                                        <label> <input type="checkbox"> <span class="lbl">The Monthly Newsletter</span></label>
+                                     </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <ul class="custom-radiobtn">
+                            	<li><label><input type="radio" name="radio"><span class="lbl">Daily</span></label></li>
+                                <li><label><input type="radio" name="radio"><span class="lbl">Weekly</span></label></li>
+                             <li><label><input type="radio" name="radio"><span class="lbl">Every 15 Days</span></label></li>
+                             <li><label><input type="radio" name="radio"><span class="lbl">Monthly</span></label></li>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8">
+                       
+                       <p class="font_14grey m_top20" ng-controller="Modalunsubscribe">Do you want to receive personalised recommendations in your Newsletter? <a href="account.html" target="_blank">Enter your Preferences</a></p>
+                       </div>  
+                        
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group m_top10">  
+                                <div ng-controller="Modalunsaved">
+                            <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a>  <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div> 
+                            </div> 
+                      </div>
+                      
+                </div>
+                 </div>
+                	  
+                <div class="user_info_box" ng-class="{'open':!isCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle" ng-click="isCollapsed = !isCollapsed">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Private Messages </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                       <div class="dropdown-block" uib-collapse="isCollapsed">
+                      <div class="row General">
+                      		
+                            <p><small class="size14_greycolor">I want to receive Private Messages from:</small></p> 
+                            
+                            <div class="row m_top15">
+                            	
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">My Friends</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">Shouters that follow me</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">Shouters I follow</span></label>
+                                     </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">All other Shouters</span></label>
+                                     </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"><p class="font_14grey m_top23">NOTE: The Shout Team will always be able to send you Private Messages</p></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                            </div> 
+                            </div> 
+                      </div>
+                      
+                      </div> 
+                </div>
+                
+                	  
+                <div class="user_info_box" ng-class="{'open':!isemailCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle" ng-click="isemailCollapsed = !isemailCollapsed">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Notifications on Site </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      <div class="dropdown-block" uib-collapse="isemailCollapsed">
+                      <div class="row General">
+                      		
+                            <p><small class="size14_greycolor">Send me a notification:</small></p> 
+                            
+                            <ul class="m_top15 row">
+                            	
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when I receive a new private message</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Review for which I enabled notifications receives a new comment</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when I obtain a new badge</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Shouter starts following my profile</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when one of my Shouts for which I enabled notifications receives a new comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when I become friend with another Shouter</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when new features are available on Shout.eu</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when one of my Reviews for which I enabled notifications receives a new comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10 disable_checkbox">
+                                        <label> <input type="checkbox" checked> <span class="lbl">everyday, with therecap of my Daily Earnings from the Affiliation Program</span></label>
+                                     </div>
+                                </li>
+                                
+                                <div class="clearfix"></div>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"></div>   
+                       <div class="col-sm-4">  
+                      <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div> 
+                            </div> 
+                      </div>
+                      </div>
+                </div>
+                	  
+                <div class="user_info_box" ng-class="{'open':!isnoCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle" ng-click="isnoCollapsed = !isnoCollapsed">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Email Notifications </p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isnoCollapsed">
+                      <div class="row General">
+                      		
+                            <p><small class="size14_greycolor">Send me an email notification:</small></p> 
+                            
+                            <ul class="m_top15 row">
+                            	
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when I receive a new private message</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Review, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when I achieve a new badge</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox"> <span class="lbl">when a Shouter starts following my profile</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when I become friend with another Shouter</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Shout, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when new features are available on Shout.eu</span></label>
+                                     </div>
+                                </li>
+                                 <div class="clearfix"></div>
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a Review of mine, for which I turned on notifications, receives a comment</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <li class="col-sm-6">
+                                     <div class="custom-checkboxbtn checkbox p_top10 disable_checkbox">
+                                        <label> <input type="checkbox" checked> <span class="lbl">when a friend of mine that I invited on Shout.eu signs up</span></label>
+                                     </div>
+                                </li>
+                                
+                                <div class="clearfix"></div>
+                            </ul>
+                            
+                            <div class="row">
+                       <div class="col-sm-8"></div>   
+                       <div class="col-sm-4">  
+                     <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                      </div> 
+                            </div> 
+                      </div>
+                      </div>
+                </div>
+                
+                	  
+                <div class="user_info_box b_btm0" ng-class="{'open':!isageCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle" ng-click="isageCollapsed = !isageCollapsed">
+                            <div class="col-sm-11 col-xs-10"> 
+                                 <p>Tooltips</p>
+                           </div>
+                      
+                      		<div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      <div class="dropdown-block" uib-collapse="isageCollapsed">
+                      <div class="row General">
+					  
+                            <p><small class="size14_greycolor">Show me tooltips</small></p> 
+                            
+                          <ul class="custom-radiobtn p_zero">
+                            <li><label><input type="radio" name="radio"><span class="lbl">Show always</span></label></li>
+                            <li><label><input type="radio" name="radio"><span class="lbl">Do not show</span></label></li> 
+                          </ul>
+                            
+                       <div class="cancel_btn_group">  
+                                <div ng-controller="Modalunsaved">
+                                <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                </div>
+                            </div>
+                       
+                      </div>
+                      </div>
+                      
+                </div>
+                
+                
+            </div>

@@ -1,0 +1,445 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        <!-- Website Main CSS -->
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'static-page-breadcrumb.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-sidebar-static.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content page-content">  
+            	<!-- Static Content -->
+                        <!-- First Section -->
+                        <h2 class="title"><span>Terms & Conditions</span></h2>
+                        
+                        <div class="content terms-content">
+                        	<ol>
+                                <li class="title-blueTxt">Introduction
+                                	<ol>
+                                        <li>These terms and conditions shall govern your use of and access to the Shout Sites.</li>
+                                        <li>By using our website, you accept these terms and conditions in full; accordingly, if you disagree 	with these terms and conditions or any part of these terms and conditions, you must not use our website.</li>
+                                        <li>When we say “Shout”, we mean [name of the company] and any subsidiaries and affiliates of 	Shout (including any that Shout may form or acquire in the future). We also refer to Shout as “Shout.eu”, “we”, “us” and “our” - we hope these Terms of Use read better that way.</li>
+                                        <li>If you register with our website, submit any material to our website or use any of our website 	services, we will ask you to expressly agree to these terms and conditions.</li>
+                                        <li>You must be at least 16 years of age to use our website; by using our website or agreeing to 	these terms and conditions, you warrant and represent to us that you are at least 16 years of age.</li>
+                                        <li>Our website uses cookies; by using our website or agreeing to these terms and conditions, you 	consent to our use of cookies in accordance with the terms of our <a href="http://192.155.246.146:8289/privacy-policy.html">privacy</a> and <a href="http://192.155.246.146:8289/cookie-policy.html">cookies policy</a>.</li>
+                                	</ol>
+                                </li>
+                                
+                                <!-- <li class="title-blueTxt">Credit -->
+                                	<!-- <ol> -->
+                                       <!-- <li>This document was created using a template from SEQ Legal (http://www.seqlegal.com).<br> -->
+										<!-- You must retain the above credit, unless you purchase a licence to use this document without the credit. You can purchase a licence at: <a href="#">http://www.website-contracts.co.uk/seqlegal-licences.html</a>.<br> -->
+										<!-- Warning: use of this document without the credit, or without purchasing a licence, is an infringement of copyright.   -->
+                                        <!-- </li> -->
+                                    <!-- </ol> -->
+                                <!-- </li> -->
+                                
+                                <li class="title-blueTxt">Copyright notice
+                                	<ol>
+                                       <li>Copyright (c) 2016 Risparmio srl</li>
+                                       <li>Subject to the express provisions of these terms and conditions:
+                                       		<ul class="lower-counter-list">
+                                            	<li>we, together with our licensors, own and control all the copyright and other intellectual property rights in our website and the material on our website; and</li>
+                                                <li>all the copyright and other intellectual property rights in our website and the material on our 	website are reserved.</li>
+                                            </ul>
+                                       
+                                       </li>
+                                    </ol>
+                                </li>
+                                
+                                
+                                <li class="title-blueTxt">Licence to use website
+                                	<ol>
+                                       <li>You may:
+                                       		<ul class="lower-counter-list">
+                                            	<li>view pages from our website in a web browser;</li>
+                                                <li>download pages from our website for caching in a web browser;</li>
+                                                <li>print pages from our website;</li>
+                                                <li>stream audio and video files from our website;</li>
+                                                <li>use our website services by means of a web browser; and</li>
+                                                <li>download and print invoices related to the Affiliate Program, subject to the other provisions of these terms and conditions.</li>
+                                            </ul>
+                                       
+                                       </li>
+                                       <li>Except as expressly permitted by Section 3.1 or the other provisions of these terms and conditions, you must not download any material from our website or save any such material to your computer.</li>
+                                    	<li>You may only use our website for your own personal and business purposes, and you must not use our website for any other purposes.</li> 
+                                        <li>Unless you own or control the relevant rights in the material, you must not:
+                                          	<ul class="lower-counter-list">
+                                            	<li>sell, rent or sub-license material from our website;</li>
+                                                <li>show any material from our website in public;</li> 
+                                                <li>exploit material from our website for a commercial purpose; or</li>
+                                                <li>redistribute material from our website.</li>
+                                             </ul>
+                                          </li>
+                                          
+                                          <li>Notwithstanding Section 3.5, you may redistribute our Newsletter in print and electronic form to any person. 
+										  <br/>  <br/>
+										  You may also share or republish material from our website (including republication on another website), as long as:
+										    <br/> <br/>
+										  <ul class="lower-counter-list">
+                                            <li>there is a clear reference to Shout.eu; and</li>
+                                            <li>you maintain unchanged the URL of the content you are sharing or republishing.</li>
+										  </ul>
+										  </li>
+											<li>We reserve the right to restrict access to areas of our website, or indeed our whole website, at our discretion; you must not circumvent or bypass, or attempt to circumvent or bypass, any access restriction measures on our website.</li>
+                                    </ol>
+                                </li>
+                                
+                                
+                               <li class="title-blueTxt">Acceptable use
+                               	<ol>
+                                    <li>You must not:
+                                        <ul class="lower-counter-list">
+                                            <li>use our website in any way or take any action that causes, or may cause, damage to the website or impairment of the performance, availability or accessibility of the website;</li>
+                                            <li>use our website in any way that is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activities;</li>
+                                            <li>use our website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software;</li>
+                                            <li>Interfere with the access of any user, host or network, including, without limitation, by sending a virus, overloading, flooding, spamming, or mail-bombing our website;</li>
+                                            <li>conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting) on or in relation to our website without our express written consent;</li>
+                                            <li>collect any personally identifiable information from users of the Shout site or use any such information found on our website;</li>
+                                            <li>use a third party’s credentials, conceal your true IP address, or otherwise impersonate or misrepresent your identity or affiliation with any person or entity;</li>
+                                            <li>use Shout.eu to determine whether a third party holds any type of account, or to learn 		about or verify information about the account that is not yours</li>
+                                            <li>access or otherwise interact with our website using any robot, spider or other 			automated means, except for the purpose of search engine indexing;</li>
+                                            <li>probe, scan, or test the vulnerability of Shout's website, or breach any security or authentication measures;</li>
+                                            <li>violate the directives set out in the robots.txt file for our website; or</li>
+                                            <li>use data collected from our website for any direct marketing activity (including without limitation email marketing, SMS marketing, telemarketing and direct mailing);</li>
+                                            <li>publish any link containing cookies or tokens related to any affiliation program.</li>
+                                        </ul>
+                                    </li>
+                                    <li>publish any link containing cookies or tokens related to any affiliation program.</li>
+                                    <li>You must ensure that all the information you supply to us through our website, or in relation to 	our website, is true, accurate, current, complete and non-misleading.</li>
+                                    <li>You will not use Shout's website or Shout’s name, logo, brand or identity to do any of these 	things:
+									
+									<ul class="lower-counter-list">
+                                        <li>send any unsolicited or unauthorised advertising, promotional materials, email, junk 		mail, spam, chain letters, or other form of solicitation;</li>
+                                        <li>use any meta tags or other hidden text or metadata utilising a Shout trademark, logo, 		URL, or product name without Shout’s express written consent.</li>
+									</ul>
+									</li>
+									<li>Retailers must not promote their products and deals in any way on Shout, in absence of a 	regular dedicated “Retailer Account”.</li>
+									<li>Retailers who dispose of a “Retailer Account” on Shout are forbidden from voting their own 	products and deals, using their own “Retailer Account” or any other Shout user account.</li>
+									
+									
+                            	 </ol> 
+                             </li>
+							 
+							 <li class="title-blueTxt">Registration and accounts
+                               	<ol>
+									<li>You may register for an account with our website by completing and submitting the account 	registration form on our website, and clicking on the verification link in the email that the 	website will send you.</li>
+									<li>You agree that all your registration information will be true and complete, and you will keep 	your account information current and up-to-date.</li>
+									<li>You must not allow any other person to use your account to access the website.</li>
+									<li>You must notify us in writing immediately if you become aware of any unauthorised use of your 	account.</li>
+									<li>You must not use any other person's account to access the website.</li>
+								</ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">User login details
+                               	<ol>
+									<li>If you register for an account with our website, you will be asked to choose a user ID and password, or we will provide you with a temporary password. </li>
+									<li>Your user ID must not be liable to mislead and must comply with the content rules set out in Section 9; you must not use your account or user ID for or in connection with the impersonation of any person. </li>
+									<li>You must keep your password confidential.</li>
+									<li> You must notify us in writing immediately if you become aware of any disclosure of your 	password.</li>
+									<li>You are responsible for any activity on our website arising out of any failure to keep your 	password confidential, and you relieve Shout of any liability or loss arising out of such a failure.</li>
+								</ol>
+							 </li>
+							 
+							 
+							 <li class="title-blueTxt">Cancellation and suspension of account
+                               	<ol>
+									<li>We may:
+										 <ul class="lower-counter-list">
+											<li>suspend your account;</li>
+											<li>cancel your account; and/or</li>
+											<li>edit your account details, </li>
+										 </ul>
+										 at any time in our sole discretion without notice or explanation
+									</li>
+									
+									<li>You may cancel your account on our website using your account control panel on the website.</li>
+								</ol>
+							 </li>
+							 
+							 
+							  <li class="title-blueTxt">Your content: licence
+                               	<ol>
+									<li>In these terms and conditions, "your content" means all works and materials (including without limitation text, graphics, images, audio material, video material, audio-visual material, scripts, software and files) that you submit to us or our website for storage or publication on, processing by, or transmission via, our website.</li>
+									<li>You grant to us a worldwide, irrevocable, non-exclusive, royalty-free licence to use, reproduce, store, adapt, publish, translate and distribute your content in any existing or future media.</li>
+									<li>You grant to us the right to sub-license the rights licensed under Section 8.2.</li>
+									<li>You grant to us the right to bring an action for infringement of the rights licensed under Section </li>
+									<li>You hereby waive all your moral rights in your content to the maximum extent permitted by 	applicable law; and you warrant and represent that all other moral rights in your content have 	been waived to the maximum extent permitted by applicable law.</li>
+									<li>You may edit your content to the extent permitted (fifteen minutes from the publication of the content) using the editing functionality made available on our website.</li>
+									<li>Without prejudice to our other rights under these terms and conditions, if you breach any provision of these terms and conditions in any way, or if we reasonably suspect that you have breached these terms and conditions in any way, we may delete, unpublish or edit any or all of your content.</li>
+								</ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">Your content: rules
+                               	<ol>
+									<li> You warrant and represent that your content will comply with these terms and conditions.</li>
+									<li> You warrant and represent that your content will comply with these terms and conditions.</li>
+									<li>Your content, and the use of your content by us in accordance with these terms and conditions, must not:
+									<ul class="lower-counter-list">
+										<li>be libellous or maliciously false;</li>
+										<li>be obscene or indecent;</li>
+										<li> infringe any copyright, moral right, database right, trade mark right, design right, right in passing off, or other intellectual property right;</li>
+										<li>infringe any right of confidence, right of privacy or right under data protection 			legislation;</li>
+										<li>constitute negligent advice or contain any negligent statement;</li>
+										<li>constitute an incitement to commit a crime, instructions for the commission of a crime or the promotion of criminal activity;</li>
+										<li>be in contempt of any court, or in breach of any court order;</li>
+										<li>be in breach of racial or religious hatred or discrimination legislation;</li>
+										<li>be blasphemous;</li>
+										<li>be in breach of official secrets legislation;</li>
+										<li>be in breach of any contractual obligation owed to any person;</li>
+										<li>depict violence in an explicit, graphic or gratuitous manner;</li>
+										<li>be pornographic, lewd, suggestive or sexually explicit;</li>
+										<li>be untrue, false, inaccurate or misleading;</li>
+										<li>consist of or contain any instructions, advice or other information which may be acted 		upon and could, if acted upon, cause illness, injury or death, or any other loss or damage;</li>
+										<li>constitute spam or self promotion;</li>
+										<li>be offensive, deceptive, fraudulent, threatening, abusive, harassing, anti-social, menacing, hateful, discriminatory or inflammatory; or</li>
+										<li>cause annoyance, inconvenience or needless anxiety to any person;</li>
+									</ul>
+									</li>
+							    </ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">Limited warranties
+                               	<ol>
+									<li>Shout allows third party sellers to list their products. Transactions are carried out on third party 	sites: the contract formed at the completion of a sale for these third party products is solely 	between buyer and seller. Shout is not a party to this contract nor assumes any responsibility 	arising out of or in connection with it nor is it the seller's agent. The seller is responsible for the 	sale of the products and for dealing with any buyer claims or any other issue arising out of or in 	connection with the contract between the buyer and seller. Since we do not sell any product or 	deal displayed on our website, we cannot assume responsibility for:
+									<ul class="lower-counter-list">
+										<li>any retailer’s behaviour;</li>
+										<li>any problem related to the sale of products by retailers;</li>
+										<li>quality of the products;</li>
+										<li>products' conformity with any law or regulations;</li>
+										<li>unavailability of products;</li>
+										<li>any difference between the products' price published on our website and those actually 		charged by retailers on their websites;</li>
+										<li>any problem related to shipping and/or delivery of products bought via a Shout link.</li>
+									</ul> 
+									</li>
+									
+									<li> We provide links to the sites of affiliated companies and certain other businesses. Merchants 	listed on our website are independent third parties and we are not acting as a principal, agent 	or broker with 	respect to any advertisers. We are not responsible for examining or evaluating, 	and we do not warrant the offerings of any of these businesses or individuals, or the content of 	their websites. Shout does not assume any responsibility or liability for the actions, products, 	and content of all of these or any other third parties. Your relationship with any merchant you 	contact through this site is solely between You and the merchant. You agree not to hold Shout 	liable for any loss or damage of any sort incurred as the result of any business conducted with 	our merchants or as the result of the content provided by such merchants through the Site. You 	should carefully review their privacy statements and other conditions of use.</li>
+							 <li> The Shout website contain lots of information provided by third party sellers, SHout users and 	other content providers. Despite our efforts to be accurate, we don't guarantee:
+							 <ul class="lower-counter-list">
+								<li> the completeness or accuracy of the information published on our website, including, 		without limitation, product images, descriptions and specifications;</li> 
+								<li>the precision or accuracy of our algorithm for the assignment of the decibel value to 		products and deals;</li> 
+								<li> that the material on the website is accurate, complete, up-to-date, reliable, well-			categorised and helpful;</li> 
+								<li>that product information contained on the Shout website do not differ from information 		contained on the actual product materials; or</li> 
+								<li>that the website or any service on the website will remain available.</li> 
+							 </ul>
+							 If you find an error or notice something that doesn't look right on our website, we would 	appreciate it if 	you let us know by using our “report” feature or feedback form. Your feedback 	can be instrumental in the continued improvement of the Shout service.
+							 </li>
+							 
+							 <li> There is no charge payable to Shout for use of the site during the continuance of these Terms and 	Conditions. We have no responsibility for transmission of funds due to any third party provider or 	distributor with whom you may elect to deal. You shall be responsible for transmitting all payments due 	on the terms agreed with any third party provider or distributor.</li>
+							 <li>We will do our utmost to ensure that availability of the Shout Services will be uninterrupted and 	that transmissions will be error-free. However, due to the nature of the internet, this cannot be 	guaranteed. Also, your access to Shout Services may also be occasionally suspended or 	restricted to allow for repairs, maintenance, or the introduction of new facilities or services. We 	will attempt to limit the frequency and duration of any such suspension or restriction. </li>
+							 <li>We reserve the right to discontinue or alter any or all of our website services, and to stop publishing our website and/or newsletter, at any time in our sole discretion without notice or explanation; and save to the extent expressly provided otherwise in these terms and conditions, you will not be entitled to any compensation or other payment upon the discontinuance or alteration of any website services, or if we stop publishing the website. </li>
+							 <li>We may elect to electronically monitor areas of the Site and may disclose any content, records, 	or electronic communication of any kind:
+							 <ul class="lower-counter-list">
+								<li> to satisfy any law, regulation, or government request; </li>
+								<li>if such disclosure is necessary or appropriate to operate the Site; or </li>
+								<li>to protect our rights or property or the rights of the users, sponsors, providers, 				licensors, or merchants.</li>
+							 </ul>
+							 </li> 
+							 <li>To the maximum extent permitted by applicable law and subject to Section 11.1, we exclude all representations and warranties relating to the subject matter of these terms and conditions, our website and the use of our website. </li>
+							 
+								</ol>
+							 </li>
+							 
+							 
+							 <li class="title-blueTxt">Limitations and exclusions of liability
+                               	<ol>
+									<li> Nothing in these terms and conditions will:
+									<ul class="lower-counter-list">
+										<li> limit or exclude any liability for death or personal injury resulting from negligence;</li>
+										<li> limit or exclude any liability for fraud or fraudulent misrepresentation;</li>
+										<li>limit any liabilities in any way that is not permitted under applicable law; or</li>
+										<li> exclude any liabilities that may not be excluded under applicable law.</li>
+									</ul>
+									</li>
+									
+									<li>The limitations and exclusions of liability set out in this Section 12 and elsewhere in these terms and conditions: 
+									<ul class="lower-counter-list">
+										<li>are subject to Section 12.1; and</li>
+										<li>govern all liabilities arising under these terms and conditions or relating to the subject 		matter of these terms and conditions, including liabilities arising in contract, in tort 			(including negligence) and for breach of statutory duty, except to the extent expressly 		provided otherwise in these terms and conditions.</li>
+									</ul>
+									</li>
+									
+									<li>To the extent that our website and the information and services on our website are provided 	free of charge, we will not be liable for any loss or damage of any nature. </li>
+									<li>We will not be liable to you in respect of any losses arising out of any event or events beyond 	our reasonable control.</li>
+									<li>We will not be liable to you in respect of any business losses, including (without limitation) loss of or damage to profits, income, revenue, use, production, anticipated savings, business, 	contracts, commercial opportunities or goodwill. </li>
+									<li>We will not be liable to you in respect of any loss or corruption of any data, database or 	software.</li>
+									<li>We will not be liable to you in respect of any special, indirect or consequential loss or damage</li>
+									<li> We will not be held responsible for any delay or failure to comply with our obligations under 	these conditions if the delay or failure arises from any cause which is beyond our reasonable 	control. </li>
+									<li>Because millions of products are listed and many thousands of customer reviews and 	comments are 	hosted on Shout.eu, it is not possible for us to be aware of the contents of each 	product listed for sale, or each customer review or comment that is displayed. Accordingly, we 	operate on a "notice and action" basis. If you believe that any content on, or within a product advertised for sale on, the Shout.eu website contains a defamatory statement, please notify Shout immediately by completing and submitting a report using our “report” pop ups.  </li>
+									<li>You accept that we have an interest in limiting the personal liability of our officers and 	employees and, having regard to that interest, you acknowledge that we are a limited liability 	entity; you agree that you will not bring any claim personally against our officers or employees 	in respect of any losses you suffer in connection with the website or these terms and conditions 	(this will not, of course, limit or exclude the liability of the limited liability entity itself for the acts 	and omissions of our officers and employees).</li>
+									 
+								</ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">Intellectual Property Claims
+                               	<ol>
+									<li>Shout.eu respects the intellectual property of others. If you believe that your intellectual 	property rights have been used in a way that gives rise to concerns of infringement, please 	contact us. We respond expeditiously to rights owners and their agents who contact us to 	communicate concerns about any alleged infringement. Upon receipt of a Intellectual Property 	Claim, we may take certain actions, including removing information or an item, all of which are 	taken without any admission as to liability and without prejudice to any rights, remedies or 	defenses, all of which are expressly reserved. Furthermore, in submitting an Intellectual 	Property Claim, you grant to Shout the right to use, reproduce, modify, adapt, publish, translate, 	create derivative works from, and display its content 	throughout the world in any media. This 	includes forwarding your claim to the parties involved in the 	provision of the allegedly 	infringing content. You agree to indemnify Shout for all claims brought by a 	third party against 	Shout arising out of or in connection with the submission of an Intellectual Property Claim. </li>
+									<li><strong>Note on Third Party Seller Listings:</strong> Please keep in mind that Third Party Seller listings are 	merely 	hosted on Shout.eu and are posted solely at the direction of Third Party Sellers who may be contacted via their <strong> Address Information </strong>page, accessible from any of their listings.</li>
+									<li><strong>Important Warning:</strong> giving false, misleading or inaccurate information in an Intellectual 	Property Claim to Shout may result in civil and/or criminal liability. You should contact a legal 	advisor if you have any questions.</li>
+								</ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">The Shout Software
+                               	<ol>
+									<li> You may use the Shout Software solely for purposes of enabling you to use and enjoy the Shout 	Services as provided by Shout.eu, and as permitted by these Terms and Conditions of Use. You 	may not incorporate any portion of the Shout Software into your own programs or compile any 	portion of it in combination with your own programs, transfer it for use with another service, or 	sell, rent, lease, lend, loan, distribute or sub-license the Shout Software or otherwise assign any 	rights to the Shout Software in whole or in part. You may not use the Shout Software for any 	illegal purpose. We may cease providing any Shout Software and we may terminate your right 	to use any Shout Software at any time. Your rights to use the Shout Software will automatically 	terminate without notice from us if you fail to comply with any of these Software Terms and 	Conditions of Use or any other Service Terms. Additional third party terms contained within or 	distributed with certain Shout Software that are specifically identified in related documentation 	may apply to that Shout Software (or software incorporated with the Shout Software) and will 	govern the use of such software in the event of a conflict with these Conditions of Use. All 	software used in any Shout Service is the property of Shout or its software suppliers and 	protected by United Kingdom and international copyright laws.
+									<br/>
+									Terms found here apply to any software (including any updates or upgrades to the software 	and any related documentation) that we make available to you from time to time for your use in 	connection with the Shout Services.</li>
+									<li> Terms found here apply to any software (including any updates or upgrades to the software 	and any related documentation) that we make available to you from time to time for your use in 	connection with the Shout Services.</li>
+									<li>You may not, and you will not encourage, assist or authorise any other person to copy, modify, 	reverse engineer, decompile or disassemble, or otherwise tamper with, the Shout Software, 	whether in whole or in part, or create any derivative works from or of the Shout Software. </li>
+								</ol>
+							 </li>
+                             
+							 <li class="title-blueTxt">Breaches of these terms and conditions
+                               	<ol>
+									<li>Without prejudice to our other rights under these terms and conditions, if you breach these terms and conditions in any way, or if we reasonably suspect that you have breached these terms and conditions in any way, we may:
+									 <ul class="lower-counter-list">
+										<li> send you one or more formal warnings;</li>
+										<li>temporarily suspend your access to our website;</li>
+										<li> permanently prohibit you from accessing our website;</li>
+										<li> block computers using your IP address from accessing our website;</li>
+										<li> contact any or all of your internet service providers and request that they block your 		access to our website;</li>
+										<li>commence legal action against you, whether for breach of contract or otherwise; and/or</li>
+										<li>suspend or delete your account on our website</li>
+									 <ul>
+									</li>
+									
+									<li> Where we suspend or prohibit or block your access to our website or a part of our website, you 	must not take any action to circumvent such suspension or prohibition or blocking (including 	without limitation creating and/or using a different account).</li>
+									<li> If you breach these Conditions of Use and we take no action, we will still be entitled to use our 	rights and remedies in any other situation where you breach these Conditions of Use.</li>
+								</ol>
+							 </li>
+							 
+							 <li class="title-blueTxt">Variation
+                               	<ol>
+									<li> We reserve the right to make changes to any Shout Services, policies, terms and conditions including these Conditions of Use, and Service Terms at any time. Unless otherwise indicated, amendments will become effective immediately. Please review these Terms and Conditions periodically. Your continued use of the Site following the posting of changes and/or modifications will constitute your acceptance of the revised Terms and Conditions. You will be subject to the terms and conditions, policies and Conditions of Use in force at the time that you use the Shout Services. If any of these Conditions of Use is deemed invalid, void, or for any reason unenforceable, that condition will be deemed severable and will not affect the validity and enforceability of any remaining condition. For your information, this page was last updated as of the date at the top of these terms and conditions.</li>
+								</ol>
+							 </li>
+							 <li class="title-blueTxt">Assignment
+                               	<ol>
+									<li>You hereby agree that we may assign, transfer, sub-contract or otherwise deal with our rights and/or obligations under these terms and conditions. </li>
+									<li>You may not without our prior written consent assign, transfer, sub-contract or otherwise deal 	with any of your rights and/or obligations under these terms and conditions.</li>
+								</ol>
+							 </li>
+							 
+							  <li class="title-blueTxt">Severability
+                               	<ol>
+									<li>If a provision of these terms and conditions is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect.</li>
+									<li>If any unlawful and/or unenforceable provision of these terms and conditions would be lawful 	or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of 	the provision will continue in effect. </li>
+								</ol>
+							 </li>
+							 
+							  <li class="title-blueTxt">Third party rights
+                               	<ol>
+									<li>A contract under these terms and conditions is for our benefit and your benefit, and is not intended to benefit or be enforceable by any third party.</li>
+									<li>The exercise of the parties' rights under a contract under these terms and conditions is not 	subject to the consent of any third party.</li>
+								</ol>
+							 </li>
+							 
+							  <li class="title-blueTxt">Entire agreement
+                               	<ol>
+									<li>These terms and conditions, together with our privacy and cookies policy, shall constitute the 	entire agreement between you and us in relation to your use of our website and shall 	supersede all previous agreements between you and us in relation to your use of our website.</li>
+								</ol>
+							 </li>
+							 
+							  <li class="title-blueTxt">Law and jurisdiction
+                               	<ol>
+									<li>These terms and conditions shall be governed by and construed in accordance with Italian law.</li>
+									<li>Any disputes relating to these terms and conditions shall be subject to the exclusive jurisdiction 	of the courts of Italy.</li>
+								</ol>
+							 </li>
+							 
+							   <li class="title-blueTxt">Statutory and regulatory disclosures
+                               	<ol>
+									<li>This website is owned and operated by <img src="assets/images/svg/text/01 - risparmio.svg" alt=""/> <img src="assets/images/svg/text/02 - Srl.svg" alt=""/> <img src="assets/images/svg/text/03 - VAT.svg" alt=""/> <img src="assets/images/svg/text/04 - number.svg" alt=""/> <img src="assets/images/svg/text/05 - IT-03521890925.svg" alt=""/></li>
+									<li> We are registered in Italy under registration number <img src="assets/images/svg/text/06 - CA-277949.svg" alt=""/> and our registered office is at <img src="assets/images/svg/text/07 - Via.svg" alt=""/>  <img src="assets/images/svg/text/08 - ippocrate.svg" alt=""/> <img src="assets/images/svg/text/09 - 28.svg" alt=""/> <img src="assets/images/svg/text/10 - 09121.svg" alt=""/> <img src="assets/images/svg/text/11 - Cagliari.svg" alt=""/> <img src="assets/images/svg/text/12 - hyphen.svg" alt=""/> <img src="assets/images/svg/text/13 - Italy.svg" alt=""/></li>
+									<li>Our principal place of business is at <img src="assets/images/svg/text/14 - Open.svg" alt=""/> <img src="assets/images/svg/text/15 - Campus.svg" alt=""/>  <img src="assets/images/svg/text/16 - SS.svg" alt=""/>  <img src="assets/images/svg/text/17 - 195.svg" alt=""/>  <img src="assets/images/svg/text/18 - loc.svg" alt=""/> <img src="assets/images/svg/text/19 - Sa.svg" alt=""/> <img src="assets/images/svg/text/20 - Illetta.svg" alt=""/> <img src="assets/images/svg/text/21 - Km.svg" alt=""/> <img src="assets/images/svg/text/22 - 2300.svg" alt=""/> <img src="assets/images/svg/text/23 - 09123.svg" alt=""/> <img src="assets/images/svg/text/24 - Cagliari.svg" alt=""/> <img src="assets/images/svg/text/25 - hyphen.svg" alt=""/> <img src="assets/images/svg/text/26 - Italy.svg" alt=""/> </li>
+									<li>You can contact us:
+										<ul class="lower-counter-list">
+											<li>by post, using the postal address given above;</li>
+											<li>using our website contact form.</li>
+										</ul>
+									</li>
+									<li>When you use any Shout Service or send e-mails, text messages, and other communications 	from your desktop or mobile device to us, you are communicating with us electronically. We will 	communicate 	with you electronically in a variety of ways, such as by e-mail, text, in-app push 	notices or by posting e-mail messages or communications on the website or through other 	Shout Services. For contractual purposes, you consent to receive communications from us 	electronically and you agree that all agreements, notices, disclosures and other 	communications that we provide you electronically satisfy any legal requirement that such 	communications be in writing, unless mandatory applicable laws specifically require a different form of communication.</li> 
+								</ol>
+							 </li>
+							 
+							 </ol>
+                                                    	
+                         
+                         </div>
+                        <!-- //First Section -->
+                <!-- //Static Content -->
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        
+        <div class="clearfix"></div>
+        </div>
+		<div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

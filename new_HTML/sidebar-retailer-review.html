@@ -1,0 +1,189 @@
+<!-- Filter Section -->
+<div  class="filter-section">
+	<div class="review-block">
+    	<h3 class="title">Amazon UK Rating <a href="">Expand</a></h3>
+        <div class="info-review">
+            <div class="bloxks">
+                <label class="progress-label">Review Average</label>
+                <div class="progress">
+                  <div class="progress-bar purple" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <span class="sr-only">60% Complete</span>
+                  </div>
+                </div>
+            </div>
+            <div class="bloxks">
+                <label>Average Price Rating</label>
+                <div class="progress">
+                  <div class="progress-bar green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <span class="sr-only">60% Complete</span>
+                  </div>
+                </div>
+                <label>Average Deal Quality Rating</label>
+                <div class="progress">
+                  <div class="progress-bar green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <span class="sr-only">60% Complete</span>
+                  </div>
+                </div>
+                <label>Average Delivery Time Rating</label>
+                <div class="progress">
+                  <div class="progress-bar green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <span class="sr-only">60% Complete</span>
+                  </div>
+                </div>
+                <label>Average Customer Service Rating</label>
+                <div class="progress">
+                  <div class="progress-bar green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                    <span class="sr-only">60% Complete</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="filter-section hidden-xs hidden-sm" ng-init="$parent.filterhide=true" ng-class="{ 'open':($parent.filter_show ) }" >
+    <div class="filter-overlay"></div>
+    
+    
+    <div class="filter-block search-fliter">
+      <h3 class="title hidden-xs hidden-sm">Show results for <a href="#" class="pull-right link hide">reset all</a></h3>
+      <ul>
+      	<li class="clearfix hidden-lg hidden-md filter-title"><h3 ng-click="$root.filter_show=false">Filters</h3> 
+        <div class="pull-right"><a href="#" class="btn blue-btn" ng-click="$root.filter_show=false">apply</a> <a href="#" class="btn disable">reset</a></div>
+        </li>
+        
+        <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Keyword <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+            	<!-- Input -->
+            	<div class="input-group add-on search-input">
+                    <input class="form-control" placeholder="Keyword" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- //Input -->
+                <!-- error Input -->
+                <div class="error_tooltip hide">Lorem ipsum dolor sit amet consectetui</div>
+                <div class="input-group add-on search-input error-input hide">
+                	<input class="form-control" value="Lorem" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- error Input -->
+                
+                <!-- keyword List -->
+                <ul class="keyword-list">
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+            	</ul>
+                <!-- //keyword List -->            
+            </div>
+             <!-- //Dropdown -->
+        </li>
+       
+       <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Time Range <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block clearfix" uib-collapse="isCollapsed">
+            	<!-- Custom Dropdown -->
+                <div ng-controller="DropdownCtrl">
+                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="timerange='All Time'">
+                        {{ timerange }} 
+                    </a>			
+                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li><a href="#" ng-class= "active('All Time', timerange)"  ng-click="timerange='All Time'">All Time</a></li>
+                        <li><a href="#" ng-class= "active('Custom Range', timerange)" ng-click="timerange='Custom Range'">Custom Range</a></li>
+                        <li><a href="#" ng-class= "active('Custom Range1', timerange)" ng-click="timerange='Custom Range1'">Custom Range1</a></li>
+                    </ul>
+                </div>
+                </div>
+          		 <!-- // Custom Dropdown -->
+                 <!-- Date Picker-->
+                  <div ng-controller="DatepickerPopupDemoCtrl" class="datepicker">
+                    <div class="input-group">
+                    	<label>Form</label>
+                        <input type="text" class="form-control" value="12/03/2016/">
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="calendar_open=!calendar_open"><img src="assets/images/icons/calendar_icon.svg" /></button>
+                        </span>
+                        <div class="calendar" ng-class="{ 'open':(calendar_open) }"><img src="assets/images/caledar-img.png" /></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>to</label>
+                        <input type="text" class="form-control" placeholder="dd/mm/yyyy"/>
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="calendar_open2=!calendar_open2"><img src="assets/images/icons/calendar_icon.svg" /></button>
+                        </span>
+                            <div class="calendar" ng-class="{ 'open':(calendar_open2) }"><img src="assets/images/caledar-img.png" /></div>
+                    
+                    </div>
+            	</div>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+       
+       <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Rating <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	<!-- Scroll Content -->
+                <div class="multiselect-panel clearfix scrollarea"
+			ng-scrollbars ng-scrollbars-config="{}"
+			style="max-height: 147px; height: 147px;">
+            <ul class="custom-checkboxbtn">
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">10/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">9/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">8/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">7/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">6/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">5/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">4/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">3/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">2/10</span></label> <span class="notification">99</span>
+            </li>
+            <li>
+            	<label><input type="checkbox" name="checkbox"><span class="lbl">1/10</span></label> <span class="notification">99</span>
+            </li>
+           
+            </ul>
+            
+                
+                </div>
+                <!-- //Scroll Content -->
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+      </ul>
+    </div>
+    <!-- Filter Block -->
+    <div ng-include="'filter-top-trending-deal.html'"></div>
+    <!-- //Filter Block -->
+    
+</div>
+<!-- //FIlter Section -->
+
+

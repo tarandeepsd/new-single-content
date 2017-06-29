@@ -1,0 +1,31 @@
+.uib-datepicker-popup{padding:0px;width:230px;}
+.uib-datepicker thead{background:#4981bc;color:#fff;font-weight:normal;}
+.uib-datepicker thead th{padding:0px;}
+.uib-daypicker{width:100%;}
+.uib-datepicker thead .btn{background:none;color:#fff;font-weight:normal;height:auto !important;line-height:24px;margin-top:9px;padding-bottom:2px;}
+.uib-datepicker-popup table th button strong{font-weight:normal;}
+.uib-datepicker-popup table th small{font-size:11px;line-height:30px;}
+.uib-datepicker .btn{min-width:10px;outline:0px;}
+.uib-datepicker tbody .btn{background:none;color:#0050a0 !important;font-weight:normal;padding:0px;border-radius:50%;width:24px;height:24px !important;line-height:22px;text-align:center;border:2px solid transparent;font-size:14px !important;}
+.uib-datepicker tbody .btn.active{background:#4681bb;color:#fff !important;border:2px solid transparent;}
+.uib-datepicker tbody .btn.active .text-info{color:#fff;}
+.uib-datepicker tbody .btn:hover{border:2px solid #0050a0;}
+.uib-datepicker tbody .text-muted{color:#a9a7b1 !important;}
+.uib-datepicker-popup .uib-button-bar{display:none;}
+.uib-datepicker-popup .uib-weeks:first-child td{padding-top:10px;}
+.uib-datepicker-popup .uib-weeks:last-child td{padding-bottom:10px;}
+.uib-daypicker tbody{padding:0 20px;}
+.uib-datepicker-popup{border-radius:3px !important;left:inherit !important;right:0 !important;}
+.uib-monthpicker, .uib-yearpicker{width:100%;}
+.uib-monthpicker .btn, .uib-yearpicker .btn{width:100%!important;height:auto!important;border-radius:1.5px!important;}
+.uib-monthpicker td, .uib-yearpicker td{padding:5px 2px;}
+.uib-datepicker-popup .uib-monthpicker button, .uib-datepicker-popup .uib-yearpicker button{font-size:13px !important;}
+.cal_left .uib-datepicker-popup{left:0 !important;right:inherit !important;}
+.uib-datepicker-popup .btn:focus{outline:none;}
+.ng-valid-date-disabled li{padding:0px !important;}
+.uib-datepicker-popup{margin-top:6px !important;}
+.uib-datepicker-popup:after{border-color:transparent transparent #4981BC transparent;border-style:none solid solid;border-width:0 6px 6px;content:"";float:right;height:1px;position:absolute;right:18px;top:-6px;width:1px;z-index:99;}
+.uib-datepicker-popup .glyphicon-chevron-right::before{content:" ";background:url(../images/svg/calender_arrows/next-month.svg) no-repeat;float:left;height:16px;width:10px;}
+.uib-datepicker-popup .glyphicon-chevron-left::before{content:" ";background:url(../images/svg/calender_arrows/prev-month.svg) no-repeat;float:left;height:16px;width:10px;}
+.uib-datepicker td{padding:2px;}
+.uib-datepicker thead tr:nth-child(2) th{padding-bottom:8px !important;}

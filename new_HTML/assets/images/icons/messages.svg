@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="30px" height="20px" viewBox="0 0 30 20" enable-background="new 0 0 30 20" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#F42749" d="M0,16v-2"/>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M15,14c0.659,0,2-1,2-1L30,3c0-1.657-1.343-3-3-3H3
+		C1.343,0,0,1.343,0,3l13,10C13,13,14.341,14,15,14z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M20,13c0,0-3.22,3.148-5.001,3C13.218,15.852,10,13,10,13
+		l-2.281-1.825L0,16v1c0,1.657,1.343,3,3,3h24c1.657,0,3-1.343,3-3v-1l-7.719-4.825L20,13z"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,5 0,14 6.316,10.053 	"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="30,14 30,5 23.684,10.053 	"/>
+</g>
+</svg>

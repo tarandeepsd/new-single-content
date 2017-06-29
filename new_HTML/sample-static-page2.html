@@ -1,0 +1,433 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'static-page-breadcrumb.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-sidebar-static.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content page-content">  
+            
+            
+               
+    <!-- Top Section Mobile -->
+    <div class="hidden-lg hidden-md mobile-product-filter clearfix"> 
+      
+      <!-- Show all -->
+      <div class="toptab-box">
+        <div class="sortby-filter policy_dropdown" ng-controller="DropdownCtrl"> 
+          <!-- Custom Dropdown -->
+          
+          <div class="dropdown custom-dropdown" uib-dropdown="1" > <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='What is Shout'"> {{ sorttab }} </a>
+            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"  ng-scrollbars ng-scrollbars-config="{}"
+				style="max-height:300px;">
+              <li><a href="#" ng-class= "active('What is Shout', sorttab)" ng-click="$parent.active = 0;sorttab='What is Shout'">What is Shout</a></li>
+              <li><a href="#" ng-class= "active('Frequently Asked Questions', sorttab)" ng-click="$parent.active = 1;sorttab='Frequently Asked Questions'">Frequently Asked Questions</a></li>
+              <li><a href="#" ng-class= "active('Registration & Log In', sorttab)"  ng-click="$parent.active = 2;sorttab='Registration & Log In'">Registration & Log In</a></li>
+              
+              <li><label>Customisation</label>
+              		<ul class="subcategories">
+                  <li><a href="#" ng-class= "active('Profiling Pop Ups', sorttab)"  ng-click="$parent.active = 2;sorttab='Profiling Pop Ups'"> Profiling Pop Ups </a></li>
+                  <li><a href="#" ng-class= "active('Preferences Page', sorttab)"  ng-click="$parent.active = 2;sorttab='Preferences Page'"> Preferences Page </a></li>
+                  <li><a href="#" ng-class= "active('Edit Preferences in My Feed page', sorttab)"  ng-click="$parent.active = 2;sorttab='Edit Preferences in My Feed page'"> Edit Preferences in "My Feed" page </a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#" ng-class= "active('Buy Deals & Products', sorttab)"  ng-click="$parent.active = 2;sorttab='Buy Deals & Products'">Buy Deals & Products</a></li>
+              <li><a href="#" ng-class= "active('Voting', sorttab)"  ng-click="$parent.active = 2;sorttab='Voting'">Voting</a></li>
+              <li><a href="#" ng-class= "active('Commenting', sorttab)"  ng-click="$parent.active = 2;sorttab='Commenting'">Commenting</a></li>
+              <li><label>Shouting</label>
+              		<ul class="subcategories">
+                  <li><a href="#" ng-class= "active('Shouting Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Shouting Deals'"> Shouting Deals </a></li>
+                  <li><a href="#" ng-class= "active('Shouting Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Shouting Tips'">Shouting Tips</a></li>
+                  <li><a href="#" ng-class= "active(' Shouting Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Shouting Discussions '"> Shouting Discussions</a></li>
+                </ul>
+              </li>
+              <li><label>Reviewing</label>
+              		<ul class="subcategories">
+                  <li><a href="#" ng-class= "active('Reviewing Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Reviewing Deals'"> Reviewing Deals </a></li>
+                  <li><a href="#" ng-class= "active('Reviewing Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Reviewing Tips'">Reviewing Tips</a></li>
+                  <li><a href="#" ng-class= "active(' Reviewing Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Reviewing Discussions '"> Reviewing Discussions</a></li>
+                </ul>
+              </li>
+              <li><label>Reporting</label>
+              		<ul class="subcategories">
+                  <li><a href="#" ng-class= "active('Reporting Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Reporting Deals'"> Reporting Deals </a></li>
+                  <li><a href="#" ng-class= "active('Reporting Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Reporting Tips'">Reporting Tips</a></li>
+                  <li><a href="#" ng-class= "active(' Reporting Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Reporting Discussions '"> Reporting Discussions</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="#" ng-class= "active('Inviting', sorttab)"  ng-click="$parent.active = 2;sorttab='Inviting'">Inviting</a></li>
+              <li><a href="#" ng-class= "active('Badges', sorttab)"  ng-click="$parent.active = 2;sorttab='Badges'">Badges</a></li>
+              <li><a href="#" ng-class= "active('Affiliate Program', sorttab)"  ng-click="$parent.active = 2;sorttab='Affiliate Program'">Affiliate Program</a></li>
+              <li><a href="#" ng-class= "active('Finding Friends', sorttab)"  ng-click="$parent.active = 2;sorttab='Finding Friends'">Finding Friends</a></li>
+              <li><a href="#" ng-class= "active('Terms & Conditions', sorttab)"  ng-click="$parent.active = 2;sorttab='Terms & Conditions'">Terms & Conditions</a></li>
+              <li><a href="#" ng-class= "active('Privacy Policy', sorttab)"  ng-click="$parent.active = 2;sorttab='Privacy Policy'">Privacy Policy</a></li>
+              <li><a href="#" ng-class= "active('Cookie Policy', sorttab)"  ng-click="$parent.active = 2;sorttab='Cookie Policy'">Cookie Policy</a></li>
+              <li><label>Contact Us</label>
+              		<ul class="subcategories">
+                  <li><a href="#" ng-class= "active(' For Retailers ', sorttab)"  ng-click="$parent.active = 2;sorttab=' For Retailers '">  For Retailers </a></li>
+                  <li><a href="#" ng-class= "active(' For Partners ', sorttab)"  ng-click="$parent.active = 2;sorttab='For Partners'">For Partners</a></li>
+                  <li><a href="#" ng-class= "active(' Work with us ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Work with us '"> Work with us</a></li>
+                </ul>
+              </li>
+              
+              
+            </ul>
+          </div>
+          
+          <!-- // Custom Dropdown --> 
+        </div>
+      </div>
+    </div>
+    <!-- //Top Section Mobile --> 
+    
+            
+            
+                     <div class="clearfix"></div>
+            	<!-- Static Content -->
+                        <!-- First Section -->
+                        <h2 class="title"><span>Profiling Pop Up</span></h2>
+                        
+                        <div class="content">
+                        	<p>Lorem ipsum dolor sit amet, <strong>consectetuer adipiscing</strong> elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea <a href="#">commodo consequat</a>. </p>
+                        	<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. <br>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+                            
+                            <h3>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</h3>
+                            
+                            <p class="m_top18">Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+                            
+                            <p class="m_top18"><img src="assets/images/default.jpg" alt="" class=" img-responsive"/></p>
+                            
+                           <p class="m_top18"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper. 
+                           <span class="right_image_text"><img src="assets/images/default2.jpg" alt="" class=" img-responsive"/></span>
+                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                           </p>
+                           
+                           <p class="m_top18"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper. 
+                           <span class="left_image_text"><img src="assets/images/default2.jpg" alt="" class=" img-responsive"/> <small>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</small></span>
+                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br>
+<br>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                           </p>
+                            
+                       </div>
+                        <!-- //First Section -->
+                     
+                     <div class="clearfix"></div>
+                      <!-- 2nd Section -->
+                     <h2 class="line_heading font_size32"><span>Examples of three columns</span></h2>
+      					
+                        <div class="content">
+        <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+        <h3>Vulputate velit esse molestie</h3>
+        
+        <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+        
+        <uib-accordion close-others="true" class="toggle_design toggle_border_none">
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Lorem ipsum dolor sit amet? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+            
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Adipiscing consectetuer elit sed diam? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Do you know a similar deal and want to shout it?</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Aliquam erat voluptat? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br>
+                <br>
+                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Duis autem vel eum itiure? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br>
+                <br>
+                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+        </uib-accordion>
+        
+        
+        <h3 class="m_top30">Vulputate velit esse molestie</h3>
+        
+        <p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+        
+        <uib-accordion close-others="true" class="toggle_design border_close">
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Lorem ipsum dolor sit amet? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Adipiscing consectetuer elit sed diam? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Aliquam erat voluptat? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br>
+                <br>
+                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading> <span class="toggle_plus"></span> Duis autem vel eum itiure? </uib-accordion-heading>
+            <div class="accordian-content" ng-controller="CollapseCtrl">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br>
+                <br>
+                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+            </div>
+            <span class="close_link"><a href="#">Close</a></span> </uib-accordion-group>
+        </uib-accordion>
+        
+        <p class="m_top18">Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        
+      </div>
+      
+                      <!-- //2nd Section -->
+                      
+                     <div class="clearfix"></div>
+                         <!-- Fifth Section -->
+                        <h2 class="title"><span>Examples of tables</span></h2>
+                        
+                        <div class="content">
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<p>Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+                                </div>
+                            </div>
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<h3>Lorem ipsum dolor sit amet</h3>
+                                	<div class="table-block">
+                                    	<div class="heading">Title of the table</div>
+                                		<div class="table-div">
+                                            <div class="table-row">
+                                                <div class="table-cell head">Label 1</div>
+                                                <div class="table-cell head text-center">Label 2</div>
+                                                <div class="table-cell head text-center">Label 3</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                        </div>
+                                    	<div class="footer">* Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</div>
+                                    </div>
+                                	<p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip. Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+                                </div>
+                            </div>
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<h3>Lorem ipsum dolor sit amet</h3>
+                                    <p class="nomarginbot">Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+                                	<div class="table-block">
+                                    	<div class="heading">Title of the table</div>
+                                		<div class="table-div">
+                                            <div class="table-row">
+                                                <div class="table-cell head">Label 1</div>
+                                                <div class="table-cell head text-center">Label 2</div>
+                                                <div class="table-cell head text-center">Label 3</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                            </div>
+                                        </div>
+                                    	<div class="footer">* Ut wisi enim lobortis nisl ut aliquip ex ea commodo  ad minim veniam<br>** Quis nostrud exerci tation ullamcorper suscipit </div>
+                                    </div>
+                                	<p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip. Vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+                                </div>
+                            </div>
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<h3>Lorem ipsum dolor sit amet</h3>
+                                	<div class="table-block left">
+                                    	<div class="heading">Title of the table</div>
+                                		<div class="table-div">
+                                            <div class="table-row">
+                                                <div class="table-cell head">Label 1</div>
+                                                <div class="table-cell head text-center">Label 2</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">Dolor sit amet</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Consectetuer adipiscing</div>
+                                                <div class="table-cell text-center" data-label="Label 2">Adipiscing elit sed</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Sed diam nonumm</div>
+                                                <div class="table-cell text-center" data-label="Label 2">Tincidunt</div>
+                                            </div>
+                                            
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Dolor ipsum</div>
+                                                <div class="table-cell text-center" data-label="Label 2">Lorem</div>
+                                            </div>
+                                        </div>
+                                    	<div class="footer">* Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</div>
+                                    </div>
+                                	<p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                    <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                    <p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+                                </div>
+                            </div>
+                        	<div class="row">
+                            	<div class="col-sm-12">
+                                	<div class="table-block fullwidth">
+                                    	<div class="heading">Title of the table</div>
+                                		<div class="table-div">
+                                            <div class="table-row">
+                                                <div class="table-cell head">Label 1</div>
+                                                <div class="table-cell head text-center">Label 2</div>
+                                                <div class="table-cell head text-center">Label 3</div>
+                                                <div class="table-cell head text-center">Label 4</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                                <div class="table-cell text-center" data-label="Label 4">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                                <div class="table-cell text-center" data-label="Label 4">999</div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div class="table-cell" data-label="Label 1">Lorem ipsum dolor sit amet</div>
+                                                <div class="table-cell text-center" data-label="Label 2">9,999</div>
+                                                <div class="table-cell text-center" data-label="Label 3">999</div>
+                                                <div class="table-cell text-center" data-label="Label 4">999</div>
+                                            </div>
+                                        </div>
+                                    	<div class="footer">* Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</div>
+                                    </div>
+                                </div>
+                            </div>
+                             
+                            	           
+                            	    
+                        
+                        </div>
+                       <!-- //Fifth Section -->
+                       
+                 
+                        
+                         
+                <!-- //Static Content -->
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

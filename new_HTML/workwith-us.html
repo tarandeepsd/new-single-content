@@ -1,0 +1,194 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'static-page-breadcrumb.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-sidebar-static.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content page-content">  
+            	<!-- Static Content -->
+                        <!-- First Section -->
+                        <h2 class="title"><span>Work with us</span></h2>
+                        
+                        <div class="content">
+                            <p>If you want to be a part of the Shout Team, please fulfill the form below. </p>
+							
+                            <p>If you are a consumer and you want to ask us a question click <a href="for-retailers.html"> here</a>. If you are a Retailer and you want to know something more about how we can cooperate click <a href="for-retailers.html">here</a>.</p>
+                         
+                         	<div class="row contact-page">
+                            	<!-- Contact Form -->
+                            	<div class="col-sm-7">
+                                	<div class="default-form">
+                                    	<div class="form-group">
+                                            <label>Your email address <span class="req">(compulsory)</span></label>
+                                            <div class="form-input">
+                                                <input type="text" class="form-control form-control-icon" placeholder="Enter a valid email address" />
+                                                <span class="form-icon question-icon"></span>
+                                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Applying for <span class="req">(compulsory)</span></label>
+                                            <div class="form-input form-select" ng-controller="DropdownCtrl">
+                                                <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-click="placeholder=true" ng-class="{'placeholder':!placeholder}" ng-init="topic='Select the position you want to apply for'">
+                                                        {{ topic }} 
+                                                    </a>			
+                                                    <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                                    	<li><a href="#" active-function modal="Community Manager" active_value="{{topic}}"  ng-click="topic='Community Manager'">Community Manager</a></li>
+                                                        <li><a href="#" active-function modal="Graphic Designer junior" active_value="{{topic}}"  ng-click="topic='Graphic Designer junior'">Graphic Designer junior</a></li>
+                                                        <li><a href="#" active-function modal="Interaction Designer" active_value="{{topic}}"  ng-click="topic='Interaction Designer'">Interaction Designer</a></li>
+                                                        <li><a href="#" active-function modal="Social Media Manager" active_value="{{topic}}"  ng-click="topic='Social Media Manager'">Social Media Manager</a></li>
+                                                        <li><a href="#" active-function modal="Factotum" active_value="{{topic}}"  ng-click="topic='Factotum'">Factotum</a></li>
+                                                    </ul>
+                                                </div>
+                                                <span class="form-icon question-icon"></span>
+                                                <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-button join-form-button text-right">
+                                        	<div class="row">
+                                                <div class="col-sm-6">
+                                                	<input type="button" value="UPLOAD CURRICULUM VITAE ..." class="btn btn-block btn-lg green-btn btn-text-black" />
+                                                 </div>
+                                                 <div class="col-sm-6">
+                                                 	<input type="button" value="SEND MY APPLICATION" class="btn btn-block btn-lg purple-btn btn-disable" />
+                                        		 </div>
+                                            </div>
+                                        </div>
+                                        
+                                    	<div class="form-group form-button join-form-button text-right">
+                                        	<div class="row">
+                                                <div class="col-sm-6">
+                                                	<div class="browsefiles">
+                                                    	John_Doe_CV.pdf <span class="closeBtn"></span>
+                                                    </div>
+                                                 </div>
+                                                 <div class="col-sm-6">
+                                                 	<input type="button" value="SEND MY APPLICATION" class="btn btn-block btn-lg purple-btn" />
+                                        		 </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                
+                                </div>
+                                <!-- //Contact Form -->
+                                
+                                <!-- Contact Content -->
+                                <div class="col-sm-5">
+                               	  <div class="contact-details">
+                                		<p><img src="assets/images/svg/address.svg" alt="Address"/></p>
+                                    <ul class="social-icons">
+                                        	<li>
+                                           	  <a href="#" class="img-hover">
+                                                	<img src="assets/images/icons/staticpage/facebook/1_facebook_normal.svg" class="normal" />
+                                                    <img src="assets/images/icons/staticpage/facebook/2_facebook_onhover.svg" class="hover" />
+                                                    <img src="assets/images/icons/staticpage/facebook/3_facebook_onclick.svg" class="active" />
+                                              </a>
+                                            </li>
+                                            <li>
+                                           	  <a href="#" class="img-hover">
+                                                	<img src="assets/images/icons/staticpage/twitter/1_twitter_normal.svg" class="normal" />
+                                                    <img src="assets/images/icons/staticpage/twitter/2_twitter_onhover.svg" class="hover" />
+                                                    <img src="assets/images/icons/staticpage/twitter/3_twitter_onclick.svg" class="active" />
+                                              </a>
+                                            </li>
+                                            <li>
+                                           	  <a href="#" class="img-hover">
+                                                	<img src="assets/images/icons/staticpage/google/1_google_normal.svg" class="normal" />
+                                                    <img src="assets/images/icons/staticpage/google/2_google_onhover.svg" class="hover" />
+                                                    <img src="assets/images/icons/staticpage/google/3_google_onclick.svg" class="active" />
+                                              </a>
+                                            </li>
+                                      </ul>
+									</div>
+
+                                
+                                </div>
+                                 <!-- //Contact Content -->
+                            
+                            </div>
+                         
+                         </div>
+                        <!-- //First Section -->
+                <!-- //Static Content -->
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

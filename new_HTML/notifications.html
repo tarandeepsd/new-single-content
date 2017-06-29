@@ -1,0 +1,612 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body>
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+         <!-- Banner -->
+        <div ng-include="'userprofile-header.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+         <!-- User Breadcrumb -->
+        <div ng-include="'user-bredcrumb.html'"></div>
+        <!-- //User Breadcrumb -->
+         <!-- Main Container -->
+        <div class="main-container clearfix"> 
+            <!-- Filter Sidebar -->
+            <div ng-include="'filter-sidebar-notification.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+            
+             <!-- Main Content --> 
+              <div class="main-content product-section">
+                
+                   <!-- Top Section Mobile -->
+                        <div class="hidden-lg hidden-md mobile-product-filter">
+                                      
+                                            <!-- Show all -->
+                                             <div class="toptab-box top-filter-block">
+                        	<div class="filter-icon">
+                            <a href="#" ng-click="filter_show=!filter_show"><img src="assets/images/filter-icon.svg"/></a>
+                        	</div>
+                        	<div class="filter-tab">
+                        	
+                                            <!-- //Show all -->
+         
+                                <div class="sortby-filter sort-tab" ng-controller="DropdownCtrl" >
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1" >
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='Notifications'; count='999'">
+                                        {{ sorttab }} <span> {{ count }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                            <li><a href="#" ng-class= "active('Notifications', sorttab)" ng-click="$parent.active = 0;sorttab='Notifications'; count='999'">Notifications <span>999</span></a></li>
+                                        </ul>
+                                    </div>
+                                <!-- // Custom Dropdown -->
+                                </div> 
+                                <!-- //Tab -->
+                                <!-- Sort By Filter -->
+                                <div class="sortby-filter sortby-filter-mobile" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical'; ascdsc='A-Z';sortbyActive='a1'">
+                                        {{ sortby }} <span> {{ ascdsc }}</span>
+                                    </a>			
+                                       <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='A-Z'; sortbyActive='a1'">Alphabetical Order <span>A-Z</span></a></li>
+                                        <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='Z-A'; sortbyActive='a2'">Alphabetical Order <span>Z-A</span></a></li>
+                                        <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='newest first'; sortbyActive='a3'">Date <span>newest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='oldest first'; sortbyActive='a4'">Date <span>oldest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='highest first'; sortbyActive='a5'">DB Value <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc=' lowest first'; sortbyActive='a6'">DB Value <span> lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='highest first'; sortbyActive='a7'">Discount <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='lowest first'; sortbyActive='a8'">Discount <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='highest first'; sortbyActive='a9'">Price <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='lowest first'; sortbyActive='a10'">Price <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='soonest'; sortbyActive='a11'">Expiry Date <span>soonest</span></a></li>
+                                        <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='latest'; sortbyActive='a12'">Expiry Date <span>latest</span></a></li>
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>
+                                
+                               <!-- Sort By Filter below420 -->
+                                <div class="sortby-filter sortby-filter-mobile sortby-filter-mobile420" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/ascending.svg';sortbyActive='a1'">
+                                        {{ sortby }} <span><img src="{{ascdsc}}" /></span>
+                                    </a>			
+                                      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a1'">Alphabetical Order <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a2'">Alphabetical Order <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a3'">Date <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a4'">Date <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a5'">DB Value <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a6'">DB Value <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a7'">Discount <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a8'">Discount <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a9'">Price <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a10'">Price <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='a11'">Expiry Date <span><img src="assets/images/icons/deal-category/descending.svg" /></span></a></li>
+                                        <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='a12'">Expiry Date <span><img src="assets/images/icons/deal-category/ascending.svg" /></span></a></li>
+                                    </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>  
+                                <!-- //Sort By Filter -->
+                                     
+                        </div>
+                        	
+                        </div>
+                                            
+                                        </div>
+                    <!-- //Top Section Mobile -->
+                    
+                    <!-- Sort By Filter -->
+                      <div class="sortby-filter hidden-xs hidden-sm custom_top" ng-controller="DropdownCtrl">
+                                        <label class="hidden-xs">Sort by</label>
+                                        <!-- Custom Dropdown -->
+                                            <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Alphabetical Order'; ascdsc='descending'">
+                                                {{ sortby }} <span> {{ ascdsc }}</span>
+                                            </a>			
+                                            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" ng-class= "active('a1', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='A-Z'; sortbyActive='a1'">Alphabetical Order <span>A-Z</span></a></li>
+                                        <li><a href="#" ng-class= "active('a2', sortbyActive)"  ng-click="sortby='Alphabetical Order'; ascdsc='Z-A'; sortbyActive='a2'">Alphabetical Order <span>Z-A</span></a></li>
+                                        <li><a href="#" ng-class= "active('a3', sortbyActive)"  ng-click="sortby='Date'; ascdsc='newest first'; sortbyActive='a3'">Date <span>newest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a4', sortbyActive)"  ng-click="sortby='Date'; ascdsc='oldest first'; sortbyActive='a4'">Date <span>oldest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a5', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc='highest first'; sortbyActive='a5'">DB Value <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a6', sortbyActive)"  ng-click="sortby='DB Value'; ascdsc=' lowest first'; sortbyActive='a6'">DB Value <span> lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a7', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='highest first'; sortbyActive='a7'">Discount <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a8', sortbyActive)"  ng-click="sortby='Discount'; ascdsc='lowest first'; sortbyActive='a8'">Discount <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a9', sortbyActive)"  ng-click="sortby='Price'; ascdsc='highest first'; sortbyActive='a9'">Price <span>highest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a10', sortbyActive)"  ng-click="sortby='Price'; ascdsc='lowest first'; sortbyActive='a10'">Price <span>lowest first</span></a></li>
+                                        <li><a href="#" ng-class= "active('a11', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='soonest'; sortbyActive='a11'">Expiry Date <span>soonest</span></a></li>
+                                        <li><a href="#" ng-class= "active('a12', sortbyActive)"  ng-click="sortby='Expiry Date'; ascdsc='latest'; sortbyActive='a12'">Expiry Date <span>latest</span></a></li>
+                                    </ul>
+                                        </div>
+                                         <!-- // Custom Dropdown -->
+                                    </div>  
+                    <!-- //Sort By Filter -->
+                               
+                             
+                    <!-- Category Content -->  
+                    <div class="user_custom_tab">
+                      <uib-tabset active="active">
+                    
+                                        <uib-tab index="0">
+                                            <uib-tab-heading><h3>Notifications <span class="badge">99</span></h3></uib-tab-heading>
+                                             
+                                             <div role="tabpanel" class="tab-pane active notifications_section">
+                                             
+                                             <div class="showresult-msg">857 results matching the 8 applied filters <a href="#" class="pull-right reset-btn-small"><span><img src="assets/images/svg/reset_all_filters_small.svg" alt=""></span>RESET ALL FILTERS</a>
+                             <div class="clearfix"></div>
+                             </div>
+                                             
+                                                    <div class="panel panel-default">
+                                                    
+                                                        <div class="table_box notification_section">
+                                                            
+                                                            <div class="row_box yellow_bg">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/new features/new_feature_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/new features/new_feature_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/new features/new_feature_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="#">Team Shout</a></span></p>
+                                                                 <h4 class="semibold"><a href="sample-static-page.html">New Feature: “Ciccio Pasticcio”</a></h4>
+                                                                 <p class="font_14grey">available on <span class="font_purple"><a href="myfeed-collection.html">My Feed</a></span> page</p>
+                                                                </div>
+                                                                
+                                                                <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small> </div>
+                                                              
+                                                            </div>
+                                                            
+                                                            <div class="row_box purple_bg">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/inactivity/inactivity_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/inactivity/inactivity_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/inactivity/inactivity_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="#">Team Shou</a>t</span></p>
+                                                                 <h4 class="semibold" ng-controller="ModalNewDealPresentOnline"><a href="#" ng-click="openNewDealPresentOnline('shoutnewdeal')">Hey, you did not shout anything in the last month</a></h4>
+                                                                 <p class="font_14grey" ng-controller="ModalNewDealPresentOnline"><span class="font_purple"><a href="#" ng-click="openNewDealPresentOnline('shoutnewdeal')">Shout a deal now</a></span> </p>
+                                                                </div>
+                                                                
+                                                                <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small> </div>
+                                                               
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                                <div class="cell_box">
+                                                                <span class="new_label"></span>
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/deal-icon/deal_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your deal</p>
+                                                                 <h4 class="semibold"><a href="single-product.html"><b>50% OFF</b> Huawei Nexus 6P 32GB 4G Grey - smartphones (Single SIM, Android, NanoSIM, EDGE ...</a></h4>
+                                                                 <p class="font_14grey">from <span class="font_purple">
+                                                                 <a href="retailer-offer.html">Amazon UK</a></span> - posted by you on 15 Jan 2016 in <span class="font_purple"><a href="deal-category.html">Smartphones</a></span></p>
+                                                                 </div>
+                                                                 
+                                                                 <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                                
+                                                              
+                                                             
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/deal-icon/deal_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your deal</p>
+                                                                 <h4 class="semibold"><a href="single-product.html"><b>50% OFF</b> Huawei Nexus 6P 32GB 4G Grey - smartphones (Single SIM, Android, NanoSIM, EDGE ...</a></h4>
+                                                                 <p class="font_14grey">from <span class="font_purple"><a href="retailer-offer.html">Amazon UK</a></span> - posted by <a href="user-shouts.html">AngelinaJolie</a> on 15 Jan 2016 in <span class="font_purple"><a href="deal-category.html">Smartphones</a></span></p>
+                                                                 </div>
+                                                                 
+                                                                 <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                                
+                                                             
+                                                            </div>
+
+															<div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/deal-icon/deal_expired_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_expired_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/deal-icon/deal_expired_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your deal</p>
+                                                                 <h4 class="semibold"><a href="single-product-expired.html"><b>Huawei Nexus 6P 32GB 4G Grey - smartphones (Single SIM, Android, NanoSIM, EDGE, GSM ...</b></a></h4>
+                                                                 <p class="font_14grey">from <span class="font_purple"><a href="retailer-offer.html">Amazon UK</a></span> - posted by <a href="user-shouts.html">AngelinaJolie</a>  on 15 Jan 2016 in <span class="font_purple"><a href="deal-category.html">Smartphones</a></span></p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notify_active_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                    
+                                                                </div>
+                                                                 
+                                                             
+                                                            </div>  
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/sales-icon/sales_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/sales-icon/sales_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/sales-icon/sales_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your sales</p>
+                                                                 <h4 class="semibold"><a href="single-sale.html">Everything at 40% OFF</a></h4>
+                                                                 <p class="font_14grey">from <span class="font_purple"><a href="retailer-offer.html">Amazon UK</a></span> - posted by <a href="user-shouts.html">AngelinaJolie</a> on 15 Jan 2016 in  <span class="font_purple"><a href="deal-category.html">Clothing & fashion Accessories</a></span></p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                             
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/coupon-icon/coupon_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/coupon-icon/coupon_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/coupon-icon/coupon_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your coupon</p>
+                                                                 <h4 class="semibold"><a href="retailer-offer.html">75% OFF on all products</a></h4>
+                                                                 <p class="font_14grey">from <span class="font_purple"><a href="retailer-offer.html">Amazon UK</a></span> - posted by <a href="user-shouts.html">AngelinaJolie</a> on 15 Jan 2016 in  <span class="font_purple"><a href="deal-category.html">Clothing & fashion Accessories</a></span></p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/product_review_edit/01-product-review-normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/product_review_edit/02-product-review-onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/product_review_edit/03-product-review-onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="error404.html">Username </a></span>posted a comment on your Product Review</p>
+                                                                 <h4 class="semibold"><a href="error404.html">Lorem ipsum dolor sit amet, consectetuer adipiscing lorem ipsum </a></h4>
+                                                                 <p class="font_14grey">posted on 25 Nov 2015</p>
+                                                                 
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                              
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/product_review_edit/04-product-review-expired-normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/product_review_edit/05-product-review-expired-onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/product_review_edit/06-product-review-expired-onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="error404.html">Username </a></span>posted a comment on your Product Review</p>
+                                                                 <h4 class="semibold"><a href="error404.html">Lorem ipsum dolor sit amet, consectetuer adipiscing lorem ipsum </a></h4>
+                                                                 <p class="font_14grey">posted on 25 Nov 2015</p>
+                                                                 
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                              
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/shop_review_edit/01-shop-review-normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/shop_review_edit/02-shop-review-onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/shop_review_edit/03-shop-review-onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="error404.html">Username</a></span>posted a comment on your Shop Review</p>
+                                                                 <h4 class="semibold"><a href="error404.html">Lorem ipsum dolor sit amet, consectetuer adipiscing lorem ipsum </a></h4>
+                                                                 <p class="font_14grey">about <span class="font_purple"><a href="error404.html">Amazon UK</a></span> - posted on 25 Nov 2015 </p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/affiliate_gain/01-gain-normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/affiliate_gain/02-gain-onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/affiliate_gain/03-gain-onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="error404.html">Shout Team </a></span></p>
+                                                                 <h4 class="semibold"><a href="error404.html">Your Daily Affiliation Recap</a></h4>
+                                                                 <p class="font_14grey">You earned £ 10.00 thanks to our  <span class="font_purple"><a href="error404.html">Affiliation Program </a></span> </p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                              
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/tip-icon/tip_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/tip-icon/tip_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/tip-icon/tip_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on your tip</p>
+                                                                 <h4 class="semibold"><a href="single-tip.html">How to Save on your Purchases</a></h4>
+                                                                 <p class="font_14grey">posted by you on 15 Jan 2016 in <span class="font_purple"><a href="deal-category.html">Clothing & Fashion</a></span></p>
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/discussion-icon/discussion_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/discussion-icon/discussion_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/discussion-icon/discussion_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey"><span class="font_purple"><a href="user-shouts.html">Shouter123</a></span> posted a comment on the discussion</p>
+                                                                 <h4 class="semibold"><a href="single-discussion.html">Lorem Ipsum: dolor sit amet?</a></h4>
+                                                                 <p class="font_14grey">posted by <a href="user-shouts.html">AngelinaJolie</a> on 15 Jan 2016 in  <span class="font_purple"><a href="deal-category.html">Clothing & Fashion</a></span></p>
+                                                                 
+                                                                 </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small>
+                                                                 <a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                             
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/friends related/friends_R_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/friends related/friends_R_onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/friends related/friends_R_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey">12 Mar 2016 - 10:30AM</p>
+                                                                 <h4 class="semibold"><a href="user-shouts.html">Frances_the_Mute</a></h4>
+                                                                 <p class="font_14grey">is now a friend of yours</p>
+                                                               </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small><a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                         
+                                                            </div>
+                                                            
+                                                            <div class="row_box">
+                                                            
+                                                                <div class="cell_box">
+                                                                    <a href="#" class="notification_img_box">
+                                                                    	<img src="assets/images/svg/accepted_invitation/01-registration-normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/accepted_invitation/02-registration-onhover.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/accepted_invitation/03-registration-onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                                 <div class="cell_box">
+                                                                 <p class="font_14grey">12 Mar 2016 - 10:30AM</p>
+                                                                 <h4 class="semibold"><a href="user-shouts.html">Frances_the_Mute</a></h4>
+                                                                 <p class="font_14grey">is now a friend of yours</p>
+                                                               </div>
+                                                                  <div class="cell_box"><small class="font_14grey">12 Mar 2016 - 10:30AM</small><a href="#" class="notification_img_box pos_abs_top">
+                                                                    	<img src="assets/images/svg/notifications/notify_active_normal.svg" alt="" class="normal"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_normal.svg" alt="" class="hover"/>
+                                                                        <img src="assets/images/svg/notifications/notifiy_disabled_onclick.svg" alt="" class="active"/>
+                                                                    </a>
+                                                                </div>
+                                                         
+                                                            </div>
+                                                                                                                     
+                                                     	</div>
+                                                        
+                                                    </div>
+                                             </div>
+                                             
+                                        </uib-tab>
+                                        
+                       </uib-tabset></div>
+                    <!-- //Category Content -->
+    
+                    <!--<div ng-include="'accout_section.html'"></div>-->
+              </div>
+            <!-- Main Content --> 
+            
+             <div class="clearfix"></div>
+        </div>
+         
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

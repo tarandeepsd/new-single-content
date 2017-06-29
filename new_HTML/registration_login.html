@@ -1,0 +1,226 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'static-page-breadcrumb.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-sidebar-static.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content product-section">  
+            	 
+                    <!-- Top Section Mobile -->
+                    <div class="hidden-lg hidden-md mobile-product-filter clearfix"> 
+                      
+                      <!-- Show all -->
+                      <div class="toptab-box">
+                        <div class="sortby-filter policy_dropdown" ng-controller="DropdownCtrl"> 
+                          <!-- Custom Dropdown -->
+                          
+                          <div class="dropdown custom-dropdown" uib-dropdown="1" > <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='What is Shout'"> {{ sorttab }} </a>
+                            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown"  ng-scrollbars ng-scrollbars-config="{}"
+                                style="max-height:300px;">
+                              <li><a href="#" ng-class= "active('What is Shout', sorttab)" ng-click="$parent.active = 0;sorttab='What is Shout'">What is Shout</a></li>
+                              <li><a href="#" ng-class= "active('Frequently Asked Questions', sorttab)" ng-click="$parent.active = 1;sorttab='Frequently Asked Questions'">Frequently Asked Questions</a></li>
+                              <li><a href="#" ng-class= "active('Registration & Log In', sorttab)"  ng-click="$parent.active = 2;sorttab='Registration & Log In'">Registration & Log In</a></li>
+                              
+                              <li><label>Customisation</label>
+                                    <ul class="subcategories">
+                                  <li><a href="#" ng-class= "active('Profiling Pop Ups', sorttab)"  ng-click="$parent.active = 2;sorttab='Profiling Pop Ups'"> Profiling Pop Ups </a></li>
+                                  <li><a href="#" ng-class= "active('Preferences Page', sorttab)"  ng-click="$parent.active = 2;sorttab='Preferences Page'"> Preferences Page </a></li>
+                                  <li><a href="#" ng-class= "active('Edit Preferences in My Feed page', sorttab)"  ng-click="$parent.active = 2;sorttab='Edit Preferences in My Feed page'"> Edit Preferences in "My Feed" page </a></li>
+                                </ul>
+                              </li>
+                              
+                              <li><a href="#" ng-class= "active('Buy Deals & Products', sorttab)"  ng-click="$parent.active = 2;sorttab='Buy Deals & Products'">Buy Deals & Products</a></li>
+                              <li><a href="#" ng-class= "active('Voting', sorttab)"  ng-click="$parent.active = 2;sorttab='Voting'">Voting</a></li>
+                              <li><a href="#" ng-class= "active('Commenting', sorttab)"  ng-click="$parent.active = 2;sorttab='Commenting'">Commenting</a></li>
+                              <li><label>Shouting</label>
+                                    <ul class="subcategories">
+                                  <li><a href="#" ng-class= "active('Shouting Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Shouting Deals'"> Shouting Deals </a></li>
+                                  <li><a href="#" ng-class= "active('Shouting Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Shouting Tips'">Shouting Tips</a></li>
+                                  <li><a href="#" ng-class= "active(' Shouting Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Shouting Discussions '"> Shouting Discussions</a></li>
+                                </ul>
+                              </li>
+                              <li><label>Reviewing</label>
+                                    <ul class="subcategories">
+                                  <li><a href="#" ng-class= "active('Reviewing Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Reviewing Deals'"> Reviewing Deals </a></li>
+                                  <li><a href="#" ng-class= "active('Reviewing Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Reviewing Tips'">Reviewing Tips</a></li>
+                                  <li><a href="#" ng-class= "active(' Reviewing Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Reviewing Discussions '"> Reviewing Discussions</a></li>
+                                </ul>
+                              </li>
+                              <li><label>Reporting</label>
+                                    <ul class="subcategories">
+                                  <li><a href="#" ng-class= "active('Reporting Deals', sorttab)"  ng-click="$parent.active = 2;sorttab='Reporting Deals'"> Reporting Deals </a></li>
+                                  <li><a href="#" ng-class= "active('Reporting Tips', sorttab)"  ng-click="$parent.active = 2;sorttab='Reporting Tips'">Reporting Tips</a></li>
+                                  <li><a href="#" ng-class= "active(' Reporting Discussions ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Reporting Discussions '"> Reporting Discussions</a></li>
+                                </ul>
+                              </li>
+                              
+                              <li><a href="#" ng-class= "active('Inviting', sorttab)"  ng-click="$parent.active = 2;sorttab='Inviting'">Inviting</a></li>
+                              <li><a href="#" ng-class= "active('Badges', sorttab)"  ng-click="$parent.active = 2;sorttab='Badges'">Badges</a></li>
+                              <li><a href="#" ng-class= "active('Affiliate Program', sorttab)"  ng-click="$parent.active = 2;sorttab='Affiliate Program'">Affiliate Program</a></li>
+                              <li><a href="#" ng-class= "active('Finding Friends', sorttab)"  ng-click="$parent.active = 2;sorttab='Finding Friends'">Finding Friends</a></li>
+                              <li><a href="#" ng-class= "active('Terms & Conditions', sorttab)"  ng-click="$parent.active = 2;sorttab='Terms & Conditions'">Terms & Conditions</a></li>
+                              <li><a href="#" ng-class= "active('Privacy Policy', sorttab)"  ng-click="$parent.active = 2;sorttab='Privacy Policy'">Privacy Policy</a></li>
+                              <li><a href="#" ng-class= "active('Cookie Policy', sorttab)"  ng-click="$parent.active = 2;sorttab='Cookie Policy'">Cookie Policy</a></li>
+                              <li><label>Contact Us</label>
+                                    <ul class="subcategories">
+                                  <li><a href="#" ng-class= "active(' For Retailers ', sorttab)"  ng-click="$parent.active = 2;sorttab=' For Retailers '">  For Retailers </a></li>
+                                  <li><a href="#" ng-class= "active(' For Partners ', sorttab)"  ng-click="$parent.active = 2;sorttab='For Partners'">For Partners</a></li>
+                                  <li><a href="#" ng-class= "active(' Work with us ', sorttab)"  ng-click="$parent.active = 2;sorttab=' Work with us '"> Work with us</a></li>
+                                </ul>
+                              </li>
+                              
+                              
+                            </ul>
+                          </div>
+                          
+                          <!-- // Custom Dropdown --> 
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //Top Section Mobile --> 
+                    
+               <div class="register_login_section clearfix">
+               
+               <h2 class="line_heading"><span>Registration &amp; Log In</span></h2>
+               
+               <div class="pad_lrt20 clearfix m_btm15">
+               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+               </div>
+               
+               <div class="clearfix"></div>
+               
+               <h2 class="line_heading font_size32"><span>Why register on Shout</span></h2>
+               <div class="pad_lrt20 clearfix">
+               		<p> <strong>Shout</strong> can be consulted without registration, by the way, we recommend you to register. Why?</p>	
+                    
+                    <ul class="green_thick">
+                    	<li>Registration in <strong>FREE!</strong></li>
+                        <li>By signing up you will have access to our exclusive features: the <strong>My Feed</strong> section, a completely <strong>customized Newsletter</strong> based on your preferences, special recommendations about the <strong>best time to buy</strong> the products you like (learn more).</li>
+                        <li>Registered Shouters can take part to the <strong>Affiliate Program</strong>, that gives you the opportunity to earn an <strong>extra income</strong> <a href="#">(learn more)</a></li>
+                        
+                    </ul>
+                    
+                    <p>So, what are you waiting for?</p>
+                    
+                    <p class="text-center m_top30"><a href="#" class="btn_orange btn min_width280">register free</a></p>
+                    
+               </div>
+               
+               <h2 class="line_heading font_size32 m_top60"><span>How to register on Shout</span></h2>
+               
+               <div class="pad_lrt20 clearfix">
+               		<p>Registration is quick and easy, all you need is a valid email address. Follow these four steps:</p>
+                	<ul class="count_li">
+                   <li><span class="smaple_img"><img src="assets/images/sample.jpg" alt=""/></span>Open the <strong>Sign Up pop up</strong> by clicking on the Sign Up button;  </li>
+                   
+                   <li><span class="smaple_img"><img src="assets/images/sample2.jpg" alt=""/></span>Enter your email and choose a password. Alternatively, you can register using one of your Social Network accounts: <strong>Facebook</strong>, <strong>Twitter</strong> or <strong>Google+</strong>. Just click on one of the Social buttons.<br/><br/>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </li>
+
+<li><span class="smaple_img"><img src="assets/images/sample3.jpg" alt=""/></span>Once you have chosen your username and password, or signed up with one of your Social Accounts, you will receive an email containing a link to confirm your account,. Just click on the link.<br/><br/>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </li>
+
+<li>There’s no step 4, <strong>you’re in!</strong></li>
+                   
+               	</ul>
+                
+                <p>Pretty easy, isn’t it? In the unlucky eventuality that something goes wrong, check our FAQ section.</p>
+               
+               	<p class="text-center m_top30"><a href="#" class="btn_orange btn min_width280">register free</a></p>
+                     
+                </div>
+               
+               
+                 <h2 class="line_heading font_size32 m_top60"><span>How to log in on Shout</span></h2>
+             <div class="pad_lrt20 clearfix">
+               		<p>Registration is quick and easy, all you need is a valid email address. Follow these four steps:</p>
+                	<ul class="count_li m_btm50">
+                   <li><span class="smaple_img"><img src="assets/images/sample3.jpg" alt=""/></span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</li>
+                   
+                   <li><span class="smaple_img"><img src="assets/images/sample.jpg" alt=""/></span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</li>
+
+                   
+               	</ul>
+             
+             </div>
+             
+               </div>
+               
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

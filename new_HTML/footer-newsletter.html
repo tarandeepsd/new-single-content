@@ -1,0 +1,45 @@
+<div class="footer-newsletter">
+    <div class="container-fluid newsletter">
+    	<p>Tired of spending hours looking for amazing deals?</p>
+		<h2>Subscribe to the Shout Newsletter Free!</h2>    
+        <form action="" method="post" role="form">
+        	<div class="newsletter-form clearfix" ng-controller="DropdownCtrl">
+        	<div class="form-group">
+            	<input class="form-control" type="text" id="" name="" placeholder="enter your email address">
+            
+            <!-- DropDown --> 
+            	<div class="dropdown" uib-dropdown>
+                <a href="#" class="dropdown-toggle" uib-dropdown-toggle ng-init="newsletter='daily'">
+		    {{ newsletter }}
+                    
+				</a>			
+				<ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+					<li><a href="#" active-function modal="daily" active_value="{{newsletter}}" ng-click="newsletter='daily'">daily</a></li>
+					<li><a href="#" active-function modal="weekly" active_value="{{newsletter}}" ng-click="newsletter='weekly'">weekly</a></li>
+                    <li><a href="#" active-function modal="every 15 days" active_value="{{newsletter}}" ng-click="newsletter='every 15 days'">every 15 days</a></li>
+                    <li><a href="#" active-function modal="monthly" active_value="{{newsletter}}" ng-click="newsletter='monthly'">monthly</a></li>
+                </ul>
+            </div>
+            <!-- //DropDown -->
+            
+            </div>
+            
+           <span class="btn_outer_sub">
+            <a href="#" class="btn hover">subscribe</a>
+            </span>
+            </div>
+        </form>    
+    
+    </div>
+    
+    <!-- Confirmation message -->
+    <div class="container-fluid confirmation-msg">
+    	<h2>
+        	You are now subscribed to Shout Newsletter!
+        </h2> 
+        	<p>We have sent you an email containing the link to confirm your subscription. Not received?</p>
+       
+        <a href="#" class="btn green-btn resetbtn">resend link</a>   
+    </div>
+    <!-- //Confirmation message -->
+</div>

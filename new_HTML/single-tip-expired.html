@@ -1,0 +1,2489 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body>
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'category-breadcrumb.html'" class="fixed-header"></div>
+        <!-- //banner -->
+        
+        <!-- Single Product -->
+        <div class="single-product clearfix product_new_design" ng-controller="dealDetailCtrl">
+        
+        	<div ng-include="'single-tip-detail-section-expired.html'"></div>
+            
+            
+             <div class="product-tabs" ng-controller="DropdownCtrl">
+                 <div class="tabheads">
+                     <div class="tabsbtn" uib-dropdown="1">
+                        <button class="btn" uib-dropdown-toggle ng-init="sorttab='Comments'; count='100'">
+                            {{ sorttab }} <span class="counter">{{ count }}</span> <span class="caret"></span> <span class="line"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="" active-function modal="Comments" active_value="{{sorttab}}" ng-click="active = 0;sorttab='Comments'; count='100'">Comments<span class="counter">100</span></a></li>
+                            <li><a href="" active-function modal="Geolocalise" active_value="{{sorttab}}" ng-click="active = 4;sorttab='Geolocalise'; count=''">Geolocalise</a></li>
+                        </ul>
+                     </div>
+                 </div>
+                  <!-- Tab panes -->
+                  <uib-tabset active="active" ng-class="{'active-mobile':active_mobile}">
+                  	
+					<uib-tab index="0">
+                        <uib-tab-heading>
+                                <h3 id="section1">Comments<span class="counter">100</span></h3>
+                         </uib-tab-heading> 
+                        <a class="btn-absolute" href="#postcomment">
+                            <span><em>post</em> comment</span>
+                        </a>
+                        <!-- Comments -->
+                            <!--filters -->
+                            <div class="filter-menu">Top Comments </div>
+                            
+                            <!--end filters -->
+                            <!--Comments section -->
+                            <div class="comment-section">
+                            
+                                <div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="quoted-text">
+                                            <label class="title"><a href="user-shouts.html">SalesAddicted</a></label>
+                                            <span class="reportcount"># 94</span>
+                                            <label class="date">22 September 2015 - 12:18 AM</label>
+                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue dui.</p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                                <!--<span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span>-->
+                                                <span class="img" ng-click="openeditcomment('width1200')"><span class="report-icon edit"></span>
+                                                	<span class="counter time absolute">15 min</span>
+                                                </span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="clearfix"></div>
+                                    
+                                    <div class="right">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                               <span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span> 
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="clearfix"></div>
+                                    
+                                    <div class="right">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                               <span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span> 
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="filter-menu middle-filter">
+                                    All Comments <span class="counter">999</span><a href="" class="jump">Jump to unread</a>
+                                    <form class="form-inline pull-right">
+                                	<div class="innerform">
+                                      <div class="form-group search">
+                                        <input type="text" class="form-control keyword" placeholder="Filter by Keyword">
+                                        <span class="lens-icon"></span>
+                                      </div>
+                                      
+                                      <div class="form-group date-sort-by">
+                                        <div class="date-sort" uib-dropdown="" ng-controller="DropdownCtrl">
+                                    <button uib-dropdown-toggle="" ng-class="{'placeholder':(showwithin=='Select')}" ng-init="showwithin='Select'">
+                                        <span>{{showwithin}}</span>{{value}} <span class="caret"></span>
+                                    </button>
+                                   <ul class="dropdown-menu" uib-dropdown-menu="">
+                                        <li><a href="#" ng-click="showwithin='Date'; value='Ascending'"><span>Date</span>Ascending</a></li>
+                                        <li><a href="#" ng-click="showwithin='Date'; value='Descending'"><span>Date</span>Descending</a></li>
+                                        <li><a href="#" ng-click="showwithin='Likes'; value='Ascending'"><span>Likes</span>Ascending</a></li>
+                                        <li><a href="#" ng-click="showwithin='Likes'; value='Descending'"><span>Likes</span>Descending</a></li>
+                                        <li><a href="#" ng-click="showwithin='Rating'; value='Ascending'"><span>Rating</span>Ascending</a></li>
+                                        <li><a href="#" ng-click="showwithin='Rating'; value='Descending'"><span>Rating</span>Descending</a></li>
+                                    </ul>
+                                </div>
+                                      </div>
+                                  </div>
+                                </form>
+                            
+                                </div>
+                                
+                                <div class="filter-results">
+                            	<strong>999 comments found for:</strong> <span class="search-tags">lorem</span> <span class="search-tags">voluptat</span>
+                                <button class="reset-btn">RESET ALL FILTERS</button>
+                                 <div class="clearfix"></div>
+                            </div>
+                            
+                            	<div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="clearfix"></div>
+                                    
+                                    <div class="right">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait. </p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                               <span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span> 
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="quoted-text">
+                                            <label class="title"><a href="user-shouts.html">SalesAddicted</a></label>
+                                            <span class="reportcount"># 94</span>
+                                            <label class="date">22 September 2015 - 12:18 AM</label>
+                                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. </p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue dui.</p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                                <!--<span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span>-->
+                                                <span class="img" ng-click="openeditcomment('width1200')"><span class="report-icon edit"></span>
+                                                	<span class="counter time absolute">15 min</span>
+                                                </span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="comment">
+                                    <div class="comment-left-profile">
+                                        <div class="profile-details">
+                                        	<div class="user-dropdown new_dropdown" uib-dropdown="">
+                                                <label class="username" uib-dropdown-toggle=""> <img class="profile-pic-new" src="assets/images/product/comment-profile.png" alt="profile"> <span>Very_Long_Username_123</span> <span class="caret"></span>
+                                                <em class="date_li">registered on 25 Nov 2015</em>
+                                                </label>
+                                                <ul class="dropdown-menu" uib-dropdown-menu="">
+                                                    <li>
+                                                    	<p class="medals ng-scope" ng-controller="Modalbadges">
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img src="assets/images/icons/userpages/chatty3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/chatty3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/chatty3_onclick.svg" class="active">
+                                                    </a>
+                    								
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/ultrasonic1_onclick.svg" class="active">
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/celebrity3_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/celebrity3_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/celebrity3_onclick.svg" alt="share">							
+                                                    </a>
+                                                    
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/pioneer1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/pioneer1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/pioneer1_onclick.svg" alt="share">							
+                                                    </a>
+                                                
+                                                    <a href="#" ng-click="Modalbadges('badges')">
+                                                        <img class="normal" src="assets/images/product/social1_normal.svg" alt="share">
+                                                        <img class="hover" src="assets/images/product/social1_onhover.svg" alt="share">
+                                                        <img class="active" src="assets/images/product/social1_onclick.svg" alt="share">							
+                                                    </a>
+                                                    <a href="#">
+                                                        <img src="assets/images/icons/userpages/contributor3_normal.svg" class="normal">
+                                                        <img src="assets/images/icons/userpages/contributor3_onhover.svg" class="hover">
+                                                        <img src="assets/images/icons/userpages/contributor3_onclick.svg" class="active">
+                                                    </a>
+                                                    
+                                                </p>
+                                                    </li>
+                                                    <li>
+                                                        <a href="user-shouts.html">
+                                                            <img class="normal" src="assets/images/product/shouts_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/shouts_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/shouts_onclick.svg" alt="share">
+                                                            9,999 shouts <small>(average: 999<sup>dB</sup>)</small>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="normal" src="assets/images/product/follow_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/follow_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/follow_onclick.svg" alt="share">
+                                                            start following
+                                                        </a>
+                                                    </li>
+                                                    <li ng-controller="Modalwritemsg">
+                                                        <a href="#" ng-click="openWritemsg()">
+                                                            <img class="normal" src="assets/images/product/write_message_normal.svg" alt="share">
+                                                            <img class="hover" src="assets/images/product/write_message_onhover.svg" alt="share">
+                                                            <img class="active" src="assets/images/product/write_message_onclick.svg" alt="share">
+                                                           send message
+                                                        </a>
+                                                     </li>
+                                                </ul>
+                                  			</div>
+                                            <span class="reportcount">#97</span>
+                                            <label class="joined date"><strong>TOP</strong> 25 Nov 2016 09:30 </label>
+                                             
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="clearfix"></div>
+                                    
+                                    <div class="right">
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait. </p>
+                                        <div class="comment-options">
+                                            <span class="hidden-xs">Helpful?</span>
+                                            
+                                            <div class="likes-dislikes">
+                                                <div class="dislikes">
+                                                    <span class="image-icon dislike"></span> <span class="counter">125</span>
+                                                </div>
+                                                <div class="likes">
+                                                    <span class="image-icon like"></span> <span class="counter">999</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="reply_section">
+                                                <span ng-controller="Modalreportcomment"><a href="#postcomment" class="reply-icon"></a></span>
+                                               <span class="" ng-click="openReportcomment()"><a href="#" class="report-icon"></a></span> 
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <!--paging section -->
+	                                <div class="paging">
+                                    <nav>
+                                      <ul class="pagination">
+                                        <li class="inactive">
+                                          <a href="#" aria-label="Previous">
+                                            <img src="assets/images/product/paging/first_disabled.svg" alt="s">
+                                          </a>
+                                        </li>
+                                        <li class="inactive">
+                                          <a href="#" aria-label="Previous">
+                                            <img src="assets/images/product/paging/prev_disabled.svg" alt="s">
+                                          </a>
+                                        </li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                          <a href="#" aria-label="Previous">
+                                            <img class="normal" src="assets/images/product/paging/next_normal.svg" alt="s">
+                                            <img class="hover" src="assets/images/product/paging/next_onhover.svg" alt="s">
+                                            <img class="active" src="assets/images/product/paging/next_onclick.svg" alt="s">
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a href="#" aria-label="Next">
+                                            <img class="normal" src="assets/images/product/paging/last_normal.svg" alt="s">
+                                            <img class="hover" src="assets/images/product/paging/last_onhover.svg" alt="s">
+                                            <img class="active" src="assets/images/product/paging/last_onclick.svg" alt="s">
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                </div>
+                                <!--end paging section -->
+                                
+                                <div class="no-comments join-conversation" name="postcomment" id="postcomment">
+                                    <div class="fist-comment">
+                                        <h3><strong>Join the conversation!</strong> All you need is a valid email address</h3>
+                                        <ul>
+                                            <li>Let the Community know what you think about this product</li>
+                                            <li>Suggest an alternative product</li>
+                                            <li ng-controller="ModalNewDealPresentOnline">Suggest a deal for this product or  <a href="#" ng-click="openNewDealPresentOnline('shoutnewdeal')">shout it</a></li>
+                                            <li class="cross" ng-controller="ModalNewDealPresentOnline">If you want to post a review about this product  <a ng-click="openNewDealPresentOnline('shoutnewdeal')" href="#">click here</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="type-comment">
+                                        <div class="right default-form">
+                                        <div class="row">
+                                        
+                                        	<div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Your email address  <span class="complsory">(compulsory)</span></label>
+                                                    <div class="form-input">
+                                                        <input class="form-control form-control-icon" placeholder="email@example.com" type="text">
+                                                        <span class="form-icon question-icon"></span>
+                                                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Your password <span class="complsory">(compulsory)</span></label>
+                                                    <div class="form-input">
+                                                        <input class="form-control form-control-icon" placeholder="Enter your password" type="password">
+                                                        <span class="form-icon question-icon"></span>
+                                                        <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                                    </div>
+                                                </div>
+                                         	</div>	
+                                            
+                                            <div class="col-sm-6">
+                                            	<div class="social_signup">
+                                                	<ul>
+                                                    	<li>or sign up with</li>
+                                                        <li><a href="#">
+                                                        	<img src="assets/images/svg/facebook/01_facebook_signup_normal.svg" alt="" class="normal"/>
+                                                            <img src="assets/images/svg/facebook/02_facebook_signup_onhover.svg" alt="" class="hover"/>
+                                                            <img src="assets/images/svg/facebook/03_facebook_signup_onclick.svg" alt="" class="active"/>
+                                                        </a></li>
+                                                        
+                                                        <li><a href="#">
+                                                        	<img src="assets/images/svg/twitter/01_twitter_signup_normal.svg" alt="" class="normal"/>
+                                                            <img src="assets/images/svg/twitter/02_twitter_signup_onhover.svg" alt="" class="hover"/>
+                                                            <img src="assets/images/svg/twitter/03_twitter_signup_onclick.svg" alt="" class="active"/>
+                                                        </a></li>
+                                                        
+                                                        <li><a href="#">
+                                                        	<img src="assets/images/svg/google/01_google_signup_normal.svg" alt="" class="normal"/>
+                                                            <img src="assets/images/svg/google/02_google_signup_onhover.svg" alt="" class="hover"/>
+                                                            <img src="assets/images/svg/google/03_google_signup_onclick.svg" alt="" class="active"/>
+                                                        </a></li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                    <label>Your comment  <span class="complsory">(compulsory)</span></label>
+                                                    <div class="text-editors">
+                                                <a href="" class="hint">
+                                                    <span class="image-icons hint-icon"></span>
+                                                </a>
+                                                <div class="hintanswer">
+                                                    Lorem ipsum dolor summit
+                                                </div>
+                                                <p class="m_zero editor_img"><img alt="" src="assets/images/editor4.png"></p>
+                                            <textarea placeholder="Enter your comment here" class="block-text"></textarea>
+                                            </div>
+                                            
+                                            </div>
+                                                
+                                            <div class="last-inputs">
+                                                <div class="custom_width_checkbox">
+                                                    <div class="custom-checkboxbtn checkbox">
+                                                        <label>
+                                                            <input type="checkbox" checked> <span class="lbl">You agree with Shout’s <a href="#">Terms & Conditions</a></span>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                    <div class="custom-checkboxbtn checkbox">
+                                                        <label>
+                                                            <input type="checkbox" checked> <span class="lbl">Notify me when this deal receives a comment</span>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="pull-right">
+                                                    <button class="publish-btn"><span>PUBLISH COMMENT</span></button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end Comments section -->
+                            
+                        <!-- end Comments -->
+                    </uib-tab>
+                    
+					<uib-tab index="4" select="topScrolled()">
+                        <uib-tab-heading>
+                                <h3>Geolocalise</h3>
+                         </uib-tab-heading>
+                        <!-- Geolocal -->
+                        <div class="geoloaction-tab">
+                        	
+                            <div class="heading">
+                                    <div class="title">Branches offering this Deal:</div>
+                                    <div class="icons" ng-controller="modalLocation">
+                                        <div class="text">
+                                            <label>Your Location:</label>
+                                            <label class="locate"><span>London</span> WC2A 2AE</label>
+                                        </div>
+                                        <a ng-click="openEditLoca()">
+                                            <span class="edit-icon"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            <div class="left">
+                                
+                                <div class="location-list scrollarea"
+			ng-scrollbars ng-scrollbars-config="{}"
+			style="max-height: 404px;">
+                                    <ul>
+                                        <li>
+                                            <div class="number">1 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <!--<a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>-->
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Incorrect address reported</a></label>
+                                            </div>
+                                        </li>
+                                        <li class="selected">
+                                            <div class="number">2 <img src="assets/images/product/pin_point_selected.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_selected.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/branch_reported.svg" alt="alert">Not correct? Please Report it</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">3 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">4 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">5 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">6 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">7 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_selected.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">8 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">9 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="number">10 <img src="assets/images/product/pin_point_normal.svg" alt="location"></div>
+                                            <div class="icon hidden-xs">
+                                                <img src="assets/images/product/pin_point_normal.svg" alt="location">
+                                            </div>
+                                            <div class="distance">15 <span>Km</span></div>
+                                            <div class="locations">
+                                                <a href="" class="tittle">Branch Name</a>
+                                                <p>via Paperon de Paperoni 333, 09131 Cagliari (CA) - ITALIA<br>
+                                                tel: +39 070 123456 - fax: +39 070 123457</p>
+                                                <a target="_blank" href="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208">Get directions</a>
+                                                <label><img src="assets/images/product/alert.svg" alt="alert"> <a href="">Not correct? Please Report it</a></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a href="retailer-info.html" class="see_branches">See all Amazon UK branches</a>
+                            </div>
+                            <div class="right">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d14013.314581655271!2d77.30034!3d28.589916!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d28.5915082!2d77.2972711!5e0!3m2!1sen!2s!4v1475491436208" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- end Geolocal -->
+                    </uib-tab>
+				
+				</uib-tabset>
+            </div>
+            
+        </div>
+        
+        <div class="top-products clearfix pod_tip">
+            <!-- Pod Section -->
+            <div class="pod-section clearfix">
+                <div class="main-title">
+                    <h2><span>Related Tips</span></h2>
+                </div>
+                
+				<div class="product-block clearfix">
+                 <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item first">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip=false" ng-class="{ 'open':share_icontip }">
+                                        <a href="#" ng-click="share_icontip=!share_icontip"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" ng-class='{"hide":rating_tip}' ng-hide="showme_tip || properties_tip">
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting" ng-class='{"show":rating_tip}' ng-hide="showme_tip || properties_tip">
+                                        <a href="#" ng-class='{"arrow":rating_tip}' ng-init="rating_tip=false" ng-click="rating_tip=!rating_tip" class="dislike">DisLike</a>
+                                        <a href="#" class="like" ng-click="showme_tip=true">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                    <!-- Voting rate input popup -->
+                                    <div class="rating-popup" ng-show="rating_tip && !properties_tip && !showme_tip">
+                                        <h3>I am voting down this deal because:</h3>
+                                        <form>
+                                            <ul class="custom-radiobtn" >
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Too expensive</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Bad product</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Bad shop</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Incorrect info</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Not found</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Duplicate</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="radio" value="proper" name="radio"  ng-model="properties_tip">
+                                                        <span class="lbl">Other reason</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                     </div>
+                                     <!-- //Voting rate input popup -->
+                                    
+                                    <!-- Voting Like Value Button -->
+                                    <div class="voting-like" ng-show="showme_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting Like Value Button -->
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum dolor sit amet...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <span class="estimate_clock">
+                                        364d
+                                    </span>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip1=false" ng-class="{ 'open':share_icontip1 }">
+                                        <a href="#" ng-click="share_icontip1=!share_icontip1"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip1">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                               
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <div class="ribbon green"><span>TIP </span></div>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh ...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <span class="comment" ng-click="openfeedback('width797')"> <strong>150</strong> comment </span>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip2=false" ng-class="{ 'open':share_icontip2 }">
+                                        <a href="#" ng-click="share_icontip2=!share_icontip2"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip2">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                   
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip3=false" ng-class="{ 'open':share_icontip3 }">
+                                        <a href="#" ng-click="share_icontip3=!share_icontip3"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip3">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                   
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip4=false" ng-class="{ 'open':share_icontip4 }">
+                                        <a href="#" ng-click="share_icontip4=!share_icontip4"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip4">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                  
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip5=false" ng-class="{ 'open':share_icontip5 }">
+                                        <a href="#" ng-click="share_icontip5=!share_icontip5"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip5">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                 
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip6=false" ng-class="{ 'open':share_icontip6 }">
+                                        <a href="#" ng-click="share_icontip6=!share_icontip6"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip6">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                 
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip7=false" ng-class="{ 'open':share_icontip7 }">
+                                        <a href="#" ng-click="share_icontip7=!share_icontip7"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip7">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                 
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip8=false" ng-class="{ 'open':share_icontip8 }">
+                                        <a href="#" ng-click="share_icontip8=!share_icontip8"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip8">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                  
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip9=false" ng-class="{ 'open':share_icontip9 }">
+                                        <a href="#" ng-click="share_icontip9=!share_icontip9"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip9">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" ng-class='{"hide":rating_tip4}' ng-hide="showme_tip4 || properties_tip4">
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting" ng-class='{"show":rating_tip4}' ng-hide="showme_tip4 || properties_tip4">
+                                        <a href="#" ng-class='{"arrow":rating_tip4}' ng-init="rating_tip4=false" ng-click="rating_tip4=!rating_tip4" class="dislike">DisLike</a>
+                                        <a href="#" class="like" ng-click="showme_tip4=true">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                  
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                     <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip10=false" ng-class="{ 'open':share_icontip10 }">
+                                        <a href="#" ng-click="share_icontip10=!share_icontip10"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip10">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" ng-class='{"hide":rating_tip3}' ng-hide="showme_tip3 || properties_tip3">
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting" ng-class='{"show":rating_tip3}' ng-hide="showme_tip3 || properties_tip3">
+                                        <a href="#" ng-class='{"arrow":rating_tip3}' ng-init="rating_tip3=false" ng-click="rating_tip3=!rating_tip3" class="dislike">DisLike</a>
+                                        <a href="#" class="like" ng-click="showme_tip3=true">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                 
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip3">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                    <!-- Grid Item -->
+                    <div class="pod-item viewall-item" style="display:none !important;">
+                        <div class="block">
+                           <a href="#">
+                            <span>View all<br> 999 Top<br> Deals</span>         
+                           </a>
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+                     <!-- Grid Item -->
+                    <div class="pod-item element-item pod-height discussionpod-item">
+                        <div class="block">
+                            <!-- Pod Ribbon -->
+                            <a class="ribbon" href="single-tip.html"><span>TOP TIP </span></a>
+                            <!-- //pod Ribbon -->
+                            
+                            <div class="discussion-text">
+                             <div class="info">
+                                    <span class="retailer-logo">
+                                        <a href="retailer-info.html">Amazon UK</a>
+                                    </span>
+                               </div>
+                                    
+                                    <h2><a href="single-tip.html">Lorem ipsum sit dolor sit amet</a></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore Lorem ipsum...</p>
+                                    
+                                      <!-- Pod Info -->
+                                <div class="info info_top12">
+                                    <a href="single-discussion.html" class="comment">post a comment</a>
+                                </div>
+                                <!-- //Pod Info -->
+                          
+                          
+                            </div>
+                                
+                            <!-- Pod List Detail -->
+                            <div class="discussion-detail clearfix">
+                              
+                            <!-- //Pod List Detail -->
+                            <!-- Pod Bottom panel -->
+                            <div class="bottom clearfix">
+                                    <!-- price Section -->
+                                    <div class="user">
+                                       <span class="img">
+                                            <a href="#"><img src="assets/images/product/user-avatar.jpg" class="img-circle" /></a>
+                                       </span>
+                                       <div class="desc">
+                                        <a href="#">Username</a>
+                                        <span class="date">15 Nov 2016</span>
+                                       </div>
+                                    </div>
+                                    <!-- //price Section -->
+                                    <!-- Share Icon -->
+                                    <div class="share-icon"  ng-init="share_icontip4=false" ng-class="{ 'open':share_icontip4 }">
+                                        <a href="#" ng-click="share_icontip4=!share_icontip4"><span class="affiliate-icon">£</span></a>
+                                        
+                                        <div class="share-list" ng-show="share_icontip4">
+                                            <h3>Share this deal:</h3>
+                                            <ul>
+                                                <li class="facebook"><a href="#"><span class="affiliate-icon">£</span>Share on Facebook</a></li>
+                                                <li class="twitter"><a href="#"><span class="affiliate-icon">£</span> Share on Twitter</a></li>
+                                                <li class="google"><a href="#"><span class="affiliate-icon">£</span> Share on Google+</a></li>
+                                                <li class="mail" ng-controller="Modalshare_email"><a ng-click="openshare_email()" href="#"><span class="affiliate-icon">£</span> Share via mail</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                     <!-- //Share Icon -->
+                                </div>
+                            <!-- //Pod Bottom panel -->
+                                
+                                
+                            <!-- Pod button button Panel -->
+                            <div class="button single-btn clearfix">
+                                <!-- Shout button -->
+                                <div class="shout-btn">
+                                    <!-- Shout value info -->
+                                    <div class="btn-info" >
+                                        <span class="shout-value">9999</span>
+                                    </div>
+                                    <!-- /Shout value info -->
+                                    <!-- Voting Thumb -->
+                                    <div class="voting">
+                                        <a href="#" class="dislike">DisLike</a>
+                                        <a href="#" class="like">Like</a>
+                                    </div>
+                                    <!-- //Voting Thumb -->
+                                  
+                                    <!-- Voting DisLike Value Button -->
+                                    <div class="voting-dislike" ng-show="properties_tip">
+                                        <span>9999</span>
+                                    </div>
+                                    <!-- //Voting DisLike Value Button -->
+                                </div>
+                                <!-- //Shout button -->
+                                <!-- Cart button -->
+                                <div class="cart-btn">
+                                    <a target="_blank" href="https://www.amazon.co.uk/Apple-iPhone-Smartphone-Certified-Refurbished/dp/B00X3CSVT4/ref=sr_1_7?s=telephone&ie=UTF8&qid=1474547378&sr=1-7&keywords=iphone+6" class="btn"><img src="assets/images/icons/cart_button.svg" /></a>
+                                </div>
+                                <!-- //Cart button -->	
+                                
+                            </div>
+                            <!-- //Pod button button Panel -->
+                            
+                              </div>
+                                <!-- //Pod List Detail -->
+                        </div>
+                    </div>
+                    <!-- //Grid Item -->
+               </div>
+           
+		   </div>
+            <!-- //Pod Section -->            
+        </div>
+        <!-- //Single Product -->
+        <div class="pod-morebtn text-center" >
+            <a href="#" class="btn morebtn" ng-class="{load_more:load_more_button}" ng-click="load_more_button=true;">load more</a>
+        </div>
+        
+        
+        <div class="clearfix"></div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+	
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

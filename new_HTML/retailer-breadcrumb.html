@@ -1,0 +1,57 @@
+<!-- Breadcrumb -->
+<nav class="user-breadcrumb" role="navigation">
+    <div class="breadcrumbtab-dropdown hidden-md hidden-lg" ng-controller="DropdownCtrl" >
+    <!-- Custom Dropdown -->
+        <div class="dropdown " uib-dropdown="1" >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="usertab='Info'">
+            {{ usertab }}
+            </a>	
+            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+               <li><h2><a href="retailer-info.html" ng-class= "active('Info', usertab)"  ng-click="usertab='Info'">Info<span class="notifications">99</span></a></h2></li>
+               <li><h2><a href="retailer-categories.html" ng-class= "active('Categories', usertab)"  ng-click="usertab='Categories'">Categories <span class="notifications">99</span></a></h2></li>
+               <li><h2><a href="retailer-products.html" ng-class= "active('Products', usertab)"  ng-click="usertab='Products'">Products <span class="notifications">99</span></a></h2></li>
+               <li><h2><a href="retailer-offer.html" ng-class= "active('Deals', usertab)"  ng-click="usertab='Deals'">Deals <span class="notifications">99</span></a></h2></li>
+			    <li><h2><a href="retailer-sale.html" ng-class= "active('Sales', usertab)"  ng-click="usertab='Sales'">Sales <span class="notifications">99</span></a></h2></li>
+				 <li><h2><a href="retailer-coupon.html" ng-class= "active('Coupons', usertab)"  ng-click="usertab='Coupons'">Coupons <span class="notifications">99</span></a></h2></li>
+				 
+            	<li><h2><a href="retailer-tips.html" ng-class= "active('Tips', usertab)"  ng-click="usertab='Tips'">Tips <span class="notifications">999</span></a></h2></li>
+            	<li><h2><a href="retailer-review.html" ng-class= "active('Reviews', usertab)"  ng-click="usertab='Reviews'">Reviews <span class="notifications">999</span></a></h2></li>
+            </ul>
+        </div>
+    <!-- // Custom Dropdown -->
+    </div>
+    
+      <!-- Right Nav -->
+       <ul class="nav-tabs clearfix hidden-sm hidden-xs" ng-controller="DropdownCtrl">
+            <li><h2>
+            	<a href="retailer-info.html">Info</a>
+            </h2></li>
+            <li class="active"><h2>
+                    <a href="retailer-categories.html">Categories <span class="notifications">99</span></a>
+            </h2></li>
+            <li><h2>
+                    <a href="retailer-products.html">Products <span class="notifications">99</span></a>
+            </h2></li>
+             <li><h2>
+                    <a href="retailer-offer.html">Deals <span class="notifications">99</span></a>
+            </h2></li>
+			  <li><h2><a href="retailer-sale.html" ng-class= "active('Sales', usertab)"  ng-click="usertab='Sales'">Sales <span class="notifications">99</span></a></h2></li>
+				 <li><h2><a href="retailer-coupon.html" ng-class= "active('Coupons', usertab)"  ng-click="usertab='Coupons'">Coupons <span class="notifications">99</span></a></h2></li>
+            <li><h2>
+                    <a href="retailer-tips.html">Tips <span class="notifications">999</span></a>
+            </h2></li>
+             
+            <li class="hidden-sm"><h2>
+                    <a href="retailer-review.html">Reviews <span class="notifications">999</span></a>
+            </h2></li>
+        </ul>
+        
+        <!-- My feed button -->
+        <div class="feed-notification">
+        	<a href="myfeed-collection.html" class="wifi-icon"></a>
+        	<a href="myfeed-collection.html">My Feed </a>
+            <span class="notifications">9,999</span>  
+         </div>
+        <!-- //My feed button -->
+        
+</nav>

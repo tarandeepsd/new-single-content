@@ -1,0 +1,68 @@
+<!-- Breadcrumb -->
+<nav class="user-breadcrumb" role="navigation">
+    <div class="breadcrumbtab-dropdown hidden-md hidden-lg" ng-controller="DropdownCtrl" >
+    <!-- Custom Dropdown -->
+        <div class="dropdown " uib-dropdown="1" >
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="usertab='Shouts'">
+                       	{{ usertab }}
+                       </a>	
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        	<li><h2><a href="user-shouts.html" ng-class= "active('Shouts', usertab)"  ng-click="usertab='Shouts'">Shouts <span class="notifications">999</span></a></h2></li>
+                            <li><h2><a href="votes.html" ng-class= "active('Votes', usertab)"  ng-click="usertab='Votes'">Votes <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-collection.html" ng-class= "active('Collections', usertab)"  ng-click="usertab='Collections'">Collections <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-wishlist.html" ng-class= "active('Wishlist', usertab)"  ng-click="usertab='Wishlist'">Wishlist <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="friends.html" ng-class= "active('Friends', usertab)"  ng-click="usertab='Friends'">Friends <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="notifications.html" ng-class= "active('Notifications', usertab)"  ng-click="usertab='Notifications'">Notifications <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-messages.html" ng-class= "active('Messages', usertab)"  ng-click="usertab='Messages'">Messages <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="account.html" ng-class= "active('Settings', usertab)"  ng-click="usertab='Settings'">Settings <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-affiliation.html" ng-class= "active('Affiliate', usertab)"  ng-click="usertab='Affiliate'">Affiliate <span class="notifications">99</span></a></h2></li>
+                        
+                        </ul>
+                    </div>
+    <!-- // Custom Dropdown -->
+    </div>
+    
+      <!-- Right Nav -->
+       <ul class="nav-tabs clearfix hidden-sm hidden-xs" ng-controller="DropdownCtrl">
+            <li class="active">
+            	<h2><a href="user-shouts.html">Shouts <span class="notifications">999</span></h2></a>
+            </li>
+            <li>
+                    <h2><a href="votes.html">Votes <span class="notifications">99</span></a></h2>
+            </li>
+            <li>
+                   <h2> <a href="user-collection.html">Collections <span class="notifications">99</span></a></h2>
+            </li>
+             <li>
+                   <h2> <a href="user-wishlist.html">Wishlist <span class="notifications">99</span></a></h2>
+            </li>
+            <li>
+                   <h2> <a href="friends.html">Friends <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li class="hidden-md">
+                   <h2> <a href="notifications.html">Notifications <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li class="hidden-md">
+                   <h2> <a href="user-messages.html">Messages <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li>
+                   <h2> <a href="account.html">Settings</a></h2>
+            </li>
+              <li class="hidden-md">
+                   <h2> <a href="user-affiliation.html">Affiliate</a></h2>
+            </li>
+             
+   		</ul>
+        
+        <!-- My feed button -->
+        <div class="feed-notification">
+        	<a href="#" class="wifi-icon"></a>
+        	<a href="myfeed-collection.html">My Feed </a>
+            <span class="notifications">9,999</span>  
+         </div>
+        <!-- //My feed button -->
+        
+</nav>

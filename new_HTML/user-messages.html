@@ -1,0 +1,282 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false" class="user-messages">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'userprofile-shout-header.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+        <!-- User Breadcrumb -->
+        <!-- Dont Use this html (Only use User-category html file) Breadcrumb -->
+     <!-- Breadcrumb -->
+			<nav class="user-breadcrumb" role="navigation">
+    <div class="breadcrumbtab-dropdown hidden-md hidden-lg" ng-controller="DropdownCtrl" >
+    <!-- Custom Dropdown -->
+        <div class="dropdown " uib-dropdown="1" >
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="usertab='Shouts'">
+                       	{{ usertab }}
+                       </a>	
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        	<li><h2><a href="user-shouts.html" active-function modal="Shouts" active_value="{{usertab}}"  ng-click="usertab='Shouts'">Shouts <span class="notifications">999</span></a></h2></li>
+                            <li><h2><a href="votes.html" active-function modal="Votes" active_value="{{usertab}}"  ng-click="usertab='Votes'">Votes <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-collection.html" active-function modal="Collections" active_value="{{usertab}}"   ng-click="usertab='Collections'">Collections <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-wishlist.html" active-function modal="Wishlist" active_value="{{usertab}}"   ng-click="usertab='Wishlist'">Wishlist <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="friends.html" active-function modal="Friends" active_value="{{usertab}}"  ng-click="usertab='Friends'">Friends <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="notifications.html" active-function modal="Notifications" active_value="{{usertab}}"  ng-click="usertab='Notifications'">Notifications <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-messages.html" active-function modal="Messages" active_value="{{usertab}}" ng-click="usertab='Messages'">Messages <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="account.html" active-function modal="Settings" active_value="{{usertab}}"  ng-click="usertab='Settings'">Settings <span class="notifications">99</span></a></h2></li>
+                            <li><h2><a href="user-affiliation.html" active-function modal="Affiliate" active_value="{{usertab}}"   ng-click="usertab='Affiliate'">Affiliate <span class="notifications">99</span></a></h2></li>
+                        
+                        </ul>
+                    </div>
+    <!-- // Custom Dropdown -->
+    </div>
+    
+      <!-- Right Nav -->
+       <ul class="nav-tabs clearfix hidden-sm hidden-xs" ng-controller="DropdownCtrl">
+            <li class="active">
+            	<h2><a href="user-shouts.html"> Shouts <span class="notifications">999</span> </a> </h2>
+            </li>
+            <li>
+                    <h2><a href="votes.html">Votes <span class="notifications">99</span></a></h2>
+            </li>
+            <li>
+                   <h2> <a href="user-collection.html">Collections <span class="notifications">99</span></a></h2>
+            </li>
+             <li>
+                   <h2> <a href="user-wishlist.html">Wishlist <span class="notifications">99</span></a></h2>
+            </li>
+            <li>
+                   <h2> <a href="friends.html">Friends <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li class="hidden-md">
+                   <h2> <a href="notifications.html">Notifications <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li class="hidden-md">
+                   <h2> <a href="user-messages.html" class="active">Messages <span class="notifications">99</span></a></h2>
+            </li>
+             
+            <li>
+                   <h2> <a href="account.html">Settings</a></h2>
+            </li>
+              <li class="hidden-md">
+                   <h2> <a href="user-affiliation.html">Affiliate</a></h2>
+            </li>
+          
+   		</ul>
+        
+        <!-- My feed button -->
+        <div class="feed-notification">
+        	<a href="#" class="wifi-icon"></a>
+        	<a href="myfeed-collection.html">My Feed </a>
+            <span class="notifications">9,999</span>  
+         </div>
+        <!-- //My feed button -->
+        
+</nav>
+ <!-- //User Breadcrumb -->
+        
+        <!-- Main Container -->
+        <div class="main-container clearfix" ng-controller="productListCtrl">
+            <!-- Filter Sidebar -->
+             <div ng-include="'filter-messages-sidebar.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->
+			<!-- Main Content --> 
+            <div class="main-content">  
+            	<!-- Top Section Mobile -->
+                	<div class="hidden-lg hidden-md mobile-product-filter clearfix">
+                    
+                    	 <!-- Message Write Button -->
+                        <div ng-controller="Modalwritemsg" class="writemsg-btn">
+                            <a href="#" ng-click="openWritemsg()" class="btn msg-button purple-btn"><span>write message</span></a>
+                         </div>
+       					 <!-- //Message Write Button -->
+                         
+                        <div class="toptab-box top-filter-block">
+                        	<div class="filter-icon">
+                            	<a href="#" ng-click="$root.filter_show=true"> <img src="assets/images/filter-icon.svg" /></a>
+                            </div>
+                        	<div class="filter-tab">
+                                <!-- Tab -->
+                                <div class="sortby-filter sort-tab" ng-controller="DropdownCtrl" >
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1" >
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='Received'; count='99'">
+                                        {{ sorttab }} <span> {{ count }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                            <li><a href="#" active-function modal="Received" active_value="{{sorttab}}" ng-click="$parent.active = 0;sorttab='Received'; count='99'">Received <span>99</span></a></li>
+                                            <li><a href="#" active-function modal="Sent" active_value="{{sorttab}}" ng-click="$parent.active = 1;sorttab='Sent'; count='9'">Sent <span>9</span></a></li>
+                                            <li><a href="#" active-function modal="Deleted" active_value="{{sorttab}}"  ng-click="$parent.active = 2;sorttab='Deleted'; count='99'">Deleted <span>99</span></a></li>
+                                        </ul>
+                                    </div>
+                                <!-- // Custom Dropdown -->
+                                </div> 
+                                <!-- //Tab -->
+                                <!-- Sort By Filter -->
+                                <div class="sortby-filter sortby-filter-mobile" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Date'; ascdsc='descending';sortbyActive='ascending'">
+                                    {{ sortby }} <span> {{ ascdsc }}</span>
+                                </a>			
+                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                    <li><a href="#" active-function modal="descending" active_value="{{sortbyActive}}"  ng-click="sortby='Date'; ascdsc='descending'; sortbyActive='descending'">Date <span>descending</span></a></li>
+                                    <li><a href="#" active-function modal="ascending" active_value="{{sortbyActive}}"  ng-click="sortby='Date'; ascdsc='ascending'; sortbyActive='ascending'">Date <span>ascending</span></a></li>
+                                 </ul>
+                    
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>
+                                
+                                 <!-- Sort By Filter below420 -->
+                                <div class="sortby-filter sortby-filter-mobile sortby-filter-mobile420" ng-controller="DropdownCtrl">
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Date'; ascdsc='assets/images/icons/deal-category/ascending.svg';sortbyActive='Date ascending'">
+                                        {{ sortby }} <span><img src="{{ascdsc}}" /></span>
+                                    </a>			
+                                      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                        <li><a href="#" active-function modal="Date ascending" active_value="{{sortbyActive}}"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/ascending.svg'; sortbyActive='Date ascending'">Date <span><img src="assets/images/icons/deal-category/ascending.svg" /></span>---{{sortbyActive}}---</a></li>
+                                        <li><a href="#" active-function modal="Date descending" active_value="{{sortbyActive}}"  ng-click="sortby='Date'; ascdsc='assets/images/icons/deal-category/descending.svg'; sortbyActive='Date descending'">Date <span><img src="assets/images/icons/deal-category/descending.svg" /></span>---{{sortbyActive}}---</a></li>
+                                      </ul>
+                                </div>
+                                 <!-- // Custom Dropdown -->
+                            	</div>  
+                                <!-- //Sort By Filter -->
+                           
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                
+                <!-- //Top Section Mobile -->
+            
+            	<!-- Sort By Filter -->
+            	<div class="sortby-filter hidden-xs hidden-sm" ng-controller="DropdownCtrl">
+                	<label class="hidden-xs">Sort by</label>
+                    <!-- Custom Dropdown -->
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sortby='Date'; ascdsc='descending';">
+                            {{ sortby }} <span> {{ ascdsc }}</span>
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                            <li><a href="#" active-function modal="descending" active_value="{{ascdsc}}"   ng-click="sortby='Date'; ascdsc='descending';">Date <span>descending</span></a></li>
+                            <li><a href="#" active-function modal="ascending" active_value="{{ascdsc}}"  ng-click="sortby='Date'; ascdsc='ascending';">Date <span>ascending</span></a></li>
+                         </ul>
+                    </div>
+                     <!-- // Custom Dropdown -->
+                </div>  
+                <!-- //Sort By Filter -->
+                
+                
+            	<!-- Tab Product  Content -->
+                <uib-tabset active="active" ng-class="{'active-mobile':active_mobile}">
+                    <uib-tab index="0" >
+                        <uib-tab-heading>
+                            	Received<span class="notifications">99</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active">
+                         	<div class="content-box">
+                         		 <div ng-include="'messages-list.html'"></div>
+                            </div>     	
+                         </div>
+                    </uib-tab>
+                    <uib-tab index="1" >
+                        <uib-tab-heading>
+                            	Sent<span class="notifications">9</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                         		<div ng-include="'message-list-empty.html'"></div> 
+                        </div>
+                    </uib-tab>
+                    <uib-tab index="2" >
+                        <uib-tab-heading>
+                            	Deleted<span class="notifications">99</span>
+                         </uib-tab-heading>
+                         
+                         <div role="tabpanel" class="tab-pane active" id="price-trends">
+                          	<div class="content-box">
+                         	<div ng-include="'message-list-deleted.html'"></div> 
+                            </div>   
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+                <!-- //Tab Product  Content -->
+            	           
+                 
+            </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

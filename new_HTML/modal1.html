@@ -1,0 +1,182 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+         <style>
+			.btn.btn-lg.green-btn{margin-bottom:10px;}
+			h2{display:block; padding:15px; clear:both;}
+		</style>
+    </head>
+    <body>
+    	<div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll></div>
+        <!-- //Topbar Header -->
+        <!-- Banner -->
+        <div ng-include="'banner.html'"></div>
+        <!-- //banner -->
+        
+        <!-- Products -->
+        <div class="container">
+             <h2>Big Popups</h2>
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit3">
+	            <input class="btn btn-lg green-btn" ng-click="onexit3('onexit-full')" value="On Exit 3" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit9">
+	            <input class="btn btn-lg green-btn" ng-click="onexit9('onexit-full')" value="On Exit 9" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit10">
+	            <input class="btn btn-lg green-btn" ng-click="onexit10('onexit-full')" value="On Exit 10" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit11">
+	            <input class="btn btn-lg green-btn" ng-click="onexit11('onexit-full')" value="On Exit 11" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit16">
+	            <input class="btn btn-lg green-btn" ng-click="onexit16('onexit-full')" value="On Exit 16" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit18">
+	            <input class="btn btn-lg green-btn" ng-click="onexit18('onexit-full')" value="On Exit 18" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit19">
+	            <input class="btn btn-lg green-btn" ng-click="onexit19('onexit-full')" value="On Exit 19" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit20">
+	            <input class="btn btn-lg green-btn" ng-click="onexit20('onexit-full')" value="On Exit 20" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit28">
+	            <input class="btn btn-lg green-btn" ng-click="onexit28('onexit-full')" value="On Exit 28" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit23">
+	            <input class="btn btn-lg green-btn" ng-click="onexit23('onexit-full')" value="On Exit 23" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+             <h2>Small Popups</h2>
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit1">
+	            <input class="btn btn-lg green-btn" ng-click="onexit1()" value="On Exit 1" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit2">
+	            <input class="btn btn-lg green-btn" ng-click="onexit2()" value="On Exit 2" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit4">
+	            <input class="btn btn-lg green-btn" ng-click="onexit4()" value="On Exit 4" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit7">
+	            <input class="btn btn-lg green-btn" ng-click="onexit7()" value="On Exit 7" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit8a">
+	            <input class="btn btn-lg green-btn" ng-click="onexit8a()" value="On Exit 8 A" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit8b">
+	            <input class="btn btn-lg green-btn" ng-click="onexit8b()" value="On Exit 8 B" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit8c">
+	            <input class="btn btn-lg green-btn" ng-click="onexit8c()" value="On Exit 8 C" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <!-- Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit10s">
+	            <input class="btn btn-lg green-btn" ng-click="onexit10s()" value="On Exit 10 Small" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+            <div class="col-xs-12 col-sm-3" ng-controller="onExit15">
+	            <input class="btn btn-lg green-btn" ng-click="onexit15()" value="On Exit 15" /> 
+            </div>  
+             <!-- //Report Deal Popup -->
+        </div>
+   			
+   
+        <!-- //Products -->
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-animate.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>
+

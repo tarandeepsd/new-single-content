@@ -1,0 +1,573 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body>
+    	 <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll></div>
+        <!-- //Topbar Header -->
+       
+        <!-- Banner -->
+        <div ng-include="'banner.html'"></div>
+        <!-- //banner -->
+        
+        <!-- Products -->
+        <div class="container">
+        	 <div class="col-xs-12 text-center main-title"><h1>Modal Popup</h1></div>
+            
+            <!-- Add to Collection Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaladdcollection">
+	            <input class="btn btn-lg red-btn" ng-click="openAddcollection()" value="Add to collection" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+           
+		     
+            <!-- Add to Collection Product Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionProduct">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionProduct()" value="Add to collection Product" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+		   
+		   
+		     
+            <!-- Add to Collection Sale Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionSale">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionSale()" value="Add to collection Sale" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+		   
+            <!-- Add to Collection Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionCoupon">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionCoupon()" value="Add to collection Coupon" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+           
+           
+            <!-- Add to Collection tip Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionTip">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionTip()" value="Add to collection tip" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+           
+           <!-- Add to Collection shopreview Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionShopreview">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionShopreview()" value="Add to collection Shopreview" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+           
+              <!-- Add to Collection discussion Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionDiscussion">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionDiscussion()" value="Add to collection discussion" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+		   
+              <!-- Add to Collection productreview Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModaladdcollectionProductreview">
+	            <input class="btn btn-lg green-btn" ng-click="openAddcollectionProductreview()" value="Add to collection Product review" /> 
+                <br><br>
+            </div>   
+           <!-- //Add to Collection Popup -->
+           
+           
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportdeal">
+	            <input class="btn btn-lg green-btn" ng-click="openReportdeal()" value="Report Deal" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Deal Popup --> 
+             
+             <!-- Report Product Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportproduct">
+	            <input class="btn btn-lg green-btn" ng-click="openReportproduct()" value="Report Product" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Product Popup --> 
+             
+               <!-- Report Comment Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportcomment">
+	            <input class="btn btn-lg green-btn" ng-click="openReportcomment()" value="Report Comment" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Comment Popup -->
+             
+            <!-- Report Product review Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportproductreview">
+	            <input class="btn btn-lg green-btn" ng-click="openReportproductreview()" value="Report Product Review" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Product review Popup -->
+             
+            <!-- Report Shop review Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportshopreview">
+	            <input class="btn btn-lg green-btn" ng-click="openReportshopreview()" value="Report Shop Review" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Shop review Popup -->
+             
+             
+             <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportconfirmdeal">
+	            <input class="btn btn-lg green-btn" ng-click="openReportconfirmdeal()" value="Report confirm Deal" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Deal Popup --> 
+             <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportsale">
+	            <input class="btn btn-lg green-btn" ng-click="openReportsale()" value="Report sale" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Deal Popup --> 
+             <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalreportcoupon">
+	            <input class="btn btn-lg green-btn" ng-click="openReportcoupon()" value="Report coupon" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Deal Popup --> 
+            
+            <!-- SHOUT CONTENT (SHOUT A NEW DEAL - DEAL NOT PRESENT ONLINE) Modal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalNewDealPresentOnline">
+	            <input class="btn btn-lg green-btn" ng-click="openNewDealPresentOnline('shoutnewdeal')" value="SHOUT A NEW DEAL NOT PRESENT ONLINE" /> 
+                <br><br>
+            </div>  
+             <!-- //SHOUT CONTENT (SHOUT A NEW DEAL - DEAL NOT PRESENT ONLINE) Modal Popup --> 
+            
+            
+            
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaleditcomment">
+	            <input class="btn btn-lg green-btn" ng-click="openeditcomment('width1200')" value="Edit Comment" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+             
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsuggerisci">
+	            <input class="btn btn-lg green-btn" ng-click="opensuggerisci('width640')" value="Suggest New Branch" /> 
+             <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+             <!-- Report Shop review Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaleditdeal">
+	            <input class="btn btn-lg green-btn" ng-click="openEditdeal()" value="Edit Deal" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Shop review Popup -->
+             
+             <!-- Report Shop review Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaleditsale">
+	            <input class="btn btn-lg green-btn" ng-click="openEditsale()" value="Edit Sale" /> 
+                <br><br>
+            </div>  
+             <!-- //Report Shop review Popup -->
+             
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalmodifica">
+	            <input class="btn btn-lg green-btn" ng-click="openmodifica('edit_product')" value="Edit shop review" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaleditproduct">
+	            <input class="btn btn-lg green-btn" ng-click="openeditproduct('edit_product')" value="Edit Product Review" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+             
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaleditdiscussion">
+	            <input class="btn btn-lg green-btn" ng-click="openeditdiscussion('edit_product')" value="Edit Discussion" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+             
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaledittip">
+	            <input class="btn btn-lg green-btn" ng-click="openedittip('edit_product')" value="Edit Tip" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            <div class="col-xs-6 col-sm-6 col-md-3 ng-scope" ng-controller="Modaleditcoupon">
+	            <input ng-click="openeditcoupon('edit_product')" class="btn btn-lg green-btn" value="Edit Coupon"> 
+              <br><br>
+            </div>
+        
+              
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalfeedback">
+	            <input class="btn btn-lg green-btn" ng-click="openfeedback('width797')" value="Feedback" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+                  
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalshare_email">
+	            <input class="btn btn-lg green-btn" ng-click="openshare_email()" value="Share by email" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+                   
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalinvite_friends">
+	            <input class="btn btn-lg green-btn" ng-click="openinvite_friends()" value="Invite friends" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsuggest_retailer">
+	            <input class="btn btn-lg green-btn" ng-click="opensuggest_retailer('width640')" value="Suggest Retailer" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalrecommended_shouters">
+	            <input class="btn btn-lg green-btn" ng-click="openrecommended_shouters('width600')" value="Recommended Shouters" /> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+             
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsubscribe">
+	            <input class="btn btn-lg green-btn" ng-click="opensubscribe('subscribe')" value="Subscribe"/> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+             
+              <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsubscribe">
+	            <input class="btn btn-lg green-btn" ng-click="opensubscribe('subscribe orange')" value="Subscribe orange"/> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+               <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsubscribe">
+	            <input class="btn btn-lg green-btn" ng-click="opensubscribe('subscribe image_bg')" value="Subscribe image"/> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+          <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsubscribefull">
+	            <input class="btn btn-lg green-btn" ng-click="opensubscribefull('subscribe modal-onexit-full')" value="Subscribe Full screen"/> 
+              <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+            
+            
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalbadges">
+	            <input class="btn btn-lg green-btn" ng-click="Modalbadges('badges')" value="Badges" /> 
+              <br><br>
+            </div>    
+             <!-- //Report Deal Popup --> 
+            <!-- Report Deal Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalnewbadges">
+	            <input class="btn btn-lg green-btn" ng-click="Modalnewbadges('newbadges')" value="New Badge" /> 
+           <br><br>
+            </div>   
+             <!-- //Report Deal Popup --> 
+             
+             
+              <!-- Upload cover image Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalUploadPic">
+	            <input class="btn btn-lg green-btn" ng-click="openUploadPic('upload-image')" value="Upload Avatar" /> 
+           <br><br>
+            </div>   
+             <!-- //Upload cover image Popup --> 
+             
+                   <!-- Upload cover image Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalUploadUser">
+	            <input class="btn btn-lg green-btn" ng-click="openUploadUser('upload-image')" value="Upload Avatar & Upload Cover Image" /> 
+           <br><br>
+            </div>   
+             <!-- //Upload cover image Popup --> 
+             
+             
+              
+            <!-- Delete Message Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaldeletemsg">
+	            <input class="btn btn-lg green-btn" ng-click="openDeletemsg()" value="Delete Message" /> 
+           <br><br>
+            </div>   
+             <!-- //Delete Message Popup --> 
+            
+              <!-- Delete Message Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalresetpass">
+	            <input class="btn btn-lg green-btn" ng-click="openresetpass()" value="Reset Password" /> 
+           <br><br>
+            </div>   
+             <!-- //Delete Message Popup --> 
+            
+            
+                 <!-- Delete Message Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalDemobigCtrl">
+	            <input class="btn btn-lg green-btn" ng-click="openbig('big')" value="Favourite Category" /> 
+           <br><br>
+            </div>   
+             <!-- //Delete Message Popup --> 
+            
+            
+                 <!-- Delete Message Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalConfirm">
+	            <input class="btn btn-lg green-btn" ng-click="openConfirm()" value="Confirm email" /> 
+           <br><br>
+            </div>   
+             <!-- //Delete Message Popup --> 
+            
+            
+              
+                 <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalCoupon">
+	            <input class="btn btn-lg green-btn" ng-click="openCoupon('coupon')" value="Coupon logout" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+            
+            
+            
+                 <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalCouponin">
+	            <input class="btn btn-lg green-btn" ng-click="openCouponin('coupon')" value="Coupon login" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+            
+                 <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalUnfollow">
+	            <input class="btn btn-lg green-btn" ng-click="openUnfollow('coupon')" value="Unfollow shouter" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+            
+                   <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalInterest">
+	            <input class="btn btn-lg green-btn" ng-click="openInterest('interest')" value="Register your Interest" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+             
+                   <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalshopblock">
+	            <input class="btn btn-lg green-btn" ng-click="openshopblock('coupon')" value="Block Shop" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+             
+                      <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalRemovepre">
+	            <input class="btn btn-lg green-btn" ng-click="openRemovepre('coupon')" value="Remove preference" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+              
+                      <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalUnblockshop">
+	            <input class="btn btn-lg green-btn" ng-click="openUnblockshop('coupon')" value="Unblock Shop" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+                       <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalblockuser">
+	            <input class="btn btn-lg green-btn" ng-click="openBlockuser('coupon')" value="Block shouter" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+            
+                        <!-- Coupon Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsharedeal">
+	            <input class="btn btn-lg green-btn" ng-click="opensharedeal('coupon')" value="Share this deal" /> 
+           <br><br>
+            </div>   
+             <!-- //Coupon Popup --> 
+            
+            
+            
+             <!-- log in Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="ModalLogin">
+	            <input class="btn btn-lg green-btn" ng-click="openLogin()" value="log in" /> 
+           <br><br>
+            </div>   
+            <!-- //log in Popup --> 
+            
+            
+              <!-- Sign up Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalsignup">
+	            <input class="btn btn-lg green-btn" ng-click="openSignup()" value="Sign up" /> 
+           <br><br>
+            </div>   
+            <!-- //Sign up Popup --> 
+            
+              <!-- Favcategories Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalfavcategories">
+	            <input class="btn btn-lg green-btn" ng-click="openfavcategories('width760')" value="Favcategories" /> 
+           <br><br>
+            </div>   
+            <!-- //Favcategories Popup --> 
+             
+              <!-- Add interests Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalinterests">
+	            <input class="btn btn-lg green-btn" ng-click="openinterests('width760')" value="Add interests" /> 
+           <br><br>
+            </div>   
+            <!-- //Add interests Popup --> 
+               
+              <!-- Add shops Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalfavshop">
+	            <input class="btn btn-lg green-btn" ng-click="openfavshop('width760')" value="Add shops" /> 
+           <br><br>
+            </div>   
+            <!-- //Add shops Popup --> 
+            
+              
+              <!-- Add countries Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalfavcountries">
+	            <input class="btn btn-lg green-btn" ng-click="openfavcountries('width760')" value="Add countries" /> 
+           <br><br>
+            </div>   
+            <!-- //Add countries Popup --> 
+            
+             
+              <!-- Add sizes Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalfavsize">
+	            <input class="btn btn-lg green-btn" ng-click="openfavsize('width760')" value="Add sizes" /> 
+           <br><br>
+            </div>   
+            <!-- //Add sizes Popup --> 
+            
+            
+                <!-- Delete all prices Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalremovealert">
+	            <input class="btn btn-lg green-btn" ng-click="openremovealert()" value="Delete all prices" /> 
+           <br><br>
+            </div>   
+            <!-- //Delete all prices Popup --> 
+            
+            
+            
+                <!-- Delete price Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modaldeleteprice">
+	            <input class="btn btn-lg green-btn" ng-click="openDeleteprice()" value="Delete price" /> 
+           <br><br>
+            </div>   
+            <!-- //Delete price Popup --> 
+            
+            
+                <!-- Edit price Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalpriceedit">
+	            <input class="btn btn-lg green-btn" ng-click="openpriceedit()" value="Edit price" /> 
+           <br><br>
+            </div>   
+            <!-- //Edit price Popup --> 
+            
+            
+             
+                <!-- Price alert Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalpricealert">
+	            <input class="btn btn-lg green-btn" ng-click="openpricealert()" value="Price alert" /> 
+           <br><br>
+            </div>   
+            <!-- //Price alert Popup --> 
+            
+                  
+            
+             
+                <!-- Welcome Popup -->
+            <div class="col-xs-6 col-sm-6 col-md-3" ng-controller="Modalwelcome">
+	            <input class="btn btn-lg green-btn" ng-click="openwelcome('welcome')" value="Welcome" /> 
+           <br><br>
+            </div>   
+            <!-- //Welcome Popup --> 
+            
+            
+            
+        
+        </div>
+   			
+   
+        <!-- //Products -->
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

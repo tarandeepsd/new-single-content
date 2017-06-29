@@ -1,0 +1,59 @@
+<!-- Filter Section -->
+<div  class="filter-section hidden-xs hidden-sm" ng-init="$root.filterhide=true" ng-class="{ 'open':($root.filter_show ) }">
+    <div class="filter-overlay"></div>
+    
+     <!-- Filter Block -->
+    <div class="filter-block search-fliter">
+      <h3 class="title hidden-xs hidden-sm">Show results for <a href="#" class="pull-right link hide">reset all</a></h3>
+      <ul>
+      	<li class="clearfix hidden-lg hidden-md filter-title"><h3 ng-click="$root.filter_show=false">Filters</h3> 
+        <div class="pull-right"><a href="#" class="btn blue-btn">apply</a> <a href="#" class="btn disable">reset</a></div>
+        </li>
+        
+        <li class="dropdown p_top8" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Keyword <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+            	<!-- Input -->
+            	<div class="input-group add-on search-input">
+                    <input class="form-control" placeholder="Keyword" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- //Input -->
+                <!-- error Input -->
+                <div class="error_tooltip hide">Lorem ipsum dolor sit amet consectetui</div>
+                <div class="input-group add-on search-input error-input hide">
+                	<input class="form-control" value="Lorem" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- error Input -->
+                
+                <!-- keyword List -->
+                <ul class="keyword-list">
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+            	</ul>
+                <!-- //keyword List -->            
+            </div>
+             <!-- //Dropdown -->
+        </li>
+        
+         
+      </ul>
+
+    </div>
+    <!-- //Filter Block -->
+       <!-- Filter TOp Treding Deal Block -->
+     <div ng-include="'filter-top-trending-deal.html'"></div>
+     <!-- //Filter TOp Treding Deal Block -->
+    
+</div>
+<!-- //FIlter Section -->
+
+

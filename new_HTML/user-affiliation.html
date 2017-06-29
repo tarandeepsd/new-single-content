@@ -1,0 +1,701 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body>
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+         <!-- Banner -->
+        <div ng-include="'userprofile-header.html'" class="fixed-header clearfix "></div>
+        <!-- //banner -->
+        
+         <!-- User Breadcrumb -->
+        <div ng-include="'user-bredcrumb.html'"></div>
+        <!-- //User Breadcrumb -->
+         <!-- Main Container -->
+        <div class="main-container clearfix"> 
+            <!-- Filter Sidebar -->
+            <div ng-include="'filter-sidebar_affiliation.html'" class="pull-left"></div>
+            <!-- //Filter Sidebar -->            
+             <!-- Main Content --> 
+              <div class="main-content product-section user-affiliate">
+                <!-- Top Section Mobile -->
+                <div class="hidden-lg hidden-md mobile-product-filter">
+                        <div class="toptab-box top-filter-block">
+                            <div class="filter-tab">
+                                <!-- Tab -->
+                                <div class="sortby-filter sort-tab" ng-controller="DropdownCtrl" >
+                                <!-- Custom Dropdown -->
+                                    <div class="dropdown custom-dropdown" uib-dropdown="1" >
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="sorttab='Settings &amp; Tools'; count=''">
+                                        {{ sorttab }} <span> {{ count }}</span>
+                                        </a>			
+                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                            <li><a href="#" active-function modal="Preferences" active_value="{{sorttab}}"  ng-click="$parent.active = 0;sorttab='Settings &amp; Tools'; count=' '">Settings &amp; Tools</a></li>
+											<li><a href="#" active-function modal="History" active_value="{{sorttab}}" ng-click="$parent.active = 1;sorttab='History'; count=' '">History</a></li>
+											<li><a href="#" active-function modal="Payments" active_value="{{sorttab}}" ng-click="$parent.active = 2;sorttab='Payments'; count=' '">Payments</a></li>
+                                        </ul>
+                                    </div>
+                                <!-- // Custom Dropdown -->
+                                </div>  
+                                 <!-- //Tab -->
+                            </div>
+                            
+                        </div>
+                    </div>
+                <!-- //Top Section Mobile -->
+                
+                           
+                <!-- Category Content -->  
+                <div class="user_custom_tab affiliation">
+                  <uib-tabset active="active">
+                        <uib-tab index="0">
+                            <uib-tab-heading>Settings &amp; Tools</uib-tab-heading>
+                            <div class="promotab">
+                            	<h2>Earn with Shout!</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+                                <div class="panel panel-default form-horizontal form_area m_zero" ng-controller="ModalGeneralCtrl">
+                                    <!--<div class="user_info_box" ng-class="{'open':!ispassCollapsed1}">
+                                          <div class="form-group dropdown-toggle" ng-click="ispassCollapsed1 = !ispassCollapsed1">
+                                                <div class="col-sm-11 col-xs-10"> 
+                                                     <p class=""><span class="name-block">Affiliate Program</span>
+                                                     <small class="purple_text">Activate <small class="alert_icon"></small></small></p>
+                                               </div>
+                                                <div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                                          </div>
+                                          <div class="dropdown-block" uib-collapse="ispassCollapsed1">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                         <div class="custom-checkboxbtn checkbox">
+                                                            <label> <input type="checkbox"> <span class="lbl">I want to join the Shout Affiliate Program</span></label>
+                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                   <div class="col-sm-7 accept"><p class="font_14grey">By joining the Shout Affiliate Program you accept the <a href="#">Shout Affiliate Program Terms &amp; Conditions</a></p></div>   
+                                                   <div class="col-sm-5">  
+                                                    <div class="cancel_btn_group">  
+                                                        <div ng-controller="Modalunsaved">
+                                                            <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                                            <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div> 
+                                          </div>
+                                     </div>-->
+                                    <div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                                          <div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                                                <div class="col-sm-11 col-xs-10">
+                                                     <p class=""><span class="name-block">Paypal Account</span>
+                                                     <small class="orange_text">Enter your PayPal email address <small class="alert_icon"></small></small></p>
+                                               </div>
+                                                <div class="col-sm-1 col-xs-2"><a href="#" class="edit_icon pull-right"></a> </div>
+                                          </div>
+                                          <div class="dropdown-block default-form" uib-collapse="ispassCollapsed">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group inner help">
+                                                        
+                                                        <div class="form-input">
+                                                            <input type="text" class="form-control form-control-icon" placeholder="Enter your PayPal account">
+                                                            <span class="form-icon question-icon"></span>
+                                                            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                                        </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group inner help">
+                                                        
+                                                        
+                                                        <div class="form-input">
+                                                            <input type="text" class="form-control form-control-icon" placeholder="Enter your password to confirm changes">
+                                                            <span class="form-icon question-icon"></span>
+                                                            <div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing.</div>
+                                                        </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">  
+                                                        <div class="cancel_btn_group">  
+                                                            <div ng-controller="Modalunsaved">
+                                                            <a href="#" class="btn btn-default" ng-click="openunsaved('sm_new')">cancel</a> 
+                                                        <a href="#" class="btn btn_purple" ng-click="openunsaved('sm_new')">SAVE CHANGES</a>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                          </div>
+                                     </div>
+                                </div>
+                                <div class="panel panel-default form-horizontal form_area m_zero" ng-controller="ModalGeneralCtrl">
+                                    <div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                                          <div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                                                <div class="col-sm-11 col-xs-10">
+                                                     <p class=""><span class="name-block">My Promo Link</span></p>
+                                               </div>
+                                                <div class="col-sm-1 col-xs-2"><a href="#" ng-class="{'selected':!ispassCollapsed}" class="pound_icon image-icons pull-right"></a> </div>
+                                          </div>
+                                          <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                                                <div class="row">
+                                                    <div class="col-sm-12">  
+                                                        <p>Do you run a large network, a content site, a blog, or simply a Social Network page or profile? Use the promo link to promote Shout through your audience, and earn commissions on any qualified sale or posted content by new Shouters whom you referred.</p>
+                                                        <form class="inline-form">
+                                                            <input type="text" class="form-control" placeholder="shout.eu/a/username"> <button type="submit" ng-click="openaffiliate('affiliate')" class="green-btn">copy link<span class="affiliate-icon"></span></button>
+                                                        </form>
+                                                    </div> 
+                                                </div>
+                                          </div>
+                                     </div>
+                                </div>
+                                <div class="panel panel-default form-horizontal form_area m_zero" ng-controller="ModalGeneralCtrl">
+                                    <div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                                          <div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                                                <div class="col-sm-11 col-xs-10">
+                                                     <p class=""><span class="name-block">Custom Promo Link</span></p>
+                                               </div>
+                                                <div class="col-sm-1 col-xs-2"><a href="#" ng-class="{'selected':!ispassCollapsed}" class="pound_icon image-icons pull-right"></a> </div>
+                                          </div>
+                                          <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                                                <div class="row">
+                                                    <div class="col-sm-12">  
+                                                        <p>Do you run a large network, a content site, a blog, or simply a Social Network page or profile? Use the promo link to promote Shout through your audience, and earn commissions on any qualified sale or posted content by new Shouters whom you referred.Here you can find an example of promo link, copy the code below and embed it on your site or blog. You can also customise the text of the promo link by editing the code in the text area below.</p>
+                                                        <blockquote>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</blockquote>
+                                                            <div class="embed-code">
+                                                                &lt;a href=&quot;indirizzo del sito&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;indirizzo dell'immagine&quot; border=&quot;0&quot; width=&quot;larghezza del banner&quot; heigth=&quot;altezza del banner&quot; alt=&quot;nome del sito&quot;&gt;&lt;/a&gt;
+                                                            </div>
+                                                        	<button type="submit" class="green-btn small">COPY LINK<span class="affiliate-icon"></span></button>
+                                                    </div> 
+                                                </div>
+                                          </div>
+                                     </div>
+                                </div>
+                                <div class="panel panel-default form-horizontal form_area m_zero" ng-controller="ModalGeneralCtrl">
+                                    <div class="user_info_box" ng-class="{'open':!ispassCollapsed}">
+                                          <div class="form-group dropdown-toggle" ng-click="ispassCollapsed = !ispassCollapsed">
+                                                <div class="col-sm-11 col-xs-10">
+                                                     <p class=""><span class="name-block">My Banners</span></p>
+                                               </div>
+                                                <div class="col-sm-1 col-xs-2"><a href="#" ng-class="{'selected':!ispassCollapsed}" class="pound_icon image-icons pull-right"></a> </div>
+                                          </div>
+                                          <div class="dropdown-block" uib-collapse="ispassCollapsed">
+                                                <div class="row">
+                                                    <div class="col-sm-12">  
+                                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                                                        <label>Choose the size of the banner</label>
+                                                        <div class="form-group">
+                                                        	<div class="col-sm-5">
+                                                            	<div class="form-input form-select" ng-controller="DropdownCtrl">
+                                                                    <div class="dropdown custom-dropdown" uib-dropdown="1">
+                                                                        <a href="#" class="dropdown-toggle"  data-toggle="dropdown" uib-dropdown-toggle ng-class="{'placeholder':(chooseitem=='Choose size')}" ng-init="chooseitem='Choose size'">
+                                                                            {{ chooseitem }} 
+                                                                        </a>			
+                                                                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                                                            <li><a href="#" active-function modal="Choose size" active_value="{{chooseitem}}" ng-click="chooseitem='Choose size'">Choose size</a></li>
+                                                                            <li><a href="#" active-function modal="Mobile Leaderboard 320 x 50" active_value="{{chooseitem}}" ng-click="chooseitem='Mobile Leaderboard 320 x 50'">Mobile Leaderboard 320 x 50</a></li>
+																			<li><a href="#" active-function modal="Banner: 468 x 60" active_value="{{chooseitem}}" ng-click="chooseitem='Banner: 468 x 60'">Banner: 468 x 60</a></li>
+                                                                            <li><a href="#" active-function modal="Vertical Rectangle 240 x 400" active_value="{{chooseitem}}" ng-click="chooseitem='Vertical Rectangle 240 x 400'">Vertical Rectangle 240 x 400</a></li>
+                                                                            <li><a href="#" active-function modal="Leaderboard 728 x 90" active_value="{{chooseitem}}" ng-click="chooseitem='Leaderboard 728 x 90'">Leaderboard 728 x 90</a></li>
+                                                                            <li><a href="#" active-function modal="Square 250 x 250" active_value="{{chooseitem}}" ng-click="chooseitem='Square 250 x 250'">Square 250 x 250</a></li>
+                                                                            <li><a href="#" active-function modal="Small Square 200 x 200" active_value="{{chooseitem}}" ng-click="chooseitem='Small Square 200 x 200'">Small Square 200 x 200</a></li>
+                                                                            <li><a href="#" active-function modal="Large Rectangle 336 x 280" active_value="{{chooseitem}}" ng-click="chooseitem='Large Rectangle 336 x 280'">Large Rectangle 336 x 280</a></li>
+                                                                            <li><a href="#" active-function modal="Inline Rectangle 300 x 250" active_value="{{chooseitem}}" ng-click="chooseitem='Inline Rectangle 300 x 250'">Inline Rectangle 300 x 250</a></li>
+                                                                            <li><a href="#" active-function modal="Skyscraper 120 x 600" active_value="{{chooseitem}}" ng-click="chooseitem='Skyscraper 120 x 600'">Skyscraper 120 x 600</a></li>
+                                                                            <li><a href="#" active-function modal="Wide Skyscraper 160 x 600" active_value="{{chooseitem}}" ng-click="chooseitem='Wide Skyscraper 160 x 600'">Wide Skyscraper 160 x 600</a></li>
+                                                                            <li><a href="#" active-function modal="Half-Page 300 x 600" active_value="{{chooseitem}}" ng-click="chooseitem='Half-Page 300 x 600'">Half-Page 300 x 600</a></li>
+                                                                            <li><a href="#" active-function modal="Large Leaderboard 970 x 90" active_value="{{chooseitem}}" ng-click="chooseitem='Large Leaderboard 970 x 90'">Large Leaderboard 970 x 90</a></li>
+                                                                            <li><a href="#" active-function modal="Large Mobile Banner 320 x 100" active_value="{{chooseitem}}" ng-click="chooseitem='Large Mobile Banner 320 x 100'">Large Mobile Banner 320 x 100</a></li>
+                                                                            <li><a href="#" active-function modal="Billboard 970 x 250" active_value="{{chooseitem}}" ng-click="chooseitem='Billboard 970 x 250'">Billboard 970 x 250</a></li>
+                                                                            <li><a href="#" active-function modal="Portrait 300 x 1050" active_value="{{chooseitem}}" ng-click="chooseitem='Portrait 300 x 1050'">Portrait 300 x 1050</a></li>
+                                                                       </ul>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="banner-preview">
+                                                            <div class="text">banner preview</div>
+                                                        </div>
+                                                        <span class="note">This image has been resized to fit in the page. <a href="error404.html" target="_blank">Click here to see the full image</a></span>
+                                                        <label>Copy and paste the following code string on your site or blog</label>
+                                                       <div class="embed-code">
+                                                                &lt;a href=&quot;indirizzo del sito&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;indirizzo dell'immagine&quot; border=&quot;0&quot; width=&quot;larghezza del banner&quot; heigth=&quot;altezza del banner&quot; alt=&quot;nome del sito&quot;&gt;&lt;/a&gt;
+                                                            </div> 
+                                                        	<button type="submit" class="green-btn small">COPY CODE<span class="affiliate-icon"></span></button> 
+                                                    </div> 
+                                                </div>
+                                          </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="1" >
+                            <uib-tab-heading> History </uib-tab-heading>
+                            <div class="history">
+                            	<div class="table-div">
+                                	<div class="table-row">
+                                    	<div class="table-cell-head">Action</div>
+                                    	<div class="table-cell-head mine">Mine</div>
+                                    	<div class="table-cell-head maffliated">My Affiliated </div>
+                                    	<div class="table-cell-head actions">&nbsp;</div>
+                                    </div>
+                                </div>
+                                
+								<div class="collapsible" ng-init="share_icon2=false" ng-class="{ 'open':share_icon2 }">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a ng-click="share_icon2=!share_icon2" href="" class="purple-text block-div">100% Profile Completed</a> <small>username, avatar, preferences, location, telephone</small> </div>
+                                            <div class="table-cell status"><form  method="get"><button class="btns"> COMPLETE</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href="" ng-click="share_icon2=!share_icon2"><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                    <div class="blowdiv">
+                                    	<div class="price-trend">
+                                              <div class="price-left">
+                                                <img src="assets/images/graph2.png" alt="graph">
+                                            </div>
+											<div class="price-right">
+                                                <div class="graph-filter">
+                                                    <h5>Time Range</h5>
+                                                    <div class="dropdown custom-dropdown pull-right" uib-dropdown="1">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="showshop2='All Time'; value=''">
+                                                    {{ showshop2 }} <span> {{ value }}</span>
+                                                </a>
+                                                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                                   <li><a href="#" active-function modal="Last Month" active_value="{{showshop2}}" ng-click="showshop2='Last Month'; value=''">Last Month</a></li>
+                                                   <li><a href="#" active-function modal="Last 3 Months" active_value="{{showshop2}}" ng-click="showshop2='Last 3 Months'; value=''">Last 3 Months</a></li>
+                                                   <li><a href="#" active-function modal=">Last 6 Months" active_value="{{showshop2}}" ng-click="showshop2='Last 6 Months'; value=''">Last 6 Months</span></a></li>
+                                                   <li><a href="#" active-function modal="Last Year" active_value="{{showshop2}}" ng-click="showshop2='Last Year'; value=''">Last Year</a></li>
+                                                   <li><a href="#" active-function modal="All Time" active_value="{{showshop2}}" ng-click="showshop2='All Time'; value=''">All Time</a></li>
+                                                </ul>
+                                            </div>
+													
+													<hr class="m_top20">
+													<div class="custom-radiobtn m_top20">
+                                            <label>
+                                                <input name="radio" value="in Pounds" type="radio">
+                                                <span class="lbl">in Pounds (£)</span>
+                                            </label>
+                                        </div>
+										
+										<div class="custom-radiobtn">
+                                            <label>
+                                                <input name="radio" value="in Quantity" type="radio">
+                                                <span class="lbl">in Quantity</span>
+                                            </label>
+                                        </div>
+										
+													<hr class="m_top20">
+													
+                                                    <label>Commissions</label>
+                                                    <div class="custom-checkboxbtn checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> <span class="lbl"><span class="circle yellow"></span>Mine</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-checkboxbtn checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> <span class="lbl"><span class="circle ligt-green"></span>My Affiliates</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="custom-checkboxbtn checkbox">
+                                                        <label>
+                                                            <input type="checkbox"> <span class="lbl"><span class="circle purple"></span>All</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Facebook Profile connected to Shout Account</a> <small>only the first connection</small></div>
+                                            
+                                            <div class="table-cell status"><form  method="get"><button class="btns fb_connect"> CONNECT</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Twitter Profile connected to Shout Account </a><small>only the first connection</small> </div>
+                                            <div class="table-cell status"><form  method="get"><button class="btns tw_connect"> CONNECT</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Google+ Profile connected to Shout Account</a><small>only the first connection</small> </div>
+                                            <div class="table-cell status"><form  method="get"><button class="btns gplus_connect"> CONNECT</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								 <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Content shared on Social Networks by Autoposting</a></div>
+                                            <div class="table-cell status">
+											<form action="account.html" method="get"><button class="btns">ACTIVATE</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								 <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Content shared manually on Social Networks</a></div>
+                                            <div class="table-cell status"><form action="deal-category.html" method="get"><button class="btns">share</button></form></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Like on Shout’s Facebook page</a><small>only once</small> </div>
+                                            <div class="table-cell status"><span class=""><img src="assets/images/product/GREEN_CHECK.svg" alt="completed"> liked</span></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Follow on Shout’s Twitter profile</a><small>only once</small> </div>
+                                            <div class="table-cell status"><span class=""><img src="assets/images/product/GREEN_CHECK.svg" alt="completed"> following</span></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Shout’s Google+ profile added to your circles</a><small>only once</small> </div>
+                                            <div class="table-cell status"><span class=""><img src="assets/images/product/GREEN_CHECK.svg" alt="completed"> added</span></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+                                <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Deal posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Sales posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Coupon posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Flyer posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Freebie posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Competition posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Tip posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Discussion posted on Shout</a><small>only when it reaches 100<sup>dB</sup></small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">Review posted on Shout</a><small>only when it reaches 10 likes from other Shouters</small></div>
+                                            <div class="table-cell status" ng-controller="ModalNewDealPresentOnline"><button class="btns shout" ng-click="openNewDealPresentOnline('shoutnewdeal')"><img alt="shout" src="assets/images/product/shout-logo.svg"></button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+							   
+							   <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">New Badge Achievement</a></div>
+                                            <div class="table-cell status" ng-controller="Modalbadges">
+                                            <button class="btns" ng-click="Modalbadges('badges')"> 
+                                            my badges
+                                            </button>
+                                            </div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row">
+                                            <div class="table-cell" data-label="Action"><a href="" class="purple-text block-div">New Shouter registered after your invitation</a></div>
+                                            <div class="table-cell status" ng-controller="Modalinvite_friends"><button class="btns invite" ng-click="openinvite_friends()"> invite friends</button></div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text">£ 1.00</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text">£ 5.00</span> <small>(10)</small></div>
+                                            <div class="table-cell actions"><a href=""><span class="image-icons searcha"></span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="collapsible">
+                                    <div class="table-div">
+                                        <div class="table-row total">
+                                            <div class="table-cell" data-label="Action"><span class="bigfonts">Total: <strong class="purple-text">£ 112.45</strong> <small>payble from 05 Apr 2016</small></span></div>
+                                            <div class="table-cell status">&nbsp;</div>
+                                            <div class="table-cell mine" data-label="Mine"><span class="purple-text bigfonts">£ 30.90</span></div>
+                                            <div class="table-cell maffliated" data-label="My Affiliated"><span class="purple-text bigfonts">£ 81.55</span></div>
+                                            <div class="table-cell actions">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </uib-tab>
+						
+                        <uib-tab index="2">
+                            <uib-tab-heading> Payments </uib-tab-heading>
+                            <div class="payments">
+                            	<div class="table-div">
+                                	<div class="table-row">
+                                    	<div class="table-cell-head">Date</div>
+                                    	<div class="table-cell-head">Reference Period</div>
+                                    	<div class="table-cell-head">Month’s Commission </div>
+                                    	<div class="table-cell-head">Due</div>
+                                    	<div class="table-cell-head">Paid*</div>
+                                    	<div class="table-cell-head">PayPal Account <small><a href="#">(edit)</a></small></div>
+                                    </div>
+									
+									<div class="table-row">
+                                    	<div class="table-cell" data-label="Date"><span class="grey-color">05 Apr 2016</span></div>
+                                    	<div class="table-cell" data-label="Reference Period"><span class="grey-color">01-31 Mar 2016</span></div>
+                                    	<div class="table-cell" data-label="Month’s Commission"><span class="">£ 85.50</span></div>
+                                    	<div class="table-cell" data-label="Due"><span class="">£ 119.00</span> <small class="block-div grey-color">£ 85.50 + £ 33.50</small></div>
+                                    	<div class="table-cell" data-label="Paid*"><span class="">£ 100.00</span> <small class="block-div grey-color">rest: £ 19.00</small></div>
+                                    	<div class="table-cell"><span class="mobile-show">PayPal Account <a href='#'>(edit)</a></span><span class="">email@example.com</span> <span class="block-div" ng-controller="Modalinvoice"><a href="#" ng-click="openinvoice('modal-invoice')" class="purple-text">view invoice</a></span></div>
+                                    </div>
+                                	<div class="table-row">
+                                    	<div class="table-cell" data-label="Date"><span class="grey-color">05 Apr 2016</span></div>
+                                    	<div class="table-cell" data-label="Reference Period"><span class="grey-color">01-31 Mar 2016</span></div>
+                                    	<div class="table-cell" data-label="Month’s Commission"><span class="">£ 25.50</span></div>
+                                    	<div class="table-cell" data-label="Due"><span class="">£ 33.50</span><small class="block-div grey-color">£ 25.50 + £ 7.50</small></div>
+                                    	<div class="table-cell" data-label="Paid*">-<small class="block-div grey-color">rest: £ 33.50</small></div>
+                                    	<div class="table-cell"><span class="mobile-show">PayPal Account <a href='#'>(edit)</a></span><div class="red-color">deferred to 05 Apr 2016 </div></div>
+                                    </div>
+                                	
+									
+									
+									
+                                	<div class="table-row">
+                                    	<div class="table-cell" data-label="Date"><span class="grey-color">05 Apr 2016</span></div>
+                                    	<div class="table-cell" data-label="Reference Period"><span class="grey-color">01-31 Mar 2016</span></div>
+                                    	<div class="table-cell" data-label="Month’s Commission"><span class="">£ 25.50</span></div>
+                                    	<div class="table-cell" data-label="Due"><span class="">£ 33.50</span><small class="block-div grey-color">£ 25.50 + £ 7.50</small></div>
+                                    	<div class="table-cell" data-label="Paid*">-<small class="block-div grey-color">rest: £ 33.50</small></div>
+                                    	<div class="table-cell"><span class="mobile-show">PayPal Account <a href='#'>(edit)</a></span><div class="yellow-color">Please specify your <br/> PayPal email address</div></div>
+                                    </div>
+									
+                                	<div class="table-row">
+                                    	<div class="table-cell" data-label="Date"><span class="grey-color">05 Apr 2016</span></div>
+                                    	<div class="table-cell" data-label="Reference Period"><span class="grey-color">01-31 Mar 2016</span></div>
+                                    	<div class="table-cell" data-label="Month’s Commission"><span class="">£ 85.50</span></div>
+                                    	<div class="table-cell" data-label="Due"><span class="">£ 119.00</span> <small class="block-div grey-color">£ 85.50 + £ 33.50</small></div>
+                                    	<div class="table-cell" data-label="Paid*"><span class="">£ 100.00</span> <small class="block-div grey-color">rest: £ 19.00</small></div>
+                                    	<div class="table-cell"><span class="mobile-show">PayPal Account <a href='#'>(edit)</a></span><span class="">email@example.com</span> <span class="block-div" ng-controller="Modalinvoice"><a href="#" ng-click="openinvoice('modal-invoice')" class="purple-text">view invoice</a></span></div>
+                                    </div>
+                                	<div class="table-row total">
+                                    	<div class="table-cell" data-label="Date"><span class=" bigfonts"><strong>TOTAL:</strong></span></div>
+                                    	<div class="table-cell hidden-xs" data-label="Reference Period">&nbsp;</div>
+                                    	<div class="table-cell" data-label="Month’s Commission"><span class="bigfonts">£ 418.50</span> <small class="block-div">earned</small></div>
+                                    	<div class="table-cell" data-label="Due"><span class="red-text bigfonts">£ 19.00</span> <small class="block-div">pending</small></div>
+                                    	<div class="table-cell" data-label="Paid*"><span class="bigfonts">£ 100.00</span> <small class="block-div">paid</small></div>
+                                    	<div class="table-cell hidden-xs">&nbsp;</div>
+                                    </div>
+                                </div>
+                                <div class="note">
+                                	<p>*Commissions are paid every £ 50.00 earned (or multiples). When you earn more than £ 50.00 (or multiples), the difference is carried forward to the next month's balance.</p>
+                                </div>
+                            </div>
+                        </uib-tab>					
+                   </uib-tabset>
+                </div>
+                <!-- //Category Content -->
+                <!--<div ng-include="'accout_section.html'"></div>-->
+              </div>
+            <!-- Main Content --> 
+             <div class="clearfix"></div>
+        </div>
+         
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+     <script src="assets/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="assets/js/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+     
+    </body>
+</html>

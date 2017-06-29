@@ -1,0 +1,271 @@
+<div class="panel panel-default form-horizontal form_area m_zero clearfix social_edit_icon" ng-controller="ModalSocialRegisterCtrl">
+            		  
+                     <div class="user_info_box" ng-class="{'open':!isnoCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle">
+                        <div class="col-sm-3 col-xs-9" ng-controller="Modaldisconnnect"> 
+                            <div class="social_media connected_social" ng-click="opendisconnect()">
+                                <a class="fb" href="#"><span></span> connected 
+                                	<em class="affiliate-icon"></em></a>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-9 col-xs-3" ng-click="isnoCollapsed = !isnoCollapsed"><a href="javascript:void(0)" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                       <div class="dropdown-block" uib-collapse="isnoCollapsed">
+                      		<div class="row social_connect">
+                      		<p class="m_btm10"><small class="size14_greycolor">Share automatically on Facebook:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Shouts</p> </div>
+                                        
+                                        <div class="col-sm-4 col-xs-6">
+                                            <div ng-controller="Modaldisconnnect">
+                                            <a href="#" class="btn btn_disable" ng-click="opendisconnect()">disable <em class="affiliate-icon"> </em></a>
+                                          </div>
+                      
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Collections</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Comments</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Categories</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Votes</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Shops</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Collected Shouts</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable">disable <em class="affiliate-icon"> </em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>Shouters I Follow</p> </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                        <div ng-controller="Modalconnnect">
+                                        <a href="#" ng-click="openconnect('width540')" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"> </em></a></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      </div>
+               		 </div>
+                
+                	 <div class="user_info_box" ng-class="{'open':!isageCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle">
+                        <div class="col-sm-3 col-xs-9" ng-controller="Modaldisconnnecttwitter"> 
+                            <div class="social_media" ng-click="opendisconnecttwitter()">
+                                <a class="tw" href="#"><span></span> connect <em class="affiliate-icon"></em></a>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-9 col-xs-3" ng-click="isageCollapsed = !isageCollapsed"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                       <div class="dropdown-block" uib-collapse="isageCollapsed">
+                      <div class="row social_connect">
+                      		<p class="m_btm10"><small class="size14_greycolor">Share automatically on Twitter:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Shouts</p> </div>
+                                        <div class="col-sm-4 col-xs-6">
+                                            <div ng-controller="Modaldisconnnecttwitter">
+                                            <a href="#" class="btn btn_disable" ng-click="opendisconnecttwitter()">disable <em class="affiliate-icon"> </em></a>
+                                          </div>
+                      
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Collections</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Comments</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Categories</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Votes</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Shops</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Collected Shouts</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>Shouters I Follow</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      </div>
+                      <div class="clearfix"></div>
+                      
+                </div>
+                
+                	 <div class="user_info_box" ng-class="{'open':!isCollapsed}">
+                     
+                	  <div class="form-group dropdown-toggle">
+                        <div class="col-sm-3 col-xs-9" ng-controller="Modaldisconnnectgoogle"> 
+                            <div class="social_media" ng-click="opendisconnectgoogle()">
+                                <a class="gplus" href="#"><span></span> connect <em class="affiliate-icon"></em></a>
+                                <div class="clearfix"></div>
+                            </div> 
+                       </div>
+                      
+                      <div class="col-sm-9 col-xs-3" ng-click="isCollapsed = !isCollapsed"><a href="#" class="edit_icon pull-right"></a> </div>
+                      
+                      </div>
+                      
+                      <div class="dropdown-block" uib-collapse="isCollapsed">
+                      <div class="row social_connect">
+                      		<p class="m_btm10"><small class="size14_greycolor">Share automatically on Google plus:</small></p>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Shouts</p> </div>
+                                         <div class="col-sm-4 col-xs-6">
+                                            <div ng-controller="Modaldisconnnectgoogle">
+                                            <a href="#" class="btn btn_disable" ng-click="opendisconnectgoogle()">disable <em class="affiliate-icon"> </em></a>
+                                          </div>
+                      
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Collections</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Comments</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Categories</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Votes</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>My Favourite Shops</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="disable_section row">
+                            	<div class="col-sm-6"> 
+                                	<div class="row">
+                                    	<div class="col-sm-8 col-xs-6"><p>My Collected Shouts</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6"> 
+                                    	<div class="col-sm-8 col-xs-6"><p>Shouters I Follow</p> </div>
+                                        <div class="col-sm-4 col-xs-6"><a href="#" class="btn btn_disable btn_enable">enable <em class="affiliate-icon"></em></a></div>
+                                </div>
+                                
+                            </div>
+                            
+                      </div>
+                      
+                      <div class="clearfix"></div>
+                      </div>
+                </div>
+                     
+            </div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="34px" height="34px" viewBox="0 0 34 34" enable-background="new 0 0 34 34" xml:space="preserve">
+<path fill="#FFFFFF" d="M17,0c9.389,0,17,7.612,17,17c0,9.389-7.611,17-17,17S0,26.389,0,17S7.611,0,17,0z"/>
+<path fill="#1a62aa" d="M17,3c7.732,0,14,6.268,14,14s-6.268,14-14,14S3,24.732,3,17S9.268,3,17,3z"/>
+<path fill="#4E844D" d="M8,20.6v-1.2"/>
+<g>
+	<path fill="#FFFFFF" d="M17,19.4c0.396,0,1.2-0.6,1.2-0.6l7.8-6c0-0.994-0.806-1.8-1.8-1.8H9.8C8.806,11,8,11.806,8,12.8l7.8,6
+		C15.8,18.8,16.604,19.4,17,19.4z"/>
+	<polygon fill="#FFFFFF" points="8,14 8,19.4 11.789,17.031 	"/>
+	<path fill="#FFFFFF" d="M20,18.8c0,0-1.932,1.889-3,1.8c-1.069-0.089-3-1.8-3-1.8l-1.368-1.095L8,20.6v0.6
+		C8,22.194,8.806,23,9.8,23h14.4c0.994,0,1.8-0.806,1.8-1.8v-0.6l-4.632-2.895L20,18.8z"/>
+	<polygon fill="#FFFFFF" points="26,19.4 26,14 22.211,17.032 	"/>
+</g>
+</svg>

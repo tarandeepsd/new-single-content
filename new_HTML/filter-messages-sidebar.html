@@ -1,0 +1,217 @@
+<!-- Filter Section -->
+<div  class="filter-section hidden-xs hidden-sm" ng-init="$root.filterhide=true" ng-class="{'open':($root.filter_show)}">
+    <div class="filter-overlay"></div>
+    	<!-- Message Write Button -->
+        <div ng-controller="Modalwritemsg" class="writemsg-btn hidden-sm hidden-xs">
+            <a href="#" ng-click="openWritemsg()" class="btn msg-button purple-btn"><span>write message</span></a>
+        </div>
+        <!-- //Message Write Button -->
+        
+        <!-- Filter Block -->
+        <div class="filter-block filter-msg-block hidden-sm hidden-xs">
+          <h3 class="title"><span>You have</span> 15 unread messages.</h3>
+          <div class="desc">
+            Your inbox contains:
+            <span class="lightgreyTxt">999 received messages</span>
+            <a href="#" class="blueTxt">9 sent messages</a>
+            <span class="lightgreyTxt smalltxt">max 200 messages available)</span>
+          </div>
+          
+          <div class="custom-checkboxbtn">
+              <label ng-click="disabled=!disabled">
+                <input type="checkbox" name="checkbox" checked="checked" >
+                <span class="lbl">Select all messages</span> 
+              </label>
+          </div>
+        
+        <div class="button" ng-init="disabled=false" ng-class="{ 'disable':disabled }">
+            <a href="#" class="btn unread-btn purple-btn disable"><span>mark as unread</span></a>
+            <a href="#" class="btn read-btn purple-btn disable"><span>mark as read</span></a>
+            <a href="#" class="btn delete-btn red-btn disable"><span>delete selected</span></a>
+        </div>
+     
+        </div>
+        <!-- //Filter Block -->
+        
+        
+        <!-- Filter Block -->
+        <div class="filter-block search-fliter"  >
+          <h3 class="title hidden-xs hidden-sm">Show results for <a href="#" class="pull-right link hide">reset all</a></h3>
+          <ul>
+            <li class="clearfix hidden-lg hidden-md filter-title"><h3 ng-click="$root.filter_show=false">Show results</h3> 
+            <div class="pull-right"><a href="#" class="btn blue-btn" ng-click="$root.filter_show=false">apply</a> <a href="#" class="btn disable">reset</a></div>
+            </li>
+            
+            <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+                <label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Keyword <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+                <!-- Dropdown --> 
+                <div class="dropdown-block" uib-collapse="isCollapsed">
+                    <!-- Input -->
+                    <div class="input-group add-on search-input">
+                        <input class="form-control" placeholder="Keyword" name="srch-term" id="srch-term" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-search" type="submit"></button>
+                            <button class="btn btn-close" type="submit"></button>
+                        </div>
+                    </div>
+                    <!-- //Input -->
+                    <!-- error Input -->
+                    <div class="error_tooltip hide">Lorem ipsum dolor sit amet consectetui</div>
+                    <div class="input-group add-on search-input error-input hide">
+                        <input class="form-control" value="Lorem" name="srch-term" id="srch-term" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-search" type="submit"></button>
+                            <button class="btn btn-close" type="submit"></button>
+                        </div>
+                    </div>
+                    <!-- error Input -->
+                    
+                    <!-- keyword List -->
+                    <ul class="keyword-list">
+                        <li><a href="#">lorem</a></li>
+                        <li><a href="#">lorem</a></li>
+                    </ul>
+                    <!-- //keyword List -->            
+                </div>
+                 <!-- //Dropdown -->
+            </li>
+            
+            
+           
+           <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+                <label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Read / Unread Messages <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+                <!-- DropDown Block -->
+                <div class="dropdown-block" uib-collapse="isCollapsed">
+                    <!-- Scroll Content -->
+                    <div class="multiselect-panel clearfix">
+                        <ul class="custom-checkboxbtn">
+                            <li>
+                                <label><input type="checkbox" checked="checked" name="checkbox"><span class="lbl">Unread</span> </label> <span class="notification">999</span>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="checkbox"><span class="lbl">Read</span></label>  <span class="notification">999</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //Scroll Content -->
+                </div>
+                <!-- //DropDown Block -->
+            </li>
+            
+			
+            <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+                <label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Time Range <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+                <!-- DropDown Block -->
+                <div class="dropdown-block clearfix" uib-collapse="isCollapsed">
+                    <!-- Custom Dropdown -->
+                    <div ng-controller="DropdownCtrl">
+                        <div class="dropdown custom-dropdown" uib-dropdown="1">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" uib-dropdown-toggle ng-init="timerange='All Time'">
+                            {{ timerange }} 
+                        </a>			
+                        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+							<li><a href="#" active-function modal="All Time" active_value="{{timerange}}" ng-click="timerange='All Time'">All Time</a></li>
+                            <li><a href="#" active-function modal="Custom Range" active_value="{{timerange}}" ng-click="timerange='Custom Range'">Custom Range</a></li>
+                            <li><a href="#" active-function modal="Custom Range1" active_value="{{timerange}}" ng-click="timerange='Custom Range1'">Custom Range1</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                     <!-- // Custom Dropdown -->
+                     <!-- Date Picker-->
+                  <div ng-controller="DatepickerPopupDemoCtrl" class="datepicker">
+                    <div class="input-group">
+                    	<label>Form</label>
+                        <!-- <input type="text" class="form-control" value="12/03/2016/"> -->
+						<input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                	uib-datepicker-popup="{{format}}" ng-model="formData.fromDate" 
+                                    is-open="calendar_open" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats" ng-click="calendar_open=!calendar_open" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="calendar_open=!calendar_open"><img src="assets/images/icons/calendar_icon.svg" /></button>
+                        </span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>to</label>
+                        <input type="text" class="form-control form-control-icon" placeholder="dd/mm/yyyy"
+                                    uib-datepicker-popup="{{format}}" ng-model="formData.toDate" 
+                                    is-open="calendar_open2" datepicker-options="dateOptions" 
+                                    ng-required="true" close-text="Close" 
+                                    alt-input-formats="altInputFormats" ng-click="calendar_open2=!calendar_open2" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="calendar_open2=!calendar_open2"><img src="assets/images/icons/calendar_icon.svg" /></button>
+                        </span>
+                    
+                    </div>
+            	</div>
+                </div>
+                <!-- //DropDown Block -->
+            </li>
+            
+			
+            <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+                <label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Sender Type <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+                <div class="dropdown-block" uib-collapse="isCollapsed">
+                    <!-- Scroll Content -->
+                    <div class="multiselect-panel clearfix">
+                        <ul class="custom-checkboxbtn">
+                            <li>
+                                <label><input type="checkbox" checked="checked" name="checkbox"><span class="lbl">Shout Team</span> </label> <span class="notification">999</span>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" checked="checked" name="checkbox"><span class="lbl">Friends</span> </label> <span class="notification">999</span>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" checked="checked" name="checkbox"><span class="lbl">Followers</span> </label> <span class="notification">999</span> 
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="checkbox"><span class="lbl">Followings</span> </label> <span class="notification">999</span>
+                            </li>
+                            <li>
+                                <label><input type="checkbox" name="checkbox"><span class="lbl">All other Shouters</span> </label> <span class="notification">999</span>
+                            </li>
+							
+                        </ul>
+                    </div>
+                    <!-- //Scroll Content -->
+                </div>
+                <!-- //DropDown Block -->
+            </li>
+            
+            
+           
+           <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+                <label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Sent by <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+                <!-- Dropdown --> 
+                <div class="dropdown-block" uib-collapse="isCollapsed">
+                    <!-- Input -->
+                    <div class="input-group add-on search-input">
+                        <input class="form-control" placeholder="Enter Shouter’s Name" name="srch-term" id="srch-term" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-search" type="submit"></button>
+                            <button class="btn btn-close" type="submit"></button>
+                        </div>
+                    </div>
+                    <!-- //Input -->
+                    
+                    <!-- keyword List -->
+                    <ul class="keyword-list">
+                        <li><a href="#">AngelinaJolie</a></li>
+                        <li><a href="#">Scarlett</a></li>
+                    </ul>
+                    <!-- //keyword List -->            
+                </div>
+                 <!-- //Dropdown -->
+            </li>
+            
+          </ul>
+        </div>
+        <!-- //Filter Block -->
+     <!-- Filter TOp Treding Deal Block -->
+     <div ng-include="'filter-top-trending-deal.html'"></div>
+     <!-- //Filter TOp Treding Deal Block -->
+</div>
+<!-- //FIlter Section -->
+
+

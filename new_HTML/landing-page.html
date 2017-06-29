@@ -1,0 +1,467 @@
+<!doctype html>
+<html ng-app="shoutModule">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Shout</title>
+        <meta name="description" content="">
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+		
+         <!-- Latest compiled and minified Bootstrap and Fontawesome CSS -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css"  type="text/css" />
+		
+        <!-- Website Main CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+       <link rel="stylesheet/less" href="assets/less/styles.less" type="text/css"/>
+        
+        <!-- Website Main CSS -->
+        
+        <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        
+		<script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/less.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+        <link rel="stylesheet" href="assets/css/jquery.mmenu.all.min.css">
+     	<link rel="stylesheet" href="assets/css/jquery.mmenu.pagedim.css">
+        
+    </head>
+    <body ng-class="{'overflowh' : ($root.filter_show )}" ng-init ="$root.filter_show = false">
+    	
+        <div>
+        <!-- Topbar Header -->
+        <div ng-include="'header-bar.html'" scroll class="blue-bg"></div>
+        <!-- //Topbar Header -->
+
+    
+        <!-- Main Container -->
+        <div class="main-container fixed-header clearfix" ng-controller="productListCtrl">
+         
+            <div class="landing_banner">
+				<div class="landing_form">
+					<h1>Did you know?</h1>
+					<h2>You can buy twice as much, spending what you do now!</h2>
+					
+					<div class="default-form form_area">
+					<div class="form-group">
+						<div class="form-input">
+							<input placeholder="Enter your email address" class="form-control" type="email">
+							<span class="form-icon question-icon"></span>
+							<div class="form_tooltip question-tooltip">Lorem ipsum dolor sit amet consectetui adipiscing</div>
+						</div>
+				
+					</div>
+					
+					<button type="submit" class="btn orange_btn btn-block">JOIN FREE <span class="effiliaction"></span></button>
+					<p class="terms">By creating a Shout account, you accept the <a href="term-conditions.html" target="_blank">Terms of Service</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a></p>
+					<p class="login" ng-controller="ModalLogin">Already registered? <a href="#" ng-click="openLogin()">Log In</a></p>
+					</div>
+					
+				</div>
+            </div>
+			
+			<!-- Main Content --> 
+            <div class="main-content landing_page white_background">  
+				<div class="main-title"><h2><span>What is Shout</span></h2></div>
+				 
+					<div class="col-sm-6">
+					<p>Shout is the first <strong>shopping community</strong> capable of showing you the <strong>true real-time convenience</strong> of any product online.</p>
+					<h2 class="sub_title m_top40">Lorem ipsum dolor</h2>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna <strong>aliquam erat volutpat</strong>. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorpert. </p>
+					</div>
+					
+					
+					<div class="col-sm-6">
+						<h2 class="sub_title">Adipiscing consectetuer elit sed</h2>
+						<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam <a href="#">littera gothica</a>.</p>
+						<p>Quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in <strong>futurum</strong>. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. </p>
+					</div>
+					
+					 <div class="col-sm-12 text-center clearfix" ng-controller="Modalsignup"><a ng-click="openSignup()" href="#" class="btn orange_btn sign_up_btn">SIGN UP FOR FREE NOW <span class="effiliaction"></span></a></div>
+				 
+				 
+            </div>
+			
+			
+			<!-- Main Content --> 
+            <div class="main-content landing_page grey_trigle_top">
+				<div class="main-title"><h2><span>What you can do on Shout</span></h2></div>
+				 <p class="text-center text_mob_left">Shout is the first <strong>shopping community</strong> capable of showing you the <strong>true real-time convenience </strong> of any product online. <br/>
+				 If you are looking for the best true <strong>deals</strong> of the day, if you are considering a deal but don’t know whether it’s the <strong>right time to buy</strong>,<br/>
+				 or if you simply want to <strong>save big</strong> on your online purchases, <strong>Shout</strong> is the service you have always been wishing for!</p>
+				 
+				 <div class="section_clearfix">
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/save-money.svg" alt=""/></p>
+					<h2 class="sub_title">Save Money</h2>
+						<p>Thousands of daily deals on the site<br/> allow you to save on your purchases</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/save-time.svg" alt=""/></p>
+					<h2 class="sub_title">Save Time</h2>
+						<p>Stop spending time on searches,<br/> all the best deals in one single place</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/recognise-convenience.svg" alt=""/></p>
+					<h2 class="sub_title">Recognise the Convenience</h2>
+						<p>Evaluate the convenience<br/> of every purchase you make</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/shout.svg" alt=""/></p>
+					<h2 class="sub_title">Shout</h2>
+						<p>Share deals and other saving<br/> opportunities with the Community</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 </div>
+				 
+				 <div class="section_clearfix">
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/vote.svg" alt=""/></p>
+					<h2 class="sub_title">Vote</h2>
+						<p>Help other users to recognise<br/> the true convenience</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/discuss.svg" alt=""/></p>
+					<h2 class="sub_title">Discuss</h2>
+						<p>Knowledge is power: talk with other<br/> Shouters and get experienced</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/review.svg" alt=""/></p>
+					<h2 class="sub_title">Review Products & Shops</h2>
+						<p>Let other users know about your<br/> experience with a product or a shop</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/learn.svg" alt=""/></p>
+					<h2 class="sub_title">Learn</h2>
+						<p>Find Shoppers with similar consumption<br/> preferences, and learn from what they do</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 </div>
+				 
+				 <div class="section_clearfix">
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/price-alert.svg" alt=""/></p>
+					<h2 class="sub_title">Set Price Alerts</h2>
+						<p>Shout is and always be free,<br/> after all our aim is to make you save</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/invite-friends.svg" alt=""/></p>
+					<h2 class="sub_title">Invite your Friends</h2>
+						<p>The more we are,<br/> the more we save!</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/earn-money.svg" alt=""/></p>
+					<h2 class="sub_title">Earn Money</h2>
+						<p>Get an extra income by being<br/> an active part of the community</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				  
+				 <div class="col-md-3 col-xs-6 col-sm-4 image_shout_outer"> 
+					<p><img src="assets/images/svg/landing-page/register.svg" alt=""/></p>
+					<h2 class="sub_title">Sign Up for FREE!</h2>
+						<p>Shout is and always be free,<br/> after all our aim is to make you save</p>
+						<small><a href="sample-static-page.html" target="_blank">learn more</a></small>
+				 </div>
+				 
+				 </div>
+				 
+				 <div class="col-sm-12 text-center clearfix" ng-controller="Modalsignup"><a ng-click="openSignup()" href="#" class="btn orange_btn sign_up_btn">SIGN UP FOR FREE <span class="effiliaction"></span></a></div>
+				 
+			</div>
+           
+			
+			<!-- Main Content --> 
+            <div class="main-content landing_page white_background white_trigle_top">  
+				<div class="main-title"><h2><span>What you can find on Shout</span></h2></div>
+				<p class="text-center text_mob_left">On Shout you can find all the products, <strong>deals</strong>, <strong>coupons</strong> and <strong>sales</strong> from the <strong>best online shops</strong>,<br/>
+				tips and discussions about how to <strong>save on purchases</strong>, reviews about stores and products.<br/>
+				Here’s a selection of the best deals you can find on Shout today.</p>
+				
+				<div ng-include="'deals.html'" class="m_top10"></div>
+				
+				
+				 <div class="col-sm-12 text-center clearfix"><a href="deal-category.html" target="_blank" class="btn btn-lg green-btn">TODAY’S TOP DEALS</a></div>
+				 
+			</div>
+			
+			
+			<!-- Main Content --> 
+            <div class="main-content landing_page grey_trigle_top">  
+				<div class="main-title"><h2><span>What our Shouters say</span></h2></div>
+				
+				<div class="slick_slider">
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+					<div>
+						<span><a href="user-shouts.html" target="_blank"><img src="assets/images/friend.jpg" alt=""/></a></span>
+						<h4><a href="user-shouts.html" target="_blank">Princess</a></h4>
+						<small>shouting since 20 Oct 2015</small>
+						<p>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat"</p>
+					</div>
+					
+				</div>
+				
+				
+				 <div class="col-sm-12 text-center clearfix" ng-controller="Modalsignup"><a ng-click="openSignup()" href="#" class="btn orange_btn sign_up_btn">SIGN UP FOR FREE <span class="effiliaction"></span></a></div>
+				 
+				 
+			</div>
+			
+			
+			<div class="main-content landing_page drak_grey_bg white_trigle_top">  
+				<div class="main-title"><h2><span>Brands & Shops</span></h2></div>
+				
+				<div class="brand_slider">
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/amazon_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/amazon_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/amazon_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/argos_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/argos_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/argos_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/mediamarkt_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/mediamarkt_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/mediamarkt_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/sainsburys_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/sainsburys_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/sainsburys_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/walmart_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/walmart_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/walmart_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/amazon_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/amazon_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/amazon_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/argos_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/argos_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/argos_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+					<div>
+						<div class="brand_img">
+							<a href="retailer-offer.html" target="_blank">
+								<img src="assets/images/brands/mediamarkt_01_normal.svg" class="normal" alt=""/>
+								<img src="assets/images/brands/mediamarkt_02_onhover.svg" class="hover" alt=""/>
+								<img src="assets/images/brands/mediamarkt_03_onclick.svg" class="focus" alt=""/>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+
+		   </div>
+            <!-- //Main Content --> 
+         </div>
+        </div>
+        <!-- Footer NewsLetter -->
+        <div ng-include="'footer-newsletter.html'" class="m_top_zero"></div>
+        <!-- //Footer NewsLetter -->
+        <!-- Footer -->
+        <div ng-include="'footer.html'"></div>
+        <!-- //Footer -->
+        <!-- Cookie Section -->
+        <div ng-include="'cookie.html'"></div>
+        <!-- //Cookie Section -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"> </script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollbars.js"></script>
+   <!-- Slick slider angular script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+	<script src="assets/js/angular-slick.js"></script>
+	<script src="assets/js/app.js"></script>
+   <!-- End Slick slider angular script -->
+    <link rel="stylesheet" href="assets/css/jquery.nouislider.css" />
+   <!-- Bootstrap slider Js Script -->  
+   <script src="assets/js/jquery.nouislider.js"></script>
+   <script src="assets/js/Link.js"></script>
+   <script src="assets/js/nouislider.js"></script> 
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+	<!-- Custom angular Js Script -->
+     <script src="assets/js/custom.js"></script>
+     <script src="assets/js/deal.js"></script>
+	 <script src="assets/js/popup.js"></script>
+     <script src="assets/js/ppopup.js"></script>
+	 <script src="assets/js/jquery.mmenu.min.all.min.js"></script> 
+	 
+	 
+	 <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slick_slider').slick({
+        //enabled: true,
+		autoplay: true,
+		draggable: false,
+		autoplaySpeed: 3000, 
+		slidesToShow: 4,
+		arrows: true,
+		slidesToScroll: 1,
+		responsive: [
+    {
+      breakpoint: 990,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 3
+      }
+    },
+	{
+      breakpoint: 767,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 530,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 1
+      }
+    }
+  ]
+      });
+    });
+	
+	    $(document).ready(function(){
+      $('.brand_slider').slick({
+        //enabled: true,
+		autoplay: true,
+		draggable: false,
+		autoplaySpeed: 3000, 
+		slidesToShow: 5,
+		arrows: true,
+		slidesToScroll: 1,
+		responsive: [
+    {
+      breakpoint: 990,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 4
+      }
+    },
+	{
+      breakpoint: 767,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 530,
+      settings: { 
+        centerMode: true, 
+        slidesToShow: 1
+      }
+    }
+  ]
+      });
+    });
+  </script>
+  
+      </body>
+</html>

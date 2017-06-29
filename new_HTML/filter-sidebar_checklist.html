@@ -1,0 +1,165 @@
+<!-- Filter Section -->
+<div class="filter-section hidden-xs hidden-sm checklist_bar">
+
+  <!-- Filter Block -->
+    <div class="filter-block search-fliter">
+      <h3 class="title">Show</h3>
+      <ul>
+        <li class="custom-checkboxbtn">
+          <p><label>
+            <input type="checkbox" name="checkbox" value="Products" >
+            <span class="lbl">Favourite Categories</span> </label><span class="notification">999</span></p>
+           
+           <p><label>
+            <input type="checkbox" name="checkbox" value="Products" >
+            <span class="lbl">Favourite Categories</span> </label><span class="notification">999</span></p>
+            <p><label>
+            <input type="checkbox" name="checkbox" value="Products" >
+            <span class="lbl">Favourite Shops</span> </label><span class="notification">999</span></p>
+			
+			<p><label>
+            <input type="checkbox" name="checkbox" value="Products" >
+            <span class="lbl">Favourite Countries</span> </label><span class="notification">999</span></p>
+			
+			<p><label>
+            <input type="checkbox" name="checkbox" value="Products" >
+            <span class="lbl">Sizes</span> </label><span class="notification">999</span></p>
+			
+        </li>
+        
+        <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Keyword <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+            	<!-- Input -->
+            	<div class="input-group add-on search-input">
+                    <input class="form-control" placeholder="Keyword" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- //Input -->
+                <!-- error Input -->
+                <div class="error_tooltip hide">Lorem ipsum dolor sit amet consectetui</div>
+                <div class="input-group add-on search-input error-input hide">
+                	<input class="form-control" value="Lorem" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- error Input -->
+                
+                <!-- keyword List -->
+                <ul class="keyword-list">
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+            	</ul>
+                <!-- //keyword List -->            
+            </div>
+             <!-- //Dropdown -->
+        </li>
+        
+      </ul>
+      
+        
+        </div>
+
+</div>
+<!-- //FIlter Section -->
+
+
+ <div class="filter-section hidden-xs hidden-sm checklist_bar" ng-init="$root.filterhide=true" ng-class="{ 'open':($root.filter_show ) }">
+ <div class="filter-overlay"></div>   
+      <!-- Filter Block -->
+    <div class="filter-block search-fliter checklist_outer">
+      <h3 class="title hidden-xs hidden-sm">Your Checklist</h3>
+      <ul>
+      	<li class="clearfix hidden-lg hidden-md filter-title"><h3 ng-click="$parent.filter_show=false">Filters</h3> 
+        <div class="pull-right"><a href="#" class="btn blue-btn" ng-click="$root.filter_show=false">apply</a> <a href="#" class="btn disable">reset</a></div>
+        </li>
+        
+        <li class="dropdown hidden-lg hidden-md last-child" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Keyword <a href="#" class="reset-link pull-right" filter-toggle-reset>reset</a></label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+            	<!-- Input -->
+            	<div class="input-group add-on search-input">
+                    <input class="form-control" placeholder="Keyword" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- //Input -->
+                <!-- error Input -->
+                <div class="error_tooltip hide">Lorem ipsum dolor sit amet consectetui</div>
+                <div class="input-group add-on search-input error-input hide">
+                	<input class="form-control" value="Lorem" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"></button>
+                        <button class="btn btn-close" type="submit"></button>
+                    </div>
+                </div>
+                <!-- error Input -->
+                
+                <!-- keyword List -->
+                <ul class="keyword-list">
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+            	</ul>
+                <!-- //keyword List -->            
+            </div>
+             <!-- //Dropdown -->
+        </li>
+        
+		
+		
+        <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Preferences</label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+				<ul class="checklist"> 
+					   <li><a href="#">Favourite Categories<small class="alert_icon"></small></a></li>
+					   <li><a href="#">Interests <small class="alert_icon"></small></a></li>
+					   <li><a href="#">Favouite Shops<small class="alert_icon"></small></a></li>
+					   <li><a href="#">Favourite Countries <small class="alert_icon"></small></a></li>
+					   <li><a href="#">Sizes <small class="alert_icon"></small> </a></li>
+				</ul>      
+            </div>
+             <!-- //Dropdown -->
+        </li>
+		
+        <li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Social</label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+				<ul class="checklist">  
+					   <li><a href="#"> Facebook <small class="alert_icon"></small> </a></li>
+					   <li><a href="#"> Twitter <small class="alert_icon"></small> </a></li>
+					  <li><a href="#"> Google+ <small class="alert_icon"></small> </a></li>
+				</ul>      
+            </div>
+             <!-- //Dropdown -->
+        </li>
+		
+		<li class="dropdown" filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Account Settings </label>
+            <!-- Dropdown --> 
+            <div class="dropdown-block" uib-collapse="isCollapsed">
+				<ul class="checklist">  
+					   <li><a href="#"> Location  </a></li>
+					   <li><a href="#"> Mobile Number  </a></li>
+					  <li><a href="#"> Age </a></li>
+					  <li><a href="#">Gender</a></li>
+					  <li><a href="#"> Family </a></li>
+				</ul>      
+            </div>
+             <!-- //Dropdown -->
+        </li>
+        
+      </ul>
+    </div>
+    <!-- //Filter Block -->
+ </div>  

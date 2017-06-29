@@ -1,0 +1,99 @@
+<!-- Filter Section -->
+<div  class="filter-section hidden-xs hidden-sm" ng-init="$root.filterhide=true" ng-class="{ 'open':($root.filter_show ) }">
+    <div class="filter-overlay"></div>
+
+     <!-- Filter Block -->
+    <div class="filter-block search-fliter staticSidebar">
+      
+      <ul>
+         <li class="active"><a href="whatisshout.html">What is Shout</a></li>
+         <li> <a href="faq.html">Frequently Asked Questions</a> </li>
+         <li> <a href="registration_login.html">Registration &amp; Log In</a> </li>
+         
+         <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Customisation</label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	 <ul>
+                 	<li><a href="sample-static-page.html"> Profiling Pop Ups </a></li>
+                    <li><a href="sample-static-page.html"> Preferences Page </a></li>
+                    <li><a href="sample-static-page.html"> Edit Preferences in "My Feed" page </a></li>
+                 </ul>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+        <li> <a href="sample-static-page.html">Buy Deals &amp; Products</a> </li>
+        <li> <a href="sample-static-page.html">Voting</a> </li>
+        <li> <a href="sample-static-page.html">Commenting</a> </li>
+        
+        <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Shouting</label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	 <ul>
+                 	<li><a href="sample-static-page.html"> Shouting Deals </a></li>
+                    <li><a href="sample-static-page.html"> Shouting Tips </a></li>
+                    <li><a href="sample-static-page.html"> Shouting Discussions </a></li>
+                 </ul>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+        <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Reviewing</label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	 <ul>
+                 	<li><a href="sample-static-page.html"> Reviewing Deals </a></li>
+                    <li><a href="sample-static-page.html"> Reviewing Tips </a></li>
+                    <li><a href="sample-static-page.html"> Reviewing Discussions </a></li>
+                 </ul>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+        <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Reporting</label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	 <ul>
+                 	<li><a href="sample-static-page.html"> Reporting Deals </a></li>
+                    <li><a href="sample-static-page.html"> Reporting Tips </a></li>
+                    <li><a href="sample-static-page.html"> Reporting Discussions </a></li>
+                 </ul>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+        <li> <a href="sample-static-page.html">Inviting</a> </li>
+        <li> <a href="sample-static-page.html">Badges</a> </li>
+        <li> <a href="sample-static-page.html">Affiliate Program</a> </li>
+        <li> <a href="sample-static-page.html">Finding Friends</a> </li>
+        <li> <a href="term-conditions.html">Terms & Conditions</a> </li>
+        <li> <a href="privacy-policy.html">Privacy Policy</a> </li>
+        <li> <a href="cookie-policy.html">Cookie Policy</a> </li>
+        
+        <li class="dropdown"  filter-toggle ng-class="{'open':!isCollapsed}">
+        	<label class="dropdown-toggle" ng-click="isCollapsed = !isCollapsed">Contact Us</label>
+            <!-- DropDown Block -->
+        	<div class="dropdown-block" uib-collapse="isCollapsed">
+            	 <ul>
+                 	<li><a href="for-retailers.html"> For Retailers </a></li>
+                    <!--<li><a href="#"> For Partners </a></li>-->
+                    <li><a href="workwith-us.html"> Work with us </a></li>
+                 </ul>
+            </div>
+            <!-- //DropDown Block -->
+        </li>
+        
+      </ul>
+    </div>
+    <!-- //Filter Block -->
+    <!-- Filter TOp Treding Deal Block -->
+     <div ng-include="'filter-top-trending-deal.html'"></div>
+     <!-- //Filter TOp Treding Deal Block -->
+</div>
+<!-- //FIlter Section -->
+
+
